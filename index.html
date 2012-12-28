@@ -8,37 +8,11 @@
         <script src="GridRenderer.js"></script>
         <script src="PlannerRenderer.js"></script>
     </head>
-    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <style type="text/css">
-
-        body {
-            background-color: #474838;
-        }
-        .title {
-            width: 100%;
-            background-color: #DBE230;
-            text-align: center;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        #canvas-wrapper{
-            width: 1250px;
-            height: 480px;
-            margin: 10px auto;
-            /*border: 1px solid red;*/
-        }
-
-        .container { width: 1280px; margin: 0px auto; }
-
-        #event{background-color: #282320; color: #f7f7f4; width:350px; padding:0px 20px 20px 20px;}
-        #date{background-color: #DBE230;  color: #474838;  padding: 4px; width: 60px;}
-        #title{ color:  #DBE230; font-size:24px; padding: 20px 0px 10px 0px;}
-        h2 { color: #DBE230; font-size: 3em}
-
-        #event { margin-bottom: 10px; margin-left: 10px; float: left;}
-
-    </style>
+   
     <script type="text/javascript">
     
     window.onload = function() {
@@ -60,7 +34,7 @@
 
     <body>
       <div class="title">  
-         <img src="title.png"/>  
+         <img src="img/title.png"/>  
       </div>
       <div class="container">
       
@@ -68,81 +42,94 @@
         <canvas id="planner" width="1250px" height="480px"></canvas>
       </div>
 
-      <div class="events">
+      <div id="events">
         <h2>Próximos eventos</h2>
         
-        <div id="event">
-            <div id="date">06.08.12</div>
-            <div id="title">Open space agentes del cambio</div>
-            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
-            ¡Tal vez seas un agente del cambio! <br/>
-            Ven y comparte ideas y experiencias con otras personas como tú.</div>
+        <div class="event">
+            <div class="date">06.08.12</div>
+            <div class="title">Open space agentes del cambio Open space agentes del cambio</div>
+            <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! 
+            buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! 
+            buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! 
+            Ven y comparte ideas y experiencias con otras personas como tú.</p></div>
+            <div class="further-info"><a href="#">Más info</a></div>
             </div>
         <div>
 
-        <div id="event">
-            <div id="date">06.08.12</div>
-            <div id="title">Open space agentes del cambio</div>
-            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+        <div class="event">
+            <div class="date">06.08.12</div>
+            <div class="title">Open space agentes del cambio</div>
+            <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
             ¡Tal vez seas un agente del cambio! <br/>
             Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            <div class="further-info"><a href="#">Más info</a></div>
             </div>
         <div>
 
-        <div id="event">
-            <div id="date">06.08.12</div>
-            <div id="title">Open space agentes del cambio</div>
-            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+        <div class="event">
+            <div class="date">06.08.12</div>
+            <div class="title">Open space agentes del cambio</div>
+            <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! <br/>
+            buscas maneras de mejorar las cosas a tu alrededor? 
             ¡Tal vez seas un agente del cambio! <br/>
             Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            <div class="further-info"><a href="#">Más info</a></div>
             </div>
         <div>  
 
 
-            <div id="event">
-            <div id="date">06.08.12</div>
-            <div id="title">Open space agentes del cambio</div>
-            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            <div class="event">
+            <div class="date">06.08.12</div>
+            <div class="title">Open space agentes del cambio</div>
+            <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
             ¡Tal vez seas un agente del cambio! <br/>
             Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            <div class="further-info"><a href="#">Más info</a></div>
             </div>
         <div>  
 
 
 
-            <div id="event">
-            <div id="date">06.08.12</div>
-            <div id="title">Open space agentes del cambio</div>
-            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            <div class="event">
+            <div class="date">06.08.12</div>
+            <div class="title">Open space agentes del cambio</div>
+            <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
             ¡Tal vez seas un agente del cambio! <br/>
             Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            <div class="further-info"><a href="#">Más info</a></div>
             </div>
         <div>  
 
 
-            <div id="event">
-            <div id="date">06.08.12</div>
-            <div id="title">Open space agentes del cambio</div>
-            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            <div class="event">
+            <div class="date">06.08.12</div>
+            <div class="title">Open space agentes del cambio</div>
+            <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
             ¡Tal vez seas un agente del cambio! <br/>
             Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            <div class="further-info"><a href="#">Más info</a></div>
             </div>
         <div>  
 
 
-            <div id="event">
-            <div id="date">06.08.12</div>
-            <div id="title">Open space agentes del cambio</div>
-            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            <div class="event">
+            <div class="date">06.08.12</div>
+            <div class="title">Open space agentes del cambio</div>
+            <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
             ¡Tal vez seas un agente del cambio! <br/>
             Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            <div class="further-info"><a href="#">Más info</a></div>
             </div>
         <div>  
       
       </div>
       
-      <img src="icon.png" id="icon" style="display:none"/>              
-      <img src="iconoff.png" id="icon-off" style="display:none"/>              
+      <img src="img/icon.png" id="icon" style="display:none"/>              
+      <img src="img/iconoff.png" id="icon-off" style="display:none"/>              
         
     </body>
 </html>
