@@ -5,23 +5,25 @@ body > .title { width: 100%; background-color: #DBE230; text-align: center; padd
 .container { width: 1280px; margin: 0px auto; }
 
 #events { font-family: 'Strait', sans-serif;}
-#events .event{background-color: #282320; color: #f7f7f4; width:350px; padding:0px 20px 20px 20px;}
-#events .date{background-color: #DBE230;  color: #474838;  padding: 4px; width: 60px;}
-#events .title{ color:  #DBE230; font-size:24px; padding: 20px 0px 10px 0px; text-transform: uppercase;  width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-#events .summary { font: normal 14px/19px Arial, Helvetica, Garuda, sans-serif; height: 180px; }
-#events .further-info { text-align: right; }
-#events .further-info a{background-color: #474838;  color: #DBE230; padding: 2px 4px; text-decoration: none; font-size: 1.2em;}
-#events .further-info a:hover { background-color: #DBE230;  color: #474838; }
+.event{background-color: #282320; color: #f7f7f4; width:350px; height: 280px; padding:0px 20px 20px 20px;}
+.event .date{background-color: #DBE230;  color: #474838;  padding: 4px; width: 60px;}
+.event .title{ color:  #DBE230; font-size:24px; padding: 20px 0px 10px 0px; text-transform: uppercase;  width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.event .summary { font: normal 14px/19px Arial, Helvetica, Garuda, sans-serif; height: 180px; }
 
-#events .new-event { background-color: #474838; color: #EBEBE9; width:350px; padding:0px 16px 16px 16px; border: 4px dashed #EBEBE9; }
-#events .new-event .summary { height: 150px; }
-#events .new-event strong { color: #DBE230; }
+.new-event { background-color: #474838; color: #EBEBE9; height: 276px; padding:0px 16px 16px 16px; border: 4px dashed #EBEBE9; }
+.new-event strong { color: #DBE230; }
+.new-event .summary { height: 150px; }
+.new-event .date { visibility: hidden;}
 
-#events .add-event { text-align: center; margin-bottom: 10px}
-#events .add-event a { background-color: #282320;  color: #DBE230; padding: 10px 8px; text-decoration: none; font-size: 1.2em;}
-#events .add-event a:hover { background-color: #DBE230;  color: #282320; }
+.event .further-info { text-align: right; }
+.event .further-info a{background-color: #474838;  color: #DBE230; padding: 2px 4px; text-decoration: none; font-size: 1.2em;}
+.event .further-info a:hover { background-color: #DBE230;  color: #474838; }
+
+.new-event .add-event { text-align: center; margin-bottom: 10px}
+.new-event .add-event a { background-color: #282320;  color: #DBE230; padding: 10px 8px; text-decoration: none; font-size: 1.2em;}
+.new-event .add-event a:hover { background-color: #DBE230;  color: #282320; }
 
 
 h2 { color: #DBE230; font-size: 3em; text-transform: uppercase;}
 
-#events .event, #events .new-event { margin-bottom: 10px; margin-left: 10px; float: left;}
+#events .event { margin-bottom: 10px; margin-left: 10px; float: left;}
