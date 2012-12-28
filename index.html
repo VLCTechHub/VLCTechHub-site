@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8"/>
+        <script src="paper.js"></script>
+        <script src="Planner.js"></script>
+        <script src="GridRenderer.js"></script>
+        <script src="PlannerRenderer.js"></script>
+    </head>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+
+    <style type="text/css">
+
+        body {
+            background-color: #474838;
+        }
+        .title {
+            width: 100%;
+            background-color: #DBE230;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #canvas-wrapper{
+            width: 1250px;
+            height: 480px;
+            margin: 10px auto;
+            /*border: 1px solid red;*/
+        }
+
+        .container { width: 1280px; margin: 0px auto; }
+
+        #event{background-color: #282320; color: #f7f7f4; width:350px; padding:0px 20px 20px 20px;}
+        #date{background-color: #DBE230;  color: #474838;  padding: 4px; width: 60px;}
+        #title{ color:  #DBE230; font-size:24px; padding: 20px 0px 10px 0px;}
+        h2 { color: #DBE230; font-size: 3em}
+
+        #event { margin-bottom: 10px; margin-left: 10px; float: left;}
+
+    </style>
+    <script type="text/javascript">
+    
+    window.onload = function() {
+        var canvas = document.getElementById('planner');
+        paper.setup(canvas);
+        Planner.setup();
+        PlannerRenderer.draw(Planner);   
+        /*var tool = new paper.Tool();
+        tool.onMouseMove = function(event) {
+            console.log('event.point', event.point);
+        }*/
+
+        paper.view.draw();
+    }
+
+    function onMouseMove(event){
+    }
+</script>
+
+    <body>
+      <div class="title">  
+         <img src="title.png"/>  
+      </div>
+      <div class="container">
+      
+      <div id="canvas-wrapper"> 
+        <canvas id="planner" width="1250px" height="480px"></canvas>
+      </div>
+
+      <div class="events">
+        <h2>Próximos eventos</h2>
+        
+        <div id="event">
+            <div id="date">06.08.12</div>
+            <div id="title">Open space agentes del cambio</div>
+            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! <br/>
+            Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            </div>
+        <div>
+
+        <div id="event">
+            <div id="date">06.08.12</div>
+            <div id="title">Open space agentes del cambio</div>
+            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! <br/>
+            Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            </div>
+        <div>
+
+        <div id="event">
+            <div id="date">06.08.12</div>
+            <div id="title">Open space agentes del cambio</div>
+            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! <br/>
+            Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            </div>
+        <div>  
+
+
+            <div id="event">
+            <div id="date">06.08.12</div>
+            <div id="title">Open space agentes del cambio</div>
+            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! <br/>
+            Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            </div>
+        <div>  
+
+
+
+            <div id="event">
+            <div id="date">06.08.12</div>
+            <div id="title">Open space agentes del cambio</div>
+            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! <br/>
+            Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            </div>
+        <div>  
+
+
+            <div id="event">
+            <div id="date">06.08.12</div>
+            <div id="title">Open space agentes del cambio</div>
+            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! <br/>
+            Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            </div>
+        <div>  
+
+
+            <div id="event">
+            <div id="date">06.08.12</div>
+            <div id="title">Open space agentes del cambio</div>
+            <div id="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
+            ¡Tal vez seas un agente del cambio! <br/>
+            Ven y comparte ideas y experiencias con otras personas como tú.</div>
+            </div>
+        <div>  
+      
+      </div>
+      
+      <img src="icon.png" id="icon" style="display:none"/>              
+      <img src="iconoff.png" id="icon-off" style="display:none"/>              
+        
+    </body>
+</html>
