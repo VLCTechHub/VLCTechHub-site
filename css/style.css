@@ -6,7 +6,7 @@ body > .title { width: 100%; background-color: #DBE230; text-align: center; padd
 
 #events { font-family: 'Strait', sans-serif;}
 .event{background-color: #282320; color: #f7f7f4; width:350px; height: 280px; padding:0px 20px 20px 20px;}
-.event .date{background-color: #DBE230;  color: #474838;  padding: 4px; width: 60px;}
+.event .date{background-color: #DBE230;  color: #474838;  padding: 4px; width: 110px; text-align: center;}
 .event .title{ color:  #DBE230; font-size:24px; padding: 20px 0px 10px 0px; text-transform: uppercase;  width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 .event .summary { font: normal 14px/19px Arial, Helvetica, Garuda, sans-serif; height: 180px; }
 

@@ -3,10 +3,9 @@
 <html lang="en-us">
     <head>
         <meta charset="UTF-8"/>
-        <script src="paper.js"></script>
-        <script src="Planner.js"></script>
-        <script src="GridRenderer.js"></script>
-        <script src="PlannerRenderer.js"></script>
+        <script src="lib/vendor/matchMedia.js"></script>
+        <script src="lib/vendor/yepnope.1.5.4-min.js"></script>
+        <script src="lib/vendor/paper.js"></script>
     </head>
     <link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -15,21 +14,13 @@
    
     <script type="text/javascript">
     
-    window.onload = function() {
-        var canvas = document.getElementById('planner');
-        paper.setup(canvas);
-        Planner.setup();
-        PlannerRenderer.draw(Planner);   
-        /*var tool = new paper.Tool();
-        tool.onMouseMove = function(event) {
-            console.log('event.point', event.point);
-        }*/
+    var truthy = function() { return false; }
 
-        paper.view.draw();
-    }
-
-    function onMouseMove(event){
-    }
+    yepnope({
+      test : matchMedia('(min-width: 1250px)').matches,
+      yep  : ['lib/vendor/paper.js', 'lib/app/Planner.js', 'lib/app/GridRenderer.js', 'lib/app/PlannerRenderer.js', 'lib/app/PlannerInit.js']
+    });
+   
 </script>
 
     <body>
@@ -47,7 +38,7 @@
             <h2>Próximos eventos</h2>
             
             <div class="event">
-                <div class="date">06.08.12</div>
+                <div class="date">06.08.12 - 17:30</div>
                 <div class="title">Open space agentes del cambio Open space agentes del cambio</div>
                 <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
                 ¡Tal vez seas un agente del cambio! 
