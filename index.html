@@ -10,6 +10,7 @@
     <link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mediaquery.css">
 
    
     <script type="text/javascript">
@@ -17,7 +18,7 @@
     var truthy = function() { return false; }
 
     yepnope({
-      test : matchMedia('(min-width: 1250px)').matches,
+      test : matchMedia('(min-width: 1250px)').match,
       yep  : ['lib/vendor/paper.js', 'lib/app/Planner.js', 'lib/app/GridRenderer.js', 'lib/app/PlannerRenderer.js', 'lib/app/PlannerInit.js']
     });
    
@@ -30,12 +31,12 @@
       
       <div class="container">
       
-          <div id="canvas-wrapper"> 
+          <div id="canvas-wrapper" style="display:none"> 
             <canvas id="planner" width="1250px" height="480px"></canvas>
           </div>
 
-          <div id="events">
-            <h2>Próximos eventos</h2>
+          <h2>Próximos eventos</h2>
+          <div id="events" class="clearfix">
             
             <div class="event">
                 <div class="date">06.08.12 - 17:30</div>
@@ -95,8 +96,13 @@
                 <div class="summary">Si organizas un <strong>evento</strong>, taller, charla o quedada informal para fomentar una comunidad o compartir información de base <strong>tecnológica</strong>. Si es un evento <strong>gratuito</strong> o de pago para cubrir costes. Si ocurre en Valencia o Castellón. Si quieres formar parte de <strong>VlcTechHub</strong> da de alta tu evento.</div>
                 <div class="add-event"><a href="#">¡Añadir mi evento!</a></div>
             </div>
-          
+
+
+
+
+
           </div>
+
         </div>
       
       <img src="img/icon.png" id="icon" style="display:none"/>              

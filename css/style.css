@@ -1,13 +1,14 @@
 body { background-color: #474838; }
 body > .title { width: 100%; background-color: #DBE230; text-align: center; padding-top: 10px; padding-bottom: 10px; }
-#canvas-wrapper { width: 1250px;  height: 480px; margin: 10px auto; }
+#canvas-wrapper { width: 1250px;  height: 480px; margin: 10px auto; display: none;}
 
-.container { width: 1280px; margin: 0px auto; }
+.container { margin: 0 auto;  }
 
 #events { font-family: 'Strait', sans-serif;}
-.event{background-color: #282320; color: #f7f7f4; width:350px; height: 280px; padding:0px 20px 20px 20px;}
+
+.event{background-color: #282320; color: #f7f7f4; width:27%; padding:0px 20px 20px 20px;}
 .event .date{background-color: #DBE230;  color: #474838;  padding: 4px; width: 110px; text-align: center;}
-.event .title{ color:  #DBE230; font-size:24px; padding: 20px 0px 10px 0px; text-transform: uppercase;  width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.event .title{ color:  #DBE230; font-size:1.5em; padding: 20px 0px 10px 0px; text-transform: uppercase;  width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 .event .summary { font: normal 14px/19px Arial, Helvetica, Garuda, sans-serif; height: 180px; }
 
 .new-event { background-color: #474838; color: #EBEBE9; height: 276px; padding:0px 16px 16px 16px; border: 4px dashed #EBEBE9; }
@@ -16,7 +17,7 @@ body > .title { width: 100%; background-color: #DBE230; text-align: center; padd
 .new-event .date { visibility: hidden;}
 
 .event .further-info { text-align: right; }
-.event .further-info a{background-color: #474838;  color: #DBE230; padding: 2px 4px; text-decoration: none; font-size: 1.2em;}
+.event .further-info a{background-color: #474838;  color: #DBE230; padding: 2px 4px; text-decoration: none; font-size: 1.2em; }
 .event .further-info a:hover { background-color: #DBE230;  color: #474838; }
 
 .new-event .add-event { text-align: center; margin-bottom: 10px}
@@ -24,6 +25,24 @@ body > .title { width: 100%; background-color: #DBE230; text-align: center; padd
 .new-event .add-event a:hover { background-color: #DBE230;  color: #282320; }
 
 
-h2 { color: #DBE230; font-size: 3em; text-transform: uppercase;}
+h2 { font-family: 'Strait', sans-serif; color: #DBE230; font-size: 3em; text-transform: uppercase;
+	text-shadow: 1px 1px 2px #282320, 0 0 1em #282320, 0 0 0.2em #282320;
+	margin: 3%;
+}
 
-#events .event { margin-bottom: 10px; margin-left: 10px; float: left;}
+#events .event { margin-bottom: 3%; margin-left: 3%; float: left; }
+#events  {  margin-left: 0% }
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+@media only screen and (min-width: 1250px) {
+	 #canvas-wrapper { display: inline;}
+	}
+
+}
