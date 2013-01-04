@@ -5,7 +5,7 @@
         <meta charset="UTF-8"/>
         <script src="lib/vendor/matchMedia.js"></script>
         <script src="lib/vendor/yepnope.1.5.4-min.js"></script>
-        <script src="lib/vendor/paper.js"></script>
+        <script src="lib/app/Event.js"></script>
     </head>
     <link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -21,6 +21,24 @@
       test : matchMedia('(min-width: 1250px)').match,
       yep  : ['lib/vendor/paper.js', 'lib/app/Planner.js', 'lib/app/GridRenderer.js', 'lib/app/PlannerRenderer.js', 'lib/app/PlannerInit.js']
     });
+
+    function getJSONP(url, success) {
+
+    var ud = '_' + +new Date,
+        script = document.createElement('script'),
+        head = document.getElementsByTagName('head')[0] 
+               || document.documentElement;
+
+    window[ud] = function(data) {
+        head.removeChild(script);
+        success && success(data);
+    };
+
+    script.src = url.replace('callback=?', 'callback=' + ud);
+    head.appendChild(script);
+
+    }
+
    
 </script>
 
@@ -107,6 +125,18 @@
       
       <img src="img/icon.png" id="icon" style="display:none"/>              
       <img src="img/iconoff.png" id="icon-off" style="display:none"/>              
+      <script type="text/javascript">
+
+
+        getJSONP('http://spreadsheets.google.com/feeds/cells/0AsqlSYFO18QfdC1oSU1qMzBZYUwxbWY2T0JUZjVvc3c/od6/public/basic?alt=json&callback=?', function(data){
+            Event.parse(data.feed.entry);
+        });
+
+
         
+
+
+
+      </script>
     </body>
 </html>
