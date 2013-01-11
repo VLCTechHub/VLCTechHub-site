@@ -1,4 +1,4 @@
-body:after {
+/*body:after {
     content: "base";
     font-size: 200%;
     font-weight: bold;
@@ -9,7 +9,7 @@ body:after {
     background-color: hsla(1,60%,40%,0.7);
     color: #fff;
 }
-
+*/
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) 
 and (max-device-width : 480px) {
@@ -17,21 +17,22 @@ and (max-device-width : 480px) {
 	.event{ width:80%;}
 	h2 { font-size: 2em; }
 	.event .title { font-size: 1.2em; }
-	body:after{
+/*	body:after{
 		content: 'Smartphones (portrait and landscape)'
 	}
-
+*/
 }
 
 /* Smartphones (landscape) ----------- */
 @media only screen 
 and (min-width : 321px) {
 	.event{ width:85%;}
-	h2 { font-size: 2em; }
+	h2 { font-size: 2.2em; margin-top: 20px; margin-bottom: 20px;}
 	.event .title { font-size: 1.2em; }
-	body:after{
+	body > .title img { width:70%; }
+/*	body:after{
 		content: 'min-width : 321px'
-	}
+	}*/
 }
 
 
@@ -40,46 +41,24 @@ and (min-width : 700px) {
 	.event{ width:40%;}
 	h2 { font-size: 3em; }
 	.event .title { font-size: 1.2em; }
-	body:after{
+	body > .title img { width:500px; }
+	/*body:after{
 		content: 'min-width : 700px'
-	}
+	}*/
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen 
 and (max-width : 320px) {
 	.event{ width:80%;}
-	h2 { font-size: 2em; }
+	h2 { font-size: 2.2em; margin-top: 20px; margin-bottom: 20px;}
 	.event .title { font-size: 1.2em; }
-	body:after{
+	body > .title img { width:70%; }
+	/*body:after{
 		content: 'max-width : 320px'
-	}
+	}*/
 }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-/* Styles */
- body:after { content: 'iPads'};
-
-}
-
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-/* Styles */
-}
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-/* Styles */
-}
 
 /* Desktops and laptops ----------- */
 @media only screen 
@@ -89,7 +68,7 @@ and (min-width : 1224px) {
   h2 { font-size: 3em; }
   .event .title { font-size: 1.5em; }
 
- body:after { content: 'laptops'};
+ /*body:after { content: 'laptops'};*/
 
 }
 
@@ -100,7 +79,7 @@ and (min-width : 1824px) {
  .event{ width:27%;}
   h2 { font-size: 3em; }
   .event .title { font-size: 1.5em; }
- body:after { content: 'large screens'};
+   /*body:after { content: 'large screens'};*/
 }
 
 /* iPhone 4 ----------- */

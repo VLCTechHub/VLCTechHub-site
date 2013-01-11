@@ -5,6 +5,7 @@
         <meta charset="UTF-8"/>
         <script src="lib/vendor/matchMedia.js"></script>
         <script src="lib/vendor/yepnope.1.5.4-min.js"></script>
+        <script src="lib/vendor/handlebars-1.0.rc.1.js"></script>
         <script src="lib/app/Event.js"></script>
     </head>
     <link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
@@ -15,30 +16,10 @@
    
     <script type="text/javascript">
     
-    var truthy = function() { return false; }
-
     yepnope({
-      test : matchMedia('(min-width: 1250px)').match,
+      test : matchMedia('(min-width: 1250px)').matches,
       yep  : ['lib/vendor/paper.js', 'lib/app/Planner.js', 'lib/app/GridRenderer.js', 'lib/app/PlannerRenderer.js', 'lib/app/PlannerInit.js']
     });
-
-    function getJSONP(url, success) {
-
-    var ud = '_' + +new Date,
-        script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0] 
-               || document.documentElement;
-
-    window[ud] = function(data) {
-        head.removeChild(script);
-        success && success(data);
-    };
-
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
-
-    }
-
    
 </script>
 
@@ -49,87 +30,93 @@
       
       <div class="container">
       
-          <div id="canvas-wrapper" style="display:none"> 
-            <canvas id="planner" width="1250px" height="480px"></canvas>
+          <div id="canvas-wrapper"> 
+            <canvas id="planner" width="1150px" height="480px"></canvas>
           </div>
 
           <h2>Próximos eventos</h2>
           <div id="events" class="clearfix">
-            
+           
+          </div>
+
+    </div>
+    <footer>
+        Para más información mándanos un mail a <a href="mailto:vlctechhub@gmail.com">vlctechhub@gmail.com</a> o síguenos en <a href="https://twitter.com/VLCTechHub" target="_blank">twitter</a>
+    </footer>
+      
+      <img src="img/icon.png" id="icon" style="display:none"/>              
+      <img src="img/iconoff.png" id="icon-off" style="display:none"/>  
+
+      <script id="event-template" type="text/x-handlebars-template">
+        {{#each events }}
             <div class="event">
-                <div class="date">06.08.12 - 17:30</div>
-                <div class="title">Open space agentes del cambio Open space agentes del cambio</div>
-                <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
-                ¡Tal vez seas un agente del cambio! 
-                buscas maneras de mejorar las cosas a tu alrededor? 
-                ¡Tal vez seas un agente del cambio! 
-                buscas maneras de mejorar las cosas a tu alrededor? 
-                ¡Tal vez seas un agente del cambio! 
-                Ven y comparte ideas y experiencias con otras personas como tú.</p></div>
-                <div class="further-info"><a href="#">Más info</a></div>
+                <div class="date">{{toDate date}} - {{toTime time}}</div>
+                <div class="title">{{title}}</div>
+                <div class="summary">{{crop description}}</div>
+                <div class="further-info"><a href="{{link}}" target="_blank">Más info</a></div>
             </div>
+        {{/each}}
 
-            <div class="event">
-                <div class="date">06.08.12</div>
-                <div class="title">Open space agentes del cambio</div>
-                <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
-                ¡Tal vez seas un agente del cambio! <br/>
-                Ven y comparte ideas y experiencias con otras personas como tú.</div>
-                <div class="further-info"><a href="#">Más info</a></div>
-            </div>
-
-            <div class="event">
-                <div class="date">06.08.12</div>
-                <div class="title">Open space agentes del cambio</div>
-                <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
-                ¡Tal vez seas un agente del cambio! <br/>
-                buscas maneras de mejorar las cosas a tu alrededor? 
-                ¡Tal vez seas un agente del cambio! <br/>
-                Ven y comparte ideas y experiencias con otras personas como tú.</div>
-                <div class="further-info"><a href="#">Más info</a></div>
-            </div>
-
-
-            <div class="event">
-                <div class="date">06.08.12</div>
-                <div class="title">Open space agentes del cambio</div>
-                <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
-                ¡Tal vez seas un agente del cambio! <br/>
-                Ven y comparte ideas y experiencias con otras personas como tú.</div>
-                <div class="further-info"><a href="#">Más info</a></div>
-            </div>
-
-            <div class="event">
-                <div class="date">06.08.12</div>
-                <div class="title">Open space agentes del cambio</div>
-                <div class="summary">¿Buscas mejorar en tu profesión? ¿Te sientes un bicho raro entre tus compañeros de trabajo? ¿Eres inconformista y buscas maneras de mejorar las cosas a tu alrededor? 
-                ¡Tal vez seas un agente del cambio! <br/>
-                Ven y comparte ideas y experiencias con otras personas como tú.</div>
-                <div class="further-info"><a href="#">Más info</a></div>
-            </div>
-
-            <div class="event new-event">
+        <div class="event new-event">
                 <div class="date">xx.xx.xx</div>
                 <div class="title">¿Organizas un evento?</div>
                 <div class="summary">Si organizas un <strong>evento</strong>, taller, charla o quedada informal para fomentar una comunidad o compartir información de base <strong>tecnológica</strong>. Si es un evento <strong>gratuito</strong> o de pago para cubrir costes. Si ocurre en Valencia o Castellón. Si quieres formar parte de <strong>VlcTechHub</strong> da de alta tu evento.</div>
-                <div class="add-event"><a href="#">¡Añadir mi evento!</a></div>
+                <div class="add-event"><a href="https://docs.google.com/spreadsheet/viewform?formkey=dC1oSU1qMzBZYUwxbWY2T0JUZjVvc3c6MQ#gid=0">¡Añadir mi evento!</a></div>
             </div>
 
+        </script>
 
-
-
-
-          </div>
-
-        </div>
-      
-      <img src="img/icon.png" id="icon" style="display:none"/>              
-      <img src="img/iconoff.png" id="icon-off" style="display:none"/>              
       <script type="text/javascript">
+
+      function getJSONP(url, success) {
+        var ud = '_' + +new Date,
+            script = document.createElement('script'),
+            head = document.getElementsByTagName('head')[0] 
+                   || document.documentElement;
+
+        window[ud] = function(data) {
+            head.removeChild(script);
+            success && success(data);
+        };
+
+        script.src = url.replace('callback=?', 'callback=' + ud);
+        head.appendChild(script);
+      }
+
+        Handlebars.registerHelper('toDate', function(date) {
+          var day = ("0" + date.getDate()).slice(-2);
+          var month = ("0" + (1 + date.getMonth())).slice(-2);
+          var year = ("" + date.getFullYear()).slice(-2);
+          
+          return day + '.' + month + '.' + year;
+        });
+
+        Handlebars.registerHelper('toTime', function(time) {
+          return time ? time.substring(0,5) : '';
+        });
+
+        Handlebars.registerHelper('crop', function(text) {
+          var limit = 500;
+          if(matchMedia('(min-width: 700px)').matches && !matchMedia('(min-width: 1224px)').matches) limit = 400;
+          return text.length < limit ? text : text.substring(0,limit) + limit.toString();
+        });
 
 
         getJSONP('http://spreadsheets.google.com/feeds/cells/0AsqlSYFO18QfdC1oSU1qMzBZYUwxbWY2T0JUZjVvc3c/od6/public/basic?alt=json&callback=?', function(data){
-            Event.parse(data.feed.entry);
+            var events = Event.parse(data.feed.entry);
+            
+            var source   = document.getElementById("event-template").innerHTML;
+            var template = Handlebars.compile(source);
+            var html = template({events: events});
+            document.getElementById('events').innerHTML = html;
+
+            if(matchMedia('(min-width: 1250px)').matches){
+                for(var i=0,l=events.length;i<l;i++){
+                    PlannerRenderer.drawEvent(events[i].date);
+                }
+
+            }
+
         });
 
 
