@@ -6,7 +6,7 @@
         <script src="lib/vendor/matchMedia.js"></script>
         <script src="lib/vendor/yepnope.1.5.4-min.js"></script>
         <script src="lib/vendor/handlebars-1.0.rc.1.js"></script>
-        <script src="lib/app/Event.js"></script>
+        <script src="lib/app/vlctechhub/vlctechhub.js"></script>
     </head>
     <link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -18,7 +18,7 @@
     
     yepnope({
       test : matchMedia('(min-width: 1250px)').matches,
-      yep  : ['lib/vendor/paper.js', 'lib/app/Planner.js', 'lib/app/GridRenderer.js', 'lib/app/PlannerRenderer.js', 'lib/app/PlannerInit.js']
+      yep  : ['lib/vendor/paper.js', 'lib/app/planner/Planner.js', 'lib/app/planner/GridRenderer.js', 'lib/app/planner/PlannerRenderer.js', 'lib/app/planner/PlannerInit.js']
     });
    
 </script>
@@ -68,61 +68,7 @@
 
       <script type="text/javascript">
 
-      function getJSONP(url, success) {
-        var ud = '_' + +new Date,
-            script = document.createElement('script'),
-            head = document.getElementsByTagName('head')[0] 
-                   || document.documentElement;
-
-        window[ud] = function(data) {
-            head.removeChild(script);
-            success && success(data);
-        };
-
-        script.src = url.replace('callback=?', 'callback=' + ud);
-        head.appendChild(script);
-      }
-
-        Handlebars.registerHelper('toDate', function(date) {
-          var day = ("0" + date.getDate()).slice(-2);
-          var month = ("0" + (1 + date.getMonth())).slice(-2);
-          var year = ("" + date.getFullYear()).slice(-2);
-          
-          return day + '.' + month + '.' + year;
-        });
-
-        Handlebars.registerHelper('toTime', function(time) {
-          return time ? time.substring(0,5) : '';
-        });
-
-        Handlebars.registerHelper('crop', function(text) {
-          var limit = 500;
-          if(matchMedia('(min-width: 700px)').matches && !matchMedia('(min-width: 1224px)').matches) limit = 400;
-          return text.length < limit ? text : text.substring(0,limit) + limit.toString();
-        });
-
-
-        getJSONP('http://spreadsheets.google.com/feeds/cells/0AsqlSYFO18QfdC1oSU1qMzBZYUwxbWY2T0JUZjVvc3c/od6/public/basic?alt=json&callback=?', function(data){
-            var events = Event.parse(data.feed.entry);
-            
-            var source   = document.getElementById("event-template").innerHTML;
-            var template = Handlebars.compile(source);
-            var html = template({events: events});
-            document.getElementById('events').innerHTML = html;
-
-            if(matchMedia('(min-width: 1250px)').matches){
-                for(var i=0,l=events.length;i<l;i++){
-                    PlannerRenderer.drawEvent(events[i].date);
-                }
-
-            }
-
-        });
-
-
-        
-
-
+        VLCTechHub.Service.getEvents(VLCTechHub.View.render);
 
       </script>
     </body>
