@@ -1,6 +1,5 @@
 body { background-color: #474838; }
 body > .title { width: 100%; background-color: #DBE230; text-align: center; padding-top: 10px; padding-bottom: 10px; }
-#canvas-wrapper { height: 480px; margin: 10px auto; display: none;}
 
 .container { margin: 0 auto;  }
 
