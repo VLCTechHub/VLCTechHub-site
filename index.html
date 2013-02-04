@@ -6,7 +6,7 @@
         <title>VLC Tech Hub - El hub de los eventos tecnológicos de Valencia</title>
         <script src="lib/vendor/matchMedia.js"></script>
         <script src="lib/vendor/handlebars-1.0.rc.1.js"></script>
-        <script src="lib/app/vlctechhub/vlctechhub-1.0.1.js"></script>
+        <script src="lib/app/vlctechhub/vlctechhub-1.1.0.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -38,9 +38,13 @@
         {{#each events }}
             <div class="event">
                 <div class="date">{{toDate date}} - {{toTime time}}</div>
-                <div class="title">{{title}}</div>
+                <div class="title"><a href="{{link}}" target="_blank" title="{{tite}}">{{title}}</a></div>
                 <div class="summary">{{crop description}}</div>
-                <div class="further-info"><a href="{{link}}" target="_blank">Más info</a></div>
+                <div class="ribbon">
+                  <a href="{{linkToCalendar this}}" target="_blank" title="Añadir a Google Calendar"><img alt="Añadir a Google Calendar" src="img/calendar.png" onmouseover="on(this);" onmouseout="off(this);"/></a>
+                  <a href="{{link}}" target="_blank" title="Más info"><img alt="Más info" src="img/arrow.png" onmouseover="on(this);" onmouseout="off(this);"/></a>
+                </div>
+                <!--<div class="further-info"><a href="{{link}}" target="_blank">Más info</a></div>-->
             </div>
         {{/each}}
 
@@ -56,6 +60,17 @@
       <script type="text/javascript">
 
         VLCTechHub.Service.getEvents(VLCTechHub.View.render);
+
+        function on(img){
+          if(img.src.indexOf('arrow') > 1) img.src = 'img/arrow2.png';
+          else img.src = 'img/calendar2.png';
+        }
+
+
+        function off(img){
+          if(img.src.indexOf('arrow') > 1) img.src = 'img/arrow.png';
+          else img.src = 'img/calendar.png';
+        }
 
       </script>
       <script type="text/javascript">
