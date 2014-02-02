@@ -6,7 +6,6 @@ html {
 body{
 	background: #ececec url('http://castirondesign.com/images/bg.png');
     margin: 0 0 100px; /* bottom = footer height */
-
 }
 
 
@@ -38,7 +37,7 @@ ul{
 }
 
 .event-list li{
-	margin-bottom: 0.8em;
+	margin-bottom: 1.5em;
 }
 
 .event li{
@@ -96,16 +95,38 @@ line-height: 26px;
 }
 
 .l-box {
-	padding:2em 0em 2em 2em;
+	padding:1em 0em 1em 2em;
 }
 
 .l-box-right {
-	padding:2em 2em 2em 0;
+	padding:1em 2em 1em 0;
 }
 
 h2 {
 	font-family: 'Lato', sans-serif;
 	text-transform: uppercase;
+}
+
+.pure-menu li a:hover, .pure-menu li a:focus {
+    color:white;
+    background: 0;
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 767px) { 
+
+    .event li {
+        display: auto;
+        /*margin-bottom: 0em;*/
+    }
+
+    .event date {
+        float: none;
+    }
+
+   
+
 }
 
 @font-face {
