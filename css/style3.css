@@ -5,23 +5,29 @@ body{
 /*body > .title { width: 100%; background-color: #DBE230; text-align: center; padding-top: 10px; padding-bottom: 10px; }*/
 
 
+::-moz-selection {
+    background: #DBE230;
+}
 
+::selection {
+    background: #DBE230;
+}
 
 .header{
     margin: 0;
-color: #333;
-text-align: center;
-padding: 2.5em 2em;
-border-bottom: 1px solid #eee;
+    color: #333;
+    text-align: center;
+    padding: 2.5em 2em;
+    border-bottom: 1px solid #eee;
 }
 
 
 .content {
-margin: 0 auto;
-padding: 0 2em;
-max-width: 1140px;
-margin-bottom: 50px;
-line-height: 1.6em;
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 1140px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
 }
 
 
@@ -36,112 +42,76 @@ line-height: 1.6em;
 
 .container { margin: 0 auto;  }
         
-/*#events { font-family: 'Ubuntu Mono', sans-serif;}*/
 
-.event{ background-color: whitesmoke;  padding:0px 20px 20px 20px;}
+#events .event { margin: 20px }
+.event{ background-color: whitesmoke;  padding:0px 30px 30px 30px; box-shadow: 0 0 10px 0px #ccc}
 .event .date{  color: #7F7F2B;  padding: 5px 0px 20px 0px; font-size: 1.2em}
-.event .title {  padding: 20px 0px 10px 0px; width: 100%; /*white-space: nowrap; overflow: hidden; text-overflow: ellipsis;*/}
-.event .title a{ color:  black;  /*font-weight: bold;*/ font-size:1.5em; text-decoration:none; text-transform: uppercase;  width: 100%; /*white-space: nowrap; overflow: hidden; text-overflow: ellipsis;*/}
-/*.event .title a:hover{ background-color:#474838;   color: #DBE230; }*/
+.event .title {  padding: 20px 0px 10px 0px; width: 100%; }
+.event .title a{ color:  black; font-size:1.5em; text-decoration:none; text-transform: uppercase;  width: 100%;}
+.event .summary { font: normal 16px/22px Arial, Helvetica, Garuda, sans-serif; /*height: 180px; */margin-top: 5px; }
+.event .more { margin-top: 2em; }
 
-.event .summary { font: normal 14px/19px Arial, Helvetica, Garuda, sans-serif; height: 180px; margin-top: 5px; }
-
-.new-event { background-color: #474838; color: #EBEBE9; height: 276px; padding:0px 16px 16px 16px; border: 4px dashed #EBEBE9; }
-.new-event strong { color: #DBE230; }
-.new-event .summary { height: 150px; }
+.new-event { background-color: transparent; box-shadow: inherit; padding:0px 16px 16px 16px; border: 4px dashed #474838; }
 .new-event .date { visibility: hidden;}
 
 .event .further-info { text-align: right; }
 .event .further-info a{background-color: #474838;  color: #DBE230; padding: 2px 4px; text-decoration: none; font-size: 1.2em; }
 .event .further-info a:hover { background-color: #DBE230;  color: #474838; }
 
-.new-event .add-event { text-align: center; margin-bottom: 10px}
-.new-event .add-event a { background-color: #282320;  color: #DBE230; padding: 10px 8px; text-decoration: none; font-size: 1.2em;}
-.new-event .add-event a:hover { background-color: #DBE230;  color: #282320; }
+.new-event .add-event { text-align: center; margin-top: 2em; }
 
-.ribbon {text-align: right;}
-.ribbon img { width: 30px}
-h2 { font-family: 'Lato', sans-serif; color: #DBE230; font-size: 3em; text-transform: uppercase;
-	text-shadow: 1px 1px 2px #282320, 0 0 1em #282320, 0 0 0.2em #282320;
-	margin: 3%;
-}
-
-footer{
-	color:#868677;
-	padding: 20px;
-	text-align: center;
-	background-color: #282320;
-	font:normal 12px/14px Arial, Helvetica, Garuda, sans-serif;
-}
-
-footer a{
-	color:#868677;
-	text-decoration: none;
-}
-
-footer a:hover{
-	color:#DBE230;
-	text-decoration: none;
-}
-
-#events .event { margin: 20px }
-
-.clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-
-h2,h3 { 	font-family: 'fzm_embossed_labelregular'
-}
-
-h3 { font-weight: normal; font-size: 1.2em;}
-.section {
-	/*text-align: center;*/
-		font-family: 'fzm_embossed_labelregular'
+.caret { 
+    border-left: 4px solid black;
+    margin-left: 15px; 
 }
 
 
 
-@font-face {
-    font-family: 'fzm_embossed_labelregular';
-    src: url('../font/fzm-embossed.label-webfont.eot');
-    src: url('../font/fzm-embossed.label-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/fzm-embossed.label-webfont.woff') format('woff'),
-         url('../font/fzm-embossed.label-webfont.ttf') format('truetype'),
-         url('../font/fzm-embossed.label-webfont.svg#fzm_embossed_labelregular') format('svg');
+.blink {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: step-start;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+h2,h3 {
+ 	/*font-family: 'fzm_embossed_labelregular'*/
+    font-family: 'Ubuntu Mono', sans-serif;
     font-weight: normal;
-    font-style: normal;
-
+    font-size: 3.5em;
 }
 
-
-
-@font-face {
-    font-family: 'fzm_embossed_label_lightRg';
-    src: url('../font/fzm-embossed.label.light-webfont.eot');
-    src: url('../font/fzm-embossed.label.light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/fzm-embossed.label.light-webfont.woff') format('woff'),
-         url('../font/fzm-embossed.label.light-webfont.ttf') format('truetype'),
-         url('../font/fzm-embossed.label.light-webfont.svg#fzm_embossed_label_lightRg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
+h3:before{
+    content: ">";
+    padding-left: 5px;
+    padding-right: 15px;
 }
 
-
-
-
-@font-face {
-    font-family: 'fzm_embossed_text_lightRg';
-    src: url('../font/fzm-embossed.text.light-webfont.eot');
-    src: url('../font/fzm-embossed.text.light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/fzm-embossed.text.light-webfont.woff') format('woff'),
-         url('../font/fzm-embossed.text.light-webfont.ttf') format('truetype'),
-         url('../font/fzm-embossed.text.light-webfont.svg#fzm_embossed_text_lightRg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
