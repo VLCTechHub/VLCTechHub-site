@@ -44,14 +44,14 @@ body{
         
 
 #events .event { margin: 20px }
-.event{ background-color: whitesmoke;  padding:0px 30px 30px 30px; box-shadow: 0 0 10px 0px #ccc}
+.event{ background-color: whitesmoke;  padding:30px; box-shadow: 0 0 10px 0px #ccc}
 .event .date{  color: #7F7F2B;  padding: 5px 0px 20px 0px; font-size: 1.2em}
 .event .title {  padding: 20px 0px 10px 0px; width: 100%; }
 .event .title a{ color:  black; font-size:1.5em; text-decoration:none; text-transform: uppercase;  width: 100%;}
 .event .summary { font: normal 16px/22px Arial, Helvetica, Garuda, sans-serif; /*height: 180px; */margin-top: 5px; }
 .event .more { margin-top: 2em; }
 
-.new-event { background-color: transparent; box-shadow: inherit; padding:0px 16px 16px 16px; border: 4px dashed #474838; }
+.new-event { background-color: transparent; box-shadow: inherit; border: 4px dashed #474838; }
 .new-event .date { visibility: hidden;}
 
 .event .further-info { text-align: right; }
