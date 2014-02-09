@@ -1,97 +1,117 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html ng-app="Vlctechhub">
     <head>
         <meta charset="UTF-8"/>
         <title>VLC Tech Hub - El hub de los eventos tecnológicos de Valencia</title>
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/base-min.css"> 
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.1/pure-min.css">
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.js"></script>
+
+    <script>
+        var app = angular.module('Vlctechhub', []);
+        app.factory('EventsFactory', function($http){
+            var baseUrl = 'http://api.vlctechhub.org/v0';
+            var get = function(url) { return $http.get(baseUrl + url);}
+            return {
+                getUpcoming: function(){ return get('/events'); }
+            };
+        });
+        app.controller('EventsController', function($scope, EventsFactory){
+            EventsFactory.getUpcoming().success(function(data){
+               $scope.events = data;
+            });
+        });
+    </script>
+
     </head>
    
     <body>
 
-    <div id="menu" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-    <a href="#" class="pure-menu-heading">VLCTechHub</a>
-    <ul>
-        <li class="pure-menu-selected"><a href="#">Próximos eventos</a></li>
-        <li><a href="#">Eventos pasados</a></li>
-        <li><a href="#">Contacto</a></li>
-    </ul>
-    </div>
 
-    <div class="pure-g" style="margin-top:70px">
+
+<div class="main">
+        <div class="header"><img style="width:30%" src="http://vlctechhub.org/img/title.png" alt="VLCTechhub" title="VLCTechhub"/></div>
         
-<div class="pure-u-1">
-            <div class="l-box">
-            <h2>Próximos eventos</h2>
-            </div>
-</div>
-        <div class="pure-u-1-2">
-            <div class="l-box">
-              <ul class="event-list">
-                <li>
-                
-                 <ul class="event">
-                  <li class="date">02.12 - 19:00</li>
-                  <li class="title"><span>SymfonyVLC - Los cambios de contexto que sufre un programador</span></li>
-                </ul>
-            </li>
+        <div class="content" ng-controller="EventsController">
             
-                <li>
-                <ul class="event">
-                  <li class="date">04.12 - 18:30</li>
-                  <li class="title"><span>Valencia Startups</span></li>
-                </ul>
-                </li>
-                <li>
+            <h3>Próximos eventos<span class="caret blink">&nbsp;</span></h3>
 
-                <ul class="event">
-                  <li class="date">15.12 - 18:00</li>
-                  <li class="title"><span>Betabeers Valencia</span></li>
-                </ul>
+            <div id="events" class="pure-g-r">
+                <div class="pure-u-1-2" ng-repeat="event in events" ng-if="events"> 
+                    <div class="event">
+                        <div class="title"><a href="{{event.link}}" target="_blank" title="">{{event.title}}</a></div>
+                        <div class="date">{{event.date | date:'dd.MM.yy - HH:mm'}}</div>
+                        <div class="summary"><p>{{event.description}}</p>
+                        <div class="more">
+                        <a class="pure-button" href="{{event.link}}" target="_blank">Ver más</a></div>
+                        </div>
+                              
+                    </div>
+                
+                </div>
 
-                </li>
-                <li class="selected">
-<ul class="event" >
-                  <li class="date">23.12 - 19:00</li>
-                  <li class="title"><span>Charla "Desarrollo de dispositivos de electrónica de consumo en Asia" </span></li>
-                </ul>
+               
+
+                <div class="pure-u-1-2">
+                    <div class="event new-event">
+                <div class="title"><a href="#">¿Organizas un evento?</a></div>
+                <div class="date">xx.xx.xx</div>
+                <div class="summary">Si organizas un <strong>evento</strong>, taller, charla o quedada informal para fomentar una comunidad o compartir información de base <strong>tecnológica</strong>. Si es un evento <strong>gratuito</strong> o de pago para cubrir costes. Si ocurre en Valencia o Castellón. Si quieres formar parte de <strong>VlcTechHub</strong> da de alta tu evento.</div>
+                <div class="add-event"><a class="pure-button pure-button-primary" href="https://docs.google.com/spreadsheet/viewform?formkey=dC1oSU1qMzBZYUwxbWY2T0JUZjVvc3c6MQ#gid=0">¡Añadir mi evento!</a></div>
+                </div>
+
+                </div>
+            </div> <!-- end grid future events -->
+
+
+            <h3>Eventos pasados<span class="caret blink">&nbsp;</span></h3>
+
+            <div class="note">Ejemplo de eventos pasados - no son valores reales</div>
+            <div id="events" class="pure-g-r">
+                <div class="pure-u-1-2">
+                    <div class="event">
+                        <div class="title"><a href="https://www.eventbrite.es/e/entradas-trobatest-winter-edition-2014-8947796099" target="_blank" title="">TROBATEST WINTER EDITION 2014</a></div>
+                        <div class="date">06.02.14 - 20:00</div>
+                        <div class="summary"><p>El próximo jueves 06 de Febrero realizaremos nuestro cuarto evento de Networking. De nuevo os esperamos en “Birra &amp; Blues” donde nos tomaremos unas cervezas artesanales excelentes. En esta ocasión contamos con una charla interesante y práctica a cargo de nuestro compañero Tomislav que nos explicará como emplear el mind mapping al mundo de las pruebas.</p>
+                        <div class="more">
+                        <a class="pure-button" href="https://www.eventbrite.es/e/entradas-trobatest-winter-edition-2014-8947796099" target="_blank">Ver más</a></div>
+                        </div>
+                              
+                    </div>
                 
-                </li>
-                <li>
+                </div>
+
+                <div class="pure-u-1-2">
                 
-<ul class="event">
-                  <li class="date">02.12 - 19:00</li>
-                  <li class="title"><span>Valencia.rb </span></li>
-                </ul>
-                </li>
-              </ul>
+                        <div class="event">
+                            <div class="title"><a href="http://www.doodle.com/9pv2trtp95i8kth8" target="_blank" title="">Orientación a objetos, Ley de Hollywood y otras cosas que se caen de linea</a></div>
+                            <div class="date">07.02.14 - 19:00</div>
+                            <div class="summary"><p>En Symfony Valencia este mes Carles Climent (@Carles_Climent‎ ) nos dará una charla muy interesante sobre OOP, ley de Hollywood y patrones de diseño.</p><div class="more"><a class="pure-button" href="https://www.eventbrite.es/e/entradas-trobatest-winter-edition-2014-8947796099" target="_blank">Ver más</a></div></div>
+                       
+                        
+                        </div>
+                
+
+                </div>
+
+                <div class="pure-u-1-2">
+                        <div class="event">
+                            <div class="title"><a href="http://jscoderetreat.com/city/es-valencia.html" target="_blank" title="">JavaScript Code Retreat #1</a></div>
+                            <div class="date">08.02.14 - 8:30</div>
+                            <div class="summary"><p>A Coderetreat is a day-long, intensive practice event, focusing on the fundamentals of software development and design. Developers can disconnect from constraints like time and feature pressure - just focus on the craft, programming. And train to become better. You don't have to ship anything. Just practice. </p>
+                            <div class="more"><a class="pure-button" href="https://www.eventbrite.es/e/entradas-trobatest-winter-edition-2014-8947796099" target="_blank">Ver más</a></div></div>
+                            
+                        
+                        </div>
+                </div>
             </div>
-        </div>
+        </div> <!-- end content -->
 
-        <div class="pure-u-1-2" >
-            
-            <div class="l-box-right" >
-              <div class="event-details" style="background-color:#FFDE03">
-                <strong>Charla de Emilio Coronado: “Moviles, Tablets, Laptops, Consolas : Desarrollo de dispositivos de electrónica de consumo en Asia”</strong><br><br>
-                19/12/2013 - 12:30:00<br>Más info: http://empretsinf.blogs.upv.es/2013/12/10/charla-de-emilio-coronado-moviles-tablets-laptops-consolas-desarrollo-de-dispositivos-de-electronica-de-consumo-en-asia/"
-                <br><br>
-                Emilio Coronado, ex alumno de la ETSINF y Software Development Manager en el equipo de Nokia ODM imparte el Jueves 19 de Diciembre a las 12:30 en el aula 1E 0.1 la siguiente charla:
-Moviles, Tablets, Laptops, Consolas : Desarrollo de dispositivos de electrónica de consumo en Asia.
-ODM ( Original Design Manufacturer ) , OEM ( Original Equipment Manufacturer ), JRD ( Joint R&D ) son términos que habrás visto repetir mas de una vez en las noticias sobre tecnología.
-Esta detras o es parte fundamental del desarrollo de teléfonos móviles, tabletas, laptops, consolas, o básicamente cualquier cosa relacionada con tecnología de consumo en empresas como Apple, Microsoft, Nokia, RIM, Sony, Acer, Asus o Nintendo.
-Es el elemento disruptivo que ha permitido otros nuevos fabricantes como Xiaomi, Oppo junto con el fabricante de chipsets Mediatek y Android, posicionarse y competir tan rápido en el mercado.
-¿Quieres saber qué son y como funcionan este tipo de desarrollos? ¿Qué tipos de empresas y cuales son exactamente estos servicios? ¿Qué tipo de oportunidad profesional podrían ofrecer o, porque no, encargarse del desarrollo y la fabricación de tu proyecto o idea?
-Emilio Coronado, antiguo alumno de la ETSINF, es Software Development Manager en el equipo de Nokia ODM en Taipei ( Taiwan ). Ha participado directamente y es responsable de varios teléfonos Lumia como el 610, los últimos 625 o 1350. Emilio nos contará una pequeña introducción, parte de su experiencia, y analizará algunos ejemplos en startups como el reloj inteligente Omate, o la consola OUYA.
-              </div>
-            </div> 
-        </div>
+</div> <!-- end main -->
 
-    </div>
-      
-    <footer>
-    </footer>
-
+    
     </body>
+
 </html>
