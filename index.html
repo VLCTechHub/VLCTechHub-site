@@ -8,9 +8,10 @@
       <link rel="stylesheet" href="css/style.css">
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.js"></script>
+      <script src="http://code.angularjs.org/1.2.12/angular-sanitize.min.js"></script>
 
       <script>
-          var app = angular.module('Vlctechhub', []);
+          var app = angular.module('Vlctechhub', ['ngSanitize']);
           app.factory('EventsFactory', function($http){
               var baseUrl = 'http://api.vlctechhub.org/v0';
               var get = function(url) { return $http.get(baseUrl + url);}
@@ -24,7 +25,7 @@
                  $scope.upcoming = data;
               });
               EventsFactory.getPast().success(function(data){
-                 $scope.past = data.slice(0,9); //TODO: paginate instead of forcing last nine
+                 $scope.past = data;
               });
           });
       </script>
@@ -46,7 +47,7 @@
                     <div class="event">
                         <div class="title"><a href="{{event.link}}" target="_blank" title="">{{event.title}}</a></div>
                         <div class="date">{{event.date | date:'dd.MM.yy - HH:mm'}}</div>
-                        <div class="summary"><p>{{event.description}}</p>
+                        <div class="summary"><p ng-bind-html="event.description | linky:'_blank'"></p>
                         <div class="more">
                         <a class="pure-button" href="{{event.link}}" target="_blank">Ver más</a></div>
                         </div>
@@ -72,7 +73,7 @@
                     <div class="event">
                         <div class="title"><a href="{{event.link}}" target="_blank" title="">{{event.title}}</a></div>
                         <div class="date">{{event.date | date:'dd.MM.yy - HH:mm'}}</div>
-                        <div class="summary"><p>{{event.description}}</p>
+                        <div class="summary"><p ng-bind-html="event.description | linky:'_blank'"></p>
                         <div class="more">
                         <a class="pure-button" href="{{event.link}}" target="_blank">Ver más</a></div>
                         </div>
