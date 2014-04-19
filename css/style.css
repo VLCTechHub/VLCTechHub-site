@@ -1,5 +1,5 @@
 body{
-	background: #ececec url('http://castirondesign.com/images/bg.png');
+	background: #ececec url('/img/bg.png');
 }
 
 ::-moz-selection {
@@ -114,11 +114,75 @@ h3:before{
     padding-right: 15px;
 }
 
-
+form.event label {
+    font-family: 'Ubuntu Mono', sans-serif;
+    font-size: 16px;
+    margin-top: 16px;
+}
 
 .pure-menu-heading img {
+    height: 74px;
     width:160px;
     margin: 10px 0px 10px 0px;
 }
 
+.pure-menu a.active{
+     color: #000;
+}
 
+.pure-button-primary {
+    background-color: #0E90D2;
+}
+
+ .button-success,
+        .button-error,
+        .button-warning,
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-success {
+            background: #5EB95E;     /* this is a green */
+        }
+
+        .button-error {
+            background: rgb(202, 60, 60); /* this is a maroon */
+        }
+
+        .button-warning {
+            background: #FAD232; /* this is an orange */
+        }
+
+        .button-secondary {
+            background: rgb(66, 184, 221); /* this is a light blue */
+        }
+.callout {
+    margin: 20px 0;
+padding: 20px;
+border-left: 3px solid #eee;
+}
+
+.callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.callout-error h4{
+    color: #d9534f;
+}
+
+.callout-error {
+    background-color: #fdf7f7;
+    border-color: #d9534f;
+}
+
+.callout-success h4{
+    color: #5EB95E;
+}
+
+.callout-success {
+    background-color: #F7FBF7;
+    border-color: #5EB95E;
+}
