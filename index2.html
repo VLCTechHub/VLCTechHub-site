@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="Vlctechhub">
+    <head>
+      <meta charset="UTF-8"/>
+      <title>VLC Tech Hub - El hub de los eventos tecnológicos de Valencia</title>
+      <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.1/pure-min.css">
+      <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/style.css">
+
+      <script src="lib/vendor/handlebars.js"></script>
+      <script src="lib/vendor/jquery.1.10.2.js"></script>
+      <script src="lib/vendor/ember-1.5.min.js"></script>
+      <script src="lib/vendor/ember-data.js"></script>
+    </head>
+
+    <body>
+      <script type="text/x-handlebars" data-template-name='application'>
+        <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="/"><img src="http://vlctechhub.org/img/title.png" alt="VLCTechhub" title="VLCTechhub"/></a>
+        <ul>
+            <li class="pure-menu-selected"><a href="#">Próximos</a></li>
+            <li><a href="#">Pasados</a></li>
+        </ul>
+
+        <ul class="">
+            <li class="pure-menu-selected"><a href="/" class="pure-button pure-button-primary">Crear evento</a>
+            </li>
+
+        </ul>
+
+        </div>
+        <div class="main">
+
+        <div class="content">
+          {{outlet}}
+        </div>
+
+        </div>
+
+      </script>
+
+       <script type="text/x-handlebars" data-template-name='index'>
+
+        <h3>Próximos eventos<span class="caret blink">&nbsp;</span></h3>
+        <div id="events" class="pure-g-r">
+          {{#each}}
+            {{event-details event=this classNames="pure-u-1-2"}}
+          {{/each}}
+          {{new-event-details classNames="pure-u-1-2"}}
+        </div>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="components/event-details">
+        <div class="event">
+          <div class="title"><a href="{{event.link}}" target="_blank" title="">{{event.title}}</a></div>
+          <div class="date">{{event.date}}</div>
+          <div class="summary">
+            <p>{{event.description}}</p>
+            <div class="more">
+            <a class="pure-button" href="{{event.link}}" target="_blank">Ver más</a></div>
+          </div>
+        </div>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="components/new-event-details">
+        <div class="event new-event">
+                <div class="title"><a href="#">¿Organizas un evento?</a></div>
+                <div class="date">xx.xx.xx</div>
+                <div class="summary">Si organizas un <strong>evento</strong>, taller, charla o quedada informal para fomentar una comunidad o compartir información de base <strong>tecnológica</strong>. Si es un evento <strong>gratuito</strong> o de pago para cubrir costes. Si ocurre en Valencia o Castellón. Si quieres formar parte de <strong>VlcTechHub</strong> da de alta tu evento.</div>
+                <div class="add-event"><a class="pure-button pure-button-primary" href="https://docs.google.com/spreadsheet/viewform?formkey=dC1oSU1qMzBZYUwxbWY2T0JUZjVvc3c6MQ#gid=0">¡Añadir mi evento!</a></div>
+                </div>
+      </script>
+
+       <script src="lib/app/vlctechhub/app.1.0.js"></script>
+
+    </body>
+
+</html>
