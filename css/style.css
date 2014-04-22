@@ -38,7 +38,7 @@ body{
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
    }
-.event .summary p:after { content:' \0700'; }
+/*.event .summary p:after { content:' \0700'; }*/
 
 .event .more { margin-top: 2em; }
 
