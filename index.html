@@ -7,83 +7,135 @@
       <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="css/style.css">
 
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.js"></script>
-      <script src="http://code.angularjs.org/1.2.12/angular-sanitize.min.js"></script>
-
-      <script>
-          var app = angular.module('Vlctechhub', ['ngSanitize']);
-          app.factory('EventsFactory', function($http){
-              var baseUrl = 'http://api.vlctechhub.org/v0';
-              var get = function(url) { return $http.get(baseUrl + url);}
-              return {
-                  getUpcoming: function(){ return get('/events/upcoming'); },
-                  getPast: function(){ return get('/events/past'); }
-              };
-          });
-          app.controller('EventsController', function($scope, EventsFactory){
-              EventsFactory.getUpcoming().success(function(data){
-                 $scope.upcoming = data;
-              });
-              EventsFactory.getPast().success(function(data){
-                 $scope.past = data;
-              });
-          });
-      </script>
+      <script src="lib/vendor/handlebars.js"></script>
+      <script src="lib/vendor/moment.js"></script>
+      <script src="lib/vendor/moment-timezone.js"></script>
+      <script src="lib/vendor/jquery.1.10.2.js"></script>
+      <script src="lib/vendor/ember-1.5.min.js"></script>
 
     </head>
 
     <body>
+      <script type="text/x-handlebars" data-template-name='application'>
+        <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="/"><img src="http://vlctechhub.org/img/title.png" alt="VLCTechhub" title="VLCTechhub"/></a>
+        <ul>
+            <li>
+              {{#link-to 'index'}}Próximos{{/link-to}}
+            </li>
+            <li>
+              {{#link-to 'pastEvents'}}Pasados{{/link-to}}
+            </li>
+        </ul>
 
-      <div class="main">
+        <ul class="">
+            <li class="pure-menu-selected">
+              {{#link-to 'newEvent' classNames="pure-button button-warning"}}Nuevo evento{{/link-to}}
+            </li>
 
-        <div class="header"><img style="width:30%" src="http://vlctechhub.org/img/title.png" alt="VLCTechhub" title="VLCTechhub"/></div>
+        </ul>
 
-        <div class="content" ng-controller="EventsController">
+        </div>
+        <div class="main">
 
-            <h3>Próximos eventos<span class="caret blink">&nbsp;</span></h3>
+        <div class="content">
+          {{outlet}}
+        </div>
 
-            <div id="events" class="pure-g-r">
-                <div class="pure-u-1-2" ng-repeat="event in upcoming" ng-if="upcoming">
-                    <div class="event">
-                        <div class="title"><a href="{{event.link}}" target="_blank" title="">{{event.title}}</a></div>
-                        <div class="date">{{event.date | date:'dd.MM.yy - HH:mm'}}</div>
-                        <div class="summary"><p ng-class="{fade: event.description.length > 700}" ng-bind-html="event.description | linky:'_blank'"></p>
-                        <div class="more">
-                        <a class="pure-button" href="{{event.link}}" target="_blank">Ver más</a></div>
-                        </div>
-                    </div>
-                </div>
+        </div>
 
-                <div class="pure-u-1-2">
-                    <div class="event new-event">
+      </script>
+
+      <script type="text/x-handlebars" data-template-name='index'>
+        {{event-title title="Próximos eventos"}}
+        <div id="events" class="pure-g-r">
+          {{#each}}
+            {{event-details event=this classNames="pure-u-1-2"}}
+          {{/each}}
+          {{new-event-details classNames="pure-u-1-2"}}
+        </div>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name='pastEvents'>
+        {{event-title title="Eventos pasados"}}
+        <div id="events" class="pure-g-r">
+          {{#each}}
+            {{event-details event=this classNames="pure-u-1-2"}}
+          {{/each}}
+          {{new-event-details classNames="pure-u-1-2"}}
+        </div>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="components/event-title">
+        <h3>{{title}}<span class="caret blink">&nbsp;</span></h3>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="components/event-details">
+        <div class="event">
+          <div class="title"><a href="{{event.link}}" target="_blank" title="">{{event.title}}</a></div>
+          <div class="date">{{prettyDate event.date}}</div>
+          <div class="summary">
+            <p>{{event.description}}</p>
+            <div class="more">
+            <a class="pure-button" {{bind-attr href=event.link}}" target="_blank">Ver más</a></div>
+          </div>
+        </div>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="components/new-event-details">
+        <div class="event new-event">
                 <div class="title"><a href="#">¿Organizas un evento?</a></div>
                 <div class="date">xx.xx.xx</div>
                 <div class="summary">Si organizas un <strong>evento</strong>, taller, charla o quedada informal para fomentar una comunidad o compartir información de base <strong>tecnológica</strong>. Si es un evento <strong>gratuito</strong> o de pago para cubrir costes. Si ocurre en Valencia o Castellón. Si quieres formar parte de <strong>VlcTechHub</strong> da de alta tu evento.</div>
-                <div class="add-event"><a class="pure-button pure-button-primary" href="https://docs.google.com/spreadsheet/viewform?formkey=dC1oSU1qMzBZYUwxbWY2T0JUZjVvc3c6MQ#gid=0">¡Añadir mi evento!</a></div>
+                <div class="add-event">
+                {{#link-to 'newEvent' classNames="pure-button button-warning"}}¡Añadir mi evento! {{/link-to}}
                 </div>
+          </div>
+      </script>
 
-                </div>
-            </div> <!-- end grid future events -->
+      <script type="text/x-handlebars" data-template-name="newEvent">
+        {{event-title title="Nuevo evento"}}
+        {{#if error}}
+        <div class="callout callout-error">
+        <h4>¡Ups! Houston, tenemos un problema</h4>
+        <p>No hemos podido crear el evento, por favor, revisa que los datos son correctos</p>
+        </div>
+        {{/if}}
+        {{#if success}}
+        <div class="callout callout-success">
+        <h4>¡Yuju! ¡Evento dado de alta!</h4>
+        <p>Hemos dado de alta tu evento, pero ten en cuenta que la publicación no es inmediata.</p>
+        </div>
+        {{/if}}
+        <form class="pure-form pure-form-stacked event">
+          <fieldset>
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <label for="new-event-title">Título *</label>
+                {{input id="new-event-title" classNames="pure-input-1" type="text" value=title placeholder="Título" focus-in='resetMessages'}}
 
-            <h3>Eventos pasados<span class="caret blink">&nbsp;</span></h3>
+                <label for="new-event-description">Descripción *</label>
+                {{textarea id="new-event-description" value=description class="pure-input-1" placeholder="Descripción" focus-in='resetMessages'}}
+              </div>
+            <div class="pure-u-1">
+                <label for="new-event-link">Link *</label>
+                {{input id="new-event-link" classNames="pure-input-1" type="text" value=link placeholder="Link" focus-in='resetMessages'}}
+              </div>
+              <div class="pure-u-1-3">
+              <label for="new-event-start-date">Fecha *</label>
+              {{input id="new-event-start-date" value=date type="text" placeholder="24/04/2014" focus-in='resetMessages'}}
+            </div>
+            <div class="pure-u-1-3">
+              <label for="new-event-start-time">Hora</label>
+              {{input id="new-event-start-time" value=time type="text" placeholder="19:30"focus-in='resetMessages'}}
+            </div>
+            </div>
+          </fieldset>
+          <button {{action "create"}} class="pure-input-1 button-success pure-button">¡Crear evento!</button>
+        </form>
+      </script>
 
-            <div class="note">Eventos pasados - sólo se están mostrando los últimos nueve</div>
-            <div id="events" class="pure-g-r">
-                <div class="pure-u-1-2" ng-repeat="event in past" ng-if="past">
-                    <div class="event">
-                        <div class="title"><a href="{{event.link}}" target="_blank" title="">{{event.title}}</a></div>
-                        <div class="date">{{event.date | date:'dd.MM.yy - HH:mm'}}</div>
-                        <div class="summary"><p ng-class="{fade: event.description.length > 700}" ng-bind-html="event.description | linky:'_blank'"></p>
-                        <div class="more">
-                        <a class="pure-button" href="{{event.link}}" target="_blank">Ver más</a></div>
-                        </div>
-                    </div>
-                </div>
-              </div> <!-- end grid past events -->
-
-        </div> <!-- end content -->
-
-      </div> <!-- end main -->
+       <script src="lib/app/vlctechhub/app.1.0.js"></script>
 
     </body>
 
