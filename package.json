@@ -1,0 +1,26 @@
+{
+  "name": "VLCTechHub",
+  "version": "0.0.0",
+  "description": "VLCTechHub ==========",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-less": "~0.11.0",
+    "handlebars": "~1.3.0",
+    "ember-template-compiler": "~1.5.1",
+    "grunt-ember-templates": "~0.4.20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/VLCTechHub/VLCTechHub.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/VLCTechHub/VLCTechHub/issues"
+  }
+}
