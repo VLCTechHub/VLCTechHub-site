@@ -29,5 +29,58 @@
 form.event label {
     font-family: 'Ubuntu Mono', sans-serif;
     font-size: 16px;
-    margin-top: 16px;
+}
+
+
+.form-item {
+  position: relative;
+  margin-bottom: 1.5em;
+}
+.form-item label,
+.form-item input,
+.form-item textarea {
+  display: inline-block;
+  transition: all 150ms;
+  -webkit-transition: all 150ms;
+  font-size: 16px !important;
+  background-color: transparent;
+}
+
+
+.form-item input,
+.form-item textarea {
+  border: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #ccc !important;
+}
+
+.form-item input:valid + label , .form-item textarea:valid + label ,
+.form-item input:focus + label , .form-item textarea:focus + label {
+  color:#666;
+  transform: translateY(-25px) scale(0.75);
+  -webkit-transform: translateY(-25px) scale(0.75);
+}
+
+.form-item input:focus , .form-item textarea:focus{
+  outline: none;
+}
+
+.form-item label {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 0 2px;
+  line-height: 20px;
+  letter-spacing: .125em;
+  color: #999;
+  background: transparent;
+  pointer-events: none;
+  transform-origin: left center;
+  -webkit-transform-origin: left center;
+  transform: translateY(0) scale(1);
+   -webkit-transform: translateY(0) scale(1);
+}
+
+form.event button {
+  line-height: 25px;
 }
