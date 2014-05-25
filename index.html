@@ -72,7 +72,7 @@
           <div class="title"><a {{bind-attr href=event.link}} target="_blank" title="">{{event.title}}</a></div>
           <div class="date">{{prettyDate event.date}}</div>
           <div class="summary">
-            <p>{{event.description}}</p>
+            <p>{{linkify event.description}}</p>
             <div class="more">
             <a class="pure-button" {{bind-attr href=event.link}}" target="_blank">Ver más</a></div>
           </div>
