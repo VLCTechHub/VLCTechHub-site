@@ -426,40 +426,32 @@ body {
   font-weight: 400;
   src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(../font/ubuntu-mono.woff) format('woff');
 }
-.pure-button-primary {
-  background-color: #0E90D2;
+a.muted {
+  color: #666;
+  text-decoration: none;
 }
-.button-success,
-.button-error,
-.button-warning,
-.button-secondary {
-  color: black;
+a.muted:hover {
+  color: #cc8800;
+}
+.pure-button {
+  padding: 10px 20px;
   border-radius: 5px;
+  color: white !important;
+  font-weight: bold;
 }
-.button-success:hover,
-.button-error:hover,
-.button-warning:hover,
-.button-secondary:hover {
+.button-primary {
+  background: #ffaa00;
+}
+.button-primary:hover {
+  background: #ffc34d !important;
   color: white !important;
 }
-.button-success {
-  background: #abdb25;
+.button-ok {
+  background: #6cad05;
 }
-.button-success:hover {
-  background: #789a19;
-}
-.button-error {
-  background: #ca3c3c;
-}
-.button-warning {
-  color: black !important;
-  background: #fad232;
-}
-.button-warning:hover {
-  background: #dab005 !important;
-}
-.button-secondary {
-  background: #42b8dd;
+.button-ok:hover {
+  background: #8bdf06 !important;
+  color: white !important;
 }
 .callout {
   margin: 20px 0;
@@ -523,6 +515,7 @@ body {
 }
 .event .more {
   margin-top: 2em;
+  text-align: right;
 }
 .new-event {
   background-color: transparent;

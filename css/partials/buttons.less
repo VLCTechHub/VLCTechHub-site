@@ -1,41 +1,33 @@
-
-.pure-button-primary {
-    background-color: #0E90D2;
+a.muted {
+    color: #666;
+    text-decoration: none;
+    &:hover{
+        color: darken(@primary_color,10%)
+    }
 }
 
-.button-success,
-.button-error,
-.button-warning,
-.button-secondary {
-    color: black;
+.pure-button{
+    padding: 10px 20px;
     border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
+}
+
+.button-primary {
+    background: @primary_color;
     &:hover {
+        background: lighten(@primary_color,15%) !important;
         color:white !important;
     }
-}
+ }
 
-.button-success {
-    background: @green_button;
+.button-ok {
+    background: @ok_color;
      &:hover {
-        .button_hover_color(@green_button);
-        background:  @hover_color;
+        background: lighten(@ok_color,10%) !important;
+        color:white !important;
     }
 
 }
 
-.button-error {
-    background: @red_button;
-}
 
-.button-warning {
-     color: black !important;
-    background: @yellow_button;
-    &:hover {
-        .button_hover_color(@yellow_button);
-        background:  @hover_color !important;
-    }
-}
-
-.button-secondary {
-    background: @blue_button;
-}

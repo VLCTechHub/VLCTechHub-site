@@ -49,7 +49,7 @@
              </a>
             </li>
             <li class="pure-menu-selected">
-              {{#link-to 'newEvent' classNames="pure-button button-warning"}}Nuevo evento{{/link-to}}
+              {{#link-to 'newEvent' classNames="pure-button button-primary"}}Añadir evento{{/link-to}}
             </li>
 
         </ul>
@@ -96,7 +96,7 @@
           <div class="summary">
             <p>{{linkify event.description}}</p>
             <div class="more">
-            <a class="pure-button" {{bind-attr href=event.link}}" target="_blank">Ver más</a></div>
+            <a class="muted" {{bind-attr href=event.link}}" target="_blank">Visitar fuente</a></div>
           </div>
         </div>
       </script>
@@ -107,7 +107,7 @@
                 <div class="date">xx.xx.xx</div>
                 <div class="summary">Si organizas un <strong>evento</strong>, taller, charla o quedada informal para fomentar una comunidad o compartir información de base <strong>tecnológica</strong>. Si es un evento <strong>gratuito</strong> o de pago para cubrir costes. Si ocurre en Valencia o Castellón. Si quieres formar parte de <strong>VlcTechHub</strong> da de alta tu evento.</div>
                 <div class="add-event">
-                {{#link-to 'newEvent' classNames="pure-button button-warning"}}¡Añadir mi evento! {{/link-to}}
+                {{#link-to 'newEvent' classNames="pure-button button-primary"}}Añadir evento{{/link-to}}
                 </div>
           </div>
       </script>
@@ -156,7 +156,7 @@
             </div>
             </div>
           </fieldset>
-          <button {{action "create"}} class="pure-input-1 button-success pure-button">¡Crear evento!</button>
+          <button {{action "create"}} class="pure-input-1 button-ok pure-button">Añadir evento</button>
         </form>
       </script>
 
