@@ -5,11 +5,13 @@
       <title>VLC Tech Hub - El hub de los eventos tecnológicos de Valencia</title>
       <link rel="stylesheet" href="css/style.css">
       <link rel="icon" type="image/png" href="img/g3615.png" />
+
       <script src="lib/vendor/handlebars.js"></script>
       <script src="lib/vendor/moment.js"></script>
       <script src="lib/vendor/moment-es.js"></script>
       <script src="lib/vendor/moment-timezone.js"></script>
       <script src="lib/vendor/jquery.1.10.2.js"></script>
+      <script src="lib/vendor/jquery.datetimepicker.js"></script>
       <script src="lib/vendor/ember-1.5.min.js"></script>
 
     </head>
@@ -156,6 +158,16 @@
           </fieldset>
           <button {{action "create"}} class="pure-input-1 button-success pure-button">¡Crear evento!</button>
         </form>
+      </script>
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-27446417-1', 'vlctechhub.org');
+        ga('send', 'pageview');
       </script>
 
        <script src="lib/app/vlctechhub/app.1.0.js"></script>
