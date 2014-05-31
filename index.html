@@ -10,13 +10,14 @@
       <script src="lib/vendor/moment-timezone.js"></script>
       <script src="lib/vendor/jquery.1.10.2.js"></script>
       <script src="lib/vendor/ember-1.5.min.js"></script>
+
     </head>
 
     <body>
       <script type="text/x-handlebars" data-template-name='application'>
         <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
         <a class="pure-menu-heading" href="/"><img src="http://vlctechhub.org/img/title.png" alt="VLCTechhub" title="VLCTechhub"/></a>
-        <ul>
+        <ul class="menu-tabs">
             <li>
               {{#link-to 'index'}}Próximos{{/link-to}}
             </li>
@@ -25,7 +26,25 @@
             </li>
         </ul>
 
-        <ul class="">
+        <ul class="right-menu">
+
+            <li>
+              <a href="mailto:vlctechhub@gmail.com" class="icon" title="Email">
+               <img src="img/email.png" width="30px">
+              </a>
+            </li>
+
+            <li>
+              <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="icon" title="VLCTechHub en GoogleGroups">
+               <img src="img/groups.png" width="40px">
+              </a>
+            </li>
+
+            <li>
+            <a href="https://twitter.com/VLCTechHub" class="icon" title="VLCTechHub en Twitter">
+             <img src="img/twitter.png" width="30px">
+             </a>
+            </li>
             <li class="pure-menu-selected">
               {{#link-to 'newEvent' classNames="pure-button button-warning"}}Nuevo evento{{/link-to}}
             </li>

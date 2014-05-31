@@ -1,86 +1,108 @@
-.event .title, .event .date {
-    font-family: 'Ubuntu Mono', sans-serif
+#events .event {
+  margin: 20px;
+}
+.event { 
+  background-color: whitesmoke;  
+  padding:30px; 
+  box-shadow: 0 0 10px 0px #ccc;
+  .date{  
+    font-family: 'Ubuntu Mono', sans-serif;
+    color: #7F7F2B;  
+    padding: 5px 0px 20px 0px; 
+    font-size: 1.2em
+  }
+  .title {  
+    font-family: 'Ubuntu Mono', sans-serif;
+    padding: 20px 0px 10px 0px; 
+    width: 100%; 
+    a{ color:  black; font-size:1.5em; text-decoration:none; text-transform: uppercase;  width: 100%;}
+  }
+  .summary { 
+    font: normal 16px/22px Arial, Helvetica, Garuda, sans-serif;  
+    margin-top: 5px; 
+    p.fade { overflow: hidden; max-height: 400px;
+             background: -webkit-linear-gradient(#333,#333,  transparent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            }
+  }
+  .more { margin-top: 2em; }
 }
 
-#events .event { margin: 20px }
-.event{ background-color: whitesmoke;  padding:30px; box-shadow: 0 0 10px 0px #ccc}
-.event .date{  color: #7F7F2B;  padding: 5px 0px 20px 0px; font-size: 1.2em}
-.event .title {  padding: 20px 0px 10px 0px; width: 100%; }
-.event .title a{ color:  black; font-size:1.5em; text-decoration:none; text-transform: uppercase;  width: 100%;}
-.event .summary { font: normal 16px/22px Arial, Helvetica, Garuda, sans-serif;  margin-top: 5px; }
-.event .summary p.fade { overflow: hidden; max-height: 400px;
-                         background: -webkit-linear-gradient(#333,#333,  transparent);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-   }
-/*.event .summary p:after { content:' \0700'; }*/
 
-.event .more { margin-top: 2em; }
+.new-event { 
+  background-color: transparent; 
+  box-shadow: inherit; 
+  border: 4px dashed #474838; 
+  .date { visibility: hidden;}
+  .further-info { 
+    text-align: right; 
+    a{
+      background-color: #474838;
+      color: #DBE230;
+      padding: 2px 4px;
+      text-decoration: none;
+      font-size: 1.2em;
+      &:hover { background-color: #DBE230;  color: #474838; }
+      }
+  }
+  .add-event { text-align: center; margin-top: 2em; }
+}
 
-.new-event { background-color: transparent; box-shadow: inherit; border: 4px dashed #474838; }
-.new-event .date { visibility: hidden;}
 
-.event .further-info { text-align: right; }
-.event .further-info a{background-color: #474838;  color: #DBE230; padding: 2px 4px; text-decoration: none; font-size: 1.2em; }
-.event .further-info a:hover { background-color: #DBE230;  color: #474838; }
 
-.new-event .add-event { text-align: center; margin-top: 2em; }
+form.event {
 
-form.event label {
+  label {
     font-family: 'Ubuntu Mono', sans-serif;
     font-size: 16px;
-}
+  }
 
+  button {
+    line-height: 25px;
+  }
+}
 
 .form-item {
   position: relative;
   margin-bottom: 1.5em;
-}
-.form-item label,
-.form-item input,
-.form-item textarea {
-  display: inline-block;
-  transition: all 150ms;
-  -webkit-transition: all 150ms;
-  font-size: 16px !important;
-  background-color: transparent;
-}
+  label,input,textarea {
+    display: inline-block;
+    transition: all 150ms;
+    -webkit-transition: all 150ms;
+    font-size: 16px !important;
+    background-color: transparent;
+  }
+  input, textarea {
+    border: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #ccc !important;
+  }
 
+  input:valid + label , textarea:valid + label ,
+  input:focus + label , textarea:focus + label {
+    color:#666;
+    transform: translateY(-25px) scale(0.75);
+    -webkit-transform: translateY(-25px) scale(0.75);
+  }
 
-.form-item input,
-.form-item textarea {
-  border: none !important;
-  box-shadow: none !important;
-  border-bottom: 1px solid #ccc !important;
-}
+  input:focus , textarea:focus{
+    outline: none;
+  }
 
-.form-item input:valid + label , .form-item textarea:valid + label ,
-.form-item input:focus + label , .form-item textarea:focus + label {
-  color:#666;
-  transform: translateY(-25px) scale(0.75);
-  -webkit-transform: translateY(-25px) scale(0.75);
-}
-
-.form-item input:focus , .form-item textarea:focus{
-  outline: none;
-}
-
-.form-item label {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  padding: 0 2px;
-  line-height: 20px;
-  letter-spacing: .125em;
-  color: #999;
-  background: transparent;
-  pointer-events: none;
-  transform-origin: left center;
-  -webkit-transform-origin: left center;
-  transform: translateY(0) scale(1);
-   -webkit-transform: translateY(0) scale(1);
-}
-
-form.event button {
-  line-height: 25px;
+  label {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    padding: 0 2px;
+    line-height: 20px;
+    letter-spacing: .125em;
+    color: #999;
+    background: transparent;
+    pointer-events: none;
+    transform-origin: left center;
+    -webkit-transform-origin: left center;
+    transform: translateY(0) scale(1);
+     -webkit-transform: translateY(0) scale(1);
+  }
 }
