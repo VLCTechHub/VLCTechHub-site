@@ -180,24 +180,22 @@ body {
   background-color: #F7FBF7;
   border-color: #5EB95E;
 }
-.event .title,
-.event .date {
-  font-family: 'Ubuntu Mono', sans-serif;
-}
 #events .event {
   margin: 20px;
 }
 .event {
   background-color: whitesmoke;
   padding: 30px;
-  box-shadow: 0 0 10px 0px #cccccc;
+  box-shadow: 0 0 10px 0px #ccc;
 }
 .event .date {
+  font-family: 'Ubuntu Mono', sans-serif;
   color: #7F7F2B;
   padding: 5px 0px 20px 0px;
   font-size: 1.2em;
 }
 .event .title {
+  font-family: 'Ubuntu Mono', sans-serif;
   padding: 20px 0px 10px 0px;
   width: 100%;
 }
@@ -219,7 +217,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/*.event .summary p:after { content:' \0700'; }*/
 .event .more {
   margin-top: 2em;
 }
@@ -231,17 +228,17 @@ body {
 .new-event .date {
   visibility: hidden;
 }
-.event .further-info {
+.new-event .further-info {
   text-align: right;
 }
-.event .further-info a {
+.new-event .further-info a {
   background-color: #474838;
   color: #DBE230;
   padding: 2px 4px;
   text-decoration: none;
   font-size: 1.2em;
 }
-.event .further-info a:hover {
+.new-event .further-info a:hover {
   background-color: #DBE230;
   color: #474838;
 }
@@ -252,6 +249,9 @@ body {
 form.event label {
   font-family: 'Ubuntu Mono', sans-serif;
   font-size: 16px;
+}
+form.event button {
+  line-height: 25px;
 }
 .form-item {
   position: relative;
@@ -298,9 +298,6 @@ form.event label {
   -webkit-transform-origin: left center;
   transform: translateY(0) scale(1);
   -webkit-transform: translateY(0) scale(1);
-}
-form.event button {
-  line-height: 25px;
 }
 .note {
   background: #1f8dd6;
@@ -372,11 +369,25 @@ h3:before {
   padding-left: 5px;
   padding-right: 15px;
 }
-.pure-menu-heading img {
+.home-menu .pure-menu-heading img {
   height: 74px;
   width: 160px;
   margin: 10px 0px 10px 0px;
 }
-.pure-menu a.active {
+.home-menu a.active {
   color: #000;
+}
+.home-menu ul.right-menu {
+  float: right;
+  padding-top: 30px;
+  padding-right: 30px;
+}
+.home-menu ul.right-menu li {
+  padding-right: 10px;
+}
+.home-menu ul.right-menu a.icon {
+  padding: 10px 0 0 0;
+}
+.home-menu ul.right-menu a.icon:hover {
+  background: transparent;
 }
