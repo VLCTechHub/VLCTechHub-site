@@ -501,6 +501,8 @@ body {
 .event .summary {
   font: normal 16px/22px Arial, Helvetica, Garuda, sans-serif;
   margin-top: 5px;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
 }
 .event .summary p.fade {
   overflow: hidden;
