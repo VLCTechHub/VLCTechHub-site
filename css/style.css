@@ -426,13 +426,6 @@ body {
   font-weight: 400;
   src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(../font/ubuntu-mono.woff) format('woff');
 }
-a.muted {
-  color: #666;
-  text-decoration: none;
-}
-a.muted:hover {
-  color: #cc8800;
-}
 .pure-button {
   padding: 10px 20px;
   border-radius: 5px;
@@ -502,6 +495,9 @@ a.muted:hover {
   text-transform: uppercase;
   width: 100%;
 }
+.event .title a:hover {
+  color: #cc8800;
+}
 .event .summary {
   font: normal 16px/22px Arial, Helvetica, Garuda, sans-serif;
   margin-top: 5px;
@@ -512,6 +508,21 @@ a.muted:hover {
   background: -webkit-linear-gradient(#333333, #333333, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.event .summary a {
+  color: #cc8800;
+  text-decoration: none;
+}
+.event .summary a:hover {
+  text-decoration: underline;
+}
+.event .summary a.muted {
+  color: #666;
+  text-decoration: none;
+}
+.event .summary a.muted:hover {
+  color: #cc8800;
+  text-decoration: none;
 }
 .event .more {
   margin-top: 2em;
@@ -601,6 +612,14 @@ form.event button {
 }
 .xdsoft_datetimepicker .xdsoft_calendar th {
   padding-top: 5px !important;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+  background: #6cad05;
+  box-shadow: #4d7b04 0px 1px 3px 0px inset;
+  color: #fff;
+  font-weight: 700;
 }
 .note {
   background: #1f8dd6;

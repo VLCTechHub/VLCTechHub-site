@@ -15,7 +15,15 @@
     font-family: 'Ubuntu Mono', sans-serif;
     padding: 20px 0px 10px 0px; 
     width: 100%; 
-    a{ color:  black; font-size:1.5em; text-decoration:none; text-transform: uppercase;  width: 100%;}
+    a{ color:  black; 
+      font-size:1.5em; 
+      text-decoration:none; 
+      text-transform: uppercase;  
+      width: 100%;
+      &:hover{
+        color: @primary_link_color;
+      }
+    }
   }
   .summary { 
     font: normal 16px/22px Arial, Helvetica, Garuda, sans-serif;  
@@ -25,7 +33,25 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             }
+    a {
+      color: @primary_link_color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    a.muted {
+    color: #666;
+    text-decoration: none;
+    &:hover{
+        color: @primary_link_color;
+        text-decoration: none;
+      }
+    }
+  
   }
+
   .more { margin-top: 2em; text-align: right; }
 }
 
@@ -113,4 +139,11 @@ form.event {
 
 .xdsoft_datetimepicker .xdsoft_calendar th  {
   padding-top: 5px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default, .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_current {
+  background: @ok_color;
+  box-shadow: darken(@ok_color, 10%) 0px 1px 3px 0px inset;
+  color: #fff;
+  font-weight: 700;
 }
