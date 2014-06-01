@@ -1,9 +1,15 @@
 #events .event {
   margin: 20px;
+  @media (max-width: @width-tablet)
+  {
+      margin: 20px 0 20px 0;
+  }
+ 
 }
 .event { 
   background-color: whitesmoke;  
   padding:30px; 
+ 
   box-shadow: 0 0 10px 0px #ccc;
   .date{  
     font-family: 'Ubuntu Mono', sans-serif;
@@ -75,6 +81,11 @@
       }
   }
   .add-event { text-align: center; margin-top: 2em; }
+
+  @media (max-width: @width-tablet)
+  {
+      display: none;
+  }
 }
 
 

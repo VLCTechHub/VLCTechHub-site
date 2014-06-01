@@ -2,6 +2,7 @@
 <html ng-app="Vlctechhub">
     <head>
       <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, user-scalable=no">
       <title>VLC Tech Hub - El hub de los eventos tecnológicos de Valencia</title>
       <link rel="stylesheet" href="css/style.css">
       <link rel="icon" type="image/png" href="img/g3615.png" />
@@ -19,7 +20,9 @@
     <body>
       <script type="text/x-handlebars" data-template-name='application'>
         <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-        <a class="pure-menu-heading" href="/"><img src="http://vlctechhub.org/img/title.png" alt="VLCTechhub" title="VLCTechhub"/></a>
+        <a class="pure-menu-heading" href="/"><img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo"/>
+          <img src="img/g3615.png" alt="VLCTechhub" title="VLCTechhub" class="logo-mobile"/>
+        </a>
         <ul class="menu-tabs">
             <li>
               {{#link-to 'index'}}Próximos{{/link-to}}

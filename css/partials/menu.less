@@ -1,8 +1,26 @@
+@smartphones: "480px";
+
 .home-menu {
-	.pure-menu-heading img {
+	.pure-menu-heading img.logo {
 	    height: 74px;
 	    width:160px;
 	    margin: 10px 0px 10px 0px;
+	    @media (max-width: @width-tablet)
+		{
+			display: none;
+		}
+	
+	}
+
+	.pure-menu-heading img.logo-mobile {
+	    height: 50px;
+	    margin: 10px 0px 10px 0px;
+	    display: none;
+	    @media (max-width: @width-tablet)
+		{
+			display: inline;
+		}
+	
 	}
 
 	a.active{
@@ -10,7 +28,7 @@
 	}
 
 	ul.right-menu {
-		float: right;
+	 	float: right;
 		padding-top: 30px;
 		padding-right: 30px;
 
@@ -25,6 +43,10 @@
 				background: transparent;
 			}
 
+		}
+		@media (max-width: @width-tablet)
+		{
+			display: none;
 		}
 	}
 

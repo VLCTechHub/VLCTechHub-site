@@ -1,16 +1,7 @@
-.note {
-background: #1f8dd6;
-padding: 0.3em 1em;
-border-radius: 3px;
-color: #fff;
-width: 100%;
-}
 .caret {
     border-left: 4px solid black;
     margin-left: 15px;
 }
-
-
 
 .blink {
     -webkit-animation-name: blinker;
@@ -52,6 +43,10 @@ h2,h3 {
     font-family: 'Ubuntu Mono', sans-serif;
     font-weight: normal;
     font-size: 3.5em;
+    @media (max-width: @width-tablet){
+        font-size: 1.75em;
+        margin: 0;
+    }
 }
 
 h3:before{
