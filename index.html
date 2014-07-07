@@ -13,7 +13,8 @@
       <script src="lib/vendor/moment-timezone.js"></script>
       <script src="lib/vendor/jquery.1.10.2.js"></script>
       <script src="lib/vendor/jquery.datetimepicker.js"></script>
-      <script src="lib/vendor/ember-1.5.min.js"></script>
+      <!-- <script src="lib/vendor/ember-1.5.min.js"></script> -->
+      <script src="lib/vendor/ember-debug.js"></script>
 
     </head>
 
@@ -25,10 +26,13 @@
         </a>
         <ul class="menu-tabs">
             <li>
-              {{#link-to 'index'}}Próximos{{/link-to}}
+              {{#link-to 'events'}}Próximos{{/link-to}}
             </li>
             <li>
-              {{#link-to 'pastEvents'}}Pasados{{/link-to}}
+              {{#link-to 'events.past'}}Últimos{{/link-to}}
+            </li>
+            <li class=̈́'archive'>
+              {{#link-to 'archive'}}Archivo{{/link-to}}
             </li>
         </ul>
 
@@ -52,7 +56,7 @@
              </a>
             </li>
             <li class="pure-menu-selected">
-              {{#link-to 'newEvent' classNames="pure-button button-primary"}}Añadir evento{{/link-to}}
+              {{#link-to 'events.new' classNames="pure-button button-primary"}}Añadir evento{{/link-to}}
             </li>
 
         </ul>
@@ -68,8 +72,22 @@
 
       </script>
 
-      <script type="text/x-handlebars" data-template-name='index'>
+      <script type="text/x-handlebars" data-template-name='events'>
+        {{outlet}}
+      </script>
+
+      <script type="text/x-handlebars" data-template-name='events/index'>
         {{event-title title="Próximos eventos"}}
+        <div id="events" class="pure-g-r">
+          {{#each}}
+            {{event-details event=this classNames="pure-u-1-2"}}
+          {{/each}}
+          {{new-event-details classNames="pure-u-1-2"}}
+        </div>  
+      </script>
+
+      <script type="text/x-handlebars" data-template-name='events/past'>
+        {{event-title title="Últimos eventos"}}
         <div id="events" class="pure-g-r">
           {{#each}}
             {{event-details event=this classNames="pure-u-1-2"}}
@@ -78,8 +96,51 @@
         </div>
       </script>
 
-      <script type="text/x-handlebars" data-template-name='pastEvents'>
-        {{event-title title="Eventos pasados"}}
+
+      <script type="text/x-handlebars" data-template-name='archive'>
+        {{outlet}}
+      </script>
+
+      <script type="text/x-handlebars" data-template-name='archive/index'>
+      </script>
+      
+
+      <script type="text/x-handlebars" data-template-name='archive/month'>
+        {{event-title title="Archivo"}}
+        <div class="month-picker">
+          <fieldset class="month-picker-fieldset">
+            {{view Ember.MonthButton id="ene" name="month" selectionBinding="month" value="ene"}}
+            <label for="ene" class="month-picker-label">Ene</label>
+            {{view Ember.MonthButton id="feb" name="month" selectionBinding="month" value="feb"}}
+            <label for="feb" class="month-picker-label">Feb</label>
+            {{view Ember.MonthButton id="mar" name="month" selectionBinding="month" value="mar"}}
+            <label for="mar" class="month-picker-label">Mar</label>
+            {{view Ember.MonthButton id="abr" name="month" selectionBinding="month" value="abr"}}
+            <label for="abr" class="month-picker-label">Abr</label>
+            {{view Ember.MonthButton id="may" name="month" selectionBinding="month" value="may"}}
+            <label for="may" class="month-picker-label">May</label>
+            {{view Ember.MonthButton id="jun" name="month" selectionBinding="month" value="jun"}}
+            <label for="jun" class="month-picker-label">Jun</label>
+            {{view Ember.MonthButton id="jul" name="month" selectionBinding="month" value="jul"}}
+            <label for="jul" class="month-picker-label">Jul</label>
+            {{view Ember.MonthButton id="ago" name="month" selectionBinding="month" value="ago"}}
+            <label for="ago" class="month-picker-label">Ago</label>
+            {{view Ember.MonthButton id="sep" name="month" selectionBinding="month" value="sep"}}
+            <label for="sep" class="month-picker-label">Sep</label>
+            {{view Ember.MonthButton id="oct" name="month" selectionBinding="month" value="oct"}}
+            <label for="oct" class="month-picker-label">Oct</label>
+            {{view Ember.MonthButton id="nov" name="month" selectionBinding="month" value="nov"}}
+            <label for="nov" class="month-picker-label">Nov</label>
+            {{view Ember.MonthButton id="dic" name="month" selectionBinding="month" value="dic"}}
+            <label for="dic" class="month-picker-label">Dic</label>
+          </fieldset>
+          <fieldset class="year-picker-fieldset">
+            {{view Ember.YearButton id="y2013" name="year" selectionBinding="year" value="2013"}}
+            <label for="y2013" class="year-picker-label">2013</label>
+            {{view Ember.YearButton id="y2014" name="year" selectionBinding="year" value="2014"}}
+            <label for="y2014" class="year-picker-label">2014</label>
+          </fieldset>
+        </div>
         <div id="events" class="pure-g-r">
           {{#each}}
             {{event-details event=this classNames="pure-u-1-2"}}
@@ -110,12 +171,12 @@
                 <div class="date">xx.xx.xx</div>
                 <div class="summary">Si organizas un <strong>evento</strong>, taller, charla o quedada informal para fomentar una comunidad o compartir información de base <strong>tecnológica</strong>. Si es un evento <strong>gratuito</strong> o de pago para cubrir costes. Si ocurre en Valencia o Castellón. Si quieres formar parte de <strong>VlcTechHub</strong> da de alta tu evento.</div>
                 <div class="add-event">
-                {{#link-to 'newEvent' classNames="pure-button button-primary"}}Añadir evento{{/link-to}}
+                {{#link-to 'events.new' classNames="pure-button button-primary"}}Añadir evento{{/link-to}}
                 </div>
           </div>
       </script>
 
-      <script type="text/x-handlebars" data-template-name="newEvent">
+      <script type="text/x-handlebars" data-template-name="events/new">
         {{event-title title="Nuevo evento"}}
         {{#if error}}
         <div class="callout callout-error">
@@ -133,33 +194,33 @@
           <fieldset>
             <div class="pure-g">
               <div class="pure-u-1 form-item">
-                {{input id="new-event-title" classNames="pure-input-1" type="text" value=title focus-in='resetMessages' required=true}}
+                {{input id="new-event-title" classNames="pure-input-1" type="text" value=title focus-in='reset' required=true}}
                 <label for="new-event-title">Título *</label>
                 </div>
                 <div class="pure-u-1 form-item">
 
-                {{textarea id="new-event-description" value=description class="pure-input-1" focus-in='resetMessages' required=true}}
+                {{textarea id="new-event-description" value=description class="pure-input-1" focus-in='reset' required=true}}
                 <label for="new-event-description">Descripción *</label>
 
               </div>
             <div class="pure-u-1 form-item">
-                {{input id="new-event-link" classNames="pure-input-1" type="text" value=link focus-in='resetMessages' required=true}}
+                {{input id="new-event-link" classNames="pure-input-1" type="text" value=link focus-in='reset' required=true}}
                 <label for="new-event-link">Link *</label>
 
               </div>
               <div class="pure-u-1-3 form-item">
-              {{input id="new-event-start-date" value=date type="text" focus-in='resetMessages' required=true }}
+              {{input id="new-event-start-date" value=date type="text" focus-in='reset' required=true }}
               <label for="new-event-start-date">Fecha *(dd/mm/yyyy)</label>
 
             </div>
             <div class="pure-u-1-3 form-item">
-              {{input id="new-event-start-time" value=time type="text" focus-in='resetMessages' required=true }}
+              {{input id="new-event-start-time" value=time type="text" focus-in='reset' required=true }}
               <label for="new-event-start-time">Hora *(hh:mm)</label>
 
             </div>
 
              <div class="pure-u-1-3 form-item">
-              {{input id="new-event-hashtag" type="text" value=hashtag focus-in='resetMessages' required=true}}
+              {{input id="new-event-hashtag" type="text" value=hashtag focus-in='reset' required=true}}
               <label for="new-event-hashtag">Hashtag o mención</label>
 
             </div>
