@@ -26,7 +26,7 @@
         </a>
         <ul class="menu-tabs">
             <li>
-              {{#link-to 'events'}}Próximos{{/link-to}}
+              {{#link-to 'events.upcoming'}}Próximos{{/link-to}}
             </li>
             <li>
               {{#link-to 'events.past'}}Últimos{{/link-to}}
@@ -76,7 +76,7 @@
         {{outlet}}
       </script>
 
-      <script type="text/x-handlebars" data-template-name='events/index'>
+      <script type="text/x-handlebars" data-template-name='events/upcoming'>
         {{event-title title="Próximos eventos"}}
         <div id="events" class="pure-g-r">
           {{#each}}

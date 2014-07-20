@@ -23,8 +23,22 @@
 	
 	}
 
+	ul.menu-tabs {
+		a {
+			&:hover {
+				background: @primary_color !important;
+				color: #fff;
+			}
+		}
+		a.active{
+	     	color: #fff;
+	     	background: #555 !important;
+		}
+	}
+
 	a.active{
-	     color: #000;
+	    color: #fff;
+		background: @primary_color !important;
 	}
 
 	ul.right-menu {

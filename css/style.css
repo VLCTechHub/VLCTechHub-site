@@ -496,6 +496,10 @@ input:checked + .year-picker-label:before {
 body {
   background: #ececec url('/img/bg.png');
 }
+a,
+label {
+  outline: 0 !important;
+}
 ::-moz-selection {
   background: #DBE230;
 }
@@ -825,8 +829,17 @@ h3:before {
     display: inline;
   }
 }
+.home-menu ul.menu-tabs a:hover {
+  background: #ffaa00 !important;
+  color: #fff;
+}
+.home-menu ul.menu-tabs a.active {
+  color: #fff;
+  background: #555 !important;
+}
 .home-menu a.active {
-  color: #000;
+  color: #fff;
+  background: #ffaa00 !important;
 }
 .home-menu ul.right-menu {
   float: right;
