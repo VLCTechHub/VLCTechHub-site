@@ -83,7 +83,7 @@
             {{event-details event=this classNames="pure-u-1-2"}}
           {{/each}}
           {{new-event-details classNames="pure-u-1-2"}}
-        </div>  
+        </div>
       </script>
 
       <script type="text/x-handlebars" data-template-name='events/past'>
@@ -103,7 +103,7 @@
 
       <script type="text/x-handlebars" data-template-name='archive/index'>
       </script>
-      
+
 
       <script type="text/x-handlebars" data-template-name='archive/month'>
         {{event-title title="Archivo"}}
@@ -156,11 +156,15 @@
       <script type="text/x-handlebars" data-template-name="components/event-details">
         <div class="event">
           <div class="title"><a {{bind-attr href=event.link}} target="_blank" title="">{{event.title}}</a></div>
-          <div class="date">{{prettyDate event.date}}</div>
+          <div class="date">
+            {{prettyDate event.date}}
+          </div>
           <div class="summary">
             <p>{{linkify event.description}}</p>
             <div class="more">
-            <a class="muted" {{bind-attr href=event.link}}" target="_blank">Visitar fuente</a></div>
+              {{linkToCalendar event}}
+              <a class="muted" {{bind-attr href=event.link}}" target="_blank"><img alt="Visitar fuente" src="img/arrow-24.png"/></a>
+            </div>
           </div>
         </div>
       </script>

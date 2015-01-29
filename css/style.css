@@ -293,7 +293,7 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
     background: #ff8000;
 }
 .xdsoft_datetimepicker  .xdsoft_label > .xdsoft_select > div > .xdsoft_option{
-	padding:2px 10px 2px 5px; 
+	padding:2px 10px 2px 5px;
 }
 .xdsoft_datetimepicker  .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current{
 	background: #33AAFF;
@@ -314,7 +314,7 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 .xdsoft_datetimepicker  .xdsoft_calendar table{
 	border-collapse:collapse;
 	width:100%;
-	
+
 }
 .xdsoft_datetimepicker  .xdsoft_calendar td > div{
 	padding-right:5px;
@@ -421,7 +421,7 @@ position:relative;
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-.month-picker-label, .month-picker-nav, 
+.month-picker-label, .month-picker-nav,
 .year-picker-label {
   display: inline-block;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -640,6 +640,9 @@ label {
 .event .more {
   margin-top: 2em;
   text-align: right;
+}
+.event .link-to-calendar {
+  margin-right: 20px;
 }
 .new-event {
   background-color: transparent;
