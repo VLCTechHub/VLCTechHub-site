@@ -1,0 +1,13 @@
+{
+  "name": "components-ember",
+  "version": "2.1.0",
+  "license": "MIT",
+  "description": "Ember Application Framework",
+  "keywords": [
+    "ember"
+  ],
+  "main": "./ember.debug.js",
+  "dependencies": {
+    "jquery": ">=1.7.0 < 2.2.0"
+  }
+}
