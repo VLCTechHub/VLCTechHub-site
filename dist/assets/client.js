@@ -3,6 +3,28 @@
 
 /* jshint ignore:end */
 
+define('client/adapters/application', ['exports', 'ember-data'], function (exports, DS) {
+
+  'use strict';
+
+  exports['default'] = DS['default'].RESTAdapter.extend({
+    host: 'http://vlctechhub-api.herokuapp.com/v0'
+  });
+
+});
+define('client/adapters/event', ['exports', 'ember-data'], function (exports, DS) {
+
+  'use strict';
+
+  exports['default'] = DS['default'].Adapter.extend({
+    host: 'http://vlctechhub-api.herokuapp.com/v0',
+    findAll: function findAll(store, type, sinceToken) {
+      var url = this.host + '/events/upcoming';
+      return $.get(url);
+    }
+  });
+
+});
 define('client/app', ['exports', 'ember', 'ember/resolver', 'ember/load-initializers', 'client/config/environment'], function (exports, Ember, Resolver, loadInitializers, config) {
 
   'use strict';
@@ -134,7 +156,7 @@ define('client/routes/events/index', ['exports', 'ember'], function (exports, Em
 
   exports['default'] = Ember['default'].Route.extend({
     model: function model() {
-      return [{ title: 'titulo', description: 'descr', date: new Date(), link: 'http://www.wikipedia.org' }];
+      return this.store.findAll('event');
     }
   });
 
@@ -144,6 +166,27 @@ define('client/routes/events', ['exports', 'ember'], function (exports, Ember) {
 	'use strict';
 
 	exports['default'] = Ember['default'].Route.extend({});
+
+});
+define('client/serializers/application', ['exports', 'ember-data'], function (exports, DS) {
+
+  'use strict';
+
+  exports['default'] = DS['default'].RESTSerializer.extend({
+    primaryKey: 'id'
+  });
+
+});
+define('client/serializers/event', ['exports', 'ember-data'], function (exports, DS) {
+
+   'use strict';
+
+   exports['default'] = DS['default'].RESTSerializer.extend({
+      normalizeFindAllResponse: function normalizeFindAllResponse(store, primaryModelClass, payload) {
+         var payload_with_root = { 'events': payload };
+         return this._super(store, primaryModelClass, payload_with_root);
+      }
+   });
 
 });
 define('client/templates/application', ['exports'], function (exports) {
@@ -472,7 +515,7 @@ define('client/templates/events/index', ['exports'], function (exports) {
               "column": 2
             },
             "end": {
-              "line": 5,
+              "line": 7,
               "column": 2
             }
           },
@@ -488,17 +531,23 @@ define('client/templates/events/index', ['exports'], function (exports) {
           dom.appendChild(el0, el1);
           var el1 = dom.createComment("");
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
+          var el1 = dom.createTextNode("\n    ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n    }\n");
           dom.appendChild(el0, el1);
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var morphs = new Array(1);
+          var morphs = new Array(2);
           morphs[0] = dom.createMorphAt(fragment,1,1,contextualElement);
+          morphs[1] = dom.createMorphAt(fragment,3,3,contextualElement);
           return morphs;
         },
         statements: [
-          ["inline","event-detail",[],["event",["subexpr","@mut",[["get","event",["loc",[null,[4,25],[4,30]]]]],[],[]]],["loc",[null,[4,4],[4,32]]]]
+          ["content","debugger",["loc",[null,[4,4],[4,18]]]],
+          ["inline","event-detail",[],["event",["subexpr","@mut",[["get","event",["loc",[null,[5,25],[5,30]]]]],[],[]]],["loc",[null,[5,4],[5,32]]]]
         ],
         locals: ["event"],
         templates: []
@@ -515,7 +564,7 @@ define('client/templates/events/index', ['exports'], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 8,
+            "line": 10,
             "column": 0
           }
         },
@@ -561,8 +610,8 @@ define('client/templates/events/index', ['exports'], function (exports) {
         return morphs;
       },
       statements: [
-        ["block","each",[["get","model",["loc",[null,[3,10],[3,15]]]]],[],0,null,["loc",[null,[3,2],[5,11]]]],
-        ["content","outlet",["loc",[null,[7,0],[7,10]]]]
+        ["block","each",[["get","model",["loc",[null,[3,10],[3,15]]]]],[],0,null,["loc",[null,[3,2],[7,11]]]],
+        ["content","outlet",["loc",[null,[9,0],[9,10]]]]
       ],
       locals: [],
       templates: [child0]
@@ -619,13 +668,33 @@ define('client/templates/events', ['exports'], function (exports) {
   }()));
 
 });
+define('client/tests/adapters/application.jshint', function () {
+
+  'use strict';
+
+  QUnit.module('JSHint - adapters');
+  QUnit.test('adapters/application.js should pass jshint', function(assert) { 
+    assert.ok(false, 'adapters/application.js should pass jshint.\nadapters/application.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nadapters/application.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
+  });
+
+});
+define('client/tests/adapters/event.jshint', function () {
+
+  'use strict';
+
+  QUnit.module('JSHint - adapters');
+  QUnit.test('adapters/event.js should pass jshint', function(assert) { 
+    assert.ok(false, 'adapters/event.js should pass jshint.\nadapters/event.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nadapters/event.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
+  });
+
+});
 define('client/tests/app.jshint', function () {
 
   'use strict';
 
   QUnit.module('JSHint - .');
   QUnit.test('app.js should pass jshint', function(assert) { 
-    assert.ok(true, 'app.js should pass jshint.'); 
+    assert.ok(false, 'app.js should pass jshint.\napp.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\napp.js: line 2, col 1, \'import\' is only available in ES6 (use esnext option).\napp.js: line 3, col 1, \'import\' is only available in ES6 (use esnext option).\napp.js: line 4, col 1, \'import\' is only available in ES6 (use esnext option).\napp.js: line 18, col 1, \'export\' is only available in ES6 (use esnext option).\n\n5 errors'); 
   });
 
 });
@@ -635,7 +704,7 @@ define('client/tests/components/event-detail.jshint', function () {
 
   QUnit.module('JSHint - components');
   QUnit.test('components/event-detail.js should pass jshint', function(assert) { 
-    assert.ok(true, 'components/event-detail.js should pass jshint.'); 
+    assert.ok(false, 'components/event-detail.js should pass jshint.\ncomponents/event-detail.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\ncomponents/event-detail.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
   });
 
 });
@@ -851,7 +920,7 @@ define('client/tests/models/event.jshint', function () {
 
   QUnit.module('JSHint - models');
   QUnit.test('models/event.js should pass jshint', function(assert) { 
-    assert.ok(true, 'models/event.js should pass jshint.'); 
+    assert.ok(false, 'models/event.js should pass jshint.\nmodels/event.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/event.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
   });
 
 });
@@ -861,7 +930,7 @@ define('client/tests/router.jshint', function () {
 
   QUnit.module('JSHint - .');
   QUnit.test('router.js should pass jshint', function(assert) { 
-    assert.ok(true, 'router.js should pass jshint.'); 
+    assert.ok(false, 'router.js should pass jshint.\nrouter.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 2, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 12, col 1, \'export\' is only available in ES6 (use esnext option).\n\n3 errors'); 
   });
 
 });
@@ -871,7 +940,7 @@ define('client/tests/routes/events/index.jshint', function () {
 
   QUnit.module('JSHint - routes/events');
   QUnit.test('routes/events/index.js should pass jshint', function(assert) { 
-    assert.ok(true, 'routes/events/index.js should pass jshint.'); 
+    assert.ok(false, 'routes/events/index.js should pass jshint.\nroutes/events/index.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nroutes/events/index.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
   });
 
 });
@@ -881,7 +950,27 @@ define('client/tests/routes/events.jshint', function () {
 
   QUnit.module('JSHint - routes');
   QUnit.test('routes/events.js should pass jshint', function(assert) { 
-    assert.ok(true, 'routes/events.js should pass jshint.'); 
+    assert.ok(false, 'routes/events.js should pass jshint.\nroutes/events.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nroutes/events.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
+  });
+
+});
+define('client/tests/serializers/application.jshint', function () {
+
+  'use strict';
+
+  QUnit.module('JSHint - serializers');
+  QUnit.test('serializers/application.js should pass jshint', function(assert) { 
+    assert.ok(false, 'serializers/application.js should pass jshint.\nserializers/application.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nserializers/application.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
+  });
+
+});
+define('client/tests/serializers/event.jshint', function () {
+
+  'use strict';
+
+  QUnit.module('JSHint - serializers');
+  QUnit.test('serializers/event.js should pass jshint', function(assert) { 
+    assert.ok(false, 'serializers/event.js should pass jshint.\nserializers/event.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nserializers/event.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
   });
 
 });
@@ -1006,7 +1095,7 @@ catch(err) {
 if (runningTests) {
   require("client/tests/test-helper");
 } else {
-  require("client/app")["default"].create({"name":"client","version":"0.0.0+07a5e377"});
+  require("client/app")["default"].create({"name":"client","version":"0.0.0+27d88c1d"});
 }
 
 /* jshint ignore:end */
