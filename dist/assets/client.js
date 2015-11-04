@@ -130,9 +130,14 @@ define('client/initializers/export-application-global', ['exports', 'ember', 'cl
 });
 define('client/models/event', ['exports', 'ember-data'], function (exports, DS) {
 
-	'use strict';
+  'use strict';
 
-	exports['default'] = DS['default'].Model.extend({});
+  exports['default'] = DS['default'].Model.extend({
+    title: DS['default'].attr('string'),
+    description: DS['default'].attr('string'),
+    link: DS['default'].attr('string'),
+    date: DS['default'].attr('date')
+  });
 
 });
 define('client/router', ['exports', 'ember', 'client/config/environment'], function (exports, Ember, config) {
@@ -515,7 +520,7 @@ define('client/templates/events/index', ['exports'], function (exports) {
               "column": 2
             },
             "end": {
-              "line": 7,
+              "line": 5,
               "column": 2
             }
           },
@@ -531,23 +536,17 @@ define('client/templates/events/index', ['exports'], function (exports) {
           dom.appendChild(el0, el1);
           var el1 = dom.createComment("");
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n    ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createComment("");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n    }\n");
+          var el1 = dom.createTextNode("\n");
           dom.appendChild(el0, el1);
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var morphs = new Array(2);
+          var morphs = new Array(1);
           morphs[0] = dom.createMorphAt(fragment,1,1,contextualElement);
-          morphs[1] = dom.createMorphAt(fragment,3,3,contextualElement);
           return morphs;
         },
         statements: [
-          ["content","debugger",["loc",[null,[4,4],[4,18]]]],
-          ["inline","event-detail",[],["event",["subexpr","@mut",[["get","event",["loc",[null,[5,25],[5,30]]]]],[],[]]],["loc",[null,[5,4],[5,32]]]]
+          ["inline","event-detail",[],["event",["subexpr","@mut",[["get","event",["loc",[null,[4,25],[4,30]]]]],[],[]]],["loc",[null,[4,4],[4,32]]]]
         ],
         locals: ["event"],
         templates: []
@@ -564,7 +563,7 @@ define('client/templates/events/index', ['exports'], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 10,
+            "line": 8,
             "column": 0
           }
         },
@@ -610,8 +609,8 @@ define('client/templates/events/index', ['exports'], function (exports) {
         return morphs;
       },
       statements: [
-        ["block","each",[["get","model",["loc",[null,[3,10],[3,15]]]]],[],0,null,["loc",[null,[3,2],[7,11]]]],
-        ["content","outlet",["loc",[null,[9,0],[9,10]]]]
+        ["block","each",[["get","model",["loc",[null,[3,10],[3,15]]]]],[],0,null,["loc",[null,[3,2],[5,11]]]],
+        ["content","outlet",["loc",[null,[7,0],[7,10]]]]
       ],
       locals: [],
       templates: [child0]
@@ -1095,7 +1094,7 @@ catch(err) {
 if (runningTests) {
   require("client/tests/test-helper");
 } else {
-  require("client/app")["default"].create({"name":"client","version":"0.0.0+27d88c1d"});
+  require("client/app")["default"].create({"name":"client","version":"0.0.0+f220221a"});
 }
 
 /* jshint ignore:end */
