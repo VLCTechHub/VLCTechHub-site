@@ -1,0 +1,7 @@
+<h3>Últimos eventos<span class="caret blink">&nbsp;</span></h3>
+<div id="events" class="pure-g-r">
+  {{#each model as |event| }}
+    {{event-detail event=event}}
+  {{/each}}
+</div>
+{{outlet}}
