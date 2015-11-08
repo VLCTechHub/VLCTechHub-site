@@ -1,7 +1,8 @@
 <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-  <a class="pure-menu-heading" href="/"><img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo"/>
+  {{#link-to 'index' classNames='pure-menu-heading'}}
+    <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo"/>
     <img src="img/g3615.png" alt="VLCTechhub" title="VLCTechhub" class="logo-mobile"/>
-  </a>
+  {{/link-to}}
   <ul class="menu-tabs">
       <li>
         {{#link-to 'events'}} Próximos {{/link-to}}
