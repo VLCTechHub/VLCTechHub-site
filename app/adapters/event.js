@@ -1,9 +1,15 @@
 import DS from 'ember-data';
 
-export default DS.Adapter.extend({
+export default DS.RESTAdapter.extend({
   host: 'http://vlctechhub-api.herokuapp.com/v0',
-  findAll: function(store, type, sinceToken) {
-    var url = this.host + '/events/upcoming';
-    return $.get(url);
+  modelName: 'event',
+  completeURL: function(partialURL){
+    return this._buildURL(this.modelName, partialURL);
+  },
+  urlForQuery: function(query, modelName) {
+    return this.completeURL(query.filter);
+  },
+  query: function(store, type, query) {
+    return $.get(this.completeURL(query.filter));
   }
 });
