@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('events', function() {
     this.route('latest');
+    this.route('new');
   });
 });
 
