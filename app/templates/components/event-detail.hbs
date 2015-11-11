@@ -6,7 +6,8 @@
   <div class="summary">
     <p>{{event.description}}</p>
     <div class="more">
-      <a class="muted" href={{event.link}} target="_blank"><img alt="Visitar fuente" src="img/arrow-24.png"/></a>
+      {{link-to-calendar event=event}}
+      {{link-to-event event=event}}
     </div>
   </div>
 </div>
