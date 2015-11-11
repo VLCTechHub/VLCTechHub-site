@@ -10,6 +10,9 @@ export default DS.RESTAdapter.extend({
     return this.completeURL(query.filter);
   },
   query: function(store, type, query) {
-    return $.get(this.completeURL(query.filter));
+    if (!query.filter) return [];
+    var filter = query.filter;
+    if (query.filter == 'latest') filter = 'past';
+    return $.get(this.completeURL(filter));
   }
 });
