@@ -51,7 +51,11 @@ module.exports = function(environment) {
     'img-src': "'self'",
     'style-src': "'self' 'unsafe-inline'",
     'media-src': "'self'"
-  }
+  };
+
+  ENV.moment = {
+    includeLocales: ['es']
+  };
 
   return ENV;
 };

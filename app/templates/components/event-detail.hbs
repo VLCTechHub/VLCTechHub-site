@@ -1,7 +1,7 @@
 <div class="event">
   <div class="title"><a href={{event.link}} target="_blank" title="">{{event.title}}</a></div>
   <div class="date">
-    {{ humanize-date event.date }}
+    {{ moment-format event.date 'LL' }} - {{ moment-from-now event.date }}
   </div>
   <div class="summary">
     <p>{{event.description}}</p>
