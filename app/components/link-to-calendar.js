@@ -1,7 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  urlToCalendar: Ember.computed('event', function() {
+  tagName: 'a',
+  classNames: ['link-to-calendar'],
+  attributeBindings: ['href', 'title', 'target'],
+  title: 'Añadir a Google Calendar',
+  target: '_blank',
+  href: Ember.computed('event', function() {
     var zeroPad = function(number) {
       return ("0" + number).slice(-2);
     };
