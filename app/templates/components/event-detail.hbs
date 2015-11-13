@@ -4,7 +4,7 @@
     {{ moment-format event.date 'LL' }} - {{ moment-from-now event.date }}
   </div>
   <div class="summary">
-    <p>{{event.description}}</p>
+    <p>{{{ linkify-text event.description }}}</p>
     <div class="more">
       {{link-to-calendar event=event}}
       {{link-to-event event=event}}
