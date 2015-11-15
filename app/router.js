@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('events', function() {
     this.route('latest');
     this.route('new');
+    this.route('archive', { path: '/archive/:year/:month' })
   });
 });
 

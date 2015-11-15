@@ -1,19 +1,19 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-  host: 'http://vlctechhub-api.herokuapp.com/v0',
-  modelName: 'event',
+  baseURL: 'http://vlctechhub-api.herokuapp.com/v0/events',
   completeURL: function(partialURL){
-    return this._buildURL(this.modelName, partialURL);
+    return `${this.baseURL}/${partialURL}`;
   },
   urlForQuery: function(query, modelName) {
     return this.completeURL(query.filter);
   },
   query: function(store, type, query) {
     if (!query.filter) return [];
-    var filter = query.filter;
-    if (query.filter == 'latest') filter = 'past';
-    return $.get(this.completeURL(filter));
+    var partialURL = query.filter;
+    if (query.filter == 'latest') partialURL = 'past';
+    if (query.filter == 'archive') partialURL = `${query.year}/${query.month}`;
+    return $.get(this.completeURL(partialURL));
   },
   createRecord: function(store, type, snapshot) {
     var data = this.serialize(snapshot);
