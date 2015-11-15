@@ -1,0 +1,13 @@
+{{#if isTextarea }}
+  {{textarea name=name value=value class=elementClass required="true"}}
+{{/if}}
+
+{{#if isDate}}
+  {{pikaday-input name=name value=value format="DD/MM/YYYY" class=elementClass useUTC=true required=true}}
+{{/if}}
+
+{{#if isInput}}
+  {{input type=type value=value name=name class=elementClass required="true"}}
+{{/if}}
+
+<label for='{{name}}'>{{label}}</label>

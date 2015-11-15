@@ -13,6 +13,7 @@
     "loader.js": "ember-cli/loader.js#3.2.1",
     "moment": ">= 2.8.0",
     "qunit": "~1.18.0",
-    "moment-timezone": ">= 0.1.0"
+    "moment-timezone": ">= 0.1.0",
+    "pikaday": "~1.4.0"
   }
 }
