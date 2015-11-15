@@ -18,16 +18,15 @@ export default Ember.Component.extend({
     return new Date(moment.tz(datetime,'Europe/Madrid').toISOString());
   }),
   createEvent: function() {
-    this.validate();
-    // if(this.validate()){
-    //   this.set('model.date', this.get('eventDateTime'));
-    //   this.get('model').save().then(function(){
-    //     this.set('isSaved', true);
-    //     this.clearData();
-    //   }, function(errors) {
-    //     this.set('isValid', false);
-    //   })
-    // }
+    if(this.validate()){
+      this.set('model.date', this.get('eventDateTime'));
+      this.get('model').save().then(function(){
+        this.set('isSaved', true);
+        this.clearData();
+      }, function(errors) {
+        this.set('isValid', false);
+      })
+    }
   },
   validate: function() {
     var required = ['model.title', 'model.description', 'model.link', 'time', 'model.date'];
