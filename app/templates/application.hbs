@@ -5,14 +5,14 @@
   {{/link-to}}
   <ul class="menu-tabs">
       <li>
-        {{#link-to 'events'}} Próximos {{/link-to}}
+        {{#link-to 'events.upcoming'}} Próximos {{/link-to}}
       </li>
       <li>
         {{#link-to 'events.latest'}} Últimos {{/link-to}}
       </li>
-      <li class='archive'>
+      {{#link-to 'events.archive' tagName='li' }}
         {{#link-to 'events.archive' '2015' '01'}} Archivo {{/link-to}}
-      </li>
+      {{/link-to}}
   </ul>
 
   <ul class="right-menu">

@@ -836,11 +836,11 @@ h3:before {
   background: #ffaa00 !important;
   color: #fff;
 }
-.home-menu ul.menu-tabs a.active {
+.home-menu ul.menu-tabs a.active, .home-menu ul.menu-tabs li.active a {
   color: #fff;
   background: #555 !important;
 }
-.home-menu a.active {
+.home-menu a.active, .home-menu li.active a {
   color: #fff;
   background: #ffaa00 !important;
 }
@@ -863,3 +863,19 @@ h3:before {
     display: none;
   }
 }
+
+.dropdown {
+    padding: 5px;
+}
+.dropdown:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.dropdown:after{
+    content: '↓';
+    font-size: 0.5em;
+    margin-left: 5px;
+}
+

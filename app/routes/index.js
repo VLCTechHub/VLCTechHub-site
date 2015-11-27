@@ -5,6 +5,6 @@ export default Ember.Route.extend({
   beforeModel: function() {
     this.get('moment').changeLocale('es');
     this.get('moment').changeTimeZone('Europe/Madrid');
-    this.transitionTo('events');
+    this.transitionTo('events.upcoming');
   }
 });

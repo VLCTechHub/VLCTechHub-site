@@ -1,7 +1,12 @@
-{{section-title text="Archivo"}}
+{{dropdown-month dropdown-id="jq-dropdown-month" year=model.year}}
+{{dropdown-year dropdown-id="jq-dropdown-year" month=model.month}}
+
+{{#section-title}}
+Archivo <span class="dropdown" data-jq-dropdown="#jq-dropdown-month">{{model.monthName}}</span>, <span class="dropdown" data-jq-dropdown="#jq-dropdown-year">{{model.year}}</span>
+{{/section-title}}
 
 <div id="events" class="pure-g-r">
-  {{#each model as |event| }}
+  {{#each model.events as |event| }}
     {{event-detail event=event}}
   {{/each}}
 </div>
