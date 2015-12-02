@@ -25,13 +25,13 @@ export default Ember.Component.extend({
         this.clearData();
       }, function(errors) {
         this.set('isValid', false);
-      })
+      });
     }
   },
   validate: function() {
     var required = ['model.title', 'model.description', 'model.link', 'time', 'model.date'];
     var isValid = required.every(function(key){
-      return this.get(key) != null
+      return this.get(key) !== null;
     }, this);
 
     isValid = isValid && this.validateTimeFormat();
@@ -40,7 +40,7 @@ export default Ember.Component.extend({
     return isValid;
   },
   validateTimeFormat: function() {
-    var timeRegex = /([01]\d|2[0-3]):([0-5]\d)/
+    var timeRegex = /([01]\d|2[0-3]):([0-5]\d)/;
     return timeRegex.test(this.get('time'));
   },
   clearData: function() {

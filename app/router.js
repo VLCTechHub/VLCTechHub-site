@@ -11,7 +11,7 @@ Router.map(function() {
     this.route('upcoming');
     this.route('latest');
     this.route('new');
-    this.route('archive', { path: '/archive/:year/:month' })
+    this.route('archive', { path: '/archive/:year/:month' });
   });
 });
 

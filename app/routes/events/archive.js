@@ -9,6 +9,6 @@ export default Ember.Route.extend({
       month: params.month,
       monthName: moment.months(parseInt(params.month) - 1),
       events: events
-    }
+    };
   }
 });

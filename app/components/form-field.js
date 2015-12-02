@@ -13,13 +13,22 @@ export default Ember.Component.extend({
   isDate: Ember.computed('type', function(){
     return this.get('type') == 'date';
   }),
+  isTime: Ember.computed('type', function(){
+    return this.get('type') == 'time';
+  }),
   isInput: Ember.computed('type', function(){
-    return !this.get('isTextarea') && !this.get('isDate');
+    return !this.get('isTextarea') && !this.get('isDate') && !this.get('isTime');
   }),
   isOneColumn: Ember.computed('columns', function(){
-    return !this.get('columns') || (this.get('columns') == 1)
+    return !this.get('columns') || (this.get('columns') == 1);
   }),
   isThreeColumns: Ember.computed('columns', function(){
     return this.get('columns') == 3;
-  })
+  }),
+  actions: {
+    showTimes: function() {
+      console.log('showTimes');
+      $('#jq-dropdown-1').jqDropdown('show');
+    }
+  }
 });
