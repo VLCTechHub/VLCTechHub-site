@@ -1,0 +1,4 @@
+{
+  // Allow ES6.
+  "esnext": true
+}
