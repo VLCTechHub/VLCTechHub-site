@@ -28,6 +28,8 @@ You will need the following things properly installed on your computer:
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
+__Note__: When run on linux, you might have a watch problem. You may need to [increment the number of files that can be watched by your user](https://discourse.roots.io/t/gulp-watch-error-on-ubuntu-14-04-solved/3453/2).
+
 
 ## Further Reading / Useful Links
 
