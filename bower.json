@@ -14,6 +14,7 @@
     "moment": ">= 2.8.0",
     "qunit": "~1.18.0",
     "moment-timezone": ">= 0.1.0",
-    "pikaday": "~1.4.0"
+    "pikaday": "~1.4.0",
+    "jquery-dropdown": "~2.0.2"
   }
 }
