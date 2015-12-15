@@ -1,0 +1,48 @@
+<div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+  {{#link-to 'index' classNames='pure-menu-heading'}}
+    <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo"/>
+    <img src="img/g3615.png" alt="VLCTechhub" title="VLCTechhub" class="logo-mobile"/>
+  {{/link-to}}
+  <ul class="menu-tabs">
+      <li>
+        {{#link-to 'events.upcoming'}} Próximos {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'events.latest'}} Últimos {{/link-to}}
+      </li>
+      {{#link-to 'events.archive' tagName='li' }}
+        {{#link-to 'events.archive' '2015' '01'}} Archivo {{/link-to}}
+      {{/link-to}}
+  </ul>
+
+  <ul class="right-menu">
+
+      <li>
+        <a href="mailto:vlctechhub@gmail.com" class="icon" title="Email">
+         <img src="img/email.png" width="30px">
+        </a>
+      </li>
+
+      <li>
+        <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="icon" title="VLCTechHub en GoogleGroups">
+         <img src="img/groups.png" width="40px">
+        </a>
+      </li>
+
+      <li>
+      <a href="https://twitter.com/VLCTechHub" class="icon" title="VLCTechHub en Twitter">
+       <img src="img/twitter.png" width="30px">
+       </a>
+      </li>
+      <li class="pure-menu-selected">
+        {{#link-to 'events.new'}} Añadir evento {{/link-to}}
+      </li>
+
+  </ul>
+</div>
+
+<div class="main">
+  <div class="content">
+    {{outlet}}
+  </div>
+</div>

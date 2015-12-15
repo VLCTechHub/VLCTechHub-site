@@ -1,0 +1,8 @@
+<div id="{{dropdown-id}}" class="jq-dropdown jq-dropdown-tip">
+    <ul class="jq-dropdown-menu">
+      {{#each months as |month| }}
+        <li>{{#link-to 'events.archive' year month.id}} {{month.text}} {{/link-to}} </li>
+      {{/each}}
+    </ul>
+</div>
+
