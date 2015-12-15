@@ -25,10 +25,10 @@ export default Ember.Component.extend({
   isThreeColumns: Ember.computed('columns', function(){
     return this.get('columns') == 3;
   }),
-  actions: {
-    showTimes: function() {
-      console.log('showTimes');
-      $('#jq-dropdown-1').jqDropdown('show');
-    }
+  didInsertElement: function(){
+    if(!this.get('isTime')) return;
+
+    var input = Ember.$("input[name='" +  this.get('name') + "']");
+    input.timepicker({'minTime': '9:00', 'maxTime': '21:00', 'forceRoundTime': false, step: 30, timeFormat: 'H:i', 'roundingFunction' : function(i) { return i; } });
   }
 });
