@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export function linkfy([text]) {
   text = text.replace(/\n/g, "<br />");
-  text = text.replace(/(https?:\/\/\S+)/gi, function (s) {
+  text = text.replace(/https?:\/\/\S+[.][^\s.,;:<>)\]\\]+/gi, function (s) {
       return '<a href="' + s + '">' + s + '</a>';
   });
 
