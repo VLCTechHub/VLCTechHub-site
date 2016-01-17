@@ -48,7 +48,7 @@ module.exports = function(environment) {
     'script-src': "'self'",
     'font-src': "'self'",
     'connect-src': "'self' vlctechhub-api.herokuapp.com",
-    'img-src': "'self' 'data:'",
+    'img-src': "'self' data:",
     'style-src': "'self' 'unsafe-inline'",
     'media-src': "'self'"
   };
