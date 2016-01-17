@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  time: '',
+  time: undefined,
   isValid: true,
   actions: {
     create: function() { this.createEvent(); }
@@ -20,23 +20,25 @@ export default Ember.Component.extend({
   createEvent: function() {
     if(this.validate()){
       this.set('model.date', this.get('eventDateTime'));
+      var self = this;
       this.get('model').save().then(function(){
-        this.set('isSaved', true);
-        this.clearData();
+        self.set('isSaved', true);
+        self.clearData();
       }, function() {
-        this.set('isValid', false);
+        self.set('isValid', false);
       });
     }
   },
   validate: function() {
     var required = ['model.title', 'model.description', 'model.link', 'time', 'model.date'];
     var isValid = required.every(function(key){
-      return this.get(key) !== null;
+      return this.get(key) !== undefined;
     }, this);
 
     isValid = isValid && this.validateTimeFormat();
 
     this.set('isValid', isValid);
+
     return isValid;
   },
   validateTimeFormat: function() {
