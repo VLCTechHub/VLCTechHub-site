@@ -1,0 +1,16 @@
+{{section-title text="Próximos eventos"}}
+
+<div class='clearfix'>
+	<div class='right muted'>
+		<p>{{#link-to 'events.upcoming'}}Ver listado detallado{{/link-to}}</p>
+	</div>
+</div>
+
+<div class="event mb2 p3">
+  {{#each model as |event| }}
+  <ul class='list-reset'>
+  	<li class='event-date font-ubuntu inline-block mr2'>{{moment-format event.date 'DD MMM HH:mm' }}h</li>
+  	<li class='inline-block'><a href='{{event.link}}' parent='_blank' class='event-title h4 py1 black'>{{event.title}}</a></li>
+  </ul>
+  {{/each}}
+</div>
