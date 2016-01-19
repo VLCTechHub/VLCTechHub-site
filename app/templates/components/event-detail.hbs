@@ -1,13 +1,15 @@
-<div class="event">
-  <div class="title"><a href={{event.link}} target="_blank" title="">{{event.title}}</a></div>
-  <div class="date">
+<div class="event mb2 p3">
+  <div class="event-title h2 font-ubuntu py1 caps"><a href={{event.link}} target="_blank" title="" class="black">{{event.title}}</a></div>
+  <div class="event-date font-ubuntu mb2">
     {{ moment-format event.date 'DD MMM HH:mm' }} - {{ moment-from-now event.date }}
   </div>
-  <div class="summary">
+  <div class="event-summary">
     <p>{{{ linkify-text event.description }}}</p>
-    <div class="more">
-      {{link-to-calendar event=event}}
-      {{link-to-event event=event}}
+    <div class="event-more clearfix">
+      <div class="right">
+        {{link-to-calendar event=event}}
+        {{link-to-event event=event}}
+      </div>
     </div>
   </div>
 </div>

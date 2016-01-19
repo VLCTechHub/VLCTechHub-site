@@ -16,6 +16,7 @@
     "moment-timezone": ">= 0.1.0",
     "pikaday": "~1.4.0",
     "jquery-dropdown": "~2.0.2",
-    "jt.timepicker": "git@github.com:jonthornton/jquery-timepicker.git#~1.8.8"
+    "jt.timepicker": "git@github.com:jonthornton/jquery-timepicker.git#~1.8.8",
+    "basscss": "~7.1.0"
   }
 }

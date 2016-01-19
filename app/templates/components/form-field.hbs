@@ -1,17 +1,18 @@
+<label for='{{name}}'>{{label}}</label>
 {{#if isTextarea }}
-  {{textarea name=name value=value class=elementClass required="true"}}
+  {{textarea name=name value=value class=elementClass}}
 {{/if}}
 
 {{#if isDate}}
-  {{pikaday-input name=name value=value format="DD/MM/YYYY" class=elementClass useUTC=true required=true}}
+  {{pikaday-input name=name value=value format="DD/MM/YYYY" class=elementClass useUTC=true}}
 {{/if}}
 
 {{#if isTime}}
-  {{input type='text' value=value name=name class=elementClass required='true'}}
+  {{input type='text' value=value name=name class=elementClass}}
 {{/if}}
 
 {{#if isInput}}
-  {{input type=type value=value name=name class=elementClass required="true"}}
+  {{input type=type value=value name=name class=elementClass}}
 {{/if}}
 
-<label for='{{name}}'>{{label}}</label>
+

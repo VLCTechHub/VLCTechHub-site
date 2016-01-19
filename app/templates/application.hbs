@@ -1,48 +1,37 @@
-<div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-  {{#link-to 'index' classNames='pure-menu-heading'}}
-    <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo"/>
-    <img src="img/g3615.png" alt="VLCTechhub" title="VLCTechhub" class="logo-mobile"/>
+<div class="flex flex-column" style="min-height:100vh">
+<div class="menu">
+  <div class="container clearfix">
+  <div class="col col-2 mt1">
+  {{#link-to 'index' classNames=''}}
+    <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo m1 px2"/>
   {{/link-to}}
-  <ul class="menu-tabs">
-      <li>
-        {{#link-to 'events.upcoming'}} Próximos {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'events.latest'}} Últimos {{/link-to}}
-      </li>
-      {{#link-to 'events.archive' tagName='li' }}
-        {{#link-to 'events.archive' '2015' '01'}} Archivo {{/link-to}}
-      {{/link-to}}
-  </ul>
-
-  <ul class="right-menu">
-
-      <li>
-        <a href="mailto:vlctechhub@gmail.com" class="icon" title="Email">
-         <img src="img/email.png" width="30px">
-        </a>
-      </li>
-
-      <li>
-        <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="icon" title="VLCTechHub en GoogleGroups">
-         <img src="img/groups.png" width="40px">
-        </a>
-      </li>
-
-      <li>
-      <a href="https://twitter.com/VLCTechHub" class="icon" title="VLCTechHub en Twitter">
-       <img src="img/twitter.png" width="30px">
-       </a>
-      </li>
-      <li class="pure-menu-selected">
-        {{#link-to 'events.new'}} Añadir evento {{/link-to}}
-      </li>
-
-  </ul>
+  </div>
+  <div class="sm-col sm-col-4 mt3">
+  {{#link-to 'events.upcoming' classNames='btn ml3'}} Próximos {{/link-to}}
+      {{#link-to 'events.latest' classNames='btn'}} Últimos {{/link-to}}
+      {{#link-to 'events.archive' '2015' '01' classNames='btn'}} Archivo {{/link-to}}
+  </div>
+  <div class="sm-col sm-col-6 mt3 md-show">
+    <div class='right'>
+      {{#link-to 'events.new' classNames='btn mr2'}} Añadir evento {{/link-to}} 
+    </div>
+  </div>
+  </div>
 </div>
+  
 
-<div class="main">
-  <div class="content">
+<div class="main flex-auto mb4">
+  <div class="container px2 sm-px3">
     {{outlet}}
   </div>
+</div>
+
+<div class="py2 center bg-navy">
+  <div class="container px2 py2">
+      <a href="https://twitter.com/VLCTechHub" class="p2 inline-block silver">Twitter</a>
+      <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="p2 inline-block silver">Google group</a>
+      <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc" class="p2 inline-block silver">Chrome extension</a>
+      <a href="mailto:vlctechhub@gmail.com" class="p2 inline-block silver">Contacto</a>
+  </div>
+</div>
 </div>
