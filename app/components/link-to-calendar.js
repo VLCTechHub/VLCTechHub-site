@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'a',
   classNames: ['link-to-calendar'],
+  classNameBindings: ['event.isPastEvent:hide'],
   attributeBindings: ['href', 'title', 'target'],
   title: 'Añadir a Google Calendar',
   target: '_blank',

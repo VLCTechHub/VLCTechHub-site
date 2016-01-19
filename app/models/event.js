@@ -5,5 +5,9 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   link: DS.attr('string'),
   date: DS.attr('date'),
-  hashtag: DS.attr('string')
+  hashtag: DS.attr('string'),
+  isPastEvent: Ember.computed('date', function(){
+  	if(this.get('date') < Date.now() ) return true;
+  	return false;
+  })
 });
