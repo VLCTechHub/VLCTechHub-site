@@ -66,6 +66,11 @@ form label {
   border: 4px dashed #474838;
 }
 
+.event-one-line:hover {
+  background-color: #ddd;
+  cursor: default;
+}
+
 .icon {
   height: 1.5rem;
 }

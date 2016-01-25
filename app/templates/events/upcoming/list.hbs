@@ -6,11 +6,15 @@
 	</div>
 </div>
 
-<div class="event mb2 p3">
+<div class="event mb2 p2">
   {{#each model as |event| }}
-  <ul class='list-reset'>
-  	<li class='event-date font-ubuntu inline-block mr2'>{{moment-format event.date 'DD MMM HH:mm' }}h</li>
-  	<li class='inline-block'><a href='{{event.link}}' parent='_blank' class='event-title h4 py1 black'>{{event.title}}</a></li>
+  <ul class='list-reset event-one-line p1 mb0'>
+  	<li class='event-date font-ubuntu inline-block mr2'
+  		title="{{moment-from-now event.date}}">
+  		{{moment-format event.date 'DD MMM HH:mm' }}h
+  	</li>
+  	<li class='inline-block'><a href='{{event.link}}' parent='_blank' class='event-title h4 py1 bold black'>{{event.title}}</a></li>
+  	<li class='inline-block'>por {{link-to-twitter event=event}}</li>
   </ul>
   {{/each}}
 </div>
