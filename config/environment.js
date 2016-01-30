@@ -16,10 +16,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      API_HOST: 'http://vlctechhub-api.herokuapp.com'
     }
   };
 
   if (environment === 'development') {
+    ENV.APP.API_HOST = 'http://localhost:5000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -47,7 +49,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
     'script-src': "'self'",
     'font-src': "'self'",
-    'connect-src': "'self' vlctechhub-api.herokuapp.com",
+    'connect-src': "'self' vlctechhub-api.herokuapp.com localhost:5000",
     'img-src': "'self' data:",
     'style-src': "'self' 'unsafe-inline'",
     'media-src': "'self'"
