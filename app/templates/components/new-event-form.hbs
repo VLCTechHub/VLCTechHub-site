@@ -12,11 +12,14 @@
 {{/if}}
 
 <form class="event p3 mb3">
-      {{form-field name='title' label="Título *" value=model.title type="text"}}
-      {{form-field name='description' label="Descripción *" value=model.description type="textarea"}}
-      {{form-field name='link' label="Link *" value=model.link type="text"}}
-      {{form-field name='date' label="Fecha *(dd/mm/yyyy)" value=model.date type="date"}}
-      {{form-field name='time' label="Hora *(hh:mm)" type="time" value=time}}
-      {{form-field name='hashtag' label="Hashtag o mención" value=model.hashtag type="text"}}
+  {{form-field name='title' label="Título *" value=model.title type="text"}}
+  {{form-field name='description' label="Descripción *" value=model.description type="textarea"}}
+  {{form-field name='link' label="Link *" value=model.link type="text"}}
+  {{form-field name='date' label="Fecha *(dd/mm/yyyy)" value=model.date type="date"}}
+  {{form-field name='time' label="Hora *(hh:mm)" type="time" value=time}}
+  {{form-field name='hashtag' label="Hashtag o mención" value=model.hashtag type="text"}}
 <button {{action "create"}} class="btn btn-primary">Añadir evento</button>
+<div class="muted inline-block {{classNameChromeExtensionHint}}">
+  o prueba la <a href='https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc' target='_blank'>extension de Chrome</a> para publicar este evento.
+</div>
 </form>

@@ -17,6 +17,13 @@ export default Ember.Component.extend({
     var datetime = "%@T%@:00".fmt(this.get('formattedDate'), this.get('formattedTime'));
     return new Date(moment.tz(datetime,'Europe/Madrid').toISOString());
   }),
+  classNameChromeExtensionHint: Ember.computed('model.link', function(){
+    var supportedSites = ['http://www.meetup.com/', 'http://www.eventbrite.es/e/'];
+    var link = this.get('model.link') || '';
+    var supported = supportedSites.some(function(site){ return link.indexOf(site) == 0 });
+    if supported return 'visible';
+    else return 'hide';
+  }),
   createEvent: function() {
     if(this.validate()){
       this.set('model.date', this.get('eventDateTime'));
