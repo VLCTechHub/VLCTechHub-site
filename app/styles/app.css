@@ -26,11 +26,11 @@ form label {
   border-bottom: 1px solid #ccc;
 }
 
-.btn:hover{
+.btn:enabled:hover{
   background-color: #ccc;
 }
 
-.btn:focus {
+.btn:enabled:focus {
   box-shadow: none;
 }
 
@@ -41,6 +41,14 @@ form label {
 
 .btn-primary {
   background-color: #fa0;
+}
+
+.btn-primary:disabled:hover {
+  box-shadow: none;
+}
+
+.btn:disabled:hover {
+  cursor: default;
 }
 
 .event {

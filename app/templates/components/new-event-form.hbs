@@ -1,25 +1,14 @@
-{{#unless isValid}}
- <div class="p1 px2 mb2 bg-red white rounded">
-  <div class='h3'>¡Ups! Houston, tenemos un problema</div>
-  <div>No hemos podido crear el evento, por favor, revisa que los datos son correctos</div>
-</div>
-{{/unless}}
-{{#if isSaved }}
-<div class="p1 px2 mb2 bg-green white rounded">
-  <div class="h3">¡Yuju! ¡Evento dado de alta!</div>
-  <div>Hemos dado de alta tu evento, pero ten en cuenta que la publicación no es inmediata.</div>
-</div>
-{{/if}}
-
 <form class="event p3 mb3">
-  {{form-field name='title' label="Título *" value=model.title type="text"}}
-  {{form-field name='description' label="Descripción *" value=model.description type="textarea"}}
-  {{form-field name='link' label="Link *" value=model.link type="text"}}
-  {{form-field name='date' label="Fecha *(dd/mm/yyyy)" value=model.date type="date"}}
-  {{form-field name='time' label="Hora *(hh:mm)" type="time" value=time}}
-  {{form-field name='hashtag' label="Hashtag o mención" value=model.hashtag type="text"}}
-<button {{action "create"}} class="btn btn-primary">Añadir evento</button>
-<div class="muted inline-block {{classNameChromeExtensionHint}}">
+  {{form-field name='title' label="Título *" value=event.title type="text"}}
+  {{form-field name='description' label="Descripción *" value=event.description type="textarea"}}
+  {{form-field name='link' label="Link *" value=event.link type="text"}}
+  {{form-field name='date' label="Fecha *(dd/mm/yyyy)" value=event.date type="date"}}
+  {{form-field name='time' label="Hora *(hh:mm)" type="time" value=event.time}}
+  {{form-field name='hashtag' label="Hashtag o mención" value=event.hashtag type="text"}}
+<button {{action "submitForm" event}} class="btn btn-primary" disabled="{{if isButtonDisabled 'disabled'}}" >{{buttonText}}</button>
+
+<div class="inline-block {{unless isChromeExtensionHintVisible 'hide'}}">
   o prueba la <a href='https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc' target='_blank'>extension de Chrome</a> para publicar este evento.
 </div>
+
 </form>
