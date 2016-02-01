@@ -22,7 +22,8 @@ rmdir dist
 
 # Add everything and push it.
 git commit -am "Deploy."
-git push
+git push origin gh-pages
 git checkout master
 git pull
+rm -rf assets
 chmod +x deploy.sh
