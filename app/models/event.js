@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 import moment from 'moment';
 
@@ -8,12 +9,12 @@ export default DS.Model.extend({
   date: DS.attr('date'),
   hashtag: DS.attr('string'),
   isPastEvent: Ember.computed('date', function(){
-    if(this.get('date') < Date.now() ) return true;
+    if(this.get('date') < Date.now() ) { return true; }
     return false;
   }),
   time: Ember.computed('date', {
-    get(key) {
-      if(Ember.isEmpty(this.get('date'))) return null;
+    get() {
+      if(Ember.isEmpty(this.get('date'))) { return null; }
       return this.get('date').toISOString().substring(11,16);
     },
     set(key, value) {
@@ -21,7 +22,7 @@ export default DS.Model.extend({
       var isValid = timeRegex.test(value);
       if (!isValid) { return '';}
       var formattedDate = moment(this.get('date')).format('YYYY-MM-DD');
-      var datetime = "${formattedDate} {value}";
+      var datetime = `${formattedDate} ${value}`;
       this.set('date', new Date(moment.tz(datetime,'YYYY-MM-DD HH:mm','Europe/Madrid')));
       return value;
     }
