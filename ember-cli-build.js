@@ -23,7 +23,7 @@ module.exports = function(defaults) {
   app.import('bower_components/jquery-dropdown/jquery.dropdown.min.css');
   app.import('bower_components/jt.timepicker/jquery.timepicker.js');
   app.import('bower_components/jt.timepicker/jquery.timepicker.css');
-  app.import('bower_components/basscss/css/basscss.css');
+  app.import('bower_components/basscss/src/basscss.css');
 
   return app.toTree();
 };
