@@ -25,5 +25,5 @@ git commit -am "Deploy."
 git push origin gh-pages
 git checkout master
 git pull
-rm -rf assets
+git clean -f
 chmod +x deploy.sh
