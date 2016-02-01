@@ -22,6 +22,7 @@ You will need the following things properly installed on your computer:
 * `npm install -g ember-cli` install ember-cli
 * `npm install`
 * `bower install`
+* `chmod +x deploy.sh`
 
 ## Running / Development
 
@@ -30,6 +31,9 @@ You will need the following things properly installed on your computer:
 
 __Note__: When run on linux, you might have a watch problem. You may need to [increment the number of files that can be watched by your user](https://discourse.roots.io/t/gulp-watch-error-on-ubuntu-14-04-solved/3453/2).
 
+## Deploy
+
+ * `./deploy.sh` will deploy an ember build into gh-pages
 
 ## Further Reading / Useful Links
 
