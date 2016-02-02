@@ -21,10 +21,10 @@ export default Ember.Component.extend({
     return supportedSites.some(function(site){ return link.indexOf(site) === 0; });
   }),
   actions: {
-    submitForm: function(params) {
+    submitAction: function(params) {
       if(!this.get('isSaving')){
         this.set('isSaving', true);
-        this.sendAction('action', params);
+        this.sendAction('submitAction', params);
       }
     }
   }

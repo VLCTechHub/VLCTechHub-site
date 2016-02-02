@@ -5,7 +5,7 @@
   {{form-field name='date' label="Fecha *(dd/mm/yyyy)" value=event.date type="date"}}
   {{form-field name='time' label="Hora *(hh:mm)" type="time" value=event.time}}
   {{form-field name='hashtag' label="Hashtag o mención" value=event.hashtag type="text"}}
-<button {{action "submitForm" event}} class="btn btn-primary" disabled="{{if isButtonDisabled 'disabled'}}" >{{buttonText}}</button>
+<button {{action "submitAction" event}} class="btn btn-primary" disabled="{{if isButtonDisabled 'disabled'}}" >{{buttonText}}</button>
 
 <div class="inline-block {{unless isChromeExtensionHintVisible 'hide'}}">
   o prueba la <a href='https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc' target='_blank'>extension de Chrome</a> para publicar este evento.

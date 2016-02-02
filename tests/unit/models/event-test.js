@@ -8,7 +8,7 @@ import {
 
 describeModel(
   'event',
-  'Model Event',
+  'Event',
   {
     // Specify the other units that are required for this test.
 
