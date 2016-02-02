@@ -24,6 +24,11 @@ You will need the following things properly installed on your computer:
 * `bower install`
 * `chmod +x deploy.sh`
 
+## Test
+
+* `npm install -g phantomjs`
+* `ember test` or `ember test --server` for liverload
+
 ## Running / Development
 
 * `ember serve`
@@ -42,4 +47,9 @@ __Note__: When run on linux, you might have a watch problem. You may need to [in
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+--
+
+[![Build Status](https://travis-ci.org/VLCTechHub/VLCTechHub.svg?branch=master)](https://travis-ci.org/VLCTechHub/VLCTechHub)
+
 
