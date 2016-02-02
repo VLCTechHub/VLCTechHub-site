@@ -1,7 +1,8 @@
 {
-  "framework": "qunit",
-  "test_page": "tests/index.html?hidepassed",
+  "framework": "mocha",
+  "test_page": "tests/index.html",
   "disable_watching": true,
+  "reporter": "dot",
   "launch_in_ci": [
     "PhantomJS"
   ],

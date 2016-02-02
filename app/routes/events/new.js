@@ -19,7 +19,7 @@ export default Ember.Route.extend({
         self.controller.set('isSaving', false);
       });
     },
-    willTransition: function(transition){
+    willTransition: function(){
       this.controller.set('saved', false);
       this.controller.set('saveFailed', false);
     }
