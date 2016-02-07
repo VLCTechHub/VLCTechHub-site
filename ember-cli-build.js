@@ -9,6 +9,12 @@ module.exports = function(defaults) {
     }
   });
 
+  if (app.env === 'production') {
+    app.options.inlineContent = {
+      'hotjar': './config/hotjar.js'
+    };
+  }
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
