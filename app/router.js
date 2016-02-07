@@ -7,15 +7,16 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('index', {path: '/'});
-  this.route('events', function() {
+
+  this.route('event', { path: 'events' }, function(){
     this.route('upcoming', function(){
-    	this.route('index');
-    	this.route('list');
+     this.route('index');
+     this.route('list');
     });
+    this.route('archive', { path: '/archive/:year/:month' });
     this.route('latest');
     this.route('new');
-    this.route('archive', { path: '/archive/:year/:month' });
-  });
+  })
 });
 
 export default Router;

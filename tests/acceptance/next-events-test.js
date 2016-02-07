@@ -1,4 +1,4 @@
-/* jshint expr:true */
+  /* jshint expr:true */
 import {
   describe,
   it,
@@ -31,7 +31,7 @@ describe('Acceptance: Upcoming events', function() {
     visit('/events/upcoming/index');
 
     andThen(function() {
-      expect(currentPath()).to.equal('events.upcoming.index');
+      expect(currentPath()).to.equal('event.upcoming.index');
 
       let event = find('.event').first();
       expect(event.hasClass('.new-event')).to.be.false;

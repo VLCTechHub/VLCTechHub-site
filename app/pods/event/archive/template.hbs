@@ -1,0 +1,13 @@
+{{event/archive-dropdown-month dropdown-id="jq-dropdown-month" year=model.year}}
+{{event/archive-dropdown-year dropdown-id="jq-dropdown-year" month=model.month}}
+
+{{#event/section-title}}
+Archivo <span class="dropdown" data-jq-dropdown="#jq-dropdown-month">{{model.monthName}}</span>, <span class="dropdown" data-jq-dropdown="#jq-dropdown-year">{{model.year}}</span>
+{{/event/section-title}}
+
+<div id="events">
+  {{#each model.events as |event| }}
+    {{event/event-detail event=event}}
+  {{/each}}
+</div>
+{{outlet}}
