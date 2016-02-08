@@ -11,7 +11,7 @@ module.exports = function(defaults) {
 
   if (app.env === 'production') {
     app.options.inlineContent = {
-      'hotjar': './config/hotjar.js'
+      'tracking': './config/tracking.js'
     };
   }
 
