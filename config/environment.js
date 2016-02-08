@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'vlc-tech-hub',
+    podModulePrefix: 'vlc-tech-hub/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'hash',
@@ -23,11 +24,11 @@ module.exports = function(environment) {
   if (environment === 'development') {
     ENV.APP.API_HOST = 'http://localhost:5000';
 
-    //ENV.APP.LOG_RESOLVER = true;
-    //ENV.APP.LOG_ACTIVE_GENERATION = true;
-    //ENV.APP.LOG_TRANSITIONS = true;
-    //ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    //ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_RESOLVER = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {

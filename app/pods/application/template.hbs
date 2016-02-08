@@ -1,0 +1,39 @@
+<div class="flex flex-column" style="min-height:100vh">
+<div class="menu">
+  <div class="container clearfix">
+  <div class="col col-2 mt1">
+  {{#link-to 'index' classNames=''}}
+    <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo py1 mr2"/>
+  {{/link-to}}
+  </div>
+  <div class="sm-col sm-col-4 mt3">
+    {{#link-to 'event.upcoming.index' classNames='btn ml1'}} Próximos {{/link-to}}
+    {{#link-to 'event.latest' classNames='btn'}} Últimos {{/link-to}}
+    {{#link-to 'event.archive' tagName='span'}}
+      {{#link-to 'event.archive' '2016' '01' classNames='btn'}} Archivo {{/link-to}}
+    {{/link-to}}
+  </div>
+  <div class="sm-col sm-col-6 mt3 md-show">
+    <div class='right'>
+      {{#link-to 'event.new' classNames='btn'}} Añadir evento {{/link-to}}
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<div class="main flex-auto mb4">
+  <div class="container px2 sm-px3">
+    {{outlet}}
+  </div>
+</div>
+
+<div class="py2 center bg-navy">
+  <div class="container px2 py2">
+      <a href="https://twitter.com/VLCTechHub" class="p2 inline-block silver">Twitter</a>
+      <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="p2 inline-block silver">Google group</a>
+      <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc" class="p2 inline-block silver">Chrome extension</a>
+      <a href="mailto:vlctechhub@gmail.com" class="p2 inline-block silver">Contacto</a>
+  </div>
+</div>
+</div>

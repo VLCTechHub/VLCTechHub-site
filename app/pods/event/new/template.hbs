@@ -1,0 +1,17 @@
+{{event/section-title text="Nuevo evento"}}
+
+{{#if saveFailed}}
+ <div class="p1 px2 mb2 bg-red white rounded">
+  <div class='h3'>¡Ups! Houston, tenemos un problema</div>
+  <div>No hemos podido crear el evento, por favor, revisa que los datos son correctos</div>
+</div>
+{{/if}}
+
+{{#if saved }}
+<div class="p1 px2 mb2 bg-green white rounded">
+  <div class="h3">¡Yuju! ¡Evento dado de alta!</div>
+  <div>Hemos dado de alta tu evento, pero ten en cuenta que la publicación no es inmediata.</div>
+</div>
+{{/if}}
+
+{{event/new-event-form event=model submitAction='saveEvent' isSaving=isSaving}}
