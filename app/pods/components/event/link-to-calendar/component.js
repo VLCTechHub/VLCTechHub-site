@@ -23,7 +23,7 @@ export default Ember.Component.extend({
     endDate.setHours(endDate.getHours() + 1);
     var dates = isoDate(startDate) + '/' + isoDate(endDate);
 
-    var url = 'http://www.google.com/calendar/event?action=TEMPLATE&text=' + title + '&dates=' + dates + '&details='+ details;
+    var url = 'https://www.google.com/calendar/event?action=TEMPLATE&text=' + title + '&dates=' + dates + '&details='+ details;
     return url;
   })
 });
