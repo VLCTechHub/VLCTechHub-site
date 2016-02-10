@@ -11,7 +11,9 @@ Router.map(function() {
   this.route('event', { path: 'events' }, function(){
     this.route('upcoming', function(){
      this.route('index');
-     this.route('list');
+     this.route('list', function(){
+        this.route('detail', { path: '/:event_id'});
+     });
     });
     this.route('archive', { path: '/archive/:year/:month' });
     this.route('latest');

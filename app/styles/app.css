@@ -13,6 +13,10 @@ input.field, textarea.field {
   background-color: transparent;
 }
 
+.hidden {
+  display: none;
+}
+
 form label {
   color: #999;
 }
@@ -76,6 +80,18 @@ form label {
 
 .event-one-line:hover {
   background-color: #ddd;
+}
+
+.event-one-line:hover .hidden {
+  display: inline;
+}
+
+.expanded {
+  background-color: #D4E3BC;
+}
+
+.expanded:hover {
+  background-color: #D4E3BC;
   cursor: default;
 }
 
