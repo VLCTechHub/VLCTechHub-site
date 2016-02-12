@@ -13,7 +13,7 @@ import {addRoutes, eventRoutes} from "../fixtures/routes";
 
 let server;
 
-describe('Acceptance: Upcoming events', function() {
+describe('Acceptance: Archive events', function() {
   let application;
 
   beforeEach(function() {
@@ -23,19 +23,20 @@ describe('Acceptance: Upcoming events', function() {
   });
 
   afterEach(function() {
-    Ember.run(application, 'destroy');
     server.shutdown();
+    Ember.run(application, 'destroy');
   });
 
-  it('can visit /events/upcoming/index', function() {
-    visit('/events/upcoming/index');
+
+  it('can visit /events/archive/2001/01', function() {
+
+    visit('/events/archive/2001/01');
 
     andThen(function() {
-      expect(currentPath()).to.equal('event.upcoming.index');
+      expect(currentPath()).to.equal('event.archive.index');
 
       let event = find('.event').first();
-      expect(event.hasClass('.new-event')).to.be.false;
-      expect(event.find('.event-title').text()).equal('a title');
+      expect(event.find('.event-title').text()).to.contain('a title');
     });
   });
 });

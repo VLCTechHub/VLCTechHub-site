@@ -10,12 +10,11 @@ Router.map(function() {
 
   this.route('event', { path: 'events' }, function(){
     this.route('upcoming', function(){
-     this.route('index');
-     this.route('list', function(){
-        this.route('detail', { path: '/:event_id'});
-     });
+      this.route('detail', { path: '/:event_id'});
     });
-    this.route('archive', { path: '/archive/:year/:month' });
+    this.route('archive', { path: '/archive/:year/:month' }, function(){
+      this.route('detail', { path: '/:event_id'});
+    });
     this.route('latest');
     this.route('new');
   })

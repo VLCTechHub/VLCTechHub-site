@@ -3,9 +3,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'a',
   classNames: ['black'],
-  attributeBindings: ['href', 'target', 'text'],
+  attributeBindings: ['href', 'target'],
   target: '_blank',
-  text: Ember.computed.alias('event.hashtag'),
   href: Ember.computed('event.hashtag', function(){
     var handler = this.get('event.hashtag');
     var userURL = 'https://twitter.com/';

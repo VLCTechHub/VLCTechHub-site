@@ -1,11 +1,5 @@
 {{event/section-title text="Próximos eventos"}}
 
-<div class='clearfix'>
-	<div class='right muted'>
-		<p>{{#link-to 'event.upcoming'}}Ver listado detallado{{/link-to}}</p>
-	</div>
-</div>
-
 <div class="event mb2">
   {{#each model as |event| }}
     {{event/event-row event=event selected=selected expandAction='expand' collapseAction='collapse'}}

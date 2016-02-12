@@ -6,8 +6,8 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'controller:event/upcoming/list',
-  'EventUpcomingListController',
+  'controller:event/upcoming',
+  'EventUpcomingController',
   {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
