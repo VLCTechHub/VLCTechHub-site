@@ -13,17 +13,6 @@ then
 	exit 1
 fi
 
-# Move to the "release" branch and make everything work.
-git checkout gh-pages
-git pull
-ls -1 | grep -v -E '^(dist|CNAME|bower_components|node_modules)$' | xargs rm -rf
-mv dist/* ./
-rmdir dist
+cp dist/index.html dist/200.html
+surge ./dist
 
-# Add everything and push it.
-git add .
-git commit -m "Deploy."
-git push origin gh-pages
-git checkout master
-git pull
-chmod +x deploy.sh

@@ -38,7 +38,10 @@ __Note__: When run on linux, you might have a watch problem. You may need to [in
 
 ## Deploy
 
- * `./deploy.sh` will deploy an ember build into gh-pages
+  Production runs on surge.sh server
+
+ * `npm install -g surge`
+ * `./deploy.sh` will deploy an ember build into surge.sh
 
 ## Further Reading / Useful Links
 
