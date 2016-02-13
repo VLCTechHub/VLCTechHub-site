@@ -8,11 +8,11 @@ import {
 let originalTransitionTo;
 
 describeModule(
-  'route:event/upcoming/list',
-  'EventUpcomingListRoute',
+  'route:event/upcoming',
+  'EventUpcomingRoute',
   {
     // Specify the other units that are required for this test.
-    //needs: ['controller:event/upcoming/list']
+    //needs: ['controller:event/upcoming']
   },
   function() {
     beforeEach(function() {
@@ -29,7 +29,7 @@ describeModule(
       let trigged = false;
       route.transitionTo = function (route, event) {
         trigged = true;
-        expect(route).to.eql('event.upcoming.list.detail');
+        expect(route).to.eql('event.upcoming.detail');
       }
       route.send('expand', Ember.Object.create({id: 'an id' }));
       expect(trigged).to.be.true;
@@ -40,7 +40,7 @@ describeModule(
       let trigged = false;
       route.transitionTo = function (route, event) {
         trigged = true;
-        expect(route).to.eql('event.upcoming.list');
+        expect(route).to.eql('event.upcoming');
       }
       route.send('collapse', Ember.Object.create({id: 'an id' }));
       expect(trigged).to.be.true;
