@@ -24,7 +24,7 @@ function version_published () {
 }
 
 function say_in_slack {
-	if [ -z "$LACK_VLCTECHHUB_TOKEN" ]; then
+	if [ -z "$SLACK_VLCTECHHUB_TOKEN" ]; then
 		 echo "WARN: Set SLACK_VLCTECHHUB_TOKEN to publish a message about this deploy"
 	else
 		echo 'Communicating with slack...'
