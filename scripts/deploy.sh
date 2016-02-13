@@ -10,7 +10,7 @@ function build {
 }
 
 function tag {
-	ember release --local false
+	ember release --local false -- yes trues
 }
 
 function publish {
@@ -40,8 +40,8 @@ function say_in_command_line {
 	echo '+=========================+'
 }
 
-build
+# build
 tag
-publish
-say_in_slack
-say_in_command_line
+# publish
+# say_in_slack
+# say_in_command_line
