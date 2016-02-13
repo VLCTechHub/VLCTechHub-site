@@ -22,7 +22,6 @@ You will need the following things properly installed on your computer:
 * `npm install -g ember-cli` install ember-cli
 * `npm install`
 * `bower install`
-* `chmod +x deploy.sh`
 
 ## Test
 
@@ -41,7 +40,9 @@ __Note__: When run on linux, you might have a watch problem. You may need to [in
   Production runs on surge.sh server
 
  * `npm install -g surge`
- * `./deploy.sh` will deploy an ember build into surge.sh
+ * `npm run deploy`
+
+  To send a message to slack about the new release, set the environment variable `SLACK_VLCTECHHUB_TOKEN` with the Slack token. It will send the message to #vlctechhub channel.
 
 ## Further Reading / Useful Links
 

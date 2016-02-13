@@ -1,4 +1,4 @@
-{
+  {
   "name": "vlc-tech-hub",
   "version": "3.0.1",
   "description": "Small description for client goes here",
@@ -10,7 +10,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy": "bash ./scripts/deploy.sh"
   },
   "repository": "",
   "engines": {
