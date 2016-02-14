@@ -6,6 +6,9 @@ module.exports = function(defaults) {
     // Add options here
     'ember-cli-mocha': {
       useLintTree: false
+    },
+    fingerprint: {
+      exclude: ['apple-touch-icon', 'favicon', 'mstile']
     }
   });
 
