@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   event: null,
   isSaving: false,
   buttonText: Ember.computed('isSaving', function(){
-    var text = 'Publicar evento';
+    var text = 'Publicar';
     if(this.get('isSaving')) {
       text = 'Publicando...';
     }

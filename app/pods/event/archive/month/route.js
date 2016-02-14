@@ -2,6 +2,7 @@ import Ember from 'ember';
 import moment from 'moment';
 
 export default Ember.Route.extend({
+  titleToken: 'Archivo',
   model: function(params) {
     const date = { year: params.year, month: params.month };
     this.set('date', date);
