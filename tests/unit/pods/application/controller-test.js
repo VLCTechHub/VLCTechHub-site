@@ -6,8 +6,8 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'controller:event/archive',
-  'EventArchiveController',
+  'controller:application',
+  'ApplicationController',
   {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']

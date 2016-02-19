@@ -8,8 +8,8 @@ import {
 let originalTransitionTo;
 
 describeModule(
-  'route:event/upcoming',
-  'EventUpcomingRoute',
+  'route:event/archive/month',
+  'EventArchiveMonthRoute',
   {
     // Specify the other units that are required for this test.
     //needs: ['controller:event/upcoming']
@@ -28,7 +28,7 @@ describeModule(
       let trigged = false;
       route.transitionTo = function (route, event) {
         trigged = true;
-        expect(route).to.eql('event.upcoming.detail');
+        expect(route).to.eql('event.archive.month.detail');
       }
       route.send('expand', Ember.Object.create({id: 'an id' }));
       expect(trigged).to.be.true;
@@ -39,7 +39,7 @@ describeModule(
       let trigged = false;
       route.transitionTo = function (route, event) {
         trigged = true;
-        expect(route).to.eql('event.upcoming');
+        expect(route).to.eql('event.archive.month');
       }
       route.send('collapse', Ember.Object.create({id: 'an id' }));
       expect(trigged).to.be.true;

@@ -30,6 +30,14 @@ form label {
   border-bottom: 1px solid #ccc;
 }
 
+.b-shadow {
+  box-shadow: 0px 25px 30px 0px rgba(0,0,0,0.75);
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
 .btn:enabled:hover{
   background-color: #ccc;
 }
