@@ -1,0 +1,16 @@
+<urlset>
+  <url>
+    <loc>http://vlctechhub.org/events/upcoming</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://vlctechhub.org/events/archive</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://vlctechhub.org</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
