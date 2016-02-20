@@ -31,7 +31,7 @@ describeModule(
         expect(year).to.eql(moment().format('YYYY'));
         expect(month).to.eql(moment().format('MM'));
       }
-      route.redirect();
+      route.beforeModel();
       expect(trigged).to.be.true;
     });
   }
