@@ -28,12 +28,12 @@ describe('Acceptance: Archive events', function() {
   });
 
 
-  it('can visit /events/archive/2001/01', function() {
+  it('can visit /events/archive', function() {
 
-    visit('/events/archive/2001/01');
+    visit('/events/archive');
 
     andThen(function() {
-      expect(currentPath()).to.equal('event.archive.index');
+      expect(currentPath()).to.equal('event.archive.month.index');
 
       let event = find('.event').first();
       expect(event.find('.event-title').text()).to.contain('a title');

@@ -1,38 +1,69 @@
 <div class="flex flex-column" style="min-height:100vh">
-<div class="menu">
-  <div class="container clearfix">
-  <div class="col col-2 mt1">
-  {{#link-to 'index' classNames=''}}
-    <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo py1 mr2"/>
-  {{/link-to}}
-  </div>
-  <div class="sm-col sm-col-4 mt3">
-    {{#link-to 'event.upcoming' classNames='btn ml1'}} Próximos {{/link-to}}
-    {{#link-to 'event.archive' tagName='span'}}
-      {{#link-to 'event.archive' '2016' '01' classNames='btn'}} Archivo {{/link-to}}
-    {{/link-to}}
-  </div>
-  <div class="sm-col sm-col-6 mt3 md-show">
-    <div class='right'>
-      {{#link-to 'event.new' classNames='btn'}} Añadir evento {{/link-to}}
+
+  <div class="menu relative md-hide">
+    <div class="clearfix">
+      <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="px2" style="height:64px"/>
+      <a class="right bg-white p2" href='#' style="width:32px" {{action "toggleMobileMenu"}}>
+        <img src="img/icon-menu.png"/>
+      </a>
     </div>
   </div>
-  </div>
-</div>
+  {{#if mobileMenuExpanded}}
+  <div class="absolute z1 col-12 b-shadow md-hide">
+    <nav>
+      <ul class="list-reset mb0">
+        <li class="bg-white p2 center border">{{#link-to 'event.upcoming' classNames='black'}} Próximos {{/link-to}}</li>
+        <li class="bg-white p2 center border">{{#link-to 'event.archive' classNames='black'}} Archivo {{/link-to}}</li>
+        <li class="bg-white p2 center border">{{#link-to 'event.new' classNames='black'}} Añadir evento {{/link-to}}</li>
+      </ul>
+    </nav>
+    </div>
+  {{/if}}
 
-
-<div class="main flex-auto mb4">
-  <div class="container px2 sm-px3">
-    {{outlet}}
+  <div class="menu md-show">
+    <div class="container clearfix">
+      <div class="col col-2 mt1">
+        {{#link-to 'index' classNames=''}}
+          <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo py1 mr2"/>
+        {{/link-to}}
+      </div>
+      <div class="sm-col sm-col-4 mt3">
+        {{#link-to 'event.upcoming' classNames='btn ml1'}} Próximos {{/link-to}}
+        {{#link-to 'event.archive' classNames='btn'}} Archivo {{/link-to}}
+      </div>
+      <div class="sm-col sm-col-6 mt3 md-show">
+        <div class='right'>
+          {{#link-to 'event.new' classNames='btn'}} Añadir evento {{/link-to}}
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="py2 center bg-navy">
-  <div class="container px2 py2">
-      <a href="https://twitter.com/VLCTechHub" class="p2 inline-block silver">Twitter</a>
-      <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="p2 inline-block silver">Google group</a>
-      <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc" class="p2 inline-block silver">Chrome extension</a>
-      <a href="mailto:vlctechhub@gmail.com" class="p2 inline-block silver">Contacto</a>
+  <div class="main flex-auto mb4">
+    <div class="container px2 sm-px3">
+      {{outlet}}
+    </div>
   </div>
-</div>
+
+  <div class="py2 center bg-navy">
+    <div class="container px2 py2">
+    <ul class="list-reset">
+      <li class="inline-block">
+        <a href="https://twitter.com/VLCTechHub" class="p2 silver">Twitter</a>
+      </li>
+      <li class="inline-block">
+        <a href="https://valencia-devs.herokuapp.com/" class="p2 silver">Slack</a>
+      </li>
+      <li class="inline-block">
+        <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="md-show p2 silver">Google group</a>
+      </li>
+      <li class="inline-block">
+        <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc" class="md-show p2 silver">Chrome extension</a>
+      </li>
+      <li class="inline-block">
+        <a href="mailto:vlctechhub@gmail.com" class="p2 silver">Contacto</a>
+      </li>
+    </ul>
+    </div>
+  </div>
 </div>
