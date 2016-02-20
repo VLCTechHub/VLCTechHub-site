@@ -6,5 +6,5 @@ export default Ember.Component.extend({
   attributeBindings: ['href', 'target', 'title'],
   title: 'Ver fuente',
   target: '_blank',
-  href: Ember.computed.alias('event.link')
+  href: Ember.computed.alias('uri')
 });

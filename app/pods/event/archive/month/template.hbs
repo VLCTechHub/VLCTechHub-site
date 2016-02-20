@@ -7,6 +7,6 @@ Archivo <span class="dropdown" data-jq-dropdown="#jq-dropdown-month">{{model.mon
 
 <div class="event mb2">
   {{#each model.events as |event| }}
-   	{{event/event-row event=event selected=selected expandAction='expand' collapseAction='collapse'}}
+   	{{event/event-row item=event selectedItem=selected expandAction='expand' collapseAction='collapse'}}
   {{/each}}
 </div>

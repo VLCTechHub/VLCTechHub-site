@@ -53,7 +53,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
     'script-src': "'self'",
     'font-src': "'self'",
-    'connect-src': "'self' vlctechhub-api.herokuapp.com script.crazyegg.com localhost:5000",
+    'connect-src': "'self' vlctechhub-api.herokuapp.com localhost:5000",
     'img-src': "'self' data:",
     'style-src': "'self' 'unsafe-inline'",
     'media-src': "'self'"

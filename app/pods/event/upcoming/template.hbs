@@ -2,6 +2,6 @@
 
 <div class="event mb2">
   {{#each model as |event| }}
-    {{event/event-row event=event selected=selected expandAction='expand' collapseAction='collapse'}}
+    {{event/event-row item=event selectedItem=selected expandAction='expand' collapseAction='collapse'}}
   {{/each}}
 </div>
