@@ -1,0 +1,47 @@
+<ul class='list-reset event-one-line px2 py1 mb0 {{if isExpanded 'expanded'}}'>
+  <li class='event-date font-ubuntu inline-block mr2'
+      title="{{moment-from-now item.published_at}}">
+      {{moment-format item.published_at 'DD/MM' }}
+  </li>
+  <li class='inline-block'>
+    <a href='#' class='event-title h3 font-ubuntu caps black' {{action 'toggleExpand' item}}>
+      {{shorten-text item.title 55}}
+    </a>
+  </li>
+  <li class="inline-block ml1">
+    {{#each item.tags as |tag|}}
+      <span class="h5 bd-gray bg-black white rounded px1 py1-2">{{tag}}</span>
+    {{/each}}
+  </li>
+  {{#if item.company}}
+    <li class='inline-block muted ml1'>
+      por <a href="{{item.company.link}}" class="black" target="_blank">{{item.company.name}}</a>
+    </li>
+  {{/if}}
+  <li class='inline-block hidden right'>
+      {{#if item.link}}
+        {{event/link-to-event uri=item.link}}
+      {{/if}}
+  </li>
+  {{#if isExpanded}}
+    <li>
+        <p class="event-summary mt2">
+          <span class="bold">Descripción:</span>
+          {{ item.description }}
+        </p>
+        <p class="event-summary mt2">
+          <span class="bold">Cómo contactar:</span>
+          {{#if item.how_to_apply}}
+            {{ item.how_to_apply }}
+          {{else}}
+            <a href='{{item.link}}'>Instrucciones en la oferta</a>
+          {{/if}}
+        </p>
+        <p class="event-summary mt2">
+          <span class="bold">Sueldo:</span>
+          {{ item.salary }}
+        </p>
+    </li>
+  {{/if}}
+</ul>
+

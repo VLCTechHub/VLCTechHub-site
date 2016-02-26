@@ -1,0 +1,21 @@
+{{event/section-title text="Empleo"}}
+
+{{#if model}}
+  <div class="clearfix mb2">
+    <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="btn btn-primary right" target='_blank'>Da de alta una oferta</a>
+  </div>
+
+  <div class="event mb2">
+  {{#each model as |job|}}
+    {{job/job-row item=job selectedItem=selected expandAction='expand' collapseAction='collapse'}}
+  {{/each}}
+  </div>
+  <p class='center muted h5'>
+   ~ Ofertas publicadas en los últimos 30 días ~
+  </p>
+{{else}}
+  <div class="h3 center gray">
+    <p>¿Estás buscando perfiles técnicos para tu empresa?</p>
+    <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="btn btn-primary"  target='_blank'>Da de alta una oferta</a>
+  </div>
+{{/if}}

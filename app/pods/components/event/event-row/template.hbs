@@ -1,26 +1,28 @@
 <ul class='list-reset event-one-line py1 px2 mb0 {{if isExpanded 'expanded'}}' >
   <li class='event-date font-ubuntu inline-block mr2'
-    title="{{moment-from-now event.date}}">
-      {{moment-format event.date 'ddd DD MMM HH:mm' }}h
+    title="{{moment-from-now item.date}}">
+      {{moment-format item.date 'ddd DD MMM HH:mm' }}h
   </li>
-  <li class='inline-block' {{action 'toggleExpand' event}}>
+  <li class='inline-block' {{action 'toggleExpand' item}}>
     <a href='#' class='event-title h3 py1 font-ubuntu caps black'>
-      {{shorten-text event.title 55}}
+      {{shorten-text item.title 55}}
     </a>
   </li>
   {{#if hasHashtag}}
     <li class='inline-block muted'>
-      por {{event/link-to-twitter event=event}}
+      por {{event/link-to-twitter hashtag=item.hashtag}}
     </li>
   {{/if}}
   <li class='inline-block hidden right'>
-      {{event/link-to-calendar event=event}}
-      {{event/link-to-event event=event}}
+      {{#unless item.isPastEvent}}
+        {{event/link-to-calendar title=item.title uri=item.link date=item.date}}
+      {{/unless}}
+      {{event/link-to-event uri=item.link}}
   </li>
   {{#if isExpanded}}
     <li>
         <p class="event-summary mt2">
-          {{{ linkify-text event.description }}}
+          {{{ linkify-text item.description }}}
         </p>
     </li>
   {{/if}}

@@ -21,7 +21,7 @@ describeComponent(
         link: 'a link'
       });
       this.set('model', event);
-      this.render(hbs`{{event/event-row event=model}}`);
+      this.render(hbs`{{event/event-row item=model}}`);
       var renderedText = this.$('ul.event-one-line').text();
       expect(renderedText).to.contain('a title');
       expect(renderedText).to.contain('lun. 01 ene. 00:00h');
@@ -40,7 +40,7 @@ describeComponent(
 
       this.set('model', event);
       this.set('selected', selected);
-      this.render(hbs`{{event/event-row event=model selected=selected}}`);
+      this.render(hbs`{{event/event-row item=model selectedItem=selected}}`);
       var renderedText = this.$('ul.event-one-line').text();
       expect(renderedText).to.contain('a title');
       expect(renderedText).to.contain('lun. 01 ene. 00:00h');
@@ -54,7 +54,7 @@ describeComponent(
       });
 
       this.set('model', event);
-      this.render(hbs`{{event/event-row event=model}}`);
+      this.render(hbs`{{event/event-row item=model}}`);
       var renderedText = this.$('ul.event-one-line').text();
       expect(renderedText).to.contain('Lorem ipsum dolor sit amet, consectetur adipiscing elit...');
     });
@@ -68,7 +68,7 @@ describeComponent(
       });
 
       this.set('model', event);
-      this.render(hbs`{{event/event-row event=model expandAction='expand'}}`);
+      this.render(hbs`{{event/event-row item=model expandAction='expand'}}`);
       let expandTrigged = false;
       this.on('expand', e => { expandTrigged = true; expect(e).to.equal(event) });
 
@@ -87,7 +87,7 @@ describeComponent(
 
       this.set('model', event);
       this.set('selected', selected);
-      this.render(hbs`{{event/event-row event=model selected=selected collapseAction='collapse'}}`);
+      this.render(hbs`{{event/event-row item=model selectedItem=selected collapseAction='collapse'}}`);
       let collapseTrigged = false;
       this.on('collapse', e => { collapseTrigged = true; expect(e).to.equal(event) });
 

@@ -13,12 +13,31 @@ input.field, textarea.field {
   background-color: transparent;
 }
 
+
+.py1-2 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.px1-2 {
+  padding-right: 0.25rem;
+  padding-left: 0.5rem;
+}
+
+.p1-2 {
+  padding: 0.25rem;
+}
+
 .hidden {
   display: none;
 }
 
 form label {
   color: #999;
+}
+
+.bd-black {
+  border: 2px solid black;
 }
 
 .logo {
@@ -38,17 +57,25 @@ nav a.active {
   font-weight: bold;
 }
 
-.btn:enabled:hover{
-  background-color: #ccc;
+.btn-menu {
+  border-bottom: 4px solid transparent;
+  border-radius: 2px;
 }
 
-.btn:enabled:focus {
+.btn-menu:hover{
+  border-bottom: 4px solid #ccc;
+}
+
+.btn-menu:focus {
+  outline: none;
   box-shadow: none;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
 }
 
-.btn.active {
-  background-color: #fa0;
-  color: white;
+.btn-menu.active {
+  border-bottom: 4px solid #fa0;
 }
 
 .btn-primary {

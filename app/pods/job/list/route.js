@@ -1,16 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  titleToken: 'Próximos eventos',
+  titleToken: function(){
+    return 'Empleos tecnológicos';
+  },
   model: function(){
-    return this.store.query('event', { 'category': 'next' });
+    return this.store.findAll('job');
   },
   actions: {
-    expand: function(event){
-      this.transitionTo('event.upcoming.detail', event);
+    expand: function(job){
+      this.transitionTo('job.list.detail', job);
     },
     collapse: function(){
-      this.transitionTo('event.upcoming');
+      this.transitionTo('job.list');
     },
     willTransition: function(){
       this.controller.set('selected', null);

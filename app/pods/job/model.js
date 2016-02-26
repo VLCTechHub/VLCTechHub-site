@@ -1,0 +1,12 @@
+import DS from 'ember-data';
+
+export default DS.Model.extend({
+  title: DS.attr('string'),
+  description: DS.attr('string'),
+  company: DS.attr(),
+  link: DS.attr('string'),
+  tags: DS.attr(),
+  how_to_apply: DS.attr('string'),
+  published_at: DS.attr('date'),
+  salary: DS.attr('string')
+});

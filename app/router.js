@@ -19,7 +19,13 @@ Router.map(function() {
     });
     this.route('latest');
     this.route('new');
-  })
+  });
+
+  this.route('job', function() {
+    this.route('list', { path: '/board' },  function() {
+      this.route('detail', { path: '/:job_id' });
+    });
+  });
 });
 
 export default Router;

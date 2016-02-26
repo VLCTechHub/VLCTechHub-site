@@ -1,14 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  item:null,
+  item: null,
   selectedItem:null,
   isExpanded: Ember.computed('item', 'selectedItem', function(){
-    if(this.get('item') === null || this.get('selectedItem') === null) { return false; }
-    return this.get('item.id') === this.get('selectedItem.id');
-  }),
-  hasHashtag: Ember.computed('item', function(){
-    return !Ember.isEmpty(this.get('item.hashtag'));
+    if(this.get('item') === null || this.get('item') === null) { return false; }
+    return this.get('selectedItem.id') === this.get('item.id');
   }),
   actions: {
     toggleExpand: function(item){
