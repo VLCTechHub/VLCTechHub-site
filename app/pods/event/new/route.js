@@ -8,21 +8,16 @@ export default Ember.Route.extend({
   actions: {
     saveEvent: function(newEvent){
       var self = this;
-      self.controller.set('saved', false);
-      self.controller.set('saveFailed', false);
-
-      newEvent.save().then(function(){
-        self.controller.set('saved', true);
+      self.controller.preSave();
+      newEvent.save().then(function() {
         self.controller.set('model', self.store.createRecord('event'));
-        self.controller.set('isSaving', false);
+        self.controller.postSave(true);
       }, function(){
-        self.controller.set('saveFailed', true);
-        self.controller.set('isSaving', false);
+        self.controller.postSave(false);
       });
     },
     willTransition: function(){
-      this.controller.set('saved', false);
-      this.controller.set('saveFailed', false);
+      this.controller.reset();
     }
   },
 });
