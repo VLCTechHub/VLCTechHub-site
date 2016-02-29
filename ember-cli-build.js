@@ -24,7 +24,11 @@ module.exports = function(defaults) {
     };
   }
 
-  Object.assign(app.options, extendedOptions);
+  for (var key in extendedOptions) {
+    if (hasOwnProperty.call(extendedOptions, key)) {
+      app.options[key] = extendedOptions[key];
+    }
+  }
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
