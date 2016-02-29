@@ -13,17 +13,24 @@ describeModule(
     // needs: ['controller:foo']
   },
   function() {
-    // Replace this with your real tests.
+    //create a sandbox as we stub global functions
+    let sandbox;
+
+    beforeEach(function(){
+      sandbox = sinon.sandbox.create();
+    });
+
+    afterEach(function(){
+      sandbox.restore();
+    });
+
     it('scrolls up to to after saving', function() {
+      sandbox.stub(window, 'scrollTo');
       let controller = this.subject();
-      let scrollTo = window.scrollTo;
-      let triggered = false;
-      window.scrollTo = function() {
-        triggered = true;
-      }
+
       controller.postSave(true);
-      window.scrollTo = scrollTo;
-      expect(triggered).to.be.true;
+
+      expect(window.scrollTo.called).to.be.true;
     });
   }
 );

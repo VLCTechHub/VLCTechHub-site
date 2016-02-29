@@ -10,11 +10,11 @@
     "jquery-dropdown": "~2.0.2",
     "jt.timepicker": "https://github.com/jonthornton/jquery-timepicker.git#~1.8.8",
     "basscss": "~7.1.0",
-    "ember-mocha-adapter": "~0.3.1",
-    "ember-mocha": "~0.8.11",
     "autosize": "~3.0.15"
   },
   "devDependencies": {
+    "ember-mocha-adapter": "~0.3.1",
+    "ember-mocha": "~0.8.8",
     "pretender": "^0.10.0"
   }
 }
