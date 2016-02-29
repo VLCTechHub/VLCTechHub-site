@@ -3,7 +3,6 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
     'ember-cli-mocha': {
       useLintTree: false
     },
@@ -12,10 +11,23 @@ module.exports = function(defaults) {
     }
   });
 
+  var extendedOptions = {};
+
   if (app.env === 'production') {
-    app.options.inlineContent = {
-      'tracking': './config/tracking.js'
+    extendedOptions = {
+      inlineContent: {
+        'tracking': './config/tracking.js'
+      },
+      pretender: {
+        'enabled': false
+      }
     };
+  }
+
+  for (var key in extendedOptions) {
+    if (hasOwnProperty.call(extendedOptions, key)) {
+      app.options[key] = extendedOptions[key];
+    }
   }
 
   // Use `app.import` to add additional libraries to the generated

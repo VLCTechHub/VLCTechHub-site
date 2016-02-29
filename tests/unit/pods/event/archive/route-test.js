@@ -14,25 +14,16 @@ describeModule(
     // needs: ['controller:foo']
   },
   function() {
-    beforeEach(function() {
-      originalTransitionTo = this.subject().transitionTo;
-    });
-
-    afterEach(function(){
-      this.subject.transitionTo = originalTransitionTo;
-    });
-
     it('redirects to current year, month archive route', function() {
       let route = this.subject();
-      let trigged = false;
-      route.transitionTo = function (route, year, month) {
-        trigged = true;
-        expect(route).to.eql('event.archive.month');
-        expect(year).to.eql(moment().format('YYYY'));
-        expect(month).to.eql(moment().format('MM'));
-      }
+      sinon.stub(route, 'transitionTo');
+
       route.beforeModel();
-      expect(trigged).to.be.true;
+
+      let destination = 'event.archive.month';
+      let year = moment().format('YYYY');
+      let month = moment().format('MM');
+      expect(route.transitionTo.calledWith(destination, year, month)).to.be.true;
     });
   }
 );

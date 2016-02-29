@@ -7,6 +7,7 @@ import {
 } from 'mocha';
 import Ember from 'ember';
 import { initialize } from 'vlc-tech-hub/initializers/register-autosize';
+import sinon from 'sinon';
 
 describe('RegisterAutosizeInitializer', function() {
   let application;
@@ -24,14 +25,12 @@ describe('RegisterAutosizeInitializer', function() {
   });
 
   it('injects autosize:main to event/form-field', function() {
-    let wasCalled = false;
-    application.inject = function(container, name, injected) {
-      expect(container).to.eql('component:event/form-field');
-      expect(name).to.eql('autosize');
-      expect(injected).to.eql('autosize:main');
-      wasCalled = true;
-    }
+    sinon.stub(application, 'inject');
     initialize(application);
-    expect(wasCalled).to.be.true;
+
+    let container = 'component:event/form-field';
+    let name = 'autosize';
+    let injected = 'autosize:main'
+    expect(application.inject.calledWith(container, name, injected)).to.be.true;
   });
 });
