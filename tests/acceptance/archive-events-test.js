@@ -9,7 +9,7 @@ import { expect } from 'chai';
 import startApp from '../helpers/start-app';
 import Ember from 'ember';
 import Pretender from 'pretender';
-import {addRoutes, eventRoutes} from "../fixtures/routes";
+import {addRoutes, eventRoutes, jobRoutes} from "../fixtures/routes";
 
 let server;
 
@@ -19,7 +19,7 @@ describe('Acceptance: Archive events', function() {
   beforeEach(function() {
     application = startApp();
     server = new Pretender();
-    addRoutes(server, [eventRoutes]);
+    addRoutes(server, [eventRoutes, jobRoutes]);
   });
 
   afterEach(function() {

@@ -5,6 +5,11 @@ export default Ember.Route.extend({
     tokens.unshift('VLCTechHub');
     return tokens.reverse().join(' | ');
   },
+  model: function(){
+    return {
+      jobs: this.store.findAll('job')
+    }
+  },
   actions: {
     toggleMobileMenu: function(){
       this.controller.toggleProperty('mobileMenuExpanded');
