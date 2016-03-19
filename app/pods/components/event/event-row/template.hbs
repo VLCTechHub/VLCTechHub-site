@@ -4,7 +4,7 @@
       {{moment-format item.date 'ddd DD MMM HH:mm' }}h
   </li>
   <li class='inline-block' {{action 'toggleExpand' item}}>
-    <a href='#' class='event-title h3 py1 font-ubuntu caps black'>
+    <a href='#' class='event-title h3 py1 font-ubuntu caps black' title={{item.title}}>
       {{shorten-text item.title 55}}
     </a>
   </li>
