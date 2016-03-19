@@ -46,25 +46,65 @@
     </div>
   </div>
 
-  <div class="py2 center bg-navy">
-    <div class="container px2 py2">
-    <ul class="list-reset">
-      <li class="inline-block">
-        <a href="https://twitter.com/VLCTechHub" class="p2 silver">Twitter</a>
-      </li>
-      <li class="inline-block">
-        <a href="https://valencia-devs.herokuapp.com/" class="p2 silver">Slack</a>
-      </li>
-      <li class="inline-block">
-        <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="md-show p2 silver">Google group</a>
-      </li>
-      <li class="inline-block">
-        <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc" class="md-show p2 silver">Chrome extension</a>
-      </li>
-      <li class="inline-block">
-        <a href="mailto:vlctechhub@gmail.com" class="p2 silver">Contacto</a>
-      </li>
-    </ul>
+  <div class="py2 bg-navy">
+    <div class="container-md px2 py2">
+      <div class="clearfix">
+
+      <div class="sm-col sm-col-3">
+        <ul class="list-reset">
+          <li class="mb1 silver caps h5">Ver</li>
+          <li>
+            {{#link-to 'event.upcoming' classNames='silver'}} Próximos eventos {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'job.list' classNames='silver'}} Ofertas de trabajo {{/link-to}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="sm-col sm-col-3">
+        <ul class="list-reset">
+          <li class="mb1 silver caps h5">Publicar</li>
+          <li>
+            {{#link-to 'event.new' classNames='silver'}} Evento {{/link-to}}
+          </li>
+          <li>
+            <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="silver">Oferta de trabajo</a>
+          </li>
+          <li>
+            <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc" class="silver">Chrome extension</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="sm-col sm-col-3">
+        <ul class="list-reset">
+          <li class="mb1 silver caps h5">Social</li>
+          <li>
+            <a href="https://twitter.com/VLCTechHub" class="silver">Twitter</a>
+          </li>
+          <li>
+            <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="silver">Google group</a>
+          </li>
+          <li>
+            <a href="https://valencia-devs.herokuapp.com/" class="silver">Slack</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sm-col sm-col-3">
+        <ul class="list-reset">
+          <li class="mb1 silver caps h5">Contacto</li>
+          <li>
+            <a href="https://github.com/VLCTechHub/" class="silver">Github</a>
+          </li>
+          <li>
+            <a href="mailto:vlctechhub@gmail.com" class="silver">Mail</a>
+          </li>
+      </ul>
+      </div>
+      </div>
     </div>
   </div>
 </div>

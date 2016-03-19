@@ -32,6 +32,18 @@ input.field, textarea.field {
   display: none;
 }
 
+.container-md{
+  max-width: 52rem;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.container-sm{
+  max-width: 40rem;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 form label {
   color: #999;
 }
