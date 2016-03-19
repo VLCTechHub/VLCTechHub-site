@@ -78,6 +78,14 @@ nav a.active {
   border-bottom: 4px solid #ccc;
 }
 
+a:focus {
+  outline: none;
+  box-shadow: none;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
 .btn-menu:focus {
   outline: none;
   box-shadow: none;
