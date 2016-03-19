@@ -1,12 +1,12 @@
 {{event/section-title text="Empleo"}}
 
-{{#if model}}
+{{#if jobs}}
   <div class="clearfix mb2">
     <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="btn btn-primary right" target='_blank'>Da de alta una oferta</a>
   </div>
 
   <div class="event mb2">
-  {{#each model as |job|}}
+  {{#each jobs as |job|}}
     {{job/job-row item=job selectedItem=selected expandAction='expand' collapseAction='collapse'}}
   {{/each}}
   </div>

@@ -13,10 +13,19 @@ describeModule(
     // needs: ['controller:foo']
   },
   function() {
-    // Replace this with your real tests.
-    it('exists', function() {
+    it('sorts jobs by publish_at desc', function() {
+      let jobJanuary = Ember.Object.create({
+        published_at: new Date(2001, 0, 1),
+        title: 'january job offer'
+      });
+      let jobFebruary = Ember.Object.create({
+        published_at: new Date(2001, 1, 1),
+        title: 'february job offer'
+      });
       let controller = this.subject();
-      expect(controller).to.be.ok;
+      controller.set('model', [jobJanuary, jobFebruary]);
+      expect(controller.get('jobs').length).to.eq(2);
+      expect(controller.get('jobs.firstObject.title')).to.eq('february job offer');
     });
   }
 );
