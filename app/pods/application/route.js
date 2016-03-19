@@ -6,9 +6,9 @@ export default Ember.Route.extend({
     return tokens.reverse().join(' | ');
   },
   model: function(){
-    return {
+    return Ember.Object.create({
       jobs: this.store.findAll('job')
-    }
+    });
   },
   actions: {
     toggleMobileMenu: function(){

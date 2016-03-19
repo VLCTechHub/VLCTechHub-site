@@ -36,4 +36,13 @@ describe('Acceptance: JobBoardTest.Js', function() {
       expect(event.find('.event-title').text()).to.contain('a title');
     });
   });
+
+  it('can visit /job/board/id', function() {
+    visit('/job/board/1');
+
+    andThen(function() {
+      let event = find('.event').first();
+      expect(event.find('.event-summary').text()).to.contain('a description');
+    });
+  });
 });

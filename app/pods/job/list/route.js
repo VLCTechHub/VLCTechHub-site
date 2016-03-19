@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return 'Empleos tecnológicos';
   },
   model: function(){
-    return this.store.peekAll('job');
+    return this.modelFor('application').get('jobs');
   },
   actions: {
     expand: function(job){

@@ -40,6 +40,16 @@ describe('Acceptance: Upcoming events', function() {
     });
   });
 
+  it('can visit /events/upcoming/id', function() {
+
+    visit('/events/upcoming/1');
+
+    andThen(function() {
+      let event = find('.event').first();
+      expect(event.find('.event-summary').text()).to.contain('a description');
+    });
+  });
+
   it('renders how many job offers are', function(){
     visit('/events/upcoming');
 
