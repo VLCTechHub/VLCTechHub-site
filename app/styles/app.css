@@ -13,6 +13,9 @@ input.field, textarea.field {
   background-color: transparent;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
 
 .py1-2 {
   padding-top: 0.25rem;
@@ -151,7 +154,11 @@ a:focus {
 }
 
 .icon {
-  height: 1.5rem;
+  height: 18px;
+}
+
+.event-icons {
+  width: 60px;
 }
 
 .dropdown {
