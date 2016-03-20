@@ -97,6 +97,10 @@ a:focus {
   border-right-color: transparent;
 }
 
+.btn {
+  display: inline;
+}
+
 .btn-menu.active {
   border-bottom: 4px solid #fa0;
 }
