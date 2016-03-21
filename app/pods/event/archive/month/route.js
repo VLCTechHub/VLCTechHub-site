@@ -8,11 +8,11 @@ export default Ember.Route.extend({
     this.set('date', date);
 
     return this.store.query('event', date).then(
-      events => ({
+      events => (Ember.Object.create({
         year: params.year,
         month: params.month,
         monthName: moment.months(parseInt(params.month) - 1),
-        events: events })
+        events: events }))
       );
   },
   actions: {

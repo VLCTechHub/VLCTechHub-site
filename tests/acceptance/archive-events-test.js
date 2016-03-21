@@ -39,5 +39,15 @@ describe('Acceptance: Archive events', function() {
       expect(event.find('.event-title').text()).to.contain('a title');
     });
   });
+
+  it('can visit /events/archive/:year/:month/:id', function() {
+
+    visit('/events/archive/2001/01/1');
+
+    andThen(function() {
+      let event = find('.event').first();
+      expect(event.find('.event-summary').text()).to.contain('a description');
+    });
+  });
 });
 

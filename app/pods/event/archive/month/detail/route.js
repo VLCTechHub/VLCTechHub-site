@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return model.get('title');
   },
   model: function(params){
-    return this.modelFor('event.archive.month').findBy('id', params.event_id);
+    return this.modelFor('event.archive.month').get('events').findBy('id', params.event_id);
   },
   setupController: function(controller, model) {
     this.controllerFor('event.archive.month').set('selected', model);
