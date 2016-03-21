@@ -13,7 +13,6 @@
       <ul class="list-reset mb0">
         <li class="bg-white p2 center border">{{#link-to 'event.upcoming' classNames='black'}} Próximos {{/link-to}}</li>
         <li class="bg-white p2 center border">{{#link-to 'event.archive' classNames='black'}} Archivo {{/link-to}}</li>
-        <li class="bg-white p2 center border">{{#link-to 'event.new' classNames='black'}} Añadir evento {{/link-to}}</li>
         <li class="bg-white p2 center border">{{#link-to 'job.list' classNames='black'}} Empleo <span class="h6 px1 rounded white bg-red">{{ totalJobs }}</span> {{/link-to}}</li>
       </ul>
     </nav>
@@ -27,15 +26,10 @@
           <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo py1 mr2" height="55px" />
         {{/link-to}}
       </div>
-      <div class="sm-col sm-col-4 mt3">
+      <div class="col col-10 mt3">
         {{#link-to 'event.upcoming' classNames='btn btn-menu ml1'}} Próximos {{/link-to}}
         {{#link-to 'event.archive' classNames='btn btn-menu'}} Archivo {{/link-to}}
         {{#link-to 'job.list' classNames='btn btn-menu'}} Empleo <span class="h6 px1 rounded white bg-red"> {{ totalJobs }} </span> {{/link-to}}
-      </div>
-      <div class="sm-col sm-col-6 mt3 md-show">
-        <div class='right'>
-          {{#link-to 'event.new' classNames='btn btn-menu'}} Añadir evento {{/link-to}}
-        </div>
       </div>
     </div>
   </div>
