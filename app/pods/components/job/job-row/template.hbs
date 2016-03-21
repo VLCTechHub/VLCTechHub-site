@@ -1,30 +1,41 @@
-<ul class='list-reset event-one-line px2 py1 mb0 {{if isExpanded 'expanded'}}'>
-  <li class='event-date font-ubuntu inline-block mr2'
-      title="{{moment-from-now item.published_at}}">
-      {{moment-format item.published_at 'DD/MM' }}
-  </li>
-  <li class='inline-block'>
-    <a href='#' class='event-title h3 font-ubuntu caps black' {{action 'toggleExpand' item}}>
-      {{shorten-text item.title 55}}
-    </a>
-  </li>
-  <li class="inline-block ml1">
-    {{#each item.tags as |tag|}}
-      <span class="h5 bd-gray bg-black white rounded px1 py1-2">{{tag}}</span>
-    {{/each}}
-  </li>
-  {{#if item.company}}
-    <li class='inline-block muted ml1'>
-      por <a href="{{item.company.link}}" class="black" target="_blank">{{item.company.name}}</a>
-    </li>
-  {{/if}}
-  <li class='inline-block hidden right'>
+<article class='event-one-line py1 px2 {{if isExpanded 'expanded'}}'>
+  <div class='flex flex-end'>
+    <header class='flex-auto'>
+      <ul class='list-reset mb0'>
+        <li class='inline-block mr2'>
+          <time datetime='{{moment-format item.published_at 'YYYY-MM-DDTHH:mm' }}' class='event-date font-ubuntu' title="{{moment-from-now item.published_at}}">
+            {{moment-format item.published_at 'DD/MM'}}
+          </time>
+        </li>
+        <li class='inline-block mr1'  {{action 'toggleExpand' item}}>
+          <h3 class='h3 font-ubuntu caps black m0'>
+            <a href='job/board/{{item.id}}' class='event-title black' title="{{item.title}}">
+              {{shorten-text item.title 55}}
+            </a>
+          </h3>
+       </li>
+       <li class='inline-block mr1'>
+        {{#each item.tags as |tag|}}
+          <span class="h5 bd-gray bg-black white rounded px1 py1-2">{{tag}}</span>
+        {{/each}}
+       </li>
+        <li class='inline-block mr2'>
+          {{#if item.company}}
+            <span class='muted'>
+              por <a href="{{item.company.link}}" class="black" target="_blank">{{item.company.name}}</a>
+            </span>
+        {{/if}}
+        </li>
+        </ul>
+   </header>
+    <div class='hidden'>
       {{#if item.link}}
         {{event/link-to-event uri=item.link}}
       {{/if}}
-  </li>
+    </div>
+  </div>
   {{#if isExpanded}}
-    <li>
+    <div>
         <p class="event-summary mt2">
           <span class="bold">Descripción:</span>
           {{{ linkify-text item.description }}}
@@ -41,7 +52,6 @@
           <span class="bold">Sueldo:</span>
           {{ item.salary }}
         </p>
-    </li>
+    </div>
   {{/if}}
-</ul>
-
+</article>

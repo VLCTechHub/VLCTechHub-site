@@ -23,7 +23,7 @@ describeComponent(
       });
       this.set('model', job);
       this.render(hbs`{{job/job-row item=model}}`);
-      var renderedText = this.$('ul.event-one-line').text();
+      var renderedText = this.$('.event-one-line').text();
       expect(renderedText).to.contain('a title');
       expect(renderedText).to.contain('one');
       expect(renderedText).to.contain('two');
@@ -47,7 +47,7 @@ describeComponent(
       this.set('model', job);
       this.set('selected', selected);
       this.render(hbs`{{job/job-row item=model selectedItem=selected}}`);
-      var renderedText = this.$('ul.event-one-line').text();
+      var renderedText = this.$('.event-one-line').text();
       expect(renderedText).to.contain('a title');
       expect(renderedText).to.contain('a description');
       expect(renderedText).to.contain('salary');
