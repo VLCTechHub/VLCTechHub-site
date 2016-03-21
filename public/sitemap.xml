@@ -1,12 +1,12 @@
 <urlset xmlns="http://www.google.com/schemas/sitemap/0.9">
   <url>
-    <loc>http://vlctechhub.org/events/upcoming</loc>
+    <loc>http://vlctechhub.org/job/board</loc>
     <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://vlctechhub.org/events/archive</loc>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://vlctechhub.org</loc>
