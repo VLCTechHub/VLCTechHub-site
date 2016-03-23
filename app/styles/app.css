@@ -51,6 +51,10 @@ form label {
   color: #999;
 }
 
+.bg-dark-gray {
+  background-color: #888;
+}
+
 .bd-black {
   border: 2px solid black;
 }
