@@ -42,7 +42,7 @@ describe('Acceptance: JobBoardTest.Js', function() {
 
     andThen(function() {
       let event = find('.event').first();
-      expect(event.find('.event-summary').text()).to.contain('a description');
+      expect(event.find('.event-summary').text()).to.contain('a job description');
     });
   });
 });

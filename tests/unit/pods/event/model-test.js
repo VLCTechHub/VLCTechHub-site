@@ -8,7 +8,7 @@ import {
 
 describeModel(
   'event',
-  'Unit: Event',
+  'Unit | Model | event',
   {
     // Specify the other units that are required for this test.
 
@@ -28,6 +28,12 @@ describeModel(
       model.set('time', '18:30');
       var madridDate = moment.tz('2000-01-01 18:30','YYYY-MM-DD HH:mm','Europe/Madrid');
       expect(model.get('time').toString()).to.equal(madridDate.format('HH:mm'));
+    });
+
+    it('should return first paragraph as excerpt', function(){
+      let model = this.subject();
+      model.set('description','first paragraph\nsecond paragraph');
+      expect(model.get('excerpt')).to.equal('first paragraph');
     });
   }
 );

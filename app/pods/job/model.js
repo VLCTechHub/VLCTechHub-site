@@ -8,5 +8,9 @@ export default DS.Model.extend({
   tags: DS.attr(),
   how_to_apply: DS.attr('string'),
   published_at: DS.attr('date'),
-  salary: DS.attr('string')
+  salary: DS.attr('string'),
+  excerpt: Ember.computed('description', function(){
+    let exp = new RegExp('.*');
+    return exp.exec(this.get('description'))[0];
+  }),
 });

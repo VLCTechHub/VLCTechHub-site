@@ -5,6 +5,16 @@ export default Ember.Route.extend({
     tokens.unshift('VLCTechHub');
     return tokens.reverse().join(' | ');
   },
+  headTags: function() {
+    return [{
+      type: 'meta',
+      tagId: 'meta-description-tag',
+      attrs: {
+        name: 'description',
+        content: "VLCTechHub es el hub de eventos y empleo tecnológico en Valencia: eventos de programación, coding dojos, talleres, workshops o quedadas informales para fomentar una comunidad o compartir información de base tecnológica en Valencia o Castellón."
+      }
+    }];
+  },
   model: function(){
     return Ember.Object.create({
       jobs: this.store.findAll('job')

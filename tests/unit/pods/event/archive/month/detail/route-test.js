@@ -6,8 +6,8 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'route:job/list/detail',
-  'JobListDetailRoute',
+  'route:event/archive/month/detail',
+  'EventArchiveMonthDetailRoute',
   {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']

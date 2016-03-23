@@ -46,7 +46,7 @@ describe('Acceptance: Upcoming events', function() {
 
     andThen(function() {
       let event = find('.event').first();
-      expect(event.find('.event-summary').text()).to.contain('a description');
+      expect(event.find('.event-summary').text()).to.contain('an event description');
     });
   });
 

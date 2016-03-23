@@ -11,7 +11,7 @@ export function eventRoutes(){
     var event = {
       'id': 1,
       'title': 'a title',
-      'description': 'a description',
+      'description': 'an event description',
       'link': 'a link',
       'hashtag':'#hashtag',
       'date':'2001-01-01T12:00:00Z'
@@ -25,7 +25,7 @@ export function jobRoutes(){
     var job = {
       'id': 1,
       'title': 'a title',
-      'description': 'a description',
+      'description': 'a job description',
       'link': 'a link',
       'company': {
         'name': 'awesome inc.',

@@ -6,11 +6,11 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'route:job/list/detail',
-  'JobListDetailRoute',
+  'route:event/upcoming/detail',
+  'EventUpcomingDetailRoute',
   {
     // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
+    needs: []
   },
   function() {
     it('should create meta description based on model.excerpt', function(){

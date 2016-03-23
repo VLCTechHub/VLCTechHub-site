@@ -27,6 +27,10 @@ export default DS.Model.extend({
       return value;
     }
   }),
+  excerpt: Ember.computed('description', function(){
+    let exp = new RegExp('.*');
+    return exp.exec(this.get('description'))[0];
+  }),
   isValid: Ember.computed('title', 'description', 'link', 'date', 'time', function(){
     var required = ['title', 'description', 'link', 'date', 'time' ];
     var isValid = required.every(function(property) {
