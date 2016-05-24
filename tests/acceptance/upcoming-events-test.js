@@ -35,8 +35,8 @@ describe('Acceptance: Upcoming events', function() {
     andThen(function() {
       expect(currentPath()).to.equal('event.upcoming.index');
 
-      let event = find('.event').first();
-      expect(event.find('.event-title').text()).to.contain('a title');
+      let event = find('.item').first();
+      expect(event.find('.item-title').text()).to.contain('a title');
     });
   });
 
@@ -45,8 +45,8 @@ describe('Acceptance: Upcoming events', function() {
     visit('/events/upcoming/1');
 
     andThen(function() {
-      let event = find('.event').first();
-      expect(event.find('.event-summary').text()).to.contain('an event description');
+      let event = find('.item').first();
+      expect(event.find('.item-summary').text()).to.contain('an event description');
     });
   });
 
