@@ -126,6 +126,11 @@ a:focus {
   box-shadow: 0 0 10px 0 #ccc
 }
 
+.item {
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px 0 #ccc
+}
+
 .font-ubuntu {
   font-family: 'Ubuntu Mono',sans-serif;
 }
@@ -134,7 +139,15 @@ a:focus {
   color: #7F7F2B;
 }
 
+.item-date {
+  color: #7F7F2B;
+}
+
 .event-summary a {
+  color: #c80;
+}
+
+.item-summary a {
   color: #c80;
 }
 
