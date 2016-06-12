@@ -4,7 +4,7 @@
   {{#link-to 'event.new' classNames='btn btn-primary right'}} Da de alta un evento {{/link-to}}
 </div>
 
-<div class="event mb2">
+<div class="item mb2">
   {{#each model as |event| }}
     {{event/event-row item=event selectedItem=selected expandAction='expand' collapseAction='collapse'}}
   {{/each}}

@@ -121,7 +121,7 @@ a:focus {
   cursor: default;
 }
 
-.event {
+.item {
   background-color: #f5f5f5;
   box-shadow: 0 0 10px 0 #ccc
 }
@@ -130,11 +130,11 @@ a:focus {
   font-family: 'Ubuntu Mono',sans-serif;
 }
 
-.event-date {
+.item-date {
   color: #7F7F2B;
 }
 
-.event-summary a {
+.item-summary a {
   color: #c80;
 }
 
@@ -165,7 +165,7 @@ a:focus {
   height: 18px;
 }
 
-.event-icons {
+.item-icons {
   width: 60px;
 }
 
