@@ -28,16 +28,24 @@ function say_in_slack {
 		 echo "WARN: Set SLACK_WEBHOOK to publish a message about this deploy"
 	else
 		echo 'Communicating with slack...'
-    message='payload={"channel": "#vlctechhub", "username": "vlctechhub-bot", "text": ":tada:Version $(version_published) released!.", "icon_emoji": ":rocket:"}'
-	  curl -X POST --data-urlencode \'$message\' $SLACK_WEBHOOK
-	fi
+    request_body=$(< <(cat <<EOF
+    {
+      "channel": "#vlctechhub",
+      "username": "vlctechhub-bot",
+      "text": ":tada:Version $(version_published) released!",
+      "icon_emoji": ":rocket:"
+    }
+EOF
+))
+    curl -X POST --data-urlencode "payload=$request_body" $SLACK_WEBHOOK -v
+  fi
 }
 
 function say_in_command_line {
-	echo ''
-	echo '+=========================+'
-	echo "| Tada! $(version_published) published! |"
-	echo '+=========================+'
+echo ''
+echo '+=========================+'
+echo "| Tada! $(version_published) published! |"
+echo '+=========================+'
 }
 
 build
