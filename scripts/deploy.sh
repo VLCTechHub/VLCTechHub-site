@@ -37,7 +37,7 @@ function say_in_slack {
     }
 EOF
 ))
-    curl -X POST --data-urlencode "payload=$request_body" $SLACK_WEBHOOK -v
+    curl -X POST --data-urlencode "payload=$request_body" $SLACK_WEBHOOK > /dev/null
   fi
 }
 
