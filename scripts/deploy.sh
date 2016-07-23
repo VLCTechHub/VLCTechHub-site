@@ -2,7 +2,7 @@
 
 function build {
 	git checkout master
-	git pull
+	git pull origin master
 	rm -rf dist
 	ember build --environment production
 	# Make sure we're in a good state.
@@ -29,7 +29,7 @@ function say_in_slack {
 	else
 		echo 'Communicating with slack...'
     message='payload={"channel": "#vlctechhub", "username": "vlctechhub-bot", "text": ":tada:Version $(version_published) released!.", "icon_emoji": ":rocket:"}'
-		curl -X POST --data-urlencode $message $SLACK_WEBHOOK  > /dev/null
+	  curl -X POST --data-urlencode \'$message\' $SLACK_WEBHOOK
 	fi
 }
 
