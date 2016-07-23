@@ -4,6 +4,8 @@ import {
   describeModule,
   it
 } from 'ember-mocha';
+import Ember from 'ember';
+import sinon from 'sinon';
 
 describeModule(
   'route:job/list/detail',
@@ -19,7 +21,7 @@ describeModule(
       sinon.stub(route, 'modelFor').returns(model);
 
       let tags = route.headTags();
-      let description = tags.find(t => t.attrs.name == 'description');
+      let description = tags.find(t => t.attrs.name === 'description');
       expect(description.attrs.content).to.eql('this is the excerpt');
     });
   }

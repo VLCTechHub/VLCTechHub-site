@@ -11,10 +11,10 @@ import Ember from 'ember';
 import Pretender from 'pretender';
 import {addRoutes, eventRoutes, jobRoutes} from "../fixtures/routes";
 
-let server;
 
 describe('Acceptance: Upcoming events', function() {
   let application;
+  let server;
 
   beforeEach(function() {
     application = startApp();

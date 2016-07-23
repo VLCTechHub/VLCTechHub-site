@@ -5,6 +5,7 @@ import {
   it
 } from 'ember-mocha';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
 
 describeComponent(
   'job/job-row',
@@ -63,7 +64,7 @@ describeComponent(
       this.set('model', job);
       this.render(hbs`{{job/job-row item=model expandAction='expand'}}`);
       let expandTrigged = false;
-      this.on('expand', e => { expandTrigged = true; expect(e).to.equal(job) });
+      this.on('expand', e => { expandTrigged = true; expect(e).to.equal(job); });
 
       this.$('.item-title').click();
       expect(expandTrigged).to.be.true;
@@ -80,7 +81,7 @@ describeComponent(
       this.set('selected', selected);
       this.render(hbs`{{job/job-row item=model selectedItem=selected collapseAction='collapse'}}`);
       let collapseTrigged = false;
-      this.on('collapse', e => { collapseTrigged = true; expect(e).to.equal(job) });
+      this.on('collapse', e => { collapseTrigged = true; expect(e).to.equal(job); });
 
       this.$('.item-title').click();
       expect(collapseTrigged).to.be.true;

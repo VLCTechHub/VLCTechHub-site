@@ -5,6 +5,7 @@ import {
   describeModule,
   it
 } from 'ember-mocha';
+import sinon from 'sinon';
 
 describeModule(
   'route:event/archive',
@@ -17,7 +18,7 @@ describeModule(
     it('redirects to current year, month archive route', function() {
       let route = this.subject();
       sinon.stub(route, 'transitionTo');
-      let currentTransiton = { targetName: 'anything.not.to.month.detail'}
+      let currentTransiton = { targetName: 'anything.not.to.month.detail'};
       route.beforeModel(currentTransiton);
 
       let destination = 'event.archive.month';
@@ -30,7 +31,7 @@ describeModule(
 
       let route = this.subject();
       sinon.stub(route, 'transitionTo');
-      let currentTransiton = { targetName: 'event.archive.month.detail'}
+      let currentTransiton = { targetName: 'event.archive.month.detail'};
       route.beforeModel(currentTransiton);
 
       let destination = 'event.archive.month';
@@ -38,6 +39,6 @@ describeModule(
       let month = moment().format('MM');
       expect(route.transitionTo.calledWith(destination, year, month)).to.be.false;
 
-    })
+    });
   }
 );

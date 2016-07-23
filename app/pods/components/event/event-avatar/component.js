@@ -6,7 +6,6 @@ export default Ember.Component.extend({
   hasLinktoTwitter: false,
   avatar: Ember.computed('event.hashtag', function() {
     var handle = this.get('event.hashtag');
-    console.log('event', this.get('event'));
     if(handle.indexOf('@') === 0) {
       return 'https://avatars.io/twitter/' + handle;
     }

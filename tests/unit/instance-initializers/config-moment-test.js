@@ -3,7 +3,8 @@ import { expect } from 'chai';
 import {
   describe,
   it,
-  beforeEach
+  beforeEach,
+  afterEach
 } from 'mocha';
 import Ember from 'ember';
 import { initialize } from 'vlc-tech-hub/instance-initializers/config-moment';

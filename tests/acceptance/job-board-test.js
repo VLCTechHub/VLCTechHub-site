@@ -14,6 +14,7 @@ import {addRoutes, jobRoutes} from "../fixtures/routes";
 
 describe('Acceptance: JobBoardTest.Js', function() {
   let application;
+  let server;
 
   beforeEach(function() {
     application = startApp();

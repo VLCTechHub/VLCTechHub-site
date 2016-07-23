@@ -15,19 +15,19 @@ export function eventRoutes(){
       'link': 'a link',
       'hashtag':'#hashtag',
       'date':'2001-01-01T12:00:00Z'
-    }
+    };
 
-  this.get(`${config.APP.API_HOST}/v1/events`, function(request){
-    return [200, {}, {'events':[event]}]
+  this.get(`${config.APP.API_HOST}/v1/events`, function(){
+    return [200, {}, {'events':[event]}];
   });
 
-  this.get(`${config.APP.API_HOST}/v1/events/slug-1`, function(request){
-    return [200, {}, {'event': event}]
+  this.get(`${config.APP.API_HOST}/v1/events/slug-1`, function(){
+    return [200, {}, {'event': event}];
   });
 }
 
 export function jobRoutes(){
-  this.get(`${config.APP.API_HOST}/v1/jobs`, function(request){
+  this.get(`${config.APP.API_HOST}/v1/jobs`, function(){
     var job = {
       'id': 1,
       'title': 'a title',
@@ -40,7 +40,7 @@ export function jobRoutes(){
       'how_to_apply': 'this is how to apply',
       'salary': 'a good salary',
       'published_at':'2001-01-01T12:00:00Z'
-    }
-    return [200, {}, {'jobs':[job]}]
+    };
+    return [200, {}, {'jobs':[job]}];
   });
 }

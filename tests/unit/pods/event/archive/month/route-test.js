@@ -4,8 +4,8 @@ import {
   describeModule,
   it
 } from 'ember-mocha';
-
-let originalTransitionTo;
+import Ember from 'ember';
+import sinon from 'sinon';
 
 describeModule(
   'route:event/archive/month',

@@ -9,10 +9,22 @@
 
     {{content-for 'head'}}
     {{content-for 'test-head'}}
+    <script>
+      function loadCSS(url) {
+        var css = document.createElement('link');
+        css.type = "text/css";
+        css.rel = "stylesheet";
+        css.href = url;
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(css);
+      }
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/vlc-tech-hub.css">
-    <link rel="stylesheet" href="assets/test-support.css">
+      if (! /PhantomJS/.test(window.navigator.userAgent)) {
+        loadCSS("assets/vendor.css");
+        loadCSS("assets/agroptima-app.css");
+        loadCSS("assets/test-support.css");
+      }
+    </script>
     <style>
         #ember-testing-container {
            height: 480px;

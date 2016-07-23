@@ -4,6 +4,8 @@ import {
   describeModule,
   it
 } from 'ember-mocha';
+import { beforeEach, afterEach } from 'mocha';
+import sinon from 'sinon';
 
 describeModule(
   'controller:event/new',

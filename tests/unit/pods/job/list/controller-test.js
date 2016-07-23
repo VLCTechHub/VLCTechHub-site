@@ -4,6 +4,7 @@ import {
   describeModule,
   it
 } from 'ember-mocha';
+import Ember from 'ember';
 
 describeModule(
   'controller:job/list',

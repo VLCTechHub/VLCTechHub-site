@@ -73,7 +73,7 @@ describeComponent(
       this.set('model', event);
       this.render(hbs`{{event/new-event-form event=model submitAction='myAction'}}`);
       let trigged = false;
-      this.on('myAction', e => { trigged = true; expect(e).to.equal(event) });
+      this.on('myAction', e => { trigged = true; expect(e).to.equal(event); });
       this.$('.btn-primary').click();
       expect(trigged).to.be.true;
     });
@@ -81,7 +81,7 @@ describeComponent(
     it('should show the chrome extention hint if link is supported', function(){
       this.render(hbs`{{event/new-event-form}}`);
       var supportedLink = 'http://www.meetup.com/anything';
-      this.$('input[name="link"]').val('supportedLink').change();
+      this.$('input[name="link"]').val(supportedLink).change();
       expect(this.$('form').text()).to.contain('prueba la extension de Chrome');
     });
   }

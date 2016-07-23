@@ -18,7 +18,7 @@ export default Ember.Component.extend({
   didInsertElement: function(){
     if(this.get('isTime')) {
       this.initializeTime();
-    };
+    }
     if(this.get('isTextarea')) {
       this.initializeTextarea();
     }
