@@ -1,15 +1,15 @@
-<article class='event-one-line py1 px2 {{if isExpanded 'expanded'}}'>
+<article class='item-one-line py1 px2 {{if isExpanded 'expanded'}}'>
   <div class='flex flex-end'>
     <header class='flex-auto'>
       <ul class='list-reset mb0'>
         <li class='inline-block mr2'>
-          <time datetime='{{moment-format item.published_at 'YYYY-MM-DDTHH:mm' }}' class='event-date font-ubuntu' title="{{moment-from-now item.published_at}}">
+          <time datetime='{{moment-format item.published_at 'YYYY-MM-DDTHH:mm' }}' class='item-date font-ubuntu' title="{{moment-from-now item.published_at}}">
             {{moment-format item.published_at 'DD/MM'}}
           </time>
         </li>
         <li class='inline-block mr1'  {{action 'toggleExpand' item}}>
           <h3 class='h3 font-ubuntu caps black m0'>
-            <a href='job/board/{{item.id}}' class='event-title black' title="{{item.title}}">
+            <a href='job/board/{{item.id}}' class='item-title black' title="{{item.title}}">
               {{shorten-text item.title 55}}
             </a>
           </h3>
@@ -36,11 +36,11 @@
   </div>
   {{#if isExpanded}}
     <div>
-        <p class="event-summary mt2">
+        <p class="item-summary mt2">
           <span class="bold">Descripción:</span>
           {{{ linkify-text item.description }}}
         </p>
-        <p class="event-summary mt2">
+        <p class="item-summary mt2">
           <span class="bold">Cómo contactar:</span>
           {{#if item.how_to_apply}}
             {{ item.how_to_apply }}
@@ -48,7 +48,7 @@
             <a href='{{item.link}}'>Instrucciones en la oferta</a>
           {{/if}}
         </p>
-        <p class="event-summary mt2">
+        <p class="item-summary mt2">
           <span class="bold">Sueldo:</span>
           {{ item.salary }}
         </p>

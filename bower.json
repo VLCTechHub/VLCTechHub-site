@@ -9,7 +9,7 @@
     "pikaday": "~1.4.0",
     "jquery-dropdown": "~2.0.2",
     "jt.timepicker": "https://github.com/jonthornton/jquery-timepicker.git#~1.8.8",
-    "basscss": "~7.1.0",
+    "basscss": "7.1.1",
     "autosize": "~3.0.15"
   },
   "devDependencies": {
