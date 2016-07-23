@@ -9,16 +9,14 @@ Router.map(function() {
   this.route('index', {path: '/'});
 
   this.route('event', { path: 'events' }, function(){
-    this.route('upcoming', function(){
-      this.route('detail', { path: '/:event_id'});
-    });
     this.route('archive', function(){
       this.route('month', { path: '/:year/:month'}, function(){
         this.route('detail', { path: '/:event_id'});
       });
     });
-    this.route('latest');
     this.route('new');
+    this.route('upcoming');
+    this.route('detail', { path: '/:slug' });
   });
 
   this.route('job', function() {

@@ -7,16 +7,22 @@ export function addRoutes(server, routes) {
 }
 
 export function eventRoutes(){
-  this.get(`${config.APP.API_HOST}/v1/events`, function(request){
-    var event = {
+  var event = {
       'id': 1,
+      'slug': 'slug-1',
       'title': 'a title',
       'description': 'an event description',
       'link': 'a link',
       'hashtag':'#hashtag',
       'date':'2001-01-01T12:00:00Z'
     }
+
+  this.get(`${config.APP.API_HOST}/v1/events`, function(request){
     return [200, {}, {'events':[event]}]
+  });
+
+  this.get(`${config.APP.API_HOST}/v1/events/slug-1`, function(request){
+    return [200, {}, {'event': event}]
   });
 }
 

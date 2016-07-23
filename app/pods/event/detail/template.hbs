@@ -1,0 +1,38 @@
+<div class="event event-detail p3 mt3">
+  <div class="container clearfix p3">
+    <div class="row">
+      <div class="sm-col sm-col-4">
+        {{event/event-avatar
+          event=model
+
+          classNames="flex-none mb2"
+          hasLinkToTwitter=true
+        }}
+      </div>
+      <div class="sm-col sm-col-8">
+        <h2>
+          <time datetime='{{moment-format model.date 'YYYY-MM-DDTHH:mm' }}' class='event-date font-ubuntu' title="{{moment-from-now model.date}}">
+          {{moment-format model.date 'dddd DD MMMM HH:mm' }}h
+          </time></h2>
+          <h1 class="mt0"> {{model.title }} </h1>
+          <div class="right">
+          {{#unless model.isPastEvent}}
+            <a href="{{model.calendarURL}}" target="_blank" class="btn btn-link">Añadir al calendario</a>
+          {{/unless}}
+          <a href="{{model.link}}" class="btn btn-primary">Ver fuente</a>
+
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-12">
+          <p class="event-title"> {{{ linkify-text model.description }}} </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-col-12">
+          <a href="{{model.link}}" class="btn btn-primary right">Ver fuente</a>
+        </div>
+      </div>
+    </div>
+  </div>

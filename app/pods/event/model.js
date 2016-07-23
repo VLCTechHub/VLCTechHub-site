@@ -8,6 +8,7 @@ export default DS.Model.extend({
   link: DS.attr('string'),
   date: DS.attr('date'),
   hashtag: DS.attr('string'),
+  slug: DS.attr('string'),
   isPastEvent: Ember.computed('date', function(){
     if(this.get('date') < Date.now() ) { return true; }
     return false;
@@ -37,5 +38,24 @@ export default DS.Model.extend({
       return !Ember.isEmpty(this.get(property));
     }, this);
     return isValid;
+  }),
+  calendarURL: Ember.computed('title', 'link', 'date', function() {
+    var zeroPad = function(number) {
+      return ("0" + number).slice(-2);
+    };
+    var isoDate = function(date) {
+      return date.getUTCFullYear() + zeroPad(date.getUTCMonth() + 1) + zeroPad(date.getUTCDate()) + 'T' +
+        zeroPad(date.getUTCHours()) + zeroPad(date.getUTCMinutes()) + zeroPad(date.getUTCSeconds()) + 'Z';
+    };
+
+    var title = encodeURIComponent(this.get('title'));
+    var details = encodeURIComponent('Más info: ' + this.get('link'));
+    var startDate = new Date(this.get('date'));
+    var endDate = new Date(this.get('date'));
+    endDate.setHours(endDate.getHours() + 1);
+    var dates = isoDate(startDate) + '/' + isoDate(endDate);
+
+    var url = 'https://www.google.com/calendar/event?action=TEMPLATE&text=' + title + '&dates=' + dates + '&details='+ details;
+    return url;
   })
 });
