@@ -8,14 +8,14 @@
     </div>
   </div>
   {{#if mobileMenuExpanded}}
-  <div class="absolute z1 col-12 b-shadow md-hide">
-    <nav>
+    <div class="absolute z1 col-12 b-shadow md-hide">
+      <nav>
       <ul class="list-reset mb0">
         <li class="bg-white p2 center border">{{#link-to 'event.upcoming' classNames='black'}} Próximos {{/link-to}}</li>
         <li class="bg-white p2 center border">{{#link-to 'event.archive' classNames='black'}} Archivo {{/link-to}}</li>
         <li class="bg-white p2 center border">{{#link-to 'job.list' classNames='black'}} Empleo <span class="h6 px1 rounded white bg-red">{{ totalJobs }}</span> {{/link-to}}</li>
       </ul>
-    </nav>
+      </nav>
     </div>
   {{/if}}
 
@@ -44,60 +44,61 @@
     <div class="container-md px2 py2">
       <div class="clearfix">
 
-      <div class="sm-col sm-col-3">
-        <ul class="list-reset">
-          <li class="mb1 silver caps h5">Ver</li>
-          <li>
+        <div class="sm-col sm-col-3">
+          <ul class="list-reset">
+            <li class="mb1 silver caps h5">Eventos</li>
+            <li>
             {{#link-to 'event.upcoming' classNames='silver'}} Próximos eventos {{/link-to}}
-          </li>
-          <li>
-            {{#link-to 'job.list' classNames='silver'}} Ofertas de trabajo {{/link-to}}
-          </li>
-        </ul>
-      </div>
-
-      <div class="sm-col sm-col-3">
-        <ul class="list-reset">
-          <li class="mb1 silver caps h5">Publicar</li>
-          <li>
-            {{#link-to 'event.new' classNames='silver'}} Evento {{/link-to}}
-          </li>
-          <li>
-            <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="silver">Oferta de trabajo</a>
-          </li>
-          <li>
+            </li>
+            <li>
+            {{#link-to 'event.new' classNames='silver'}} Publicar evento {{/link-to}}
+            </li>
+            <li>
             <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc" class="silver">Chrome extension</a>
-          </li>
-        </ul>
+            </li>
 
-      </div>
+          </ul>
+        </div>
 
-      <div class="sm-col sm-col-3">
-        <ul class="list-reset">
-          <li class="mb1 silver caps h5">Social</li>
-          <li>
+        <div class="sm-col sm-col-3">
+          <ul class="list-reset">
+            <li class="mb1 silver caps h5">Ofertas de trabajo</li>
+            <li>
+            {{#link-to 'job.list' classNames='silver'}} Ofertas activas {{/link-to}}
+            </li>
+            <li>
+            <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="silver">Publicar oferta</a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="sm-col sm-col-3">
+          <ul class="list-reset">
+            <li class="mb1 silver caps h5">Social</li>
+            <li>
             <a href="https://twitter.com/VLCTechHub" class="silver">Twitter</a>
-          </li>
-          <li>
+            </li>
+            <li>
             <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="silver">Google group</a>
-          </li>
-          <li>
+            </li>
+            <li>
             <a href="https://valencia-devs.herokuapp.com/" class="silver">Slack</a>
-          </li>
-        </ul>
-      </div>
+            </li>
+          </ul>
+        </div>
 
-      <div class="sm-col sm-col-3">
-        <ul class="list-reset">
-          <li class="mb1 silver caps h5">Contacto</li>
-          <li>
+        <div class="sm-col sm-col-3">
+          <ul class="list-reset">
+            <li class="mb1 silver caps h5">Contacto</li>
+            <li>
             <a href="https://github.com/VLCTechHub/" class="silver">Github</a>
-          </li>
-          <li>
+            </li>
+            <li>
             <a href="mailto:hola@vlctechhub.org" class="silver">Mail</a>
-          </li>
-      </ul>
-      </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
