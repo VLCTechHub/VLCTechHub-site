@@ -24,12 +24,12 @@ function version_published () {
 }
 
 function say_in_slack {
-	if [ -z "$SLACK_VLCTECHHUB_TOKEN" ]; then
-		 echo "WARN: Set SLACK_VLCTECHHUB_TOKEN to publish a message about this deploy"
+	if [ -z "$SLACK_WEBHOOK" ]; then
+		 echo "WARN: Set SLACK_WEBHOOK to publish a message about this deploy"
 	else
 		echo 'Communicating with slack...'
-		message="https://slack.com/api/chat.postMessage?token=${SLACK_VLCTECHHUB_TOKEN}&channel=%23vlctechhub&text=%3Atada%3AVersion%20$(version_published)%20released!&username=techhub-bot&icon_emoji=%3Arocket%3A&pretty=1"
-		curl -s $message > /dev/null
+    message='payload={"channel": "#vlctechhub", "username": "vlctechhub-bot", "text": ":tada:Version $(version_published) released!.", "icon_emoji": ":rocket:"}'
+		curl -X POST --data-urlencode $message $SLACK_WEBHOOK  > /dev/null
 	fi
 }
 

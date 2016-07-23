@@ -42,7 +42,7 @@ __Note__: When run on linux, you might have a watch problem. You may need to [in
  * `npm install -g surge`
  * `npm run deploy`
 
-  To send a message to slack about the new release, set the environment variable `SLACK_VLCTECHHUB_TOKEN` with the Slack token. It will send the message to #vlctechhub channel.
+  To send a message to slack about the new release, set the environment variable `SLACK_WEBHOOK` with the Incoming Webhook url. It will send the message to #vlctechhub channel.
 
 ## Further Reading / Useful Links
 
