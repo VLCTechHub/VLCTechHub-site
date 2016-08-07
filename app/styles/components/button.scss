@@ -1,0 +1,86 @@
+.button {
+  font-size: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline;
+  line-height: 1.125rem;
+  padding: .5rem 1rem;
+  height: auto;
+  text-decoration: none;
+  background: #fff;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+
+  &:hover {
+    text-decoration: none;
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.1)));
+    background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1));
+    background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+
+  }
+}
+
+.button {
+  &.-menu {
+    background: transparent;
+    color: #111;
+    border: 1px solid transparent;
+  }
+  &.-menu:hover {
+    border-bottom: 4px solid #ccc;
+  }
+
+  &.-menu.active {
+    border-bottom: 4px solid #fa0;
+  }
+}
+
+.button {
+  &.-primary {
+    color: #fff;
+    background-color: #fa0;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+.button {
+  &.-link {
+    color: #888;
+    background-color: transparent;
+
+    &:hover {
+      color: #444;
+      background-color: #ccc;
+    }
+  }
+}
+
+.new-item-link {
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+
+.label {
+  border-radius: 0.25em;
+  padding: .3em .6em;
+  font-size: .75rem;
+  color: #fff;
+  background-color: #777;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.label {
+  &.-danger {
+    background-color: #ff4136;
+  }
+}

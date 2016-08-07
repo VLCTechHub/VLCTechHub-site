@@ -1,25 +1,24 @@
-<article class='item-one-line py1 px2 {{if isExpanded 'expanded'}}'>
-  <div class='flex flex-end'>
-    <header class='flex-auto'>
-      <ul class='list-reset mb0'>
-        <li class='inline-block mr2'>
-          <time datetime='{{moment-format item.published_at 'YYYY-MM-DDTHH:mm' }}' class='item-date font-ubuntu' title="{{moment-from-now item.published_at}}">
+<article class='expandable-list {{if isExpanded 'expanded'}}'>
+    <header>
+      <ul class=''>
+        <li class=''>
+          <time datetime='{{moment-format item.published_at 'YYYY-MM-DDTHH:mm' }}' class='date' title="{{moment-from-now item.published_at}}">
             {{moment-format item.published_at 'DD/MM'}}
           </time>
         </li>
-        <li class='inline-block mr1'  {{action 'toggleExpand' item}}>
-          <h3 class='h3 font-ubuntu caps black m0'>
-            <a href='job/board/{{item.id}}' class='item-title black' title="{{item.title}}">
+        <li class=''  {{action 'toggleExpand' item}}>
+          <h3>
+            <a href='job/board/{{item.id}}' class='title' title="{{item.title}}">
               {{shorten-text item.title 55}}
             </a>
           </h3>
        </li>
-       <li class='inline-block mr1'>
+       <li class=''>
         {{#each item.tags as |tag|}}
-          <span class="h5 bd-gray bg-dark-gray white rounded px1 py1-2">{{tag}}</span>
+          <span class="label">{{tag}}</span>
         {{/each}}
        </li>
-        <li class='inline-block mr2'>
+        <li class=''>
           {{#if item.company}}
             <span class='muted'>
               por <a href="{{item.company.link}}" class="black" target="_blank">{{item.company.name}}</a>
@@ -28,16 +27,14 @@
         </li>
         </ul>
    </header>
-    <div class='hidden'>
-      {{#if item.link}}
-        {{event/link-to-event uri=item.link}}
-      {{/if}}
-    </div>
-  </div>
   {{#if isExpanded}}
     <div>
+      {{#if item.link }}
+          <div class="external-link">
+            <a href="{{item.link}}" target="_blank" class="button">Ver fuente</a>
+          </div>
+        {{/if}}
         <p class="item-summary mt2">
-          <span class="bold">Descripción:</span>
           {{{ linkify-text item.description }}}
         </p>
         <p class="item-summary mt2">

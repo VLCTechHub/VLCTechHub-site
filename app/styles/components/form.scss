@@ -1,0 +1,35 @@
+.box {
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px 0 #ccc;
+  margin-bottom: 2rem;
+}
+
+form {
+  padding: 2rem;
+
+  label {
+    color: #999;
+    vertical-align: middle;
+  }
+}
+
+
+.field:focus {
+  outline: 0;
+}
+
+input.field, textarea.field {
+  border: none!important;
+  box-shadow: none!important;
+  border-bottom: 1px solid #ccc!important;
+  background-color: transparent;
+  width: 100%;
+  margin-bottom: 2rem;
+  display:block;
+  font-size: 1rem;
+}
+
+input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week] {
+  height: 2.25rem;
+  -webkit-appearance: none;
+}

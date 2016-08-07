@@ -1,11 +1,11 @@
 {{event/section-title text="Empleo"}}
 
 {{#if jobs}}
-  <div class="clearfix mb2">
-    <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="btn btn-primary right" target='_blank'>Da de alta una oferta</a>
+  <div class="new-item-link">
+    <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="button -primary right" target='_blank'>Da de alta una oferta</a>
   </div>
 
-  <div class="item mb2">
+  <div class="box">
   {{#each jobs as |job|}}
     {{job/job-row item=job selectedItem=selected expandAction='expand' collapseAction='collapse'}}
   {{/each}}

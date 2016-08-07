@@ -1,0 +1,16 @@
+body {
+  background: #ececec url('/img/bg.png');
+}
+
+.muted {
+  opacity: .5;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

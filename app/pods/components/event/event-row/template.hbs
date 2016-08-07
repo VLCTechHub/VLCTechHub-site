@@ -1,20 +1,22 @@
-<article class='item-one-line py1 px2 {{if isExpanded 'expanded'}}'>
-  <div class='flex flex-end'>
-    <header class='flex-auto'>
-      <ul class='list-reset mb0'>
-        <li class='inline-block mr2'>
-          <time datetime='{{moment-format item.date 'YYYY-MM-DDTHH:mm' }}' class='item-date font-ubuntu' title="{{moment-from-now item.date}}">
+<article class='expandable-list {{if isExpanded 'expanded'}}'>
+    <header>
+      <ul>
+        <li>
+        <time
+          datetime='{{moment-format item.date 'YYYY-MM-DDTHH:mm' }}'
+          class='date'
+          title="{{moment-from-now item.date}}">
             {{moment-format item.date 'ddd DD MMM HH:mm' }}h
           </time>
         </li>
-        <li class='inline-block mr1'  {{action 'toggleExpand' item}}>
-          <h3 class='h3 font-ubuntu caps black m0'>
-            <a href='events/upcoming/{{item.id}}' class='item-title black' title="{{item.title}}">
+        <li {{action 'toggleExpand' item}}>
+          <h3>
+            <a href='events/upcoming/{{item.id}}' class='title' title="{{item.title}}">
               {{shorten-text item.title 55}}
             </a>
           </h3>
        </li>
-        <li class='inline-block mr2'>
+        <li>
           {{#if hasHashtag}}
             <span class='muted'>
               por {{event/link-to-twitter hashtag=item.hashtag}}
@@ -23,16 +25,13 @@
         </li>
         </ul>
    </header>
-   <div class='hidden'>
-    <div class='item-icons'>
-    {{#unless item.isPastEvent}}
-      {{event/link-to-calendar title=item.title uri=item.link date=item.date}}
-    {{/unless}}
-    {{event/link-to-event uri=item.link}}
-    </div>
-    </div>
-  </div>
   {{#if isExpanded}}
+    <div class="external-link">
+      <a href="{{item.link}}" target="_blank" class="button"> Ver fuente </a>
+      {{#unless item.isPastEvent}}
+      <a href="{{item.calendarURL}}" target="_blank" class="button -link"> Añadir al calendario </a>
+    {{/unless}}
+    </div>
       <p class="item-summary mt2">
         {{{ linkify-text item.description }}}
       </p>

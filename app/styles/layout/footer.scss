@@ -1,0 +1,35 @@
+.footer {
+  background-color: #001f3f;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #ddd;
+
+  a {
+    color: #ddd;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer {
+  padding: 3rem;
+
+  .grid {
+    display: flex;
+  }
+  .grid-col {
+    flex: 1;
+  }
+
+  .list-header {
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .list-item {
+  }
+}

@@ -1,4 +1,5 @@
 <div class="flex flex-column" style="min-height:100vh">
+  {{!--
   <div class="menu relative md-hide">
     <div class="clearfix">
       <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="px2" style="height:64px"/>
@@ -19,17 +20,19 @@
     </div>
   {{/if}}
 
-  <div class="menu md-show">
-    <div class="container clearfix">
-      <div class="col col-2 mt1">
+  --}}
+
+  <div class="menu">
+    <div class="main">
+      <div class="logo">
         {{#link-to 'index' classNames=''}}
           <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo py1 mr2" height="55px" />
         {{/link-to}}
       </div>
-      <div class="col col-10 mt3">
-        {{#link-to 'event.upcoming' classNames='btn btn-menu ml1'}} Próximos {{/link-to}}
-        {{#link-to 'event.archive' classNames='btn btn-menu'}} Archivo {{/link-to}}
-        {{#link-to 'job.list' classNames='btn btn-menu'}} Empleo <span class="h6 px1 rounded white bg-red"> {{ totalJobs }} </span> {{/link-to}}
+      <div class="options">
+        {{#link-to 'event.upcoming' classNames='button -menu'}} Próximos {{/link-to}}
+        {{#link-to 'event.archive' classNames='button -menu'}} Archivo {{/link-to}}
+        {{#link-to 'job.list' classNames='button -menu'}} Empleo <span class="label -danger"> {{ totalJobs }} </span> {{/link-to}}
       </div>
     </div>
   </div>
@@ -40,65 +43,60 @@
     </div>
   </div>
 
-  <div class="py2 bg-navy">
-    <div class="container-md px2 py2">
-      <div class="clearfix">
+  <div class="footer">
+    <div class="main grid">
+      <div class="grid-col">
+        <ul>
+          <li class="list-header">Eventos</li>
+          <li class="list-item">
+            {{#link-to 'event.upcoming'}} Próximos eventos {{/link-to}}
+          </li>
+          <li class="list-item">
+            {{#link-to 'event.new'}} Publicar evento {{/link-to}}
+          </li>
+          <li class="list-item">
+            <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc">Chrome extension</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="sm-col sm-col-3">
-          <ul class="list-reset">
-            <li class="mb1 silver caps h5">Eventos</li>
-            <li>
-            {{#link-to 'event.upcoming' classNames='silver'}} Próximos eventos {{/link-to}}
-            </li>
-            <li>
-            {{#link-to 'event.new' classNames='silver'}} Publicar evento {{/link-to}}
-            </li>
-            <li>
-            <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc" class="silver">Chrome extension</a>
-            </li>
+      <div class="grid-col">
+        <ul>
+          <li class="list-header">Ofertas de trabajo</li>
+          <li class="list-item">
+            {{#link-to 'job.list'}} Ofertas activas {{/link-to}}
+          </li>
+          <li class="list-item">
+            <a href="https://vlctechhub.typeform.com/to/iYKS7g">Publicar oferta</a>
+          </li>
+        </ul>
+      </div>
 
-          </ul>
-        </div>
+      <div class="grid-col">
+        <ul>
+          <li class="list-header">Social</li>
+          <li class="list-item">
+            <a href="https://twitter.com/VLCTechHub">Twitter</a>
+          </li>
+          <li class="list-item">
+            <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub">Google group</a>
+          </li>
+          <li class="list-item">
+            <a href="https://valencia-devs.herokuapp.com/">Slack</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="sm-col sm-col-3">
-          <ul class="list-reset">
-            <li class="mb1 silver caps h5">Ofertas de trabajo</li>
-            <li>
-            {{#link-to 'job.list' classNames='silver'}} Ofertas activas {{/link-to}}
-            </li>
-            <li>
-            <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="silver">Publicar oferta</a>
-            </li>
-          </ul>
-
-        </div>
-
-        <div class="sm-col sm-col-3">
-          <ul class="list-reset">
-            <li class="mb1 silver caps h5">Social</li>
-            <li>
-            <a href="https://twitter.com/VLCTechHub" class="silver">Twitter</a>
-            </li>
-            <li>
-            <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub" class="silver">Google group</a>
-            </li>
-            <li>
-            <a href="https://valencia-devs.herokuapp.com/" class="silver">Slack</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="sm-col sm-col-3">
-          <ul class="list-reset">
-            <li class="mb1 silver caps h5">Contacto</li>
-            <li>
-            <a href="https://github.com/VLCTechHub/" class="silver">Github</a>
-            </li>
-            <li>
-            <a href="mailto:hola@vlctechhub.org" class="silver">Mail</a>
-            </li>
-          </ul>
-        </div>
+      <div class="grid-col">
+        <ul>
+          <li class="list-header">Contacto</li>
+          <li class="list-item">
+            <a href="https://github.com/VLCTechHub/">Github</a>
+          </li>
+          <li class="list-item">
+            <a href="mailto:hola@vlctechhub.org">Mail</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
