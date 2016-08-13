@@ -28,26 +28,3 @@
   }
 }
 
-.event-detail {
-  padding: 2rem;
-
-  .logo {
-    width: 30%;
-    float:left;
-  }
-
-  .summary {
-    width: 70%;
-    float:left;
-  }
-
-  .description {
-    width: 100%;
-  }
-
-  &:after {
-    clear: both;
-    content: "";
-    display: block;
-  }
-}

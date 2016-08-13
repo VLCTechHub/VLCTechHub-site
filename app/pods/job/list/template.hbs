@@ -5,17 +5,17 @@
     <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="button -primary right" target='_blank'>Da de alta una oferta</a>
   </div>
 
-  <div class="box">
+  <div class="box -expandable-list">
   {{#each jobs as |job|}}
     {{job/job-row item=job selectedItem=selected expandAction='expand' collapseAction='collapse'}}
   {{/each}}
   </div>
-  <p class='center muted h5'>
+  <p class='job-info'>
    ~ Ofertas publicadas en los últimos 30 días ~
   </p>
 {{else}}
-  <div class="h3 center gray">
+  <div class="job-empty">
     <p>¿Estás buscando perfiles técnicos para tu empresa?</p>
-    <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="btn btn-primary"  target='_blank'>Da de alta una oferta</a>
+    <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="button -primary"  target='_blank'>Da de alta una oferta</a>
   </div>
 {{/if}}

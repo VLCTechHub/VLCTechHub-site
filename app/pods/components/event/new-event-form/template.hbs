@@ -7,8 +7,10 @@
   {{event/form-field name='hashtag' label="Hashtag o mención" value=event.hashtag type="text"}}
 <button {{action "submitAction" event}} class="button -primary" disabled="{{if isButtonDisabled 'disabled'}}" >{{buttonText}}</button>
 
-<div class="inline-block {{unless isChromeExtensionHintVisible 'hide'}}">
-  o prueba la <a href='https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc' target='_blank'>extension de Chrome</a> para publicar este evento.
-</div>
+{{#if isChromeExtensionHintVisible }}
+  <div class="hint">
+    o prueba la <a href='https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc' target='_blank'>extension de Chrome</a> para publicar este evento.
+  </div>
+{{/if}}
 
 </form>

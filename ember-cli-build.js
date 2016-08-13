@@ -8,6 +8,12 @@ module.exports = function(defaults) {
     },
     fingerprint: {
       exclude: ['apple-touch-icon', 'favicon', 'mstile']
+    },
+    sassOptions: {
+      includePaths: [
+        'node_modules/breakpoint-sass/stylesheets',
+        'node_modules/jeet/scss/jeet'
+      ]
     }
   });
 

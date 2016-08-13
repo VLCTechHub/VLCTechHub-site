@@ -5,10 +5,8 @@
 </div>
 
 
-<div class="container">
-  <div class="clearfix">
-    {{#each model as |event|}}
-      {{event/event-card event=event}}
-    {{/each}}
-  </div>
-</div>
+<ul class="event-cards">
+  {{#each model as |event|}}
+    <li>{{event/event-card event=event}}</li>
+  {{/each}}
+</ul>

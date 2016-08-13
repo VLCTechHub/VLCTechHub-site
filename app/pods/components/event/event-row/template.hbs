@@ -25,15 +25,15 @@
         </li>
         </ul>
    </header>
-  {{#if isExpanded}}
-    <div class="external-link">
-      <a href="{{item.link}}" target="_blank" class="button"> Ver fuente </a>
-      {{#unless item.isPastEvent}}
-      <a href="{{item.calendarURL}}" target="_blank" class="button -link"> Añadir al calendario </a>
-    {{/unless}}
-    </div>
-      <p class="item-summary mt2">
-        {{{ linkify-text item.description }}}
-      </p>
-  {{/if}}
-</article>
+   {{#if isExpanded}}
+     <div class="actions">
+       <a href="{{item.link}}" target="_blank" class="button -primary"> Ver fuente </a>
+       {{#unless item.isPastEvent}}
+         <a href="{{item.calendarURL}}" target="_blank" class="button"> Añadir al calendario </a>
+     {{/unless}}
+   </div>
+   <p class="item-summary">
+   {{{ linkify-text item.description }}}
+   </p>
+ {{/if}}
+ </article>

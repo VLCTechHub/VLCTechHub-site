@@ -1,5 +1,5 @@
 .button {
-  font-size: inherit;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   display: inline;
@@ -43,6 +43,7 @@
   &.-primary {
     color: #fff;
     background-color: #fa0;
+    border-color: darken(#fa0, 3%);
 
     &:disabled {
       opacity: 0.5;
@@ -82,5 +83,12 @@
 .label {
   &.-danger {
     background-color: #ff4136;
+  }
+}
+
+.actions {
+  margin-bottom: 1em;
+  .button {
+    margin-right: 20px;
   }
 }

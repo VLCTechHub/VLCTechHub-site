@@ -5,8 +5,13 @@
 Archivo <span class="dropdown" data-jq-dropdown="#jq-dropdown-month">{{model.monthName}}</span>, <span class="dropdown" data-jq-dropdown="#jq-dropdown-year">{{model.year}}</span>
 {{/event/section-title}}
 
-<div class="box">
+<div class="box -expandable-list">
   {{#each model.events as |event| }}
-   	{{event/event-row item=event selectedItem=selected expandAction='expand' collapseAction='collapse'}}
+    {{event/event-row
+      item=event
+      selectedItem=selected
+      expandAction='expand'
+      collapseAction='collapse'
+    }}
   {{/each}}
 </div>

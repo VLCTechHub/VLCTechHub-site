@@ -1,21 +1,21 @@
-<article class="md-col md-col-4 px2 py2 event-card">
-  <div class="p2 bg-white border rounded" style="min-height:400px;max-height:400px">
-    <div class="center">
+<article class="event-card">
+  <div>
+    <div class="avatar">
       {{event/event-avatar event=event}}
     </div>
-    <div>
+    <div class="body">
       <time
         datetime='{{moment-format event.date 'YYYY-MM-DDTHH:mm' }}'
-        class='item-date font-ubuntu'
+        class='date'
         title="{{moment-from-now event.date}}">
           {{moment-format event.date 'ddd DD MMM HH:mm' }}h
       </time>
-      <div class="event-title">
+      <div class="title">
         {{#link-to 'event.detail' event}}
           {{event.title}}
         {{/link-to}}
       </div>
     </div>
   </div>
-  </article>
+</article>
 
