@@ -2,11 +2,15 @@
   margin-bottom: 1em;
   @include cf();
   .event-avatar {
-    @include col(1/3);
+    @include breakpoint($screen-sm-min) {
+      @include col(1/3);
+    }
   }
   .summary {
-    @include col(2/3);
-    @include cf();
+    @include breakpoint($screen-sm-min) {
+      @include col(2/3);
+      @include cf();
+    }
     .title {
       margin-bottom:1em;
       font-family: 'Helvetica Neue',Helvetica,sans-serif;

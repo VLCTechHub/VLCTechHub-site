@@ -88,7 +88,18 @@
 
 .actions {
   margin-bottom: 1em;
+
   .button {
-    margin-right: 20px;
+    display: block;
+    margin-bottom: 1em;
   }
+
+  @include breakpoint($screen-sm-min) {
+    .button {
+      display: inline;
+      margin-right: 20px;
+      margin-bottom: 0px;
+    }
+  }
+
 }
