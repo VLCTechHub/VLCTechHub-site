@@ -1,3 +1,4 @@
+
 body {
   background: #ececec url('/img/bg.png');
 }
@@ -14,7 +15,15 @@ body {
 .menu {
   background-color: #f5f5f5;
   border-bottom: 1px solid #ccc;
-  padding: 20px;
+
+}
+
+.menu.-desktop {
+  display: none;
+  @include breakpoint($screen-sm-min) {
+    display: block;
+  }
+ padding: 20px;
   margin-bottom: 2rem;
 
   & .logo {
@@ -30,13 +39,65 @@ body {
     float:left;
     width: 83.33333%;
   }
-}
+
+
+  }
 
 .menu:after {
   clear: both;
   content: "";
   display: block;
 }
+
+.menu.-mobile {
+  position: relative;
+  display: block;
+  @include breakpoint($screen-sm-min) {
+    display: none;
+  }
+
+  & .logo {
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+    > img {
+      width:120px;
+    }
+  }
+  & .hamburger {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    & img {
+      width: 32px;
+    }
+  }
+}
+
+.menu-options.-mobile {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+
+  display: block;
+  @include breakpoint($screen-sm-min) {
+    display: none;
+  }
+
+  & li {
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid whitesmoke;
+
+    & .active {
+      font-weight: bold;
+    }
+  }
+}
+
+
 
 .footer {
   background-color: #001f3f;

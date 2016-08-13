@@ -1,92 +1,87 @@
-<div class="" style="min-height:100vh">
-  {{!--
-  <div class="menu relative md-hide">
-    <div class="clearfix">
-      <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="px2" style="height:64px"/>
-      <a class="right bg-white p2" href='#' style="width:32px" {{action "toggleMobileMenu"}}>
-        <img src="img/icon-menu.png"/>
-      </a>
-    </div>
+<div class="site">
+  <header class="menu -mobile">
+  <div class="logo">
+    <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub"/>
   </div>
+  <div class="hamburger">
+    <a  href='#'  {{action "toggleMobileMenu"}}>
+      <img src="img/icon-menu.png"/>
+    </a>
+  </div>
+  </header>
   {{#if mobileMenuExpanded}}
-    <div class="absolute z1 col-12 b-shadow md-hide">
-      <nav>
-      <ul class="list-reset mb0">
-        <li class="bg-white p2 center border">{{#link-to 'event.upcoming' classNames='black'}} Próximos {{/link-to}}</li>
-        <li class="bg-white p2 center border">{{#link-to 'event.archive' classNames='black'}} Archivo {{/link-to}}</li>
-        <li class="bg-white p2 center border">{{#link-to 'job.list' classNames='black'}} Empleo <span class="h6 px1 rounded white bg-red">{{ totalJobs }}</span> {{/link-to}}</li>
-      </ul>
-      </nav>
-    </div>
+    <nav class="menu-options -mobile">
+    <ul>
+      <li>{{#link-to 'event.upcoming' classNames='black'}} Próximos {{/link-to}}</li>
+      <li>{{#link-to 'event.archive' classNames='black'}} Archivo {{/link-to}}</li>
+      <li>{{#link-to 'job.list' classNames='black'}} Empleo <span class="label -danger">{{ totalJobs }}</span> {{/link-to}}</li>
+    </ul>
+    </nav>
   {{/if}}
 
-  --}}
-
-  <div class="menu">
-    <div class="main">
-      <div class="logo">
-        {{#link-to 'index' classNames=''}}
-          <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" class="logo py1 mr2" height="55px" />
-        {{/link-to}}
-      </div>
-      <div class="options">
-        {{#link-to 'event.upcoming' classNames='button -menu'}} Próximos {{/link-to}}
-        {{#link-to 'event.archive' classNames='button -menu'}} Archivo {{/link-to}}
-        {{#link-to 'job.list' classNames='button -menu'}} Empleo <span class="label -danger"> {{ totalJobs }} </span> {{/link-to}}
-      </div>
-    </div>
+  <header class="menu -desktop">
+  <div class="logo">
+    {{#link-to 'index' classNames=''}}
+      <img src="img/title.png" alt="VLCTechhub" title="VLCTechhub" />
+    {{/link-to}}
   </div>
+  <div class="options">
+    {{#link-to 'event.upcoming' classNames='button -menu'}} Próximos {{/link-to}}
+    {{#link-to 'event.archive' classNames='button -menu'}} Archivo {{/link-to}}
+    {{#link-to 'job.list' classNames='button -menu'}} Empleo <span class="label -danger"> {{ totalJobs }} </span> {{/link-to}}
+  </div>
+  </header>
 
+  <main class="container">
+    {{outlet}}
+  </main>
+
+  <footer class="footer">
   <div class="container">
-      {{outlet}}
-    </div>
-
-  <div class="footer">
-    <div class="container">
-      <div class="grid">
-        <ul>
-          <li class="list-header">Eventos</li>
-          <li class="list-item">
-            {{#link-to 'event.upcoming'}} Próximos eventos {{/link-to}}
-          </li>
-          <li class="list-item">
-            {{#link-to 'event.new'}} Publicar evento {{/link-to}}
-          </li>
-          <li class="list-item">
-            <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc">Chrome extension</a>
-          </li>
-        </ul>
-        <ul>
-          <li class="list-header">Ofertas de trabajo</li>
-          <li class="list-item">
-            {{#link-to 'job.list'}} Ofertas activas {{/link-to}}
-          </li>
-          <li class="list-item">
-            <a href="https://vlctechhub.typeform.com/to/iYKS7g">Publicar oferta</a>
-          </li>
-        </ul>
-        <ul>
-          <li class="list-header">Social</li>
-          <li class="list-item">
-            <a href="https://twitter.com/VLCTechHub">Twitter</a>
-          </li>
-          <li class="list-item">
-            <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub">Google group</a>
-          </li>
-          <li class="list-item">
-            <a href="https://valencia-devs.herokuapp.com/">Slack</a>
-          </li>
-        </ul>
-        <ul>
-          <li class="list-header">Contacto</li>
-          <li class="list-item">
-            <a href="https://github.com/VLCTechHub/">Github</a>
-          </li>
-          <li class="list-item">
-            <a href="mailto:hola@vlctechhub.org">Mail</a>
-          </li>
-        </ul>
-      </div>
+    <div class="grid">
+      <ul>
+        <li class="list-header">Eventos</li>
+        <li class="list-item">
+        {{#link-to 'event.upcoming'}} Próximos eventos {{/link-to}}
+        </li>
+        <li class="list-item">
+        {{#link-to 'event.new'}} Publicar evento {{/link-to}}
+        </li>
+        <li class="list-item">
+        <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc">Chrome extension</a>
+        </li>
+      </ul>
+      <ul>
+        <li class="list-header">Ofertas de trabajo</li>
+        <li class="list-item">
+        {{#link-to 'job.list'}} Ofertas activas {{/link-to}}
+        </li>
+        <li class="list-item">
+        <a href="https://vlctechhub.typeform.com/to/iYKS7g">Publicar oferta</a>
+        </li>
+      </ul>
+      <ul>
+        <li class="list-header">Social</li>
+        <li class="list-item">
+        <a href="https://twitter.com/VLCTechHub">Twitter</a>
+        </li>
+        <li class="list-item">
+        <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub">Google group</a>
+        </li>
+        <li class="list-item">
+        <a href="https://valencia-devs.herokuapp.com/">Slack</a>
+        </li>
+      </ul>
+      <ul>
+        <li class="list-header">Contacto</li>
+        <li class="list-item">
+        <a href="https://github.com/VLCTechHub/">Github</a>
+        </li>
+        <li class="list-item">
+        <a href="mailto:hola@vlctechhub.org">Mail</a>
+        </li>
+      </ul>
     </div>
   </div>
+  </footer>
 </div>

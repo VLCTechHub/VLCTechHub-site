@@ -45,6 +45,22 @@
   }
 }
 
+.dropdown {
+  padding: 5px;
+
+  &:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &:after {
+    content: '↓';
+    font-size: .5em;
+    margin-left: 5px;
+  }
+}
+
 .alert {
   border: 1px solid black;
   border-radius: 3px;
