@@ -33,8 +33,8 @@ describe('Acceptance: JobBoardTest.Js', function() {
     andThen(function() {
       expect(currentPath()).to.equal('job.list.index');
 
-      let event = find('.item').first();
-      expect(event.find('.item-title').text()).to.contain('a title');
+      let event = find('.expandable-list').first();
+      expect(event.find('.title').text()).to.contain('a title');
     });
   });
 
@@ -42,7 +42,7 @@ describe('Acceptance: JobBoardTest.Js', function() {
     visit('/job/board/1');
 
     andThen(function() {
-      let event = find('.item').first();
+      let event = find('.expandable-list').first();
       expect(event.find('.item-summary').text()).to.contain('a job description');
     });
   });

@@ -24,7 +24,7 @@ describeComponent(
       });
       this.set('model', job);
       this.render(hbs`{{job/job-row item=model}}`);
-      var renderedText = this.$('.item-one-line').text();
+      var renderedText = this.$('.expandable-list').text();
       expect(renderedText).to.contain('a title');
       expect(renderedText).to.contain('one');
       expect(renderedText).to.contain('two');
@@ -48,7 +48,7 @@ describeComponent(
       this.set('model', job);
       this.set('selected', selected);
       this.render(hbs`{{job/job-row item=model selectedItem=selected}}`);
-      var renderedText = this.$('.item-one-line').text();
+      var renderedText = this.$('.expandable-list').text();
       expect(renderedText).to.contain('a title');
       expect(renderedText).to.contain('a description');
       expect(renderedText).to.contain('salary');
@@ -66,7 +66,7 @@ describeComponent(
       let expandTrigged = false;
       this.on('expand', e => { expandTrigged = true; expect(e).to.equal(job); });
 
-      this.$('.item-title').click();
+      this.$('.expandable-list .title').click();
       expect(expandTrigged).to.be.true;
     });
 
@@ -83,7 +83,7 @@ describeComponent(
       let collapseTrigged = false;
       this.on('collapse', e => { collapseTrigged = true; expect(e).to.equal(job); });
 
-      this.$('.item-title').click();
+      this.$('.expandable-list .title').click();
       expect(collapseTrigged).to.be.true;
     });
   }
