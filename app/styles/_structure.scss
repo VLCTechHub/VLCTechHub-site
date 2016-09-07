@@ -3,6 +3,19 @@ body {
   background: #ececec url('/img/bg.png');
 }
 
+.site {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+}
+
 .container {
   max-width: 64rem;
   margin-left: auto;
