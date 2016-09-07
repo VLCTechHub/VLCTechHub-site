@@ -1,15 +1,29 @@
-<div class="item mb2 p3">
-  <div class="item-title h2 font-ubuntu py1 caps"><a href={{event.link}} target="_blank" title="" class="black">{{event.title}}</a></div>
-  <div class="item-date font-ubuntu h3 mb2">
-    {{ moment-format event.date 'DD MMM HH:mm' }}h - {{ moment-from-now event.date }}
-  </div>
-  <div class="item-summary">
-    <p>{{{ linkify-text event.description }}}</p>
-    <div class="item-more clearfix">
-      <div class="right">
-        {{event/link-to-calendar event=event}}
-        {{event/link-to-event event=event}}
+<div class="box">
+  <div class="header">
+    {{event/event-avatar
+      hasLinkToTwitter=true
+      event=model
+    }}
+    <div class="summary">
+      <time
+      datetime='{{moment-format model.date 'YYYY-MM-DDTHH:mm' }}'
+      class='date'
+      title="{{moment-from-now model.date}}">
+      {{moment-format model.date 'dddd DD MMMM HH:mm' }}h
+      </time>
+      <h1 class="title"> {{model.title }} </h1>
+      <div class="actions">
+        <a href="{{model.link}}" class="button -primary">Ver fuente</a>
+        {{#unless model.isPastEvent}}
+          <a href="{{model.calendarURL}}" target="_blank" class="button">Añadir al calendario</a>
+        {{/unless}}
       </div>
     </div>
   </div>
+    <div class="description">
+      <p > {{{ linkify-text model.description }}} </p>
+    </div>
+    <div class="bottom-actions">
+      <a href="{{model.link}}" class="button -primary">Ver fuente</a>
+    </div>
 </div>

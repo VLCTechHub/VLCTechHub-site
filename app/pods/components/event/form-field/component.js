@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  elementClass: 'field block col-12 mb3',
+  elementClass: 'field',
   autosize: Ember.K,
   isTextarea: Ember.computed('type', function(){
     return this.get('type') === 'textarea';
@@ -18,7 +18,7 @@ export default Ember.Component.extend({
   didInsertElement: function(){
     if(this.get('isTime')) {
       this.initializeTime();
-    };
+    }
     if(this.get('isTextarea')) {
       this.initializeTextarea();
     }

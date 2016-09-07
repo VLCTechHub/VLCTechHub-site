@@ -1,0 +1,7 @@
+.event-cards {
+  background-color: red;
+  @include cf()
+  > li {
+    @include col(1/3);
+  }
+}

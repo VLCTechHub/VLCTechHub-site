@@ -11,10 +11,10 @@ import Ember from 'ember';
 import Pretender from 'pretender';
 import {addRoutes, eventRoutes, jobRoutes} from "../fixtures/routes";
 
-let server;
 
 describe('Acceptance: Archive events', function() {
   let application;
+  let server;
 
   beforeEach(function() {
     application = startApp();
@@ -35,8 +35,8 @@ describe('Acceptance: Archive events', function() {
     andThen(function() {
       expect(currentPath()).to.equal('event.archive.month.index');
 
-      let event = find('.item').first();
-      expect(event.find('.item-title').text()).to.contain('a title');
+      let event = find('.expandable-list').first();
+      expect(event.find('.title').text()).to.contain('a title');
     });
   });
 
@@ -45,7 +45,7 @@ describe('Acceptance: Archive events', function() {
     visit('/events/archive/2001/01/1');
 
     andThen(function() {
-      let event = find('.item').first();
+      let event = find('.expandable-list').first();
       expect(event.find('.item-summary').text()).to.contain('an event description');
     });
   });

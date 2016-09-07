@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import moment from 'moment';
 
 export default Ember.Component.extend({
   event: null,
@@ -12,7 +11,7 @@ export default Ember.Component.extend({
     return text;
   }),
   isButtonDisabled: Ember.computed('event.isValid', 'isSaving', function(){
-    if(!this.get('event.isValid') || this.get('isSaving')) return true;
+    if(!this.get('event.isValid') || this.get('isSaving')) { return true; }
     return false;
   }),
   isChromeExtensionHintVisible: Ember.computed('event.link', function(){

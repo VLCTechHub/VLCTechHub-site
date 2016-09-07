@@ -1,0 +1,30 @@
+.expandable-list {
+  padding: 0.5rem 1rem;
+
+  .date {
+    color: #7F7F2B;
+  }
+
+  .title {
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-size: 1.25rem;
+  }
+
+  .external-link {
+    margin-bottom: 1rem;
+  }
+
+  ul, li { display:inline-block;margin:0;padding:0;list-style:none; }
+  li { padding-right: 0.5rem; }
+  ul { width: 100% }
+
+  &.expanded {
+    background-color: #D4E3BC;
+    ul {
+      margin-bottom: 1rem;
+    }
+  }
+}
+

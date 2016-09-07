@@ -1,14 +1,12 @@
 {{event/section-title text="Próximos eventos"}}
 
-<div class="clearfix mb2">
-  {{#link-to 'event.new' classNames='btn btn-primary right'}} Da de alta un evento {{/link-to}}
+<div class="new-item-link">
+  {{#link-to 'event.new' classNames='button -primary'}} Da de alta un evento {{/link-to}}
 </div>
 
 
-<div class="container">
-  <div class="clearfix">
-    {{#each model as |event|}}
-      {{event/event-card event=event}}
-    {{/each}}
-  </div>
-</div>
+<ul class="event-cards">
+  {{#each model as |event|}}
+    <li>{{event/event-card event=event}}</li>
+  {{/each}}
+</ul>

@@ -5,6 +5,7 @@ import {
   it
 } from 'ember-mocha';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
 
 describeComponent(
   'event/event-row',
@@ -22,7 +23,7 @@ describeComponent(
       });
       this.set('model', event);
       this.render(hbs`{{event/event-row item=model}}`);
-      var renderedText = this.$('.item-one-line').text();
+      var renderedText = this.$('.expandable-list').text();
       expect(renderedText).to.contain('a title');
       expect(renderedText).to.contain('lun. 01 ene. 00:00h');
       expect(renderedText).not.to.contain('a description');
@@ -41,7 +42,7 @@ describeComponent(
       this.set('model', event);
       this.set('selected', selected);
       this.render(hbs`{{event/event-row item=model selectedItem=selected}}`);
-      var renderedText = this.$('.item-one-line').text();
+      var renderedText = this.$('.expandable-list').text();
       expect(renderedText).to.contain('a title');
       expect(renderedText).to.contain('lun. 01 ene. 00:00h');
       expect(renderedText).to.contain('a description');
@@ -55,7 +56,7 @@ describeComponent(
 
       this.set('model', event);
       this.render(hbs`{{event/event-row item=model}}`);
-      var renderedText = this.$('.item-one-line').text();
+      var renderedText = this.$('.expandable-list').text();
       expect(renderedText).to.contain('Lorem ipsum dolor sit amet, consectetur adipiscing elit...');
     });
 
@@ -70,9 +71,9 @@ describeComponent(
       this.set('model', event);
       this.render(hbs`{{event/event-row item=model expandAction='expand'}}`);
       let expandTrigged = false;
-      this.on('expand', e => { expandTrigged = true; expect(e).to.equal(event) });
+      this.on('expand', e => { expandTrigged = true; expect(e).to.equal(event); });
 
-      this.$('.item-title').click();
+      this.$('.expandable-list .title').click();
       expect(expandTrigged).to.be.true;
     });
 
@@ -89,9 +90,9 @@ describeComponent(
       this.set('selected', selected);
       this.render(hbs`{{event/event-row item=model selectedItem=selected collapseAction='collapse'}}`);
       let collapseTrigged = false;
-      this.on('collapse', e => { collapseTrigged = true; expect(e).to.equal(event) });
+      this.on('collapse', e => { collapseTrigged = true; expect(e).to.equal(event); });
 
-      this.$('.item-title').click();
+      this.$('.expandable-list .title').click();
       expect(collapseTrigged).to.be.true;
     });
   }

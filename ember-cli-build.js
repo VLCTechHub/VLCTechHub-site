@@ -8,6 +8,12 @@ module.exports = function(defaults) {
     },
     fingerprint: {
       exclude: ['apple-touch-icon', 'favicon', 'mstile']
+    },
+    sassOptions: {
+      includePaths: [
+        'node_modules/breakpoint-sass/stylesheets',
+        'node_modules/jeet/scss/jeet'
+      ]
     }
   });
 
@@ -48,7 +54,7 @@ module.exports = function(defaults) {
   app.import('bower_components/jt.timepicker/jquery.timepicker.js');
   app.import('bower_components/jt.timepicker/jquery.timepicker.css');
   app.import('bower_components/autosize/dist/autosize.min.js');
-  app.import('vendor/css/basscss.css');
+  //app.import('vendor/css/basscss.css');
 
   return app.toTree();
 };

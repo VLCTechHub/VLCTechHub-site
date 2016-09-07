@@ -1,0 +1,153 @@
+
+body {
+  background: #ececec url('/img/bg.png');
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+}
+
+.container {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.menu {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+
+}
+
+.menu.-desktop {
+  display: none;
+  @include breakpoint($screen-sm-min) {
+    display: block;
+  }
+ padding: 20px;
+  margin-bottom: 2rem;
+
+  & .logo {
+    width: 16.66667%;
+    float:left;
+
+    & img {
+      width:120px;
+    }
+  }
+  & .options {
+    margin-top: 1em;
+    float:left;
+    width: 83.33333%;
+  }
+
+
+  }
+
+.menu:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.menu.-mobile {
+  position: relative;
+  display: block;
+  @include breakpoint($screen-sm-min) {
+    display: none;
+  }
+
+  & .logo {
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+    > img {
+      width:120px;
+    }
+  }
+  & .hamburger {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    & img {
+      width: 32px;
+    }
+  }
+}
+
+.menu-options.-mobile {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+
+  display: block;
+  @include breakpoint($screen-sm-min) {
+    display: none;
+  }
+
+  & li {
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid whitesmoke;
+
+    & .active {
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+.footer {
+  background-color: #001f3f;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #ddd;
+
+  a {
+    color: #ddd;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer {
+
+  .grid {
+    @include cf();
+    margin-left: 6em;
+  }
+
+  .grid > ul {
+    @include col(1, $cycle: 1);
+    @include breakpoint($screen-sm-min) {
+      @include col(1/4, $cycle: 4);
+    }
+  }
+
+  .list-header {
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .list-item {
+  }
+}

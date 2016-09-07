@@ -30,7 +30,7 @@ describe('RegisterAutosizeInitializer', function() {
 
     let container = 'component:event/form-field';
     let name = 'autosize';
-    let injected = 'autosize:main'
+    let injected = 'autosize:main';
     expect(application.inject.calledWith(container, name, injected)).to.be.true;
   });
 });

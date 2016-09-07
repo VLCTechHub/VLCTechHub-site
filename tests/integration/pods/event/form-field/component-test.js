@@ -4,6 +4,7 @@ import {
   describeComponent,
   it
 } from 'ember-mocha';
+import { describe } from 'mocha';
 import hbs from 'htmlbars-inline-precompile';
 
 describeComponent(
@@ -22,7 +23,7 @@ describeComponent(
 
       it('renders a growing textarea with autosize injected property', function(){
         let wasCalled = false;
-        this.set('autosize', function(){ wasCalled = true});
+        this.set('autosize', function(){ wasCalled = true; });
         this.render(hbs`{{event/form-field type='textarea' autosize=autosize}}`);
 
         expect(wasCalled).to.be.true;

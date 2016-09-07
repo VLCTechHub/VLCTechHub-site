@@ -20,7 +20,7 @@ export default Ember.Route.extend({
       this.transitionTo('event.archive.month.detail', this.get('date.year'), this.get('date.month'), event);
     },
 
-    collapse(params){
+    collapse(){
       this.transitionTo('event.archive.month', this.get('date.year'), this.get('date.month'));
     },
 
