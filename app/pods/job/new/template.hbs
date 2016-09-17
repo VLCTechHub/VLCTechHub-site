@@ -1,0 +1,6 @@
+<form class="box">
+  {{event/form-field name='title' label="Título *" value=model.title type="text"}}
+  {{event/form-field name='company' label="Empresa *" value=model.company.name type="text"}}
+  {{event/form-field name='company-link' label="Link de la empresa *" value=model.company.link type="text"}}
+  <button {{action "save"}} class="button -primary">Dar de alta</button>
+</form>

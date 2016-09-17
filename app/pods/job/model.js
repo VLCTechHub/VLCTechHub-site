@@ -4,9 +4,9 @@ import Ember from 'ember';
 export default DS.Model.extend({
   title: DS.attr('string'),
   description: DS.attr('string'),
-  company: DS.attr(),
+  company: DS.attr({'defaultValue': () => {return {}; } }),
   link: DS.attr('string'),
-  tags: DS.attr(),
+  tags: DS.attr({'defaultValue': () => [] }),
   how_to_apply: DS.attr('string'),
   published_at: DS.attr('date'),
   salary: DS.attr('string'),
