@@ -1,13 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  saved: false,
+  saveFailed: false,
   actions: {
     save: function() {
-      console.log('SALVARRRRRRRRRRRRRRRRRRrr');
-      console.log(this.get('model'), this.get('model').serialize());
       var newJob = this.get('model');
 
-      return newJob.save();
+      return newJob.save()
+        .then(() => this.set('saved', true))
+        .catch(() => this.set('saveFailed', true));
     }
   }
 });

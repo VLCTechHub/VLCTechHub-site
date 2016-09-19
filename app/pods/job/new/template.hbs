@@ -1,6 +1,25 @@
+{{#if saveFailed}}
+
+ <div class="alert -danger">
+  <div class='h3'>¡Ups! Houston, tenemos un problema</div>
+  <div>No hemos podido crear la oferta, por favor, revisa que los datos son correctos</div>
+</div>
+{{/if}}
+
+{{#if saved }}
+<div class="alert -confirm">
+  <div class="h3">¡Yuju! ¡Oferta dada de alta!</div>
+  <div>Hemos dado de alta tu oferta, pero ten en cuenta que la publicación no es inmediata.</div>
+</div>
+{{/if}}
+
+
 <form class="box">
   {{event/form-field name='title' label="Título *" value=model.title type="text"}}
-  {{event/form-field name='company' label="Empresa *" value=model.company.name type="text"}}
-  {{event/form-field name='company-link' label="Link de la empresa *" value=model.company.link type="text"}}
-  <button {{action "save"}} class="button -primary">Dar de alta</button>
+  {{event/form-field name='description' label="Descripción *" value=model.description type="textarea"}}
+  {{event/form-field name='company' label="Nombre de la empresa *" value=model.company.name type="text"}}
+  {{event/form-field name='company-link' label="Web de la empresa *" value=model.company.link type="text"}}
+  {{event/form-field name='how-to-apply' label="Cómo aplicar *" value=model.how_to_apply type="text"}}
+  {{event/form-field name='salary' label="Salario *" value=model.salary type="text"}}
+  <button {{action "save"}} class="button -primary" disabled={{unless model.isValid 'disabled'}}>Publicar</button>
 </form>

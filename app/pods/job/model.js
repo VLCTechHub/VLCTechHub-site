@@ -14,4 +14,9 @@ export default DS.Model.extend({
     let exp = new RegExp('.*');
     return exp.exec(this.get('description'))[0];
   }),
+  isValid: Ember.computed('title', 'description', 'salary',
+             'how_to_apply', 'company.name', 'company.link', function() {
+    var requiredFields = ['title', 'description', 'salary', 'how_to_apply', 'company.name', 'company.link'];
+    return requiredFields.every((key) => !Ember.isEmpty(this.get(key)));
+  }),
 });
