@@ -2,7 +2,7 @@
 
 {{#if jobs}}
   <div class="new-item-link">
-    <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="button -primary right" target='_blank'>Da de alta una oferta</a>
+    {{#link-to 'job.new' class='button -primary right'}}Da de alta una oferta{{/link-to}}
   </div>
 
   <div class="box -expandable-list">
@@ -16,6 +16,6 @@
 {{else}}
   <div class="job-empty">
     <p>¿Estás buscando perfiles técnicos para tu empresa?</p>
-    <a href="https://vlctechhub.typeform.com/to/iYKS7g" class="button -primary"  target='_blank'>Da de alta una oferta</a>
+    {{#link-to 'job.new' class='button -primary'}}Da de alta una oferta{{/link-to}}
   </div>
 {{/if}}

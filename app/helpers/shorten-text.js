@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export function shorten([text, size]) {
-  if(text.length <= size) {
+  if(!text || text.length <= size) {
     return text;
   }
   return text.substring(0,size) + '...';

@@ -6,21 +6,25 @@ export default Ember.Controller.extend({
   actions: {
     save: function() {
       var newJob = this.get('model');
-
       return newJob.save()
         .then(() => this.showSuccess())
+        .then(() => this.resetForm())
         .catch(() => this.showFailure());
     }
   },
+  resetForm: function() {
+    this.set('model', this.get('store').createRecord('job')));
+  },
+
   showSuccess: function() {
-    this.enableMessage('saved')
+    this.showMessage('saved');
   },
 
   showFailure: function() {
-    this.enableMessage('saveFailed')
+    this.showMessage('saveFailed');
   },
 
-  enableMessage: function(prop) {
+  showMessage: function(prop) {
     this.hideMessages();
     this.set(prop, true);
     window.scrollTo(0,0);

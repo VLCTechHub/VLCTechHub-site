@@ -15,7 +15,7 @@ export default Ember.Route.extend({
     }];
   },
   model: function(){
-    return this.modelFor('application').get('jobs');
+    return this.modelFor('application').get('jobs').filterBy('isPublished');
   },
   actions: {
     expand: function(job){
