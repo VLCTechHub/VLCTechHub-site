@@ -1,0 +1,56 @@
+<form class="box">
+  {{event/form-field
+    name='title'
+    label="Puesto *"
+    value=job.title
+    type="text"
+    helpText="Ej: 'Desarrollador ruby', 'Diseñador UX', 'Programador senior .Net'"
+  }}
+
+  {{event/form-field
+    name='description'
+    label="Descripción *"
+    value=job.description
+    type="textarea"
+    helpText="Describe con detalle lo que implica el puesto, qué tipo de candidato buscas, cómo se trabaja en tu empresa y qué beneficios ofrecéis."
+  }}
+
+  {{event/form-field
+    name='salary'
+    label="Sueldo *"
+    value=model.salary
+    type="text"
+    helpText="Los candidatos contactan más con empresas que publican el sueldo en la oferta."
+  }}
+
+  {{event/form-field
+    name='how-to-apply'
+    label="Cómo aplicar *"
+    value=job.how_to_apply
+    type="text"
+    helpText="Escribe las instrucciones para inscribirte a tu oferta aquí (ej: 'Mándanos una carta de presentación y tu cv a la direccion de correo xxx@xxx.com. Cuéntanos por qué eres el candidato ideal!')"
+  }}
+
+  {{event/form-field
+    name='company'
+    label="Nombre de la empresa *"
+    value=job.company.name
+    type="text"
+  }}
+
+  {{event/form-field
+    name='company-link'
+    label="Web de la empresa *"
+    value=job.company.link
+    type="text"
+  }}
+
+
+  <button
+    {{action "submit"}}
+    class="button -primary"
+    disabled={{unless job.isValid 'disabled'}}
+  >
+    Publicar
+  </button>
+</form>

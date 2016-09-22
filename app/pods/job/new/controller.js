@@ -3,17 +3,17 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   saved: false,
   saveFailed: false,
-  actions: {
-    save: function() {
-      var newJob = this.get('model');
-      return newJob.save()
-        .then(() => this.showSuccess())
-        .then(() => this.resetForm())
-        .catch(() => this.showFailure());
-    }
+
+  saveJob: function() {
+    var job = this.get('model');
+    return job.save()
+      .then(() => this.showSuccess())
+      .then(() => this.resetModel())
+      .catch(() => this.showFailure());
   },
-  resetForm: function() {
-    this.set('model', this.get('store').createRecord('job')));
+
+  resetModel: function() {
+    this.set('model', this.get('store').createRecord('job'));
   },
 
   showSuccess: function() {

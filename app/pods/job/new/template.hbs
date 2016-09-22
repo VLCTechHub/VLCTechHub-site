@@ -1,3 +1,9 @@
+{{event/section-title text="Nuevo empleo"}}
+
+<p>
+Recomendamos seguir <a href='http://www.carlosreig.es/como-hacer-una-buena-oferta-de-trabajo/?source=vlctechhub' class='link'>esta guía</a> para publicar. <strong>Revisamos cada oferta</strong>, ten en cuenta que la publicación no es inmediata.
+</p>
+
 {{#if saveFailed}}
 
  <div class="alert -danger">
@@ -13,13 +19,4 @@
 </div>
 {{/if}}
 
-
-<form class="box">
-  {{event/form-field name='title' label="Título *" value=model.title type="text"}}
-  {{event/form-field name='description' label="Descripción *" value=model.description type="textarea"}}
-  {{event/form-field name='company' label="Nombre de la empresa *" value=model.company.name type="text"}}
-  {{event/form-field name='company-link' label="Web de la empresa *" value=model.company.link type="text"}}
-  {{event/form-field name='how-to-apply' label="Cómo aplicar *" value=model.how_to_apply type="text"}}
-  {{event/form-field name='salary' label="Salario *" value=model.salary type="text"}}
-  <button {{action "save"}} class="button -primary" disabled={{unless model.isValid 'disabled'}}>Publicar</button>
-</form>
+{{job/new-form job=model onSubmit=(action saveJob)}}
