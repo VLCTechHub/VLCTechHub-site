@@ -16,9 +16,17 @@
   }}
 
   {{event/form-field
+    name='tag'
+    label="Palabras clave"
+    value=job.tags
+    type="tag"
+    helpText="Breve listado separado por comas. Ej: javascript, aws, marketing, photoshop"
+  }}
+
+  {{event/form-field
     name='salary'
     label="Sueldo *"
-    value=model.salary
+    value=job.salary
     type="text"
     helpText="Los candidatos contactan más con empresas que publican el sueldo en la oferta."
   }}
