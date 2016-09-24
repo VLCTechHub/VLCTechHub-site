@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   classNames: "event-avatar",
   hasLinktoTwitter: false,
   avatar: Ember.computed('event.hashtag', function() {
-    var handle = this.get('event.hashtag');
+    var handle = this.get('event.hashtag') || '';
     if(handle.indexOf('@') === 0) {
       return 'http://res.cloudinary.com/vlctechhub/image/twitter_name/w_240/' +
               handle.substring(1) +
@@ -15,6 +15,7 @@ export default Ember.Component.extend({
   }),
   href: Ember.computed('event.hashtag', function(){
     var handler = this.get('event.hashtag');
+    if(Ember.isEmpty(handler)) { return ''; }
     var userURL = 'https://twitter.com/';
     var hashtagURL = 'https://twitter.com/hashtag/';
     var uriHandler = handler.substring(1, handler.length);
