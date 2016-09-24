@@ -22,10 +22,9 @@ describeModel(
       model.setProperties({
         'title': 'a title',
         'description': 'a description',
-        'salary': 'anything',
-        'how_to_apply': 'how to apply',
         'company.name': 'company name',
-        'company.link': 'company link'
+        'company.link': 'company link',
+        'contactEmail': 'an email'
       });
       expect(model.get('isValid')).to.be.true;
     });

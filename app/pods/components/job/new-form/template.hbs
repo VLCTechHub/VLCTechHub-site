@@ -25,7 +25,7 @@
 
   {{event/form-field
     name="salary"
-    label="Sueldo *"
+    label="Sueldo"
     value=job.salary
     type="text"
     helpText="Los candidatos contactan más con empresas que publican el sueldo en la oferta."
@@ -33,11 +33,20 @@
 
   {{event/form-field
     name="how-to-apply"
-    label="Cómo aplicar *"
+    label="Cómo inscribirse"
     value=job.how_to_apply
     type="text"
     helpText="Escribe las instrucciones para inscribirte a tu oferta aquí. Ej: 'Mándanos una carta de presentación y tu cv a la direccion de correo xxx@xxx.com. Cuéntanos por qué eres el candidato ideal!'"
   }}
+
+  {{event/form-field
+    name="link"
+    label="URL de la oferta"
+    value=job.link
+    type="text"
+    helpText="Si tienes publicada la oferta en tu página web puedes poder aquí el link."
+  }}
+
 
   {{event/form-field
     name="company-name"
@@ -55,7 +64,7 @@
 
   {{event/form-field
     name="company-twitter"
-    label="Twitter handler de la empresa"
+    label="Twitter de la empresa"
     value=job.company.twitter
     type="text"
     helpText="Te nombraremos cuando se publique la oferta. Ej: @mozilla"
@@ -63,8 +72,8 @@
 
   {{event/form-field
     name="email"
-    label="Email de contacto"
-    value=job.email
+    label="Email de contacto *"
+    value=job.contactEmail
     type="text"
     helpText="Email contacto en caso de tener alguna duda con la oferta. Este email no se publicará con la oferta."
   }}

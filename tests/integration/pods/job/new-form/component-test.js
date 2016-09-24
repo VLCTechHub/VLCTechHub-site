@@ -69,8 +69,11 @@ describeComponent(
       this.$('input[name="how-to-apply"]').val('how to apply').change();
       expect(this.get('job.how_to_apply')).to.eql('how to apply');
 
+      this.$('input[name="link"]').val('offer link').change();
+      expect(this.get('job.link')).to.eql('offer link');
+
       this.$('input[name="email"]').val('email').change();
-      expect(this.get('job.email')).to.eql('email');
+      expect(this.get('job.contactEmail')).to.eql('email');
 
       this.$('input[name="company-name"]').val('company name').change();
       expect(this.get('job.company.name')).to.eql('company name');
