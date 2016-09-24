@@ -19,5 +19,6 @@ export default DS.Model.extend({
     var requiredFields = ['title', 'description', 'salary', 'how_to_apply', 'company.name', 'company.link'];
     return requiredFields.every((key) => !Ember.isEmpty(this.get(key)));
   }),
-  isPublished: Ember.computed.notEmpty('published_at')
+  isPublished: Ember.computed.notEmpty('published_at'),
+  email: DS.attr('string')
 });

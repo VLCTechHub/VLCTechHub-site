@@ -1,6 +1,6 @@
 <form class="box">
   {{event/form-field
-    name='title'
+    name="title"
     label="Puesto *"
     value=job.title
     type="text"
@@ -8,7 +8,7 @@
   }}
 
   {{event/form-field
-    name='description'
+    name="description"
     label="Descripción *"
     value=job.description
     type="textarea"
@@ -16,7 +16,7 @@
   }}
 
   {{event/form-field
-    name='tag'
+    name="tag"
     label="Palabras clave"
     value=job.tags
     type="tag"
@@ -24,7 +24,7 @@
   }}
 
   {{event/form-field
-    name='salary'
+    name="salary"
     label="Sueldo *"
     value=job.salary
     type="text"
@@ -32,27 +32,42 @@
   }}
 
   {{event/form-field
-    name='how-to-apply'
+    name="how-to-apply"
     label="Cómo aplicar *"
     value=job.how_to_apply
     type="text"
-    helpText="Escribe las instrucciones para inscribirte a tu oferta aquí (ej: 'Mándanos una carta de presentación y tu cv a la direccion de correo xxx@xxx.com. Cuéntanos por qué eres el candidato ideal!')"
+    helpText="Escribe las instrucciones para inscribirte a tu oferta aquí. Ej: 'Mándanos una carta de presentación y tu cv a la direccion de correo xxx@xxx.com. Cuéntanos por qué eres el candidato ideal!'"
   }}
 
   {{event/form-field
-    name='company'
+    name="company-name"
     label="Nombre de la empresa *"
     value=job.company.name
     type="text"
   }}
 
   {{event/form-field
-    name='company-link'
+    name="company-link"
     label="Web de la empresa *"
     value=job.company.link
     type="text"
   }}
 
+  {{event/form-field
+    name="company-twitter"
+    label="Twitter handler de la empresa"
+    value=job.company.twitter
+    type="text"
+    helpText="Te nombraremos cuando se publique la oferta. Ej: @mozilla"
+  }}
+
+  {{event/form-field
+    name="email"
+    label="Email de contacto"
+    value=job.email
+    type="text"
+    helpText="Email contacto en caso de tener alguna duda con la oferta. Este email no se publicará con la oferta."
+  }}
 
   <button
     {{action "submit"}}
