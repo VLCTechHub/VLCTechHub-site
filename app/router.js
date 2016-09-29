@@ -23,6 +23,7 @@ Router.map(function() {
     this.route('list', { path: '/board' },  function() {
       this.route('detail', { path: '/:job_id' });
     });
+    this.route('new');
   });
 });
 

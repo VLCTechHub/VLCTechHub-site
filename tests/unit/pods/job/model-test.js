@@ -14,5 +14,19 @@ describeModel(
       model.set('description','first paragraph\nsecond paragraph');
       expect(model.get('excerpt')).to.equal('first paragraph');
     });
+
+    it('should validate boring required fields', function() {
+      var model = this.subject();
+      expect(model.get('isValid')).to.be.false;
+
+      model.setProperties({
+        'title': 'a title',
+        'description': 'a description',
+        'company.name': 'company name',
+        'company.link': 'company link',
+        'contactEmail': 'an email'
+      });
+      expect(model.get('isValid')).to.be.true;
+    });
   }
 );

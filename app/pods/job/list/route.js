@@ -14,7 +14,7 @@ export default Ember.Route.extend({
       }
     }];
   },
-  model: function(){
+  model: function() {
     return this.modelFor('application').get('jobs');
   },
   actions: {

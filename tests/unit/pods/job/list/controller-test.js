@@ -17,10 +17,12 @@ describeModule(
     it('sorts jobs by publish_at desc', function() {
       let jobJanuary = Ember.Object.create({
         published_at: new Date(2001, 0, 1),
+        isPublished: true,
         title: 'january job offer'
       });
       let jobFebruary = Ember.Object.create({
         published_at: new Date(2001, 1, 1),
+        isPublished: true,
         title: 'february job offer'
       });
       let controller = this.subject();

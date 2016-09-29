@@ -1,0 +1,22 @@
+{{event/section-title text="Nuevo empleo"}}
+
+<p>
+Recomendamos seguir <a href='http://www.carlosreig.es/como-hacer-una-buena-oferta-de-trabajo/?source=vlctechhub' class='link'>esta guía</a> para publicar. <strong>Revisamos cada oferta</strong>, ten en cuenta que la publicación no es inmediata.
+</p>
+
+{{#if saveFailed}}
+
+ <div class="alert -danger">
+  <div class='h3'>¡Ups! Houston, tenemos un problema</div>
+  <div>No hemos podido crear la oferta, por favor, revisa que los datos son correctos</div>
+</div>
+{{/if}}
+
+{{#if saved }}
+<div class="alert -confirm">
+  <div class="h3">¡Yuju! ¡Oferta dada de alta!</div>
+  <div>Hemos dado de alta tu oferta, pero ten en cuenta que la publicación no es inmediata.</div>
+</div>
+{{/if}}
+
+{{job/new-form job=model onSubmit=(action saveJob)}}

@@ -15,4 +15,11 @@
   {{input type=type value=value name=name class=elementClass}}
 {{/if}}
 
+{{#if isTag}}
+  {{input type='text' value=tagAsString name=name class=elementClass focus-out="setTag"}}
+{{/if}}
+<span class='help-text'>
+  {{helpText}}
+</span>
+
 

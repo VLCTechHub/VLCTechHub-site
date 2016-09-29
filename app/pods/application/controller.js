@@ -10,6 +10,6 @@ export default Ember.Controller.extend({
     return moment().format('YYYY');
   }),
   totalJobs: Ember.computed('model.jobs.@each', function(){
-    return this.get('model.jobs.length');
+    return this.get('model.jobs').filterBy('isPublished').get('length');
   })
 });
