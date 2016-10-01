@@ -20,9 +20,9 @@
       }
 
       if (! /PhantomJS/.test(window.navigator.userAgent)) {
-        loadCSS("assets/vendor.css");
-        loadCSS("assets/agroptima-app.css");
-        loadCSS("assets/test-support.css");
+        loadCSS("{{rootURL}}assets/vendor.css");
+        loadCSS("{{rootURL}}assets/agroptima-app.css");
+        loadCSS("{{rootURL}}assets/test-support.css");
       }
     </script>
     <style>
@@ -38,12 +38,12 @@
 
     {{content-for 'body'}}
     {{content-for 'test-body'}}
-    <script src="assets/vendor.js"></script>
-    <script src="assets/test-support.js"></script>
-    <script src="assets/vlc-tech-hub.js"></script>
-    <script src="testem.js" integrity=""></script>
-    <script src="assets/tests.js"></script>
-    <script src="assets/test-loader.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/test-support.js"></script>
+    <script src="{{rootURL}}assets/vlc-tech-hub.js"></script>
+    <script src="{{rootURL}}testem.js" integrity=""></script>
+    <script src="{{rootURL}}assets/tests.js"></script>
+    <script src="{{rootURL}}assets/test-loader.js"></script>
 
     {{content-for 'body-footer'}}
     {{content-for 'test-body-footer'}}

@@ -62,12 +62,11 @@ describeComponent(
       });
 
       this.set('model', job);
-      this.render(hbs`{{job/job-row item=model expandAction='expand'}}`);
-      let expandTrigged = false;
-      this.on('expand', e => { expandTrigged = true; expect(e).to.equal(job); });
-
+      let trigged = false;
+      this.set('myAction', () => trigged = true);
+      this.render(hbs`{{job/job-row item=model onExpand=(action myAction)}}`);
       this.$('.expandable-list .title').click();
-      expect(expandTrigged).to.be.true;
+      expect(trigged).to.be.true;
     });
 
     it('should trigger collapse action on clicking the title if job was selected', function(){
@@ -79,12 +78,16 @@ describeComponent(
 
       this.set('model', job);
       this.set('selected', selected);
-      this.render(hbs`{{job/job-row item=model selectedItem=selected collapseAction='collapse'}}`);
-      let collapseTrigged = false;
-      this.on('collapse', e => { collapseTrigged = true; expect(e).to.equal(job); });
+      let trigged = false;
+      this.set('myAction', () => trigged = true);
+      this.render(hbs`{{job/job-row
+        item=model
+        selectedItem=selected
+        onCollapse=(action myAction)}}
+      `);
 
       this.$('.expandable-list .title').click();
-      expect(collapseTrigged).to.be.true;
+      expect(trigged).to.be.true;
     });
   }
 );

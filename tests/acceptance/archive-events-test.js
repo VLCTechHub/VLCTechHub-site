@@ -30,7 +30,7 @@ describe('Acceptance: Archive events', function() {
 
   it('can visit /events/archive', function() {
 
-    visit('/events/archive');
+    visit('/events/archive/2001/01');
 
     andThen(function() {
       expect(currentPath()).to.equal('event.archive.month.index');

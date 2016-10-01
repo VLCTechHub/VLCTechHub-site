@@ -18,13 +18,7 @@ export default Ember.Route.extend({
     return this.modelFor('application').get('jobs');
   },
   actions: {
-    expand: function(job){
-      this.transitionTo('job.list.detail', job);
-    },
-    collapse: function(){
-      this.transitionTo('job.list');
-    },
-    willTransition: function(){
+   willTransition: function(){
       this.controller.set('selected', null);
     }
   }
