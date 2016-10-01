@@ -70,10 +70,10 @@ describeComponent(
         title: 'a title',
         isValid: true
       });
-      this.set('model', event);
-      this.render(hbs`{{event/new-event-form event=model submitAction='myAction'}}`);
       let trigged = false;
-      this.on('myAction', e => { trigged = true; expect(e).to.equal(event); });
+      this.set('model', event);
+      this.set('myAction', () => { trigged = true; });
+      this.render(hbs`{{event/new-event-form event=model onSubmit=(action myAction)}}`);
       this.$('.button.-primary').click();
       expect(trigged).to.be.true;
     });

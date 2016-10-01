@@ -2,16 +2,17 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   event: null,
-  isSaving: false,
-  buttonText: Ember.computed('isSaving', function(){
+  isSubmitting: false,
+  onSubmit: Ember.K,
+  buttonText: Ember.computed('isSubmitting', function(){
     var text = 'Publicar';
-    if(this.get('isSaving')) {
+    if(this.get('isSubmitting')) {
       text = 'Publicando...';
     }
     return text;
   }),
-  isButtonDisabled: Ember.computed('event.isValid', 'isSaving', function(){
-    if(!this.get('event.isValid') || this.get('isSaving')) { return true; }
+  isButtonDisabled: Ember.computed('event.isValid', 'isSubmitting', function(){
+    if(!this.get('event.isValid') || this.get('isSubmitting')) { return true; }
     return false;
   }),
   isChromeExtensionHintVisible: Ember.computed('event.link', function(){
@@ -20,10 +21,10 @@ export default Ember.Component.extend({
     return supportedSites.some(function(site){ return link.indexOf(site) === 0; });
   }),
   actions: {
-    submitAction: function(params) {
-      if(!this.get('isSaving')){
-        this.set('isSaving', true);
-        this.sendAction('submitAction', params);
+    submit: function(params) {
+      if(!this.get('isSubmitting')){
+        this.set('isSubmitting', true);
+        return this.get('onSubmit')(params);
       }
     }
   }

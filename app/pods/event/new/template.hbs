@@ -18,4 +18,4 @@ Si organizas un <strong>evento</strong>, taller, charla o quedada informal para 
 </div>
 {{/if}}
 
-{{event/new-event-form event=model submitAction='saveEvent' isSaving=isSaving}}
+{{event/new-event-form event=model onSubmit=(action 'saveEvent') isSaving=isSaving}}

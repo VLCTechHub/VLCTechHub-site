@@ -6,17 +6,7 @@ export default Ember.Route.extend({
     return this.store.createRecord('event');
   },
   actions: {
-    saveEvent: function(newEvent){
-      var self = this;
-      self.controller.preSave();
-      newEvent.save().then(function() {
-        self.controller.set('model', self.store.createRecord('event'));
-        self.controller.postSave(true);
-      }, function(){
-        self.controller.postSave(false);
-      });
-    },
-    willTransition: function(){
+   willTransition: function(){
       this.controller.reset();
     }
   },
