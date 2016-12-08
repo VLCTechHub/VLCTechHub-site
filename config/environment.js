@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'vlc-tech-hub',
     podModulePrefix: 'vlc-tech-hub/pods',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -33,7 +33,7 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
+    ENV.rootURL = '/';
     ENV.locationType = 'none';
 
     ENV.APP.API_HOST = 'http://localhost:4200';

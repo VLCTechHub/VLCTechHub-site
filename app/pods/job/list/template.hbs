@@ -7,7 +7,12 @@
 
   <div class="box -expandable-list">
   {{#each jobs as |job|}}
-    {{job/job-row item=job selectedItem=selected expandAction='expand' collapseAction='collapse'}}
+    {{job/job-row
+      item=job
+      selectedItem=selected
+      onExpand=(action 'expand')
+      onCollapse=(action 'collapse')
+    }}
   {{/each}}
   </div>
   <p class='job-info'>

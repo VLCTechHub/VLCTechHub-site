@@ -31,8 +31,8 @@
 
     {{content-for 'head'}}
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/vlc-tech-hub.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/vlc-tech-hub.css">
 
     {{content-for 'tracking'}}
     {{content-for 'head-footer'}}
@@ -40,8 +40,8 @@
   <body>
     {{content-for 'body'}}
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/vlc-tech-hub.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/vlc-tech-hub.js"></script>
 
     {{content-for 'body-footer'}}
   </body>

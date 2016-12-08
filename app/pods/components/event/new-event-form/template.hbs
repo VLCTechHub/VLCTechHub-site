@@ -5,7 +5,7 @@
   {{event/form-field name='date' label="Fecha *(dd/mm/yyyy)" value=event.date type="date"}}
   {{event/form-field name='time' label="Hora *(hh:mm)" type="time" value=event.time}}
   {{event/form-field name='hashtag' label="Hashtag o mención" value=event.hashtag type="text"}}
-<button {{action "submitAction" event}} class="button -primary" disabled="{{if isButtonDisabled 'disabled'}}" >{{buttonText}}</button>
+<button {{action "submit" event}} class="button -primary" disabled="{{if isButtonDisabled 'disabled'}}" >{{buttonText}}</button>
 
 {{#if isChromeExtensionHintVisible }}
   <div class="hint">
