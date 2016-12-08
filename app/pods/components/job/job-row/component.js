@@ -12,7 +12,6 @@ export default Ember.Component.extend({
   actions: {
     toggleExpand: function(item){
       var action = this.get('isExpanded') ? 'onCollapse':'onExpand';
-      //this.sendAction(action, item);
       return this.get(action)(item);
     }
   }

@@ -63,7 +63,7 @@ describeComponent(
 
       this.set('model', job);
       let trigged = false;
-      this.set('myAction', () => trigged = true);
+      this.set('myAction', () => { trigged = true; });
       this.render(hbs`{{job/job-row item=model onExpand=(action myAction)}}`);
       this.$('.expandable-list .title').click();
       expect(trigged).to.be.true;
@@ -79,7 +79,7 @@ describeComponent(
       this.set('model', job);
       this.set('selected', selected);
       let trigged = false;
-      this.set('myAction', () => trigged = true);
+      this.set('myAction', () => { trigged = true; });
       this.render(hbs`{{job/job-row
         item=model
         selectedItem=selected
