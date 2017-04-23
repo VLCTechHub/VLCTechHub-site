@@ -24,7 +24,6 @@ describe('Integration: JobRowComponent', function() {
    expect(renderedText).to.contain('a title');
    expect(renderedText).to.contain('one');
    expect(renderedText).to.contain('two');
-   expect(renderedText).to.contain('01/01');
    expect(renderedText).not.to.contain('a description');
  });
 
