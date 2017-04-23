@@ -9,8 +9,8 @@ This is the repository for the frontend application. Backend application can be 
 
 You will need the following things properly installed on your computer:
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/)
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/)
 * [npm](https://www.npmjs.com/)
 
 
@@ -46,8 +46,8 @@ __Note__: When run on linux, you might have a watch problem. You may need to [in
 
 ## Further Reading / Useful Links
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
+* [ember.js](https://emberjs.com/)
+* [ember-cli](https://www.ember-cli.com/)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)

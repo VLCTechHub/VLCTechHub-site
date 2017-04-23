@@ -1,38 +1,37 @@
 /* jshint expr:true */
 import { expect } from 'chai';
+import { setupTest } from 'ember-mocha';
 import {
-  describeModule,
-  it
-} from 'ember-mocha';
-import { beforeEach, afterEach } from 'mocha';
+  beforeEach,
+  afterEach,
+  it,
+  describe
+} from 'mocha';
 import sinon from 'sinon';
 
-describeModule(
-  'controller:event/new',
-  'EventNewController',
-  {
+describe('EventNewController', function() {
+  setupTest('controller:event/new', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
-  },
-  function() {
-    //create a sandbox as we stub global functions
-    let sandbox;
+  });
 
-    beforeEach(function(){
-      sandbox = sinon.sandbox.create();
-    });
+  //create a sandbox as we stub global functions
+  let sandbox;
 
-    afterEach(function(){
-      sandbox.restore();
-    });
+  beforeEach(function(){
+    sandbox = sinon.sandbox.create();
+  });
 
-    it('scrolls up to to after saving', function() {
-      sandbox.stub(window, 'scrollTo');
-      let controller = this.subject();
+  afterEach(function(){
+    sandbox.restore();
+  });
 
-      controller.postSave(true);
+  it('scrolls up to to after saving', function() {
+    sandbox.stub(window, 'scrollTo');
+    let controller = this.subject();
 
-      expect(window.scrollTo.called).to.be.true;
-    });
-  }
-);
+    controller.postSave(true);
+
+    expect(window.scrollTo.called).to.be.true;
+  });
+});
