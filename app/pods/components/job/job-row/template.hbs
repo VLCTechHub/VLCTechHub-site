@@ -1,31 +1,31 @@
 <article class='expandable-list {{if isExpanded 'expanded'}}'>
     <header>
-      <ul class=''>
-        <li class=''>
+      <ul>
+        <li>
           <time datetime='{{moment-format item.published_at 'YYYY-MM-DDTHH:mm' }}' class='date' title="{{moment-from-now item.published_at}}">
             {{moment-format item.published_at 'DD/MM'}}
           </time>
         </li>
-        <li class=''  {{action 'toggleExpand' item}}>
+        <li>
           <h3>
-            <a href='job/board/{{item.id}}' class='title' title="{{item.title}}">
+            {{#link-to 'job.list.detail' item class="title" title=item.title}}
               {{shorten-text item.title 55}}
-            </a>
+            {{/link-to}}
           </h3>
        </li>
-       <li class=''>
+       <li>
         {{#each item.tags as |tag|}}
           <span class="label">{{tag}}</span>
         {{/each}}
        </li>
-        <li class=''>
+        <li>
           {{#if item.company}}
             <span class='muted'>
               por <a href="{{item.company.link}}" class="black" target="_blank">{{item.company.name}}</a>
             </span>
         {{/if}}
         </li>
-        </ul>
+      </ul>
    </header>
   {{#if isExpanded}}
     <div>

@@ -50,39 +50,4 @@ describe('Integration: JobRowComponent', function() {
     expect(renderedText).to.contain('salary');
     expect(renderedText).to.contain('how to apply');
   });
-
-  it('should trigger expand action on clicking the title', function(){
-    var job = Ember.Object.create({
-      id: '1',
-      title: 'a title'
-    });
-
-    this.set('model', job);
-    let trigged = false;
-    this.set('myAction', () => { trigged = true; });
-    this.render(hbs`{{job/job-row item=model onExpand=(action myAction)}}`);
-    this.$('.expandable-list .title').click();
-    expect(trigged).to.be.true;
-  });
-
-  it('should trigger collapse action on clicking the title if job was selected', function(){
-    var job = Ember.Object.create({
-      id: '1',
-      title: 'a title'
-    });
-    var selected = Ember.Object.create({id: job.get('id')});
-
-    this.set('model', job);
-    this.set('selected', selected);
-    let trigged = false;
-    this.set('myAction', () => { trigged = true; });
-    this.render(hbs`{{job/job-row
-      item=model
-      selectedItem=selected
-      onCollapse=(action myAction)}}
-    `);
-
-    this.$('.expandable-list .title').click();
-    expect(trigged).to.be.true;
-  });
 });
