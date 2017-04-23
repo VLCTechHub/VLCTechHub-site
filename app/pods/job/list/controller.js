@@ -5,12 +5,4 @@ export default Ember.Controller.extend({
   jobs: Ember.computed('model', function() {
     return this.get('model').filterBy('isPublished').sortBy('published_at').reverse();
   }),
-  actions: {
-     expand: function(job){
-      this.transitionToRoute('job.list.detail', job);
-    },
-    collapse: function(){
-      this.transitionToRoute('job.list');
-    }
-  }
 });
