@@ -78,11 +78,17 @@
   text-align: center;
   vertical-align: baseline;
   white-space: nowrap;
+  line-height: 2.5em;
 }
 
 .label {
   &.-danger {
     background-color: #ff4136;
+  }
+  &.-ghost {
+    background-color: transparent;
+    border: 1px solid #9E9E9E;
+    color: #9E9E9E;
   }
 }
 

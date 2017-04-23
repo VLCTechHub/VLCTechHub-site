@@ -1,30 +1,55 @@
 .expandable-list {
   padding: 0.5rem 1rem;
 
-  .date {
-    color: #7F7F2B;
+  header {
+    @include cf();
   }
 
-  .title {
+  &.-expanded {
+    border-top: 5px solid #FFAA00;
+    background-color: whitesmoke;
+    box-shadow: 0px 8px 20px #9E9E9E;
+
+    header {
+      margin-bottom: 20px;
+    }
+  }
+
+  .who {
+    @include breakpoint($screen-sm-min) {
+      @include span(2/3);
+    }
+  }
+
+  .when {
+    @include breakpoint($screen-sm-min) {
+      @include span(1/3);
+    }
+  }
+
+  .job-title {
     color: #111;
     text-transform: uppercase;
     letter-spacing: 0;
     font-size: 1.25rem;
   }
 
-  .external-link {
+  .when {
+    @include breakpoint($screen-sm-min) {
+      text-align: right;
+    }
+  }
+  .source-link {
+    text-align: right;
     margin-bottom: 1rem;
   }
 
-  ul, li { display:inline-block;margin:0;padding:0;list-style:none; }
-  li { padding-right: 0.5rem; }
-  ul { width: 100% }
+  .item-summary > div {
+    font-size: 1.5rem;
+    color: #9E9E9E;
+  }
 
-  &.expanded {
-    background-color: #D4E3BC;
-    ul {
-      margin-bottom: 1rem;
-    }
+  .item-summary {
+    margin-bottom: 20px;
   }
 }
-
