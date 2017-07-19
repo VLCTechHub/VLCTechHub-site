@@ -1,4 +1,4 @@
-<article class='expandable-list {{if isExpanded 'expanded'}}'>
+<article class='expandable-list {{if isExpanded '-expanded'}}'>
     <header>
       <ul>
         <li>
@@ -10,7 +10,7 @@
           </time>
         </li>
         <li {{action 'toggleExpand' item}}>
-          <h3>
+          <h3 class='event-title'>
             <a href='events/upcoming/{{item.id}}' class='title' title="{{item.title}}">
               {{shorten-text item.title 55}}
             </a>
