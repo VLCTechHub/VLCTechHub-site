@@ -12,7 +12,7 @@
   {{#if mobileMenuExpanded}}
     <nav class="menu-options -mobile">
     <ul>
-      <li>{{#link-to 'event.upcoming' classNames='black'}} Próximos {{/link-to}}</li>
+      <li>{{#link-to 'event.upcoming' (query-params view='list') classNames='black'}} Próximos {{/link-to}}</li>
       <li>{{#link-to 'event.archive' classNames='black'}} Archivo {{/link-to}}</li>
       <li>{{#link-to 'job.list' classNames='black'}} Empleo <span class="label -danger">{{ totalJobs }}</span> {{/link-to}}</li>
     </ul>
@@ -26,7 +26,7 @@
     {{/link-to}}
   </div>
   <div class="options">
-    {{#link-to 'event.upcoming' classNames='button -menu'}} Próximos {{/link-to}}
+    {{#link-to 'event.upcoming' (query-params view='list') classNames='button -menu'}} Próximos {{/link-to}}
     {{#link-to 'event.archive' classNames='button -menu'}} Archivo {{/link-to}}
     {{#link-to 'job.list' classNames='button -menu'}} Empleo <span class="label -danger"> {{ totalJobs }} </span> {{/link-to}}
   </div>

@@ -3,15 +3,23 @@
 
 <div class="button-ribbon">
   <div class="button-ribbon-item">
-
-    <span {{action "showList"}} class="button -submenu {{if isListVisible 'active'}}">
+    {{#link-to 'event.upcoming'
+      (query-params view='list')
+      classNames='button -submenu'}}
       Listado
-    </span> |
-    <span {{action "showCalendar"}} class="button -submenu {{if isCalendarVisible 'active'}}"> Calendario </span>
+    {{/link-to}}
+     |
+    {{#link-to 'event.upcoming'
+      (query-params view='calendar')
+      classNames='button -submenu'}}
+      Calendario
+    {{/link-to}}
   </div>
 
   <div class="button-ribbon-item">
-    {{#link-to 'event.new' classNames='button -primary'}} Da de alta un evento {{/link-to}}
+    {{#link-to 'event.new' classNames='button -primary'}}
+      Da de alta un evento
+    {{/link-to}}
   </div>
 </div>
 
