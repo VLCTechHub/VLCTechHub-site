@@ -1,12 +1,27 @@
 {{event/section-title text="Próximos eventos"}}
 
-<div class="new-item-link">
-  {{#link-to 'event.new' classNames='button -primary'}} Da de alta un evento {{/link-to}}
+
+<div class="button-ribbon">
+  <div class="button-ribbon-item">
+
+    <span {{action "showList"}} class="button -submenu {{if isListVisible 'active'}}">
+      Listado
+    </span> |
+    <span {{action "showCalendar"}} class="button -submenu {{if isCalendarVisible 'active'}}"> Calendario </span>
+  </div>
+
+  <div class="button-ribbon-item">
+    {{#link-to 'event.new' classNames='button -primary'}} Da de alta un evento {{/link-to}}
+  </div>
 </div>
 
+{{event/event-list
+  events=model
+  isVisible=isListVisible
+}}
 
-<ul class="event-cards">
-  {{#each model as |event|}}
-    <li>{{event/event-card event=event}}</li>
-  {{/each}}
-</ul>
+{{event/event-calendar
+  events=model
+  isVisible=isCalendarVisible
+}}
+

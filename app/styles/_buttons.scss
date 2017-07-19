@@ -37,6 +37,23 @@
   &.-menu.active {
     border-bottom: 4px solid #fa0;
   }
+
+  &.-submenu {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #111;
+    font-weight: normal;
+    display: inline-block;
+    min-width: 60px;
+  }
+
+  &.-submenu:hover {
+    border-bottom: 2px solid #ccc;
+  }
+
+  &.-submenu.active {
+    border-bottom: 2px solid #fa0;
+  }
 }
 
 .button {
@@ -63,11 +80,12 @@
   }
 }
 
-.new-item-link {
-  text-align: right;
-  margin-bottom: 2rem;
-}
 
+.button-ribbon {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
 
 .label {
   border-radius: 0.25em;
@@ -92,6 +110,11 @@
   }
 }
 
+.new-item-link {
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
 .actions {
   margin-bottom: 1em;
 
@@ -109,3 +132,4 @@
   }
 
 }
+
