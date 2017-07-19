@@ -1,0 +1,30 @@
+  <ul>
+    <li>
+      <ul class="button-menu-list">
+        <li>
+        {{#link-to 'event.upcoming'
+          (query-params view='list')
+          classNames='button -menu'
+          current-when='event.upcoming'}}
+            Agenda
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'job.list' classNames='button -menu'}}
+            Empleo <span class="badge"> {{ totalJobs }} </span>
+          {{/link-to}}
+        </li>
+      </ul>
+  </li>
+  <li>
+    <div class='logo'>
+      {{#link-to 'index' classNames=''}}
+        <img src="/img/title.png" alt="VLCTechhub" title="VLCTechhub" />
+      {{/link-to}}
+    </div>
+  </li>
+  <li>
+    {{component actionComponent classNames="action"}}
+  </li>
+</ul>
+

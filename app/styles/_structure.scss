@@ -6,7 +6,6 @@ body {
 .site {
   display: flex;
   flex-direction: column;
-  display: flex;
   min-height: 100vh;
 }
 
@@ -31,30 +30,6 @@ main {
 
 }
 
-.menu.-desktop {
-  display: none;
-  @include breakpoint($screen-sm-min) {
-    display: block;
-  }
- padding: 20px;
-  margin-bottom: 2rem;
-
-  & .logo {
-    width: 16.66667%;
-    float:left;
-
-    & img {
-      width:120px;
-    }
-  }
-  & .options {
-    margin-top: 1em;
-    float:left;
-    width: 83.33333%;
-  }
-
-
-  }
 
 .menu:after {
   clear: both;

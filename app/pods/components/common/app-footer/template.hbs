@@ -1,0 +1,51 @@
+<footer class="footer">
+  <div class="container">
+    <div class="grid">
+      <ul>
+        <li class="list-header">Eventos</li>
+        <li class="list-item">
+          {{#link-to 'event.upcoming' (query-params view='list')}} Próximos eventos {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'event.archive'}} Eventos anteriores {{/link-to}}
+        </li>
+        <li class="list-item">
+        {{#link-to 'event.new'}} Publicar evento {{/link-to}}
+        </li>
+        <li class="list-item">
+        <a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc">Chrome extension</a>
+        </li>
+      </ul>
+      <ul>
+        <li class="list-header">Ofertas de trabajo</li>
+        <li class="list-item">
+        {{#link-to 'job.list'}} Ofertas activas {{/link-to}}
+        </li>
+        <li class="list-item">
+          {{#link-to 'job.new'}} Publicar oferta {{/link-to}}
+        </li>
+      </ul>
+      <ul>
+        <li class="list-header">Social</li>
+        <li class="list-item">
+        <a href="https://twitter.com/VLCTechHub">Twitter</a>
+        </li>
+        <li class="list-item">
+        <a href="https://groups.google.com/forum/?hl=es#!forum/vlctechhub">Google group</a>
+        </li>
+        <li class="list-item">
+        <a href="https://valencia-devs.herokuapp.com/">Slack</a>
+        </li>
+      </ul>
+      <ul>
+        <li class="list-header">Contacto</li>
+        <li class="list-item">
+        <a href="https://github.com/VLCTechHub/">Github</a>
+        </li>
+        <li class="list-item">
+        <a href="mailto:hola@vlctechhub.org">Mail</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

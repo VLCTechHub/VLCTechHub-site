@@ -1,25 +1,22 @@
-{{event/section-title text="Próximos eventos"}}
 
 
 <div class="button-ribbon">
   <div class="button-ribbon-item">
-    {{#link-to 'event.upcoming'
-      (query-params view='list')
-      classNames='button -submenu'}}
-      Listado
-    {{/link-to}}
-     |
-    {{#link-to 'event.upcoming'
-      (query-params view='calendar')
-      classNames='button -submenu'}}
-      Calendario
-    {{/link-to}}
+    {{event/section-title text="Agenda"}}
   </div>
-
   <div class="button-ribbon-item">
-    {{#link-to 'event.new' classNames='button -primary'}}
-      Da de alta un evento
-    {{/link-to}}
+    <ul class="button-menu-list">
+      <li>
+        {{link-to 'Listado' 'event.upcoming'
+          (query-params view='list')
+          classNames='button -submenu'}}
+      </li>
+    <li>
+      {{link-to 'Calendario' 'event.upcoming'
+        (query-params view='calendar')
+        classNames='button -submenu'}}
+      </li>
+    </ul>
   </div>
 </div>
 
