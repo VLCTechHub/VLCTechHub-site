@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  menu: Ember.inject.service(),
   titleToken: function(){
     return 'Empleos tecnológicos';
   },
@@ -17,9 +18,11 @@ export default Ember.Route.extend({
   model: function() {
     return this.modelFor('application').get('jobs');
   },
-  actions: {
-   willTransition: function(){
-      this.controller.set('selected', null);
-    }
+  activate() {
+    this.get('menu').set('actionComponent', 'common/create-job-button');
+  },
+  deactivate() {
+    this.get('menu').set('actionComponent', null);
+    this.controller.set('selected', null);
   }
 });

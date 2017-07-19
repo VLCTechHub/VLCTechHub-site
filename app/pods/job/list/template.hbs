@@ -1,10 +1,6 @@
 {{event/section-title text="Empleo"}}
 
 {{#if jobs}}
-  <div class="new-item-link">
-    {{#link-to 'job.new' class='button -primary right'}}Da de alta una oferta{{/link-to}}
-  </div>
-
   <div class="box -expandable-list">
   {{#each jobs as |job|}}
     {{job/job-row
