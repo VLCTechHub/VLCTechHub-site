@@ -20,6 +20,14 @@
   </div>
 </div>
 
+{{#if isAnnouncementVisible}}
+  <div class="announcement">
+    <a href="http://vlctechfest.org">
+      PSST! No te pierdas VLCTechFest el próximo 2 de junio, organizado por VLCTechHub!
+    </a>
+  </div>
+{{/if}}
+
 {{event/event-list
   events=model
   isVisible=isListVisible

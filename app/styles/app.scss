@@ -73,3 +73,19 @@
   max-width: 600px;
   margin: 0 auto;
 }
+
+.announcement {
+  padding: 15px;
+  background: #fa0;
+  @include breakpoint($screen-sm-min) {
+    clip-path: polygon(100% 0, 97% 50%, 100% 100%, 0% 100%, 3% 50%, 0% 0%);
+  }
+  font-family: "font_condensed";
+  letter-spacing: 0.12em;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
