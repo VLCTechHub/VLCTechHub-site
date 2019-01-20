@@ -1,0 +1,47 @@
+{
+  "name": "vlctechhub-site",
+  "private": true,
+  "description": "The VLCTechHub site",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.6",
+    "gatsby": "^2.0.91",
+    "gatsby-plugin-emotion": "^4.0.1",
+    "gatsby-plugin-meta-redirect": "^1.1.1",
+    "gatsby-plugin-react-helmet": "^3.0.5",
+    "gatsby-plugin-typography": "^2.2.5",
+    "gatsby-source-apiserver": "^2.1.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.18",
+    "remark": "^10.0.1",
+    "remark-react": "^5.0.1",
+    "typography": "^0.16.18",
+    "typography-theme-doelger": "^0.16.18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vlctechhub/VLCTechHub-site"
+  },
+  "bugs": {
+    "url": "https://github.com/vlctechhub/VLCTechHub-site/issues"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "surge": "^0.20.1"
+  }
+}
