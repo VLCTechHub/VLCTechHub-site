@@ -7,13 +7,13 @@
     <article>
       <nav>
       {% block nav %}
-          {% include "components/nav.njk" %}
+          {% include "src/html/components/nav.njk" %}
       {% endblock %}
       </nav>
       <header>
         <div class="container">
           {% block header %}
-            {% include "components/header.njk" %}
+            {% include "src/html/components/header.njk" %}
           {% endblock %}
         </div>
       </header>
@@ -24,7 +24,7 @@
       </section>
       <footer>
         {% block footer %}
-          {% include "components/footer.njk" %}
+          {% include "src/html/components/footer.njk" %}
         {% endblock %}
       </footer>
     </article>

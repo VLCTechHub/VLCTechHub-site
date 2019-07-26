@@ -14,10 +14,18 @@ const spaceToDash = function(string) {
   return string.replace(/\s+/g, "-");
 }
 
-const templateConfig = {
+const inplaceConfig = {
   engineOptions: {
     filters: { toUpper, spaceToDash }
   }
+};
+
+const layoutConfig = {
+
+  engineOptions: {
+    filters: { toUpper, spaceToDash }
+  },
+  directory: 'src/html/layouts'
 };
 
 Metalsmith(__dirname)
@@ -30,8 +38,8 @@ Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .clean(true)
-  .use(inplace(templateConfig))
-  .use(layouts(templateConfig))
+  .use(inplace(inplaceConfig))
+  .use(layouts(layoutConfig))
   .use(markdown())
   .use(permalinks({}))
   .build(function(err, files) {
