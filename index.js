@@ -1,7 +1,24 @@
-var Metalsmith  = require('metalsmith');
-var markdown    = require('metalsmith-markdown');
-var layouts     = require('metalsmith-layouts');
-var permalinks  = require('metalsmith-permalinks');
+const Metalsmith = require('metalsmith');
+const markdown = require('metalsmith-markdown');
+const layouts = require('metalsmith-layouts');
+const permalinks = require('metalsmith-permalinks');
+const inplace = require('metalsmith-in-place');
+
+const toUpper = function(string) {
+  "use strict";
+  return string.toUpper();
+}
+
+const spaceToDash = function(string) {
+  "use strict";
+  return string.replace(/\s+/g, "-");
+}
+
+const templateConfig = {
+  engineOptions: {
+    filters: { toUpper, spaceToDash }
+  }
+};
 
 Metalsmith(__dirname)
   .metadata({
@@ -13,11 +30,10 @@ Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .clean(true)
+  .use(inplace(templateConfig))
+  .use(layouts(templateConfig))
   .use(markdown())
-  .use(permalinks({
-  }))
-  .use(layouts({
-  }))
+  .use(permalinks({}))
   .build(function(err, files) {
     if (err) { throw err; }
   });

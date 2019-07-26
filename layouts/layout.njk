@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <article>
+      <nav>
+      {% block nav %}
+          {% include "components/nav.njk" %}
+      {% endblock %}
+      </nav>
+      <header>
+        <div class="container">
+          {% block header %}
+            {% include "components/header.njk" %}
+          {% endblock %}
+        </div>
+      </header>
+      <section id="main-section">
+        {% block main %}
+          This is the default content for body.
+        {% endblock %}
+      </section>
+      <footer>
+        {% block footer %}
+          {% include "components/footer.njk" %}
+        {% endblock %}
+      </footer>
+    </article>
+  </body>
+</html>
