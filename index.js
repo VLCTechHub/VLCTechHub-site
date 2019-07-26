@@ -21,12 +21,20 @@ const inplaceConfig = {
 };
 
 const layoutConfig = {
-
   engineOptions: {
     filters: { toUpper, spaceToDash }
   },
   directory: 'src/html/layouts'
 };
+
+// Fake file:
+
+// {
+//   title: String, // Name of the page
+//     file: String, // Fake file path, provide a .md for markdown content
+//       contents: String, // Contents of the page
+//       }
+
 
 Metalsmith(__dirname)
   .metadata({
@@ -38,11 +46,37 @@ Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .clean(true)
+  .use((files, metalsmith, done) => {
+   /* MongoClient.connect(mongoUrl, (error, db) => {
+      if (error) return done(error);
+      db.collection('pages').find({}).toArray((docError, pages) => {
+        if (docError) return done(docError);
+        pages.forEach((page) => {
+          page.contents = new Buffer(page.contents);
+          files[page.file] = page;
+        });
+        done();
+      });
+    }) */
+    let eventPages= [{
+      title: 'event created from api',
+      file: 'events/event-from-api.md',
+      contents: 'This is a **content** of event 1 created from api',
+      layout: 'event.njk'
+    }];
+
+    eventPages.forEach(page => {
+      page.contents = new Buffer(page.contents);
+      files[page.file] = page;
+    });
+    done();
+  } )
+  .use(markdown())
   .use(inplace(inplaceConfig))
   .use(layouts(layoutConfig))
-  .use(markdown())
   .use(permalinks({}))
   .build(function(err, files) {
+  console.log(files);
     if (err) { throw err; }
   });
 

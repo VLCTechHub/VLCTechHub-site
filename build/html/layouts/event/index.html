@@ -5,17 +5,17 @@
 <body>
   <h1>My Static Site &amp; Blog</h1>
   <h3></h3>
-  &lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;VLCTechHub&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;{{ title }}&lt;/h1&gt;
-  &lt;h3&gt;{{startDate }}&lt;/h3&gt;
-  {{ contents }}
+  <html>
+<head>
+  <title>VLCTechHub</title>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <h3>{{startDate }}</h3>
+  {{ contents | safe }}
   FIN
-&lt;/body&gt;
-&lt;/html&gt;
+</body>
+</html>
 
   FIN
 </body>
