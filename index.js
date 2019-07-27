@@ -76,7 +76,6 @@ Metalsmith(__dirname)
   .use(layouts(layoutConfig))
   .use(permalinks({}))
   .build(function(err, files) {
-  console.log(files);
     if (err) { throw err; }
   });
 
