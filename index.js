@@ -3,6 +3,7 @@ const markdown = require('metalsmith-markdown');
 const layouts = require('metalsmith-layouts');
 const permalinks = require('metalsmith-permalinks');
 const inplace = require('metalsmith-in-place');
+const sass = require('metalsmith-sass');
 
 const toUpper = function(string) {
   "use strict";
@@ -46,6 +47,7 @@ Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .clean(true)
+  .use(sass())
   .use((files, metalsmith, done) => {
    /* MongoClient.connect(mongoUrl, (error, db) => {
       if (error) return done(error);
