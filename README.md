@@ -24,7 +24,7 @@ La web de VLCTechHub está desarrollada como un sitio estático con el generador
 
 4. ** Construye el sitio **
 
-  Cuando ejecutas el comando *build* el sitio se contruye dentro del directorio *build*.
+  Cuando ejecutas el comando *build* el sitio se contruye dentro del directorio *dist*.
 
   ```sh
     yarn run build
@@ -35,7 +35,7 @@ La web de VLCTechHub está desarrollada como un sitio estático con el generador
   Ya tienes construido el sitio estático! Puedes levantar un sencillo servidor con python desde la linea de comandos.
 
   ```sh
-    cd build/
+    cd dist/
     python -m SimpleHTTPServer --port=8080
   ```
 

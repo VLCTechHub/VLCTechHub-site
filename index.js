@@ -25,7 +25,7 @@ const layoutConfig = {
   engineOptions: {
     filters: { toUpper, spaceToDash }
   },
-  directory: 'src/html/layouts'
+  directory: 'html/layouts'
 };
 
 // Fake file:
@@ -44,8 +44,8 @@ Metalsmith(__dirname)
     generator: "Metalsmith",
     url: "http://www.metalsmith.io/"
   })
-  .source('./src')
-  .destination('./build')
+  .source('./pages')
+  .destination('./dist')
   .clean(true)
   .use(sass())
   .use((files, metalsmith, done) => {
