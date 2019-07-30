@@ -1,0 +1,33 @@
+.main-footer {
+  .footer-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  hr {
+    width: 85%;
+    height: 2px;
+    background-color: black;
+    margin-bottom:60px;
+  }
+
+  h1 {
+    font-size: 1em;
+    color: $brand-color;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  ul,
+  ul li {
+    margin:0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+}

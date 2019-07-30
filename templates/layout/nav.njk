@@ -1,0 +1,14 @@
+{% set navItems = [
+  {name: 'Agenda', uri: '/events/', id:'events'},
+  {name: 'Empleo', uri: '/jobs/',id:'jobs'}
+]
+%}
+
+<ul class="reset">
+  {% for item in navItems %}
+    <li class="{% if navItem == item.id %}current{% endif %}"
+    >
+      <a href="{{item.uri}}">{{ item.name }}</a>
+    </li>
+  {% endfor %}
+</ul>

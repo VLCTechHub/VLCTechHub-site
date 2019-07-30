@@ -25,7 +25,7 @@ const layoutConfig = {
   engineOptions: {
     filters: { toUpper, spaceToDash }
   },
-  directory: 'html/layouts'
+  directory: 'templates/pages'
 };
 
 // Fake file:
@@ -47,7 +47,6 @@ Metalsmith(__dirname)
   .source('./pages')
   .destination('./dist')
   .clean(true)
-  .use(sass())
   .use((files, metalsmith, done) => {
    /* MongoClient.connect(mongoUrl, (error, db) => {
       if (error) return done(error);
@@ -77,6 +76,7 @@ Metalsmith(__dirname)
   .use(inplace(inplaceConfig))
   .use(layouts(layoutConfig))
   .use(permalinks({}))
+  .use(sass({}))
   .build(function(err, files) {
     if (err) { throw err; }
   });

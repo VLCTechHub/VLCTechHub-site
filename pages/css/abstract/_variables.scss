@@ -1,0 +1,24 @@
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+
+$text-color: rgb(0, 0, 0) !default;
+$text-color-secondary: rgb(100,100,100) !default;
+
+$brand-color: rgb(255, 213, 0) !default;
+$light-grey: rgb(237, 237, 237) !default;
+$white: rgb(255, 255, 255) !default;
+$black: rgb(0, 0 ,0) !default;
+
+$max-width: 1180px !default;
+
+/// Breakpoints map
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+
+
+

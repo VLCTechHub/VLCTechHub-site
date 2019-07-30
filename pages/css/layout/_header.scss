@@ -1,0 +1,36 @@
+.main-header {
+  display: flex;
+  padding: 20px 40px 20px 40px;
+  align-items: center;
+
+  .logo img {
+    max-height: 50px;
+  }
+
+  ul,
+  ul li {
+    margin:0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-left: 40px;
+    text-transform: uppercase;
+
+    &.current {
+      background-color: $brand-color;
+      padding: 0 10px 0 10px;
+    }
+  }
+
+  .social-links {
+    margin-left: auto;
+
+    li {
+      display: inline;
+    }
+  }
+}

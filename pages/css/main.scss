@@ -7,15 +7,17 @@
 
 
 @import
+  'base/reset',
   'base/base',
   'base/fonts',
-  'base/typography',
-  'base/helpers';
+  'base/typography';
 
 @import
   'layout/header',
   'layout/footer';
 
 @import
-  'components/button';
+  'components/button',
+  'components/event-summary',
+  'components/next-events';
 

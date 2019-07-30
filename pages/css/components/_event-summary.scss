@@ -1,0 +1,45 @@
+.next-events-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.event-summary {
+  max-width: 350px;
+  text-align: center;
+  margin-bottom: 40px;
+
+  img {
+    max-width: 350px;
+    border: 4px solid $black;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 1.1em;
+    text-transform: uppercase;
+
+    &:hover {
+       text-decoration: underline;
+       cursor: pointer;
+    }
+  }
+
+  p {
+    text-align: left;
+    color: $text-color-secondary;
+    font-size: 0.9em;
+  }
+
+  hr {
+    width: 30%;
+    height: 2px;
+    color: black;
+    background-color: black;
+    margin: 30px auto 50px auto;
+  }
+}

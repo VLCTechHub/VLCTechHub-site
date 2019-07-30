@@ -50,6 +50,8 @@ La web de VLCTechHub está desarrollada como un sitio estático con el generador
 
   La jerarquia de plantillas de Nutjucks esta basada en un artículo sobre [patrones de disenyo orientados a componentes](https://css-tricks.com/component-led-design-patterns-nunjucks-grunt/) sobre Nutjucks.
 
+  La estructura usada en la parte sass sigue los consejos de ["Sass Guidelines"](https://sass-guidelin.es/es/).
+
 ## 🤝 Cómo contribuir
 
  Estamos empezando a desarrollar este proyecto, donde la web tendrá un nuevo disenyo e iremos incluyendo poco a poco nuevas funcionalidades.  Si quieres ayudar a desarrollar el proyecto nos encantaría tenerte como parte de la comunidad de VLCTechHub! :muscle::purple_heart:. Nos encontrarás en el canal #vlctechhub del slack de [VLCTechHub](https://slack.vlctechhub.org/)
