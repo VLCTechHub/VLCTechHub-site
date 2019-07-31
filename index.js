@@ -3,7 +3,10 @@ const markdown = require('metalsmith-markdown');
 const layouts = require('metalsmith-layouts');
 const permalinks = require('metalsmith-permalinks');
 const inplace = require('metalsmith-in-place');
+const collections = require('metalsmith-collections');
 const sass = require('metalsmith-sass');
+const http = require('http');
+const nunjucksDate = require('nunjucks-date');
 
 const toUpper = function(string) {
   "use strict";
@@ -17,7 +20,7 @@ const spaceToDash = function(string) {
 
 const inplaceConfig = {
   engineOptions: {
-    filters: { toUpper, spaceToDash }
+    filters: { toUpper, spaceToDash , date: nunjucksDate }
   }
 };
 
@@ -27,14 +30,6 @@ const layoutConfig = {
   },
   directory: 'templates/pages'
 };
-
-// Fake file:
-
-// {
-//   title: String, // Name of the page
-//     file: String, // Fake file path, provide a .md for markdown content
-//       contents: String, // Contents of the page
-//       }
 
 
 Metalsmith(__dirname)
@@ -48,30 +43,37 @@ Metalsmith(__dirname)
   .destination('./dist')
   .clean(true)
   .use((files, metalsmith, done) => {
-   /* MongoClient.connect(mongoUrl, (error, db) => {
-      if (error) return done(error);
-      db.collection('pages').find({}).toArray((docError, pages) => {
-        if (docError) return done(docError);
-        pages.forEach((page) => {
-          page.contents = new Buffer(page.contents);
+    let url = 'http://vlctechhub-api.herokuapp.com/v1/events?category=next'
+    const req = http.get(url, (res) => {
+      let body = '';
+      res.on('data', (chunk) => {
+        body += chunk;
+      });
+
+      res.on('end', () => {
+        let events = JSON.parse(body).events;
+        events.forEach(e => {
+          let page = {
+            file: 'events/' + e.slug + '.md',
+            title: e.title,
+            contents: Buffer.from(e.description),
+            date: e.date,
+            layout: 'event.njk',
+            hashtag: e.hashtag,
+            slug: e.slug,
+            collection: 'upcomingEvents'
+          }
           files[page.file] = page;
         });
         done();
       });
-    }) */
-    let eventPages= [{
-      title: 'event created from api',
-      file: 'events/event-from-api.md',
-      contents: 'This is a **content** of event 1 created from api',
-      layout: 'event.njk'
-    }];
-
-    eventPages.forEach(page => {
-      page.contents = new Buffer(page.contents);
-      files[page.file] = page;
-    });
-    done();
-  } )
+    })
+    req.on('error', (error) => {
+      console.error(error)
+    })
+    req.end();
+  })
+  .use(collections())
   .use(markdown())
   .use(inplace(inplaceConfig))
   .use(layouts(layoutConfig))
