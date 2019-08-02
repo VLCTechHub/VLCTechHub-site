@@ -1769,7 +1769,14 @@ mixin-deep@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
-moment@*, moment@^2.24.0:
+moment-timezone@^0.5.17, moment-timezone@^0.5.26:
+  version "0.5.26"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.26.tgz#c0267ca09ae84631aa3dc33f65bedbe6e8e0d772"
+  integrity sha512-sFP4cgEKTCymBBKgoxZjYzlSovC20Y6J7y3nanDc5RoBIXKlZhoYwBoZGe3flwU6A372AcRwScH8KiwV6zjy1g==
+  dependencies:
+    moment ">= 2.9.0"
+
+moment@*, "moment@>= 2.9.0", moment@^2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
@@ -1976,6 +1983,13 @@ nunjucks-date@^1.4.0:
   dependencies:
     moment "*"
     nunjucks "^3.x"
+
+nunjucks-moment-timezone-filter@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/nunjucks-moment-timezone-filter/-/nunjucks-moment-timezone-filter-1.0.1.tgz#d087404080686d17c31ac4a72e52d000a04c28ce"
+  integrity sha512-mP4B3K8qFPn+q18TiLvz6tWAsiHagyCqtEeyBP0vHPd3dsJtjf5OOB44cH2yOQO1VTQHzIqWaH1Oewb2hRnz3w==
+  dependencies:
+    moment-timezone "^0.5.17"
 
 nunjucks@^3.0.0, nunjucks@^3.x:
   version "3.2.0"

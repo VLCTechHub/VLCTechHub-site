@@ -6,7 +6,10 @@ const inplace = require('metalsmith-in-place');
 const collections = require('metalsmith-collections');
 const sass = require('metalsmith-sass');
 const http = require('http');
-const nunjucksDate = require('nunjucks-date');
+const nunjucksDate = require('nunjucks-moment-timezone-filter');
+const moment = require('moment');
+
+moment.locale('es');
 
 const toUpper = function(string) {
   "use strict";
@@ -20,7 +23,7 @@ const spaceToDash = function(string) {
 
 const inplaceConfig = {
   engineOptions: {
-    filters: { toUpper, spaceToDash , date: nunjucksDate }
+    filters: { toUpper, spaceToDash , date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate }
   }
 };
 
@@ -31,6 +34,16 @@ const layoutConfig = {
   directory: 'templates/pages'
 };
 
+const createTwitterInfo = function(txt) {
+  let twitter = {};
+  if(txt && txt[0] === '@') {
+    twitter.handle = txt.substring(1);
+  }
+  else {
+    twitter.hashtag = txt;
+  }
+  return twitter;
+}
 
 Metalsmith(__dirname)
   .metadata({
@@ -39,7 +52,7 @@ Metalsmith(__dirname)
     generator: "Metalsmith",
     url: "http://www.metalsmith.io/"
   })
-  .source('./pages')
+  .source('./data')
   .destination('./dist')
   .clean(true)
   .use((files, metalsmith, done) => {
@@ -49,7 +62,6 @@ Metalsmith(__dirname)
       res.on('data', (chunk) => {
         body += chunk;
       });
-
       res.on('end', () => {
         let events = JSON.parse(body).events;
         events.forEach(e => {
@@ -59,7 +71,7 @@ Metalsmith(__dirname)
             contents: Buffer.from(e.description),
             date: e.date,
             layout: 'event.njk',
-            hashtag: e.hashtag,
+            twitter: createTwitterInfo(e.hashtag),
             slug: e.slug,
             collection: 'upcomingEvents'
           }
@@ -78,7 +90,9 @@ Metalsmith(__dirname)
   .use(inplace(inplaceConfig))
   .use(layouts(layoutConfig))
   .use(permalinks({}))
-  .use(sass({}))
+  .use(sass({
+    outputDir: 'css/'
+  }))
   .build(function(err, files) {
     if (err) { throw err; }
   });
