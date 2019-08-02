@@ -11,27 +11,14 @@ const moment = require('moment');
 
 moment.locale('es');
 
-const toUpper = function(string) {
-  "use strict";
-  return string.toUpper();
-}
-
-const spaceToDash = function(string) {
-  "use strict";
-  return string.replace(/\s+/g, "-");
-}
-
 const inplaceConfig = {
   engineOptions: {
-    filters: { toUpper, spaceToDash , date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate }
+    filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate }
   }
 };
 
 const layoutConfig = {
-  engineOptions: {
-    filters: { toUpper, spaceToDash }
-  },
-  directory: 'templates/pages'
+  directory: 'templates/'
 };
 
 const createTwitterInfo = function(txt) {

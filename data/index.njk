@@ -1,6 +1,6 @@
 {% set navItem = "events" %}
 
-{% extends "templates/pages/default.njk" %}
+{% extends "./templates/default.njk" %}
 
 {% block main %}
   <article class="next-events">
@@ -10,12 +10,14 @@
     <section class="next-events-summary">
       {% for upcomingEvent in collections.upcomingEvents %}
        <article class="event-summary">
-        {% if upcomingEvent.twitter.hashtag %}
-          <img src="https://dummyimage.com/350x350/000/fff.gif&text=%23{{upcomingEvent.twitter.hashtag}}"></img>
-        {% else %}
-          <img src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/{{upcomingEvent.twitter.handle}}.jpg"></img>
-        {% endif %}
-        <h1>{{upcomingEvent.title}}</h1>
+          <a href="events/{{upcomingEvent.slug}}">
+          {% if upcomingEvent.twitter.hashtag %}
+            <img src="https://dummyimage.com/350x350/000/fff.gif&text=%23{{upcomingEvent.twitter.hashtag}}"></img>
+          {% else %}
+            <img src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/{{upcomingEvent.twitter.handle}}.jpg"></img>
+          {% endif %}
+          </a>
+        <h1><a href="events/{{upcomingEvent.slug}}">{{upcomingEvent.title}}</a></h1>
         <p>
           {{upcomingEvent.date | newDate | date('dddd') | capitalize }} /
           {{upcomingEvent.date | newDate | date('DD MMMM') | capitalize }} /

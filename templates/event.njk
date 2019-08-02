@@ -1,0 +1,7 @@
+{% extends "./default.njk" %}
+
+{% block main %}
+  <h1>{{ title }}</h1>
+  <h3>{{startDate }}</h3>
+  {{ contents | safe }}
+{% endblock %}

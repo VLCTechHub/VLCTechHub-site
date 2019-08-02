@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
-    {% include "templates/layout/header.njk" %}
+    {% include "./layout/header.njk" %}
      <main>
         <section class="container">
           {% block main %}
@@ -29,7 +29,7 @@
         </section>
       </main>
       {% block footer %}
-        {% include "templates/layout/footer.njk" %}
+        {% include "./layout/footer.njk" %}
       {% endblock %}
   </body>
 </html>
