@@ -1,5 +1,5 @@
 .title {
-  margin-bottom: 2em;
+  margin-bottom: $space-larger;
   text-transform: lowercase;
   &::after {
     content: ' _____';

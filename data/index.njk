@@ -1,6 +1,7 @@
 {% set navItem = "events" %}
 
 {% extends "./templates/default.njk" %}
+{% from "./templates/macros/event.njk" import image, dayOfWeek, time, shortDate %}
 
 {% block main %}
   <article class="next-events">
@@ -11,17 +12,14 @@
       {% for upcomingEvent in collections.upcomingEvents %}
        <article class="event-summary">
           <a href="events/{{upcomingEvent.slug}}">
-          {% if upcomingEvent.twitter.hashtag %}
-            <img src="https://dummyimage.com/350x350/000/fff.gif&text=%23{{upcomingEvent.twitter.hashtag}}"></img>
-          {% else %}
-            <img src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/{{upcomingEvent.twitter.handle}}.jpg"></img>
-          {% endif %}
+            {{ image(upcomingEvent.twitter) }}
           </a>
         <h1><a href="events/{{upcomingEvent.slug}}">{{upcomingEvent.title}}</a></h1>
         <p>
-          {{upcomingEvent.date | newDate | date('dddd') | capitalize }} /
-          {{upcomingEvent.date | newDate | date('DD MMMM') | capitalize }} /
-          {{upcomingEvent.date | newDate | date('tz', 'Europe/Madrid') | date('HH:mm')}}h</p>
+          {{ dayOfWeek(upcomingEvent.startDate) }} /
+          {{ shortDate(upcomingEvent.startDate) }} /
+          {{ time(upcomingEvent.startDate) }}
+          </p>
         <hr>
       </article>
       {% endfor %}

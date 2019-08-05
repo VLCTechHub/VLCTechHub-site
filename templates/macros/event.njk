@@ -1,0 +1,26 @@
+{% macro image(twitterInfo, width=350) %}
+  {% if twitterInfo.hashtag %}
+    <img src="https://dummyimage.com/{{width}}x{{width}}/000/fff.gif&text=%23{{twitterInfo.hashtag}}"></img>
+  {% else %}
+    <img src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_{{width}}/{{twitterInfo.handle}}.jpg"></img>
+  {% endif %}
+{% endmacro %}
+
+
+{% macro dayOfWeek(d) %}
+  {{d | newDate | date('dddd') | capitalize }}
+{% endmacro %}
+
+{% macro shortDate(d) %}
+  {{d | newDate | date('DD MMMM') | capitalize }}
+{% endmacro %}
+
+{% macro longDate(d) %}
+  {{d | newDate | date('dddd DD [de] MMMM') | capitalize }}
+{% endmacro %}
+
+{% macro time(d) %}
+  {{d | newDate | date('tz', 'Europe/Madrid') | date('HH:mm')}}h
+{% endmacro %}
+
+

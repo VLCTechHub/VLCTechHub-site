@@ -18,6 +18,9 @@ const inplaceConfig = {
 };
 
 const layoutConfig = {
+  engineOptions: {
+    filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate }
+  },
   directory: 'templates/'
 };
 
@@ -59,7 +62,7 @@ Metalsmith(__dirname)
             file: 'events/' + e.slug + '.md',
             title: e.title,
             contents: Buffer.from(e.description),
-            date: e.date,
+            startDate: e.date.toString(),
             layout: 'event.njk',
             twitter: createTwitterInfo(e.hashtag),
             slug: e.slug,

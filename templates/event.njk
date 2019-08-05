@@ -1,9 +1,23 @@
 {% extends "./default.njk" %}
+{% from "./macros/event.njk" import image, longDate, time %}
 
 {% block main %}
   <article id="event-page">
     <header><h1>{{title}}</h1></header>
-    <section class="event-details"></section>
+    <section class="event-details">
+      {{ image(twitter) }}
+      <section class="details">
+      <p>{{longDate(startDate)}}</p>
+      <p>{{time(startDate)}}</p>
+      </section>
+      <section class="actions">
+        <button class="button button-primary">Ver fuente</button>
+        <button class="button button-secondary">Añadir al calendario</button>
+      </section>
+    </section>
+    <section class="ruler">
+      <hr>
+    </section>
     <section class="event-description">
       {{contents | safe}}
     </section>
