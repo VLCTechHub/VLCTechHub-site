@@ -1,6 +1,6 @@
 .main-header {
   display: flex;
-  padding: 20px 40px 20px 40px;
+  padding: $space-medium $space-large $space-medium $space-large;
   align-items: center;
 
   .logo img {
@@ -17,12 +17,12 @@
 
   nav ul li {
     display: inline;
-    margin-left: 40px;
+    margin-left: $space-large;
     text-transform: uppercase;
 
     &.current {
       background-color: $brand-color;
-      padding: 0 10px 0 10px;
+      padding: 0 $space-small 0 $space-small;
     }
   }
 

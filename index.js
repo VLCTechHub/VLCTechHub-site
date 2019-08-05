@@ -26,6 +26,9 @@ const createTwitterInfo = function(txt) {
   if(txt && txt[0] === '@') {
     twitter.handle = txt.substring(1);
   }
+  else if(txt && txt[0] === '#') {
+    twitter.hashtag = txt.substring(1);
+  }
   else {
     twitter.hashtag = txt;
   }

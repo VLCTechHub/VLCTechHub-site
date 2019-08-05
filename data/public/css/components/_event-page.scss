@@ -1,0 +1,19 @@
+#event-page {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "header header"
+                       "details description";
+  grid-template-columns: 1fr 2fr;
+
+  header {
+    grid-area: header;
+  }
+
+  .event-details {
+    grid-area: details;
+  }
+
+  .event-description {
+    grid-area: description;
+  }
+}

@@ -1,7 +1,11 @@
 {% extends "./default.njk" %}
 
 {% block main %}
-  <h1>{{ title }}</h1>
-  <h3>{{startDate }}</h3>
-  {{ contents | safe }}
+  <article id="event-page">
+    <header><h1>{{title}}</h1></header>
+    <section class="event-details"></section>
+    <section class="event-description">
+      {{contents | safe}}
+    </section>
+  </article>
 {% endblock %}

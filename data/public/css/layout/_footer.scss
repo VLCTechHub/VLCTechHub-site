@@ -1,4 +1,6 @@
 .main-footer {
+  margin-bottom: $space-large;
+
   .footer-content {
     display: flex;
     justify-content: space-evenly;
@@ -9,14 +11,14 @@
     width: 85%;
     height: 2px;
     background-color: black;
-    margin-bottom:60px;
+    margin-bottom: $space-larger;
   }
 
   h1 {
     font-size: 1em;
     color: $brand-color;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: $space-medium;
   }
 
   ul,
@@ -28,6 +30,6 @@
   }
 
   ul li {
-    margin-bottom: 10px;
+    margin-bottom: $space-small;
   }
 }

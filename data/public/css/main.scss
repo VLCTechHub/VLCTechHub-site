@@ -1,8 +1,8 @@
 @charset 'UTF-8';
 
 @import
-  'abstract/variables',
   'abstract/functions',
+  'abstract/variables',
   'abstract/mixins';
 
 
@@ -19,5 +19,5 @@
 @import
   'components/button',
   'components/event-summary',
-  'components/next-events';
+  'components/event-page';
 

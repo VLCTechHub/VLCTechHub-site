@@ -1,1 +1,5 @@
+$browser-rem-base: 16 !default;
 
+@function rem($pixels) {
+  @return ($pixels * 1px) / ($browser-rem-base * 1px) * 1rem;
+}
