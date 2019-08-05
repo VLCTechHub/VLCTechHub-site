@@ -23,7 +23,8 @@ describe('Unit | Model | job', function() {
       'description': 'a description',
       'company.name': 'company name',
       'company.link': 'company link',
-      'contactEmail': 'an email'
+      'contactEmail': 'an email',
+      'salary': 'a salary'
     });
     expect(model.get('isValid')).to.be.true;
   });
