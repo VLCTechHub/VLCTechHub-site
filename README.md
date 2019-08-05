@@ -4,16 +4,16 @@
 
 La web de VLCTechHub está desarrollada como un sitio estático con el generador metalsmith.
 
-1. ** Instala yarn **
+1. **Instala yarn**
 
    Yarn es un gestor de dependencias de proyectos en node. Para instalarlo en tu sistema sigue [sus instrucciones](https://yarnpkg.com/en/docs/install).
 
-2. ** Clona este repo en tu máquina **
+2. **Clona este repo en tu máquina**
 
   ```sh
     git clone git@github.com:VLCTechHub/VLCTechHub-site.git
   ```
-3. ** Instala las dependencias con yarn **
+3. **Instala las dependencias con yarn**
 
   Entra en el directorio creado e instala las dependencias.
 
@@ -22,15 +22,15 @@ La web de VLCTechHub está desarrollada como un sitio estático con el generador
     yarn install
   ```
 
-4. ** Construye el sitio **
+4. **Construye el sitio**
 
-  Cuando ejecutas el comando *build* el sitio se contruye dentro del directorio *dist*.
+  Cuando ejecutas el comando `build` el sitio se contruye dentro del directorio *dist*.
 
   ```sh
     yarn run build
   ```
 
-5. ** Levanta un servidor para ver el sitio **
+5. **Levanta un servidor para ver el sitio**
 
   Ya tienes construido el sitio estático! Puedes levantar un sencillo servidor con python desde la linea de comandos.
 
