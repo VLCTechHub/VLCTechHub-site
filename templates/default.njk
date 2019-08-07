@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
+    <title>{{seo.ogTitle}}</title>
     <meta charset="utf-8"/>
+    <meta name="description" content="{{seo.ogDescription | truncate(300) }}"/>
+    <meta name="og:title" content="{{seo.ogTitle}}"/>
+    <meta name="og:description" content="{{seo.ogDescription | truncate(300) }}"/>
+    <meta name="og:url" content="{{seo.ogUrl}}"/>
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
@@ -10,22 +14,8 @@
      <main>
         <section class="container">
           {% block main %}
-            boton
-            h1 class=title
-            ul / li / article / section / h1 , image, p  (flex)
-
-
-            //detalle de evento, con grid, grid-template
-            'info desc'
-            'mapa desc'
-
-            //mobil
-            'info'
-            'desc'
-            'mapa'
-
-            This is the default content for body.
-            {% endblock %}
+            This is the default content for body. It should be overriden.
+          {% endblock %}
         </section>
       </main>
       {% block footer %}

@@ -9,6 +9,9 @@ const http = require('http');
 const nunjucksDate = require('nunjucks-moment-timezone-filter');
 const moment = require('moment');
 
+
+const baseUrl = 'http:/vlctechhub.org/';
+
 moment.locale('es');
 
 const inplaceConfig = {
@@ -40,10 +43,11 @@ const createTwitterInfo = function(txt) {
 
 Metalsmith(__dirname)
   .metadata({
-    title: "My Static Site & Blog",
-    description: "It's about saying »Hello« to the World.",
-    generator: "Metalsmith",
-    url: "http://www.metalsmith.io/"
+    seo: {
+      ogTitle: "VLCTechHub",
+      ogDescription: "VLCTechHub es el hub de eventos y empleo tecnológico en Valencia: eventos de programación, coding dojos, talleres, workshops o quedadas informales para fomentar una comunidad o compartir información de base tecnológica en Valencia o Castellón.",
+      ogUrl: baseUrl
+    }
   })
   .source('./data')
   .destination('./dist')
@@ -66,7 +70,12 @@ Metalsmith(__dirname)
             layout: 'event.njk',
             twitter: createTwitterInfo(e.hashtag),
             slug: e.slug,
-            link: e.link,
+            sourceUrl: e.link,
+            seo: {
+              ogTitle: e.title,
+              ogDescription: e.description,
+              ogUrl: baseUrl + 'events/' + e.slug +'/'
+            },
             collection: 'upcomingEvents'
           }
           files[page.file] = page;
