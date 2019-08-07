@@ -66,6 +66,7 @@ Metalsmith(__dirname)
             layout: 'event.njk',
             twitter: createTwitterInfo(e.hashtag),
             slug: e.slug,
+            link: e.link,
             collection: 'upcomingEvents'
           }
           files[page.file] = page;

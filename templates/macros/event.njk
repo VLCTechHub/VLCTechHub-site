@@ -23,4 +23,8 @@
   {{d | newDate | date('tz', 'Europe/Madrid') | date('HH:mm')}}h
 {% endmacro %}
 
+{% macro googleCalendarLink(title, link, startDate) %}
+  https://www.google.com/calendar/event?action=TEMPLATE&text={{title | urlencode}}&details={{link | urlencode}}&dates={{startDate}}/{{ startDate | newDate | date("add", 1, "hours") | date}}
+{% endmacro %}
+
 

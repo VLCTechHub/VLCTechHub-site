@@ -1,5 +1,5 @@
 {% extends "./default.njk" %}
-{% from "./macros/event.njk" import image, longDate, time %}
+{% from "./macros/event.njk" import image, longDate, time, googleCalendarLink %}
 
 {% block main %}
   <article id="event-page">
@@ -11,8 +11,8 @@
       <p>{{time(startDate)}}</p>
       </section>
       <section class="actions">
-        <button class="button button-primary">Ver fuente</button>
-        <button class="button button-secondary">Añadir al calendario</button>
+      <a href="{{link}}" class="button button-primary">Ver fuente</a>
+      <a href="{{googleCalendarLink(title, link, startDate)}}" class="button button-secondary">Añadir al calendario</a>
       </section>
     </section>
     <section class="ruler">
