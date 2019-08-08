@@ -1,0 +1,29 @@
+form {
+  p {
+    margin: $space-large 0;
+  }
+
+  p > label {
+    display: block;
+    margin-bottom: $space-small;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .hint {
+    display: block;
+    margin-top: $space-small;
+    color: $text-color-secondary;
+    font-size: 0.9rem;
+  }
+}
+
+input[type=text],
+input[type=email],
+input[type=number],
+textarea,
+fieldset {
+  padding: $space-small;
+  width : 100%;
+  border: 3px solid $black;
+}

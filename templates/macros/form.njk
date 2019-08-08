@@ -1,0 +1,23 @@
+{% macro textInput(name, label, hint) %}
+  <p>
+    <label for="{{name}}">{{label}}</label>
+    <input id="{{name}}" name="{{name}}" type="text"></input>
+    {% if hint %}
+      <span class="hint">{{hint}}</span>
+    {% endif %}
+    <span class="error"></span>
+  </p>
+{% endmacro %}
+
+{% macro textarea(name, label, hint) %}
+  <p>
+    <label for="{{name}}">{{label}}</label>
+    <textarea id="{{name}}" name="{{name}}" rows=10></textarea>
+    {% if hint %}
+      <span class="hint">{{hint}}</span>
+    {% endif %}
+    <span class="error"></span>
+  </p>
+{% endmacro %}
+
+

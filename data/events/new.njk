@@ -1,0 +1,23 @@
+{% extends "./templates/default.njk" %}
+{% from "./templates/macros/form.njk" import textInput, textarea %}
+
+{% block main %}
+  <article class="new-event">
+    <header>
+      <h1 class="title"> publicar un evento </h1>
+      <p>
+      Si organizas un <strong>evento</strong>, taller, charla o quedada informal para fomentar una comunidad o compartir información de base <strong>tecnológica</strong> publica tu evento de forma gratuita.
+      </p>
+    </header>
+
+  <form>
+    {{textInput('title', 'Título *')}}
+    {{textInput('startDate', 'Fecha *', 'Formato dd/mm/yyyy')}}
+    {{textInput('startTime', 'Hora *', 'Formato hh:mm')}}
+    {{textarea('description', 'Descripción *')}}
+    {{textInput('sourceUrl', 'Link *')}}
+    {{textInput('hashtag', 'Usuario de twitter', 'Por ejemplo: @vlctechhub. Si no tienes usuario de twitter puedes usar un hashtag como por ejemplo #eventoparatodos. De aquí se genera la imagen cuando se publique el evento.')}}
+    <button class="button button-emphasis">Enviar el evento</button>
+  </form>
+  </article>
+{% endblock %}
