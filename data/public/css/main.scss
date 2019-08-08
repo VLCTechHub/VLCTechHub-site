@@ -19,6 +19,8 @@
 @import
   'components/button',
   'components/event-summary',
-  'components/event-page',
   'components/form';
 
+@import
+  'pages/event',
+  'pages/event-next';

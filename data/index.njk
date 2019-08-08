@@ -4,9 +4,10 @@
 {% from "./templates/macros/event.njk" import image, dayOfWeek, time, shortDate %}
 
 {% block main %}
-  <article class="next-events">
+  <article id="next-events">
     <header>
       <h1 class="title"> Agenda </h1>
+      <a class="button button-secondary" href="/events/new/">Publicar un evento</a>
     </header>
     <section class="next-events-summary">
       {% for upcomingEvent in collections.upcomingEvents %}
