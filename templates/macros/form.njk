@@ -1,7 +1,12 @@
-{% macro textInput(name, label, hint) %}
+{% macro textInput(name, label, required, hint) %}
   <p>
-    <label for="{{name}}">{{label}}</label>
-    <input id="{{name}}" name="{{name}}" type="text"></input>
+    <label for="{{name}}">
+      <span>{{label}}</span>
+      {% if required %}
+        <abbr title="Campo obligatorio">*</abbr>
+      {% endif %}
+    </label>
+    <input id="{{name}}" name="{{name}}" type="text" {%if required %}required{%endif%}></input>
     {% if hint %}
       <span class="hint">{{hint}}</span>
     {% endif %}
@@ -9,10 +14,15 @@
   </p>
 {% endmacro %}
 
-{% macro textarea(name, label, hint) %}
+{% macro textarea(name, label, required, hint) %}
   <p>
-    <label for="{{name}}">{{label}}</label>
-    <textarea id="{{name}}" name="{{name}}" rows=10></textarea>
+    <label for="{{name}}">
+      {{label}}
+      {% if required %}
+        <abbr title="Campo obligatorio">*</abbr>
+      {% endif %}
+    </label>
+    <textarea id="{{name}}" name="{{name}}" rows=10 {%if required %}required{%endif%}></textarea>
     {% if hint %}
       <span class="hint">{{hint}}</span>
     {% endif %}

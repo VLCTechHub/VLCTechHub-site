@@ -16,6 +16,7 @@ form {
     color: $text-color-secondary;
     font-size: 0.9rem;
   }
+
 }
 
 input[type=text],
@@ -26,4 +27,17 @@ fieldset {
   padding: $space-small;
   width : 100%;
   border: 3px solid $black;
+}
+
+
+form._submit-attempted {
+  input[type=text],
+  input[type=email],
+  input[type=number],
+  textarea,
+  fieldset {
+    &:invalid {
+      border: 3px solid firebrick;
+    }
+  }
 }
