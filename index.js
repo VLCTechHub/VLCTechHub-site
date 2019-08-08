@@ -4,6 +4,7 @@ const layouts = require('metalsmith-layouts');
 const permalinks = require('metalsmith-permalinks');
 const inplace = require('metalsmith-in-place');
 const collections = require('metalsmith-collections');
+const uglify = require('metalsmith-uglify');
 const sass = require('metalsmith-sass');
 const http = require('http');
 const nunjucksDate = require('nunjucks-moment-timezone-filter');
@@ -94,7 +95,14 @@ Metalsmith(__dirname)
   .use(layouts(layoutConfig))
   .use(permalinks({}))
   .use(sass({
-    outputDir: 'css/'
+    outputDir: 'assets/css/'
+  }))
+  .use(uglify({
+    concat: {
+      file: 'vlctechhub-min.js',
+      root: 'assets/js'
+    },
+    removeOriginal: true
   }))
   .build(function(err, files) {
     if (err) { throw err; }

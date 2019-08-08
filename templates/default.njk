@@ -7,7 +7,7 @@
     <meta name="og:title" content="{{seo.ogTitle}}"/>
     <meta name="og:description" content="{{seo.ogDescription | truncate(300) }}"/>
     <meta name="og:url" content="{{seo.ogUrl}}"/>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body>
     {% include "./layout/header.njk" %}
@@ -21,5 +21,6 @@
       {% block footer %}
         {% include "./layout/footer.njk" %}
       {% endblock %}
+      {% include './partials/footer-scripts.njk' %}
   </body>
 </html>

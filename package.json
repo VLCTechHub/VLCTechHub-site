@@ -13,6 +13,7 @@
     "metalsmith-markdown": "^1.2.0",
     "metalsmith-permalinks": "^2.2.0",
     "metalsmith-sass": "^1.6.0",
+    "metalsmith-uglify": "^2.3.2",
     "moment-timezone": "^0.5.26",
     "nunjucks-moment-timezone-filter": "^1.0.1",
     "swig": "^1.4.2",
