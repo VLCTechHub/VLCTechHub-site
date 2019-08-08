@@ -42,13 +42,13 @@ La web de VLCTechHub está desarrollada como un sitio estático con el generador
   Ahora el sitio esta corriendo en `http://localhost:8080`.
 
 
-## 🎓 Aprendiendo MetalSmith y Nutjucks
+## 🎓 Aprendiendo MetalSmith y Nunjucks
 
   La documentación de MetalSmith se encuentra en [su web](https://metalsmith.io).
 
-  El sistema de plantillas que usa este repo es [Nutjucks](https://mozilla.github.io/nunjucks/), un lenguaje de plantillas sencillo y potente desarrollado por Mozilla.
+  El sistema de plantillas que usa este repo es [Nunjucks](https://mozilla.github.io/nunjucks/), un lenguaje de plantillas sencillo y potente desarrollado por Mozilla.
 
-  La jerarquia de plantillas de Nutjucks esta basada en un artículo sobre [patrones de disenyo orientados a componentes](https://css-tricks.com/component-led-design-patterns-nunjucks-grunt/) sobre Nutjucks.
+  La jerarquia de plantillas de Nunjucks esta basada en un artículo sobre [patrones de disenyo orientados a componentes](https://css-tricks.com/component-led-design-patterns-nunjucks-grunt/) sobre Nunjucks.
 
   La estructura usada en la parte sass sigue los consejos de ["Sass Guidelines"](https://sass-guidelin.es/es/).
 
