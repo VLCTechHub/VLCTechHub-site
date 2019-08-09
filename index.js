@@ -98,6 +98,7 @@ Metalsmith(__dirname)
     outputDir: 'assets/css/'
   }))
   .use(uglify({
+    es: true,
     concat: {
       file: 'vlctechhub-min.js',
       root: 'assets/js'

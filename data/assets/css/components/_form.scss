@@ -20,24 +20,34 @@ form {
 }
 
 input[type=text],
-input[type=email],
-input[type=number],
+input[type=time],
+input[type=date],
 textarea,
 fieldset {
   padding: $space-small;
   width : 100%;
   border: 3px solid $black;
+
+  &:focus {
+    outline: none;
+    border: 3px solid $brand-color;
+  }
+
 }
 
 
-form._submit-attempted {
+form[data-submit-attempted=true] {
   input[type=text],
-  input[type=email],
-  input[type=number],
+  input[type=time],
+  input[type=date],
   textarea,
   fieldset {
     &:invalid {
       border: 3px solid firebrick;
+      box-shadow: none;
+    }
+    &:focus:invalid {
+      border: 3px solid $brand-color;
     }
   }
 }

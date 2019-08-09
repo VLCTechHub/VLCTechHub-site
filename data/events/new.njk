@@ -1,5 +1,5 @@
 {% extends "./templates/default.njk" %}
-{% from "./templates/macros/form.njk" import textInput, textarea %}
+{% from "./templates/macros/form.njk" import textInput, timeInput, dateInput, textarea %}
 
 {% block main %}
   <article id="new-event">
@@ -13,12 +13,12 @@
     <form>
     {% set required = true %}
     {{textInput('title', 'Título', required)}}
-    {{textInput('startDate', 'Fecha', required, 'Formato dd/mm/yyyy')}}
-    {{textInput('startTime', 'Hora', required, 'Formato hh:mm')}}
+    {{dateInput('startDate', 'Fecha', required)}}
+    {{timeInput('startTime', 'Hora', required, 'Formato hh:mm. Si el control pide tres valores, el tercer valor establece AM o PM.')}}
     {{textarea('description', 'Descripción', required)}}
     {{textInput('sourceUrl', 'Link', required)}}
     {{textInput('hashtag', 'Usuario de twitter', notRequired, 'Por ejemplo: @vlctechhub. Si no tienes usuario de twitter puedes usar un hashtag como por ejemplo #eventoparatodos. De aquí se genera la imagen cuando se publique el evento.')}}
-    <button class="button button-emphasis">Enviar el evento</button>
+    <button class="button button-emphasis" data-type="submit">Enviar el evento</button>
   </form>
   </article>
 {% endblock %}
