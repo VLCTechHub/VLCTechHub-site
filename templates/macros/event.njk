@@ -1,8 +1,8 @@
 {% macro image(twitterInfo, width=350) %}
-  {% if twitterInfo.hashtag %}
-    <img src="https://dummyimage.com/{{width}}x{{width}}/000/fff.gif&text=%23{{twitterInfo.hashtag}}"></img>
-  {% else %}
+  {% if twitterInfo.handle %}
     <img src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_{{width}}/{{twitterInfo.handle}}.jpg"></img>
+  {% else %}
+    <img src="https://dummyimage.com/{{width}}x{{width}}/000/fff.gif&text=%23{{twitterInfo.hashtag}}"></img>
   {% endif %}
 {% endmacro %}
 
