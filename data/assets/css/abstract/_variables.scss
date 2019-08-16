@@ -14,14 +14,7 @@ $space-medium: rem(20);
 $space-large: rem(40);
 $space-larger: rem(60);
 
-$max-width: 1180px !default;
-
-/// Breakpoints map
-$breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
+$max-width: 64rem !default;
 
 
 

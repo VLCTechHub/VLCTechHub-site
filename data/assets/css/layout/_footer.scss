@@ -1,36 +1,42 @@
 .main-footer {
-  margin-top: $space-large * 2;
-  margin-bottom: $space-large;
+  display: none;
 
-  .footer-content {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
+  @include size-medium {
+    display: block;
 
-  hr {
-    width: 85%;
-    height: 2px;
-    background-color: black;
-    margin-bottom: $space-larger;
-  }
+    margin-top: $space-large * 2;
+    margin-bottom: $space-large;
 
-  h1 {
-    font-size: 1em;
-    color: $brand-color;
-    font-weight: bold;
-    margin-bottom: $space-medium;
-  }
+    .footer-content {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
 
-  ul,
-  ul li {
-    margin:0;
-    padding: 0;
-    text-indent: 0;
-    list-style: none;
-  }
+    hr {
+      width: 85%;
+      height: 2px;
+      background-color: black;
+      margin-bottom: $space-larger;
+    }
 
-  ul li {
-    margin-bottom: $space-small;
+    h1 {
+      font-size: 1em;
+      color: $brand-color;
+      font-weight: bold;
+      margin-bottom: $space-medium;
+    }
+
+    ul,
+    ul li {
+      margin:0;
+      padding: 0;
+      text-indent: 0;
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: $space-small;
+    }
   }
 }

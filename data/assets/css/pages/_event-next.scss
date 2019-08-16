@@ -3,5 +3,17 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-direction: column-reverse;
+
+    @include size-medium {
+      flex-direction: row;
+    }
+
+    .button {
+      margin: 4rem 0 1.5rem 0;
+      @include size-medium {
+        margin: 0;
+      }
+    }
   }
 }

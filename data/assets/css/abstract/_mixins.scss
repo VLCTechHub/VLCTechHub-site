@@ -18,3 +18,15 @@
     }
   }
 }
+
+@mixin size-medium {
+  @media (min-width: 48em) {
+    @content;
+  }
+}
+
+@mixin size-large {
+  @media (min-width: 75em) {
+    @content;
+  }
+}

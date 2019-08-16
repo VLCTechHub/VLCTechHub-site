@@ -1,25 +1,47 @@
 #event-page {
   display: grid;
   width: 100%;
-  grid-template-areas: "header header header"
+
+  grid-template-areas: "header"
+                       "ruler"
+                       "details"
+                       "description";
+
+  @include size-medium {
+    grid-template-areas: "header header header"
                        "details ruler description";
-  grid-template-columns: 1fr 3rem 2fr;
+    grid-template-columns: 1fr 3rem 2fr;
+}
 
   header {
     grid-area: header;
-    h1 {
-      margin-bottom: $space-larger;
+    @include size-medium {
+      h1 {
+        margin-bottom: $space-larger;
+      }
     }
   }
 
   .event-details {
     grid-area: details;
     margin-bottom: $space-medium;
+    text-align: center;
+
+    @include size-medium {
+      text-align: left;
+    }
+
+    img {
+      width: 100%;
+      max-width: 350px;
+    }
 
     .details {
-      margin: $space-larger 0;
+      margin: $space-larger auto;
       font-size: 1.2rem;
       font-weight: bold;
+      max-width: 350px;
+      text-align: left;
     }
   }
 
@@ -35,12 +57,23 @@
 
   .ruler {
     grid-area: ruler;
+    margin-bottom: 2rem;
 
     hr {
-      height: 100%;
-      width: 1px;
+      height: 2px;
+      width: 100%;
       background-color: $black;
-      margin: auto;
+    }
+
+    @include size-medium {
+      margin-bottom: 0;
+
+      hr {
+        height: 100%;
+        width: 1px;
+        background-color: $black;
+        margin: auto;
+      }
     }
   }
 

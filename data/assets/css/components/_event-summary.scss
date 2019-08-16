@@ -5,14 +5,30 @@
 }
 
 .event-summary {
-  max-width: 350px;
+  max-width: 100%;
   text-align: center;
   margin-bottom: $space-large;
 
-  img {
+  @include size-medium {
+    max-width: 300px;
+  }
+
+  @include size-large {
     max-width: 350px;
+  }
+
+  img {
+    max-width: 100%;
     border: 4px solid $black;
     margin-bottom: $space-medium;
+
+    @include size-medium {
+      max-width: 300px;
+    }
+
+    @include size-large {
+      max-width: 350px;
+    }
 
     &:hover {
       cursor: pointer;
