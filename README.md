@@ -30,6 +30,14 @@ La web de VLCTechHub está desarrollada como un sitio estático con el generador
     yarn run build
   ```
 
+  Cuando se construye el site, se usa la API de vlctechhub. Por defecto, usa la dirección local de desarrollo `localhost:5000` para hacer llamadas a la API y enviar los formularios de creación.
+
+  Para construir el sitio contra producción u otra dirección donde se encuentre la API de vlctechhub hay que pasarsela por variable de entorno cuando se construye:
+
+  ```sh
+   API_ROOT=url/to/api/ yarn run build
+  ```
+
 5. **Levanta un servidor para ver el sitio**
 
   Ya tienes construido el sitio estático! Puedes levantar un sencillo servidor con python desde la linea de comandos.

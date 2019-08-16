@@ -42,7 +42,7 @@ const createTwitterInfo = function(txt) {
   return twitter;
 }
 
-let apiRoot = process.env.apiRoot || 'http://localhost:5000/';
+let apiRoot = process.env.API_ROOT || 'http://localhost:5000/';
 
 Metalsmith(__dirname)
   .metadata({
