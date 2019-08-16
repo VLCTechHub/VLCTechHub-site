@@ -11,6 +11,12 @@
   </head>
   <body>
     {% include "./layout/header.njk" %}
+      <script>
+        let Site = {};
+        Site.API_ROOT = '{{apiRoot}}'
+      </script>
+      <script src="/assets/js/vlctechhub-min.js"></script>
+
      <main>
         <section class="container">
           {% block main %}
@@ -21,6 +27,5 @@
       {% block footer %}
         {% include "./layout/footer.njk" %}
       {% endblock %}
-      <script src="/assets/js/vlctechhub-min.js"></script>
-  </body>
+ </body>
 </html>

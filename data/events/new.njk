@@ -10,7 +10,15 @@
       </p>
     </header>
 
-    <form>
+    <section class="notification success" style="display:none">
+      ¡Evento recibido con éxito! Hemos dado de alta tu evento, pero ten en cuenta que la publicación no es inmediata.
+    </section>
+
+    <section class="notification error" style="display:none">
+      No hemos podido crear la oferta, por favor, revisa que los datos son correctos y prueba más tarde.
+    </section>
+
+    <form onsubmit="return false;">
     {% set required = true %}
     {{textInput('title', 'Título', required)}}
     {{dateInput('startDate', 'Fecha', required)}}
@@ -18,7 +26,10 @@
     {{textarea('description', 'Descripción', required)}}
     {{textInput('sourceUrl', 'Link', required)}}
     {{textInput('hashtag', 'Usuario de twitter', notRequired, 'Por ejemplo: @vlctechhub. Si no tienes usuario de twitter puedes usar un hashtag como por ejemplo #eventoparatodos. De aquí se genera la imagen cuando se publique el evento.')}}
-    <button class="button button-emphasis" data-type="submit">Enviar el evento</button>
+    <button type="button" class="button button-emphasis" data-type="submit">Enviar el evento</button>
   </form>
   </article>
+  <script>
+    Site.Events.New.init();
+  </script>
 {% endblock %}

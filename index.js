@@ -42,19 +42,23 @@ const createTwitterInfo = function(txt) {
   return twitter;
 }
 
+let apiRoot = process.env.apiRoot || 'http://localhost:5000/';
+
 Metalsmith(__dirname)
   .metadata({
     seo: {
       ogTitle: "VLCTechHub",
       ogDescription: "VLCTechHub es el hub de eventos y empleo tecnológico en Valencia: eventos de programación, coding dojos, talleres, workshops o quedadas informales para fomentar una comunidad o compartir información de base tecnológica en Valencia o Castellón.",
       ogUrl: baseUrl
-    }
+    },
+    apiRoot: apiRoot
   })
   .source('./data')
   .destination('./dist')
   .clean(true)
   .use((files, metalsmith, done) => {
-    let url = 'http://vlctechhub-api.herokuapp.com/v1/events?category=next'
+    let url = `${apiRoot}v1/events?category=next`
+    console.log('Consuming', url);
     const req = http.get(url, (res) => {
       let body = '';
       res.on('data', (chunk) => {
@@ -75,7 +79,7 @@ Metalsmith(__dirname)
             seo: {
               ogTitle: e.title,
               ogDescription: e.description,
-              ogUrl: baseUrl + 'events/' + e.slug +'/'
+              ogUrl: apiRoot + 'events/' + e.slug +'/'
             },
             collection: 'upcomingEvents'
           }
