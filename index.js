@@ -7,6 +7,7 @@ const collections = require('metalsmith-collections');
 const uglify = require('metalsmith-uglify');
 const sass = require('metalsmith-sass');
 const http = require('http');
+const https = require('https');
 const nunjucksDate = require('nunjucks-moment-timezone-filter');
 const moment = require('moment');
 
@@ -59,7 +60,8 @@ Metalsmith(__dirname)
   .use((files, metalsmith, done) => {
     let url = `${apiRoot}v1/events?category=next`
     console.log('Consuming', url);
-    const req = http.get(url, (res) => {
+    let protocol = apiRoot.startsWith('https://')? https : http;
+    const req = protocol.get(url, (res) => {
       let body = '';
       res.on('data', (chunk) => {
         body += chunk;

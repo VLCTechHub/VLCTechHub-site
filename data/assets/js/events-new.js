@@ -66,7 +66,7 @@ Site.Events.New.init = function() {
     $E('header .title').scrollIntoView({behaviour: 'smooth', block: 'end'});
   }
 
-  function showErrorMessage() {
+  function showKOMessage() {
     $E('.notification.success').style.display = 'none';
     $E('.notification.error').style.display = 'block';
     $E('header .title').scrollIntoView({behaviour: 'smooth', block: 'end'});
@@ -80,6 +80,8 @@ Site.Events.New.init = function() {
 
     fetch(Site.API_ROOT + 'v1/events/', {
       method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(buildEventAPIData())
     })
