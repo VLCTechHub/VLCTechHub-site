@@ -33,7 +33,7 @@ Site.Events.New.init = function() {
     let date = $E('#startDate').value;
     let time = $E('#startTime').value;
     let offset = getUTCOffset(new Date(date));
-    return `${date}T${time}-0${offset}:00`;
+    return `${date}T${time}+0${offset}:00`;
   }
 
   function buildEventAPIData() {
