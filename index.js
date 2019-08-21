@@ -78,6 +78,7 @@ Metalsmith(__dirname)
             twitter: createTwitterInfo(e.hashtag),
             slug: e.slug,
             sourceUrl: e.link,
+            pageTitle: e.title,
             seo: {
               ogTitle: e.title,
               ogDescription: e.description,
