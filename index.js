@@ -96,7 +96,9 @@ Metalsmith(__dirname)
     req.end();
   })
   .use(collections())
-  .use(markdown())
+  .use(markdown({
+    sanitize: true
+  }))
   .use(inplace(inplaceConfig))
   .use(layouts(layoutConfig))
   .use(permalinks({}))
