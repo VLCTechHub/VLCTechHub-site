@@ -1,9 +1,10 @@
-<html>
-<head>
-  <title>VLCTechHub</title>
-</head>
-<body>
-  <h1>{{ title }}</h1>
-  {{ contents }}
-</body>
-</html>
+{% extends "./default.njk" %}
+
+{% block main %}
+  <article id="job-page">
+    <header><h1>{{title}}</h1></header>
+    <section class="job-description">
+      {{contents | safe}}
+    </section>
+  </article>
+{% endblock %}

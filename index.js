@@ -58,7 +58,7 @@ Metalsmith(__dirname)
   .destination('./dist')
   .clean(true)
   .use((files, metalsmith, done) => {
-    let url = `${apiRoot}v1/events?category=next`
+    let url = `${apiRoot}v1/events/?category=next`
     console.log('Consuming', url);
     let protocol = apiRoot.startsWith('https://')? https : http;
     const req = protocol.get(url, (res) => {
@@ -85,6 +85,47 @@ Metalsmith(__dirname)
               ogUrl: apiRoot + 'events/' + e.slug +'/'
             },
             collection: 'upcomingEvents'
+          }
+          files[page.file] = page;
+        });
+        done();
+      });
+    })
+    req.on('error', (error) => {
+      console.error(error)
+    })
+    req.end();
+  })
+  .use((files, metalsmith, done) => {
+    let url = `${apiRoot}v1/jobs/`
+    console.log('Consuming', url);
+    let protocol = apiRoot.startsWith('https://')? https : http;
+    const req = protocol.get(url, (res) => {
+      let body = '';
+      res.on('data', (chunk) => {
+        body += chunk;
+      });
+      res.on('end', () => {
+        let jobs = JSON.parse(body).jobs;
+        jobs.forEach(e => {
+          let page = {
+            file: 'job/board/' + e.id + '.md',
+            title: e.title,
+            contents: Buffer.from(e.description),
+            howToApply: e.how_to_apply,
+            salary: e.salary,
+            publishedAt: e.published_at.toString(),
+            sourceUrl: e.link,
+            tags: e.tags,
+            slug: e.id,
+            layout: 'job.njk',
+            pageTitle: e.title,
+            seo: {
+              ogTitle: e.title,
+              ogDescription: e.description,
+              ogUrl: apiRoot + 'job/board/' + e.id +'/'
+            },
+            collection: 'jobs'
           }
           files[page.file] = page;
         });

@@ -1,0 +1,22 @@
+{% set pageTitle = "Empleo" %}
+{% set navItem = "jobs" %}
+
+{% extends "./templates/default.njk" %}
+
+{% block main %}
+  <article id="job-board">
+    <header>
+      <h1 class="title"> Empleo </h1>
+      <a class="button button-secondary" href="/job/new/">Publicar una oferta</a>
+    </header>
+    <section class="jobs">
+      {% for job in collections.jobs %}
+       <article class="job-detail">
+        <h1><a href="{{job.slug}}">{{job.title}}</a></h1>
+        <hr>
+      </article>
+      {% endfor %}
+    </section>
+  </article>
+{% endblock %}
+

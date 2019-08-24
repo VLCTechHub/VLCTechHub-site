@@ -1,0 +1,40 @@
+{% set pageTitle = "Publicar oferta" %}
+{% extends "./templates/default.njk" %}
+
+{% from "./templates/macros/form.njk" import textInput, textarea %}
+
+{% block main %}
+  <article id="new-job">
+    <header>
+      <h1 class="title"> publicar una oferta </h1>
+      <p>
+      Recomendamos seguir <a href="http://www.carlosreig.es/como-hacer-una-buena-oferta-de-trabajo/?source=vlctechhub" target="_blank" rel="noopener noreferrer">esta guía </a>para publicar. <strong>Revisamos cada oferta</strong>, ten en cuenta que la publicación no es inmediata.
+      </p>
+    </header>
+
+    <section class="notification success" style="display:none">
+      ¡Oferta recibida con éxito! Hemos dado de alta tu oferta, pero ten en cuenta que la publicación no es inmediata.
+    </section>
+
+    <section class="notification error" style="display:none">
+      No hemos podido crear la oferta, por favor, revisa que los datos son correctos y prueba más tarde.
+    </section>
+
+    <form onsubmit="return false;">
+    {% set required = true %}
+    {{textInput('title', 'Puesto', required, "Ej: 'Desarrollador ruby', 'Diseñador UX', 'Programador senior .Net'")}}
+    {{textarea('description', 'Descripción', required, "Describe con detalle lo que implica el puesto, qué tipo de candidato buscas, cómo se trabaja en tu empresa y qué beneficios ofrecéis.")}}
+    {{textInput('keywords', 'Palabras clave', required, "Breve listado separado por comas. Ej: javascript, aws, marketing, photoshop")}}
+    {{textInput('salary', 'Sueldo', required, "Los candidatos contactan más con empresas que publican el sueldo en la oferta.")}}
+    {{textInput('howToApply', 'Cómo aplicar', required, "Escribe las instrucciones para inscribirte a tu oferta aquí. Ej: 'Mándanos una carta de presentación y tu cv a la direccion de correo xxx@xxx.com. Cuéntanos por qué eres el candidato ideal!'")}}
+    {{textInput('sourceUrl', 'URL de la oferta', notRequired, "Si tienes publicada la oferta en tu página web puedes poder aquí el link.")}}
+    {{textInput('companyName', 'Nombre de la empresa', required)}}
+    {{textInput('companyWeb', 'Web de la empresa', required)}}
+    {{textInput('companyTwitter', 'Twitter de la empresa', notRequired, "Te nombraremos cuando se publique la oferta. Ej: @mozilla")}}
+    {{textInput('companyContact', 'Email de contacto', notRequired, "Email contacto en caso de tener alguna duda con la oferta. Este email no se publicará con la oferta.")}}
+    <button type="button" class="button button-emphasis" data-type="submit">Enviar la oferta</button>
+  </form>
+  </article>
+  <script>
+  </script>
+{% endblock %}
