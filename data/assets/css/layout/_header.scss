@@ -31,11 +31,23 @@
     nav ul li {
       display: inline;
       margin-left: $space-large;
+      padding: $space-small;
       text-transform: uppercase;
+      font-weight: bold;
+
+      @include on-event {
+        border-bottom: 8px solid whitesmoke;
+        a {
+          color: $brand-color;
+        }
+      }
+
+      &.current:hover a {
+        color: $text-color;
+      }
 
       &.current {
-        background-color: $brand-color;
-        padding: 0 $space-small 0 $space-small;
+        border-bottom: 8px solid $brand-color;
       }
     }
 
