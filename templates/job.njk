@@ -2,9 +2,38 @@
 
 {% block main %}
   <article id="job-page">
-    <header><h1>{{title}}</h1></header>
+  <header>
+      <h1>{{title}}</h1>
+      <p>{{companyName}}</p>
+      <section class="tags">
+        {% for tag in tags %}
+          <span class="tag">{{tag}}</span>
+        {% endfor %}
+      </section>
+    </header>
     <section class="job-description">
+      <section>
+      <h2>Descripción</h2>
       {{contents | safe}}
+      </section>
+      <section>
+      <h2>Sueldo</h2>
+      {% if salary %}
+        {{salary}}
+      {% else %}
+        No hay información.
+      {% endif %}
+      </section>
+      <section>
+      <h2>Cómo aplicar</h2>
+      {{howToApply | safe }}
+      </section>
+      {% if sourceUrl %}
+      <section>
+      <h2>Más infomación</h2>
+      Más información de la oferta en <a href="{{sourceUrl}}">{{sourceUrl}}</a>.
+      </section>
+      {% endif %}
     </section>
   </article>
 {% endblock %}

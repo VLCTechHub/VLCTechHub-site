@@ -1,0 +1,47 @@
+#job-board {
+  > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: column-reverse;
+
+    @include size-medium {
+      flex-direction: row;
+    }
+
+    .button {
+      margin: 4rem 0 1.5rem 0;
+      @include size-medium {
+        margin: 0;
+      }
+    }
+  }
+
+  .job-detail {
+    header p {
+      font-size: 0.9rem;
+      color: $text-color-secondary;
+    }
+    header a {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: $text-color;
+    }
+
+    .tags {
+      margin-top: $space-medium;
+    }
+
+    hr {
+      margin: 2rem 0;
+      background-color: $black;
+      height: 2px;
+    }
+  }
+
+  .job-detail:last-child hr {
+    display: none;
+  }
+}
+

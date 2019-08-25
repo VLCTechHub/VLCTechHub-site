@@ -1,0 +1,22 @@
+#job-page {
+  header {
+    padding-bottom: $space-large;
+    margin-bottom: $space-large;
+    border-bottom: 3px solid black;
+
+    h1 {
+      text-transform: uppercase;
+    }
+
+  }
+
+  .job-description {
+    column-width: 25rem;
+    column-gap: 4em;
+    column-rule: 1px solid black;
+
+    section {
+      break-inside: avoid;
+    }
+  }
+}

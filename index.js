@@ -10,6 +10,7 @@ const http = require('http');
 const https = require('https');
 const nunjucksDate = require('nunjucks-moment-timezone-filter');
 const moment = require('moment');
+const marked = require('marked');
 
 
 const baseUrl = 'http:/vlctechhub.org/';
@@ -112,12 +113,13 @@ Metalsmith(__dirname)
             file: 'job/board/' + e.id + '.md',
             title: e.title,
             contents: Buffer.from(e.description),
-            howToApply: e.how_to_apply,
+            howToApply: marked(e.how_to_apply, { sanitize: true, smartLists: true }),
             salary: e.salary,
             publishedAt: e.published_at.toString(),
             sourceUrl: e.link,
             tags: e.tags,
             slug: e.id,
+            companyName: e.company.name,
             layout: 'job.njk',
             pageTitle: e.title,
             seo: {

@@ -1,0 +1,9 @@
+.tag {
+  padding: 0.15rem 0.25rem;
+  border: 1px solid $brand-color;
+  border-radius: 3px;
+  font-size: 0.625rem;
+  color: $text-color-secondary;
+  text-transform: lowercase;
+  white-space: nowrap;
+}

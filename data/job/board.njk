@@ -12,7 +12,15 @@
     <section class="jobs">
       {% for job in collections.jobs %}
        <article class="job-detail">
-        <h1><a href="{{job.slug}}">{{job.title}}</a></h1>
+       <header>
+          <p><a href="{{job.slug}}">{{job.title}}</a></p>
+          <p>{{job.companyName}}</p>
+        </header>
+        <section class="tags">
+          {% for tag in job.tags %}
+            <span class="tag">{{tag}}</span>
+          {% endfor %}
+          </section>
         <hr>
       </article>
       {% endfor %}
