@@ -17,15 +17,19 @@ const baseUrl = 'http:/vlctechhub.org/';
 
 moment.locale('es');
 
+function fromNow(date) {
+  return moment(date).fromNow();
+}
+
 const inplaceConfig = {
   engineOptions: {
-    filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate }
+    filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate, fromNow: fromNow }
   }
 };
 
 const layoutConfig = {
   engineOptions: {
-    filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate }
+    filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate, fromNow: fromNow }
   },
   directory: 'templates/'
 };
@@ -113,7 +117,7 @@ Metalsmith(__dirname)
             file: 'job/board/' + e.id + '.md',
             title: e.title,
             contents: Buffer.from(e.description),
-            howToApply: marked(e.how_to_apply, { sanitize: true, smartLists: true }),
+            howToApply: marked(e.how_to_apply || '', { sanitize: true, smartLists: true }),
             salary: e.salary,
             publishedAt: e.published_at.toString(),
             sourceUrl: e.link,
@@ -139,7 +143,17 @@ Metalsmith(__dirname)
     })
     req.end();
   })
-  .use(collections())
+  .use(collections(
+    {
+      jobs: {
+        sortBy: 'publishedAt',
+        reverse: true
+      },
+      upcomingEvents: {
+        sortBy: 'startDate'
+      }
+    }
+  ))
   .use(markdown({
     sanitize: true
   }))

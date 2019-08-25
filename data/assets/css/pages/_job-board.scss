@@ -20,13 +20,17 @@
   .job-detail {
     header p {
       font-size: 0.9rem;
-      color: $text-color-secondary;
     }
     header a {
       text-transform: uppercase;
       font-weight: bold;
       font-size: 1.1rem;
-      color: $text-color;
+    }
+
+    .freshness {
+      font-size: 0.7rem;
+      color: $text-color-secondary;
+      text-align: right;
     }
 
     .tags {

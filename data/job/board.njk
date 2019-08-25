@@ -13,8 +13,13 @@
       {% for job in collections.jobs %}
        <article class="job-detail">
        <header>
+          <section class="freshness">
+            {{job.publishedAt | newDate | fromNow }}
+          </section>
+          <section>
           <p><a href="{{job.slug}}">{{job.title}}</a></p>
           <p>{{job.companyName}}</p>
+          </section>
         </header>
         <section class="tags">
           {% for tag in job.tags %}
