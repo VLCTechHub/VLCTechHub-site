@@ -22,7 +22,22 @@ a {
   text-decoration: none;
 
   @include on-event {
-    text-decoration: underline;
+    text-decoration: none;
+  }
+}
+
+p a, h1 a {
+  text-decoration: none;
+  background-image: linear-gradient(transparent 0%, transparent calc(60%), rgb(255, 213, 0) calc(60%), rgb(255, 213, 0) 100%);
+  transition: padding 120ms ease-in-out;
+
+  @include on-event {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-image: linear-gradient(transparent 0%, #ffd500 0%, #ffd500 100%);
+    padding: 2px 0 4px 0;
   }
 }
 
