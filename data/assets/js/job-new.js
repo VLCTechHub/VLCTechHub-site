@@ -56,7 +56,7 @@ Site.Job.New.init = function() {
       return false;
     }
 
-    fetch(Site.API_ROOT + 'v1/jobs/', {
+    fetch(Site.API_ROOT + '/jobs/', {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',

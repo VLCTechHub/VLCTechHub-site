@@ -78,7 +78,7 @@ Site.Events.New.init = function() {
       return false;
     }
 
-    fetch(Site.API_ROOT + 'v1/events/', {
+    fetch(Site.API_ROOT + '/events/', {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',

@@ -18,7 +18,7 @@ function fromNow(date) {
 }
 
 const devBuild = ((process.env.NODE_ENV || '').trim().toLowerCase() !== 'production');
-const apiRoot = devBuild ? 'http://localhost:5000/' : 'https://vlctechhub-api.herokuapp.com/';
+const apiRoot = devBuild ? 'http://localhost:5000/v1' : 'https://vlctechhub-api.herokuapp.com/v1';
 const version = git.short();
 
 Metalsmith(__dirname)
