@@ -85,8 +85,9 @@ Site.Events.New.init = function() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(buildEventAPIData())
     })
-    .catch(() => { showKOMessage(); })
-    .then(() => { clearForm(); showOKMessage(); });
+    .then((response) => { if(!response.ok) { throw new Error("Response not ok"); }})
+    .then(() => { clearForm(); showOKMessage(); })
+    .catch(() => { showKOMessage(); });
     return false;
   }
 
