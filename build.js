@@ -11,8 +11,9 @@ const https = require('https');
 const nunjucksDate = require('nunjucks-moment-timezone-filter');
 const moment = require('moment');
 const marked = require('marked');
+const git = require('git-rev-sync');
 
-const devBuild = ((process.env.NODE_ENV || '').trim().toLowerCase() !== 'production');
+
 
 moment.locale('es');
 
@@ -47,7 +48,9 @@ const createTwitterInfo = function(txt) {
   return twitter;
 }
 
-let apiRoot = devBuild ? 'http://localhost:5000/' : 'https://vlctechhub-api.herokuapp.com/';
+const devBuild = ((process.env.NODE_ENV || '').trim().toLowerCase() !== 'production');
+const apiRoot = devBuild ? 'http://localhost:5000/' : 'https://vlctechhub-api.herokuapp.com/';
+const version = git.short();
 
 Metalsmith(__dirname)
   .metadata({
@@ -56,7 +59,8 @@ Metalsmith(__dirname)
       ogDescription: "VLCTechHub es el hub de eventos y empleo tecnológico en Valencia: eventos de programación, coding dojos, talleres, workshops o quedadas informales para fomentar una comunidad o compartir información de base tecnológica en Valencia o Castellón.",
       ogUrl: 'https://vlctechhub.org/'
     },
-    apiRoot: apiRoot
+    apiRoot: apiRoot,
+    version: git.short()
   })
   .source('./data')
   .destination('./dist')
@@ -160,12 +164,17 @@ Metalsmith(__dirname)
   .use(layouts(layoutConfig))
   .use(permalinks({}))
   .use(sass({
-    outputDir: 'assets/css/'
+    outputDir: 'assets/css/',
+    outFile: 'foobar.css'
   }))
-  .use(uglify({
+  .use((files, metalsmith, done) => { //fingerprint css based on commit
+    files[`assets/css/vlctechhub-${version}-min.css`] = files['assets/css/main.css'];
+    done();
+  })
+  .use(uglify({ // build + fingerprint js based on commmit
     es: true,
     concat: {
-      file: 'vlctechhub-min.js',
+      file: `vlctechhub-${version}-min.js`,
       root: 'assets/js'
     },
     removeOriginal: true

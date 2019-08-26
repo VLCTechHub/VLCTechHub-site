@@ -8,7 +8,7 @@
     <meta name="og:title" content="{{seo.ogTitle}}"/>
     <meta name="og:description" content="{{seo.ogDescription | truncate(300) }}"/>
     <meta name="og:url" content="{{seo.ogUrl}}"/>
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/vlctechhub-{{version}}-min.css">
   </head>
   <body>
     {% include "./layout/header.njk" %}
@@ -16,7 +16,7 @@
         let Site = {};
         Site.API_ROOT = '{{apiRoot}}'
       </script>
-      <script src="/assets/js/vlctechhub-min.js"></script>
+      <script src="/assets/js/vlctechhub-{{version}}-min.js"></script>
 
      <main>
         <section class="container">
