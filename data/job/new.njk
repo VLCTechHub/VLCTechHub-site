@@ -12,11 +12,11 @@
       </p>
     </header>
 
-    <section class="notification success" style="display:none">
+    <section class="notification success">
       ¡Oferta recibida con éxito! Hemos dado de alta tu oferta, pero ten en cuenta que la publicación no es inmediata.
     </section>
 
-    <section class="notification error" style="display:none">
+    <section class="notification error">
       No hemos podido crear la oferta, por favor revisa que los datos son correctos y prueba más tarde.
     </section>
 
@@ -35,7 +35,7 @@
     <button type="button" class="button button-emphasis" data-type="submit">Enviar la oferta</button>
   </form>
   </article>
-  <script>
+  <script nonce="{{version}}">
     Site.Job.New.init();
   </script>
 {% endblock %}

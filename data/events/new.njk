@@ -12,11 +12,11 @@
       </p>
     </header>
 
-    <section class="notification success" style="display:none">
+    <section class="notification success">
       ¡Evento recibido con éxito! Hemos dado de alta tu evento, pero ten en cuenta que la publicación no es inmediata.
     </section>
 
-    <section class="notification error" style="display:none">
+    <section class="notification error">
       No hemos podido crear el evento, por favor revisa que los datos son correctos y prueba más tarde.
     </section>
 
@@ -31,7 +31,7 @@
     <button type="button" class="button button-emphasis" data-type="submit">Enviar el evento</button>
   </form>
   </article>
-  <script>
+  <script nonce="{{version}}">
     Site.Events.New.init();
   </script>
 {% endblock %}
