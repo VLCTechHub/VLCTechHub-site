@@ -29,7 +29,8 @@ Metalsmith(__dirname)
       ogUrl: 'https://vlctechhub.org/'
     },
     apiRoot: apiRoot,
-    version: git.short()
+    version: git.short(),
+    nonce: Buffer.from(Math.random().toString()).toString('base64')
   })
   .source('./data')
   .destination('./dist')

@@ -8,7 +8,7 @@
     <meta name="og:title" content="{{seo.ogTitle}}"/>
     <meta name="og:description" content="{{seo.ogDescription | truncate(300) }}"/>
     <meta name="og:url" content="{{seo.ogUrl}}"/>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*; script-src 'nonce-{{version}}' ;  connect-src {{apiRoot}}/ ">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*; script-src 'self' 'nonce-{{nonce}}' ;  connect-src {{apiRoot}}/ ">
 
     <link rel="stylesheet" href="/assets/css/vlctechhub-{{version}}-min.css">
 
@@ -36,11 +36,11 @@
   </head>
   <body>
     {% include "./layout/header.njk" %}
-      <script nonce="{{version}}">
+      <script nonce="{{nonce}}">
         let Site = {};
         Site.API_ROOT = '{{apiRoot}}'
       </script>
-      <script nonce="{{version}}" src="/assets/js/vlctechhub-{{version}}-min.js"></script>
+      <script src="/assets/js/vlctechhub-{{version}}-min.js"></script>
 
      <main>
         <section class="container">
