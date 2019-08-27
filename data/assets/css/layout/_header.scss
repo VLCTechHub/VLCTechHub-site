@@ -4,10 +4,12 @@
   align-items: center;
 
   .logo img {
-    max-width: 50%;
+    width: 50%;
+    height: auto;
 
     @include size-medium {
-      max-width: 120px;
+      width: 120px;
+      height: 55px;
     }
   }
 
@@ -35,19 +37,17 @@
       text-transform: uppercase;
       font-weight: bold;
 
-      @include on-event {
-        border-bottom: 8px solid whitesmoke;
-        a {
-          color: $brand-color;
-        }
+      a {
+          color: $text-color;
+          padding: 4px 8px;
+          transition: background-color 120ms ease-in-out;
+          @include on-event {
+            background-color: $brand-color;
+          }
       }
 
-      &.current:hover a {
-        color: $text-color;
-      }
-
-      &.current {
-        border-bottom: 8px solid $brand-color;
+      &.current a {
+        background-color: $brand-color;
       }
     }
 
