@@ -37,8 +37,8 @@ Metalsmith(__dirname)
   .source('./data')
   .destination('./dist')
   .clean(true)
-  .use(events({ apiRoot: apiRoot}))
-  .use(jobs({ apiRoot: apiRoot}))
+  .use(events({ apiRoot: apiRoot, collection: 'upcomingEvents' }))
+  .use(jobs({ apiRoot: apiRoot, collection: 'jobs'}))
   .use(collections({
       jobs: { sortBy: 'publishedAt', reverse: true },
       upcomingEvents: { sortBy: 'startDate' }
@@ -86,6 +86,10 @@ Metalsmith(__dirname)
   .use(rss({
     collection:'jobs',
     description: 'El feed de las ofertas de trabajo.',
+    customTitleFn: (item) => {
+      let title = item.title + ' | ' + item.companyName;
+      return title;
+    },
     pubDateAttributeName: 'publishedAt',
     destination: 'job/board/feed.xml'
   }))
