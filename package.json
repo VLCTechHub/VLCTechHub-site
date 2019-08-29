@@ -5,6 +5,7 @@
   "repository": "git@github.com:VLCTechHub/VLCTechHub.git",
   "license": "MIT",
   "dependencies": {
+    "feed": "^4.0.0",
     "git-rev-sync": "^1.12.0",
     "jstransformer-nunjucks": "^1.0.0",
     "metalsmith": "^2.3.0",
