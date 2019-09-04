@@ -1,0 +1,23 @@
+name: Refresh site
+
+on:
+  schedule:
+      - cron: '*/15 * * * *'
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: metalsmith
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm install
+      - run: npm run build
+        env:
+          NODE_ENV: production
+      - run: surge --project $GITHUB_WORKSPACE/dist --domain vlctechhub-revamp.surge.sh
+        env:
+          SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}        
+          SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
