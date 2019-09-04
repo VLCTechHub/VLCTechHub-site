@@ -1,4 +1,4 @@
-name: Refresh site
+name: Refresh site in Surge
 
 on:
   schedule:
