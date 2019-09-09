@@ -14,6 +14,11 @@
     column-gap: 4em;
     column-rule: 1px solid black;
 
+    code {
+      display: block;
+      overflow: auto;
+    }
+
     section {
       break-inside: avoid;
     }
