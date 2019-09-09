@@ -13,8 +13,12 @@
     <section class="next-events-summary">
       {% for upcomingEvent in collections.upcomingEvents %}
        <article class="event-summary">
-        <a href="events/{{upcomingEvent.slug}}">{{image(upcomingEvent.twitter)}}</a>
-        <h1><a href="events/{{upcomingEvent.slug}}">{{upcomingEvent.title}}</a></h1>
+       <h1>
+        <a href="events/{{upcomingEvent.slug}}">
+          <section class="reset-link">{{image(upcomingEvent.twitter)}}</section>
+          {{upcomingEvent.title}}
+        </a>
+        </h1>
         <p>
           {{ dayOfWeek(upcomingEvent.startDate) }} /
           {{ shortDate(upcomingEvent.startDate) }} /

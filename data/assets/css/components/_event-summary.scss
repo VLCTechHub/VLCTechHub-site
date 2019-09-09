@@ -1,47 +1,60 @@
 .next-events-summary {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include size-medium {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include size-large {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .event-summary {
   position: relative;
-  width: 100%;
-  text-align: center;
+  justify-self: left;
   margin-bottom: $space-large;
 
   @include size-medium {
-    width: 300px;
+    justify-self: center;
   }
 
   @include size-large {
-    width: 350px;
-  }
-
-  img {
-    width: 100%;
-    background-color: whitesmoke;
-    transition: outline 120ms ease-in-out;
-
-    @include size-medium {
-      width: 300px;
-      height: 300px;
-    }
-
-    @include size-large {
-      width: 350px;
-      height: 350px;
-    }
-
-    &:hover {
-      outline: 4px solid $black;
-    }
+    justify-self: left;
   }
 
   h1 {
     text-align: left;
     font-size: 1.1rem;
     text-transform: uppercase;
+
+    .reset-link {
+      margin-bottom: $space-small;
+      background-image: none;
+
+      &:hover {
+        background-image: none;
+        padding: 0;
+      }
+    }
+
+
+    img {
+      width: 100%;
+      max-width: 300px;
+
+      background-color: whitesmoke;
+      transition: outline 120ms ease-in-out;
+
+      @include size-medium {
+        width: 300px;
+        height: 300px;
+      }
+    }
+    &:hover img {
+      outline: 4px solid $black;
+    }
   }
 
   p {
