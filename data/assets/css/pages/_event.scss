@@ -3,22 +3,22 @@
   width: 100%;
 
   grid-template-areas: "header"
-                       "ruler"
                        "details"
                        "description";
 
   @include size-medium {
-    grid-template-areas: "header header header"
-                       "details ruler description";
-    grid-template-columns: 1fr 3rem 2fr;
+    grid-template-areas: "header header"
+                       "details  description";
+    grid-template-columns: 1/3fr 2/3fr;
 }
 
   header {
     grid-area: header;
-    @include size-medium {
-      h1 {
-        margin-bottom: $space-larger;
-      }
+    padding-bottom: $space-large;
+    margin-bottom: $space-large;
+    border-bottom: 3px solid black;
+    h1 {
+      text-transform: uppercase;
     }
   }
 
@@ -28,52 +28,37 @@
     text-align: center;
 
     @include size-medium {
+      padding-right: $space-large;
+      border-right: 1px solid black;
       text-align: left;
     }
 
     img {
       width: 100%;
-      max-width: 350px;
+      max-width: 300px;
     }
 
     .details {
-      margin: $space-larger auto;
-      font-size: 1.2rem;
-      font-weight: bold;
-      max-width: 350px;
-      text-align: left;
+      display: none;
+      @include size-medium {
+        display: block;
+        margin: $space-larger auto;
+        font-weight: bold;
+        max-width: 300px;
+        text-align: left;
+      }
     }
   }
 
   .event-description {
     grid-area: description;
-    font-size: 1.2rem;
 
+    @include size-medium {
+      margin-left: $space-large;
+    }
 
     p:first-child {
       margin-top: 0;
-    }
-  }
-
-  .ruler {
-    grid-area: ruler;
-    margin-bottom: 2rem;
-
-    hr {
-      height: 2px;
-      width: 100%;
-      background-color: $black;
-    }
-
-    @include size-medium {
-      margin-bottom: 0;
-
-      hr {
-        height: 100%;
-        width: 1px;
-        background-color: $black;
-        margin: auto;
-      }
     }
   }
 
