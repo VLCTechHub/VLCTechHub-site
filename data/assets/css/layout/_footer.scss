@@ -4,26 +4,24 @@
   @include size-medium {
     display: block;
 
-    margin-top: $space-large * 2;
+    margin-top: $space-large;
     margin-bottom: $space-large;
 
     .footer-content {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
+      border-top: 3px solid black;
+      margin: 0 auto;
+      padding-top: $space-large;
+      max-width: 73rem;
+      width: 100%;
     }
 
     a {
       @include on-event {
         color: $brand-color;
       }
-    }
-
-    hr {
-      width: 85%;
-      height: 2px;
-      background-color: black;
-      margin-bottom: $space-larger;
     }
 
     h1 {
