@@ -2,15 +2,17 @@
   display: grid;
   width: 100%;
 
-  grid-template-areas: "header"
-                       "details"
-                       "description";
+  grid-template-areas:
+    'header'
+    'details'
+    'description';
 
   @include size-medium {
-    grid-template-areas: "header header"
-                       "details  description";
+    grid-template-areas:
+      'header header'
+      'details  description';
     grid-template-columns: 1/3fr 2/3fr;
-}
+  }
 
   header {
     grid-area: header;

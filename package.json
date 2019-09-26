@@ -1,8 +1,8 @@
 {
-  "name": "VLCTechHub",
+  "name": "VLCTechHub-site",
   "version": "1.0.0",
   "main": "build.js",
-  "repository": "git@github.com:VLCTechHub/VLCTechHub.git",
+  "repository": "git@github.com:VLCTechHub/VLCTechHub-site.git",
   "license": "MIT",
   "dependencies": {
     "feed": "^4.0.0",
@@ -23,5 +23,9 @@
   },
   "scripts": {
     "build": "node build.js"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "prettier": "^1.18.2"
   }
 }

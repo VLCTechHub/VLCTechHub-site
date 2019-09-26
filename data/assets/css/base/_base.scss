@@ -26,8 +26,14 @@ a {
   }
 }
 
-p a, h1 a {
-  background-image: linear-gradient(transparent 0%, transparent calc(60%), rgb(255, 213, 0) calc(60%), rgb(255, 213, 0) 100%);
+p a,
+h1 a {
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent calc(60%),
+    rgb(255, 213, 0) calc(60%),
+    rgb(255, 213, 0) 100%
+  );
   transition: padding 120ms ease-in-out;
 
   &:hover {
@@ -56,4 +62,4 @@ ul {
   @include size-large {
     padding: 0 $space-medium;
   }
- }
+}

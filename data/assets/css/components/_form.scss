@@ -16,16 +16,15 @@ form {
     color: $text-color-secondary;
     font-size: 0.9rem;
   }
-
 }
 
-input[type=text],
-input[type=time],
-input[type=date],
+input[type='text'],
+input[type='time'],
+input[type='date'],
 textarea,
 fieldset {
   padding: $space-small;
-  width : 100%;
+  width: 100%;
   border: 3px solid $black;
 
   &:focus {
@@ -38,11 +37,10 @@ fieldset {
   }
 }
 
-
-form[data-submit-attempted=true] {
-  input[type=text],
-  input[type=time],
-  input[type=date],
+form[data-submit-attempted='true'] {
+  input[type='text'],
+  input[type='time'],
+  input[type='date'],
   textarea,
   fieldset {
     &:invalid {
@@ -59,11 +57,11 @@ form[data-submit-attempted=true] {
   padding: 2rem 1rem;
   color: #111;
   &.success {
-    background: #A9E7BB;
-    border-left: 5px solid #42A85F;
+    background: #a9e7bb;
+    border-left: 5px solid #42a85f;
   }
   &.error {
-    background: #FCA7A0;
-    border-left: 5px solid #B82E24;
+    background: #fca7a0;
+    border-left: 5px solid #b82e24;
   }
 }

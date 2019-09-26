@@ -12,14 +12,14 @@
 }
 
 .button-primary {
-    color: $white;
-    background-color: $black;
-    transition: all 120ms ease-in-out;
+  color: $white;
+  background-color: $black;
+  transition: all 120ms ease-in-out;
 
-    &:hover {
-      color: $black;
-      background-color: $brand-color;
-    }
+  &:hover {
+    color: $black;
+    background-color: $brand-color;
+  }
 }
 
 .button-secondary {
@@ -34,12 +34,12 @@
 }
 
 .button-emphasis {
-    color: $black;
-    background-color: $brand-color;
-    transition: all 120ms ease-in-out;
+  color: $black;
+  background-color: $brand-color;
+  transition: all 120ms ease-in-out;
 
-    &:hover {
-      color: $white;
-      background-color: $black;
-    }
+  &:hover {
+    color: $white;
+    background-color: $black;
+  }
 }

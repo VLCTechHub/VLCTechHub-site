@@ -2,7 +2,7 @@
 
 Esta es la web de http://vlctechhub.org. Si tienes alguna pregunta puedes contactar con el equipo en el canal #vlctchhub de https://slack.vlctechhub.org
 
-#  Bugs y petición de funcionalidades
+# Bugs y petición de funcionalidades
 
 Crees que has encontrado un bug o tienes una nueva funcionalidad que proponer? Háznoslo saber!
 
@@ -29,55 +29,54 @@ La web de VLCTechHub está desarrollada como un sitio estático con el generador
 
 2. **Clona este repo en tu máquina**
 
-  ```sh
-    git clone git@github.com:VLCTechHub/VLCTechHub-site.git
-  ```
+```sh
+  git clone git@github.com:VLCTechHub/VLCTechHub-site.git
+```
+
 3. **Instala las dependencias con yarn**
 
-  Entra en el directorio creado e instala las dependencias.
+Entra en el directorio creado e instala las dependencias.
 
-  ```sh
-    cd VLCTechHub-site/
-    yarn install
-  ```
+```sh
+  cd VLCTechHub-site/
+  yarn install
+```
 
 4. **Construye el sitio**
 
-  Cuando ejecutas el comando `build` el sitio se contruye dentro del directorio *dist*.
+Cuando ejecutas el comando `build` el sitio se contruye dentro del directorio _dist_.
 
-  ```sh
-    yarn run build
-  ```
+```sh
+  yarn run build
+```
 
-  Cuando se construye el site, se usa la API de vlctechhub. Por defecto, usa la dirección local de desarrollo `localhost:5000` para hacer llamadas a la API y enviar los formularios de creación.
+Cuando se construye el site, se usa la API de vlctechhub. Por defecto, usa la dirección local de desarrollo `localhost:5000` para hacer llamadas a la API y enviar los formularios de creación.
 
-  Para construir el sitio contra producción hay que construir el sitio con la variable de entorno `NODE_ENV` con el valor `production`:
+Para construir el sitio contra producción hay que construir el sitio con la variable de entorno `NODE_ENV` con el valor `production`:
 
-  ```sh
-   NODE_ENV=production yarn run build
-  ```
+```sh
+ NODE_ENV=production yarn run build
+```
 
 5. **Levanta un servidor para ver el sitio**
 
-  Ya tienes construido el sitio estático! Puedes levantar un sencillo servidor con Python desde la linea de comandos.
+Ya tienes construido el sitio estático! Puedes levantar un sencillo servidor con Python desde la linea de comandos.
 
-  Con Python 2:
+Con Python 2:
 
-  ```sh
-    cd dist/
-    python -m SimpleHTTPServer --port=8080
-  ```
+```sh
+  cd dist/
+  python -m SimpleHTTPServer --port=8080
+```
 
-  Con Python 3:
+Con Python 3:
 
-  ```sh
-    cd dist/
-    python3 -m http.server 8080
-  ```
+```sh
+  cd dist/
+  python3 -m http.server 8080
+```
 
-  Ahora el sitio esta corriendo en `http://localhost:8080`.
-
-
+Ahora el sitio esta corriendo en `http://localhost:8080`.
 
 # Contribuyendo con pull requests
 
@@ -87,8 +86,8 @@ Nos encantan los pull requests! Aquí tienes una breve guía de como contribuir:
 
 2. Introduce tus cambios siguiendo la guía de estilos de sintaxis:
 
-* Dos espacios, no tabs
-* Sigue las convenciones que vas en el código
+- Dos espacios, no tabs
+- Sigue las convenciones que vas en el código
 
 3. Commitea tus cambios
 
@@ -96,11 +95,11 @@ Nos encantan los pull requests! Aquí tienes una breve guía de como contribuir:
 
 ## 🎓 Aprendiendo MetalSmith y Nunjucks
 
-  La documentación de MetalSmith se encuentra en [su web](https://metalsmith.io).
+La documentación de MetalSmith se encuentra en [su web](https://metalsmith.io).
 
-  El sistema de plantillas que usa este repo es [Nunjucks](https://mozilla.github.io/nunjucks/), un lenguaje de plantillas sencillo y potente desarrollado por Mozilla.
+El sistema de plantillas que usa este repo es [Nunjucks](https://mozilla.github.io/nunjucks/), un lenguaje de plantillas sencillo y potente desarrollado por Mozilla.
 
-  La jerarquia de plantillas de Nunjucks esta basada en un artículo sobre [patrones de disenyo orientados a componentes](https://css-tricks.com/component-led-design-patterns-nunjucks-grunt/) sobre Nunjucks.
+La jerarquia de plantillas de Nunjucks esta basada en un artículo sobre [patrones de disenyo orientados a componentes](https://css-tricks.com/component-led-design-patterns-nunjucks-grunt/) sobre Nunjucks.
 
 ## Creando una página nueva
 
@@ -112,4 +111,3 @@ Si ya existe una plantilla para la página que quieres crear, tan solo deberas i
 Si la plantilla no existe, puedes crearla dentro de `templates` y luego usarla siguiendo los pasos anteriores.
 
 Para modificar/anyadir css, javascript y/o imagenes usa la carpeta `assets`
-
