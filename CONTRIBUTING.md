@@ -59,11 +59,20 @@ La web de VLCTechHub está desarrollada como un sitio estático con el generador
 
 5. **Levanta un servidor para ver el sitio**
 
-  Ya tienes construido el sitio estático! Puedes levantar un sencillo servidor con python desde la linea de comandos.
+  Ya tienes construido el sitio estático! Puedes levantar un sencillo servidor con Python desde la linea de comandos.
+
+  Con Python 2:
 
   ```sh
     cd dist/
     python -m SimpleHTTPServer --port=8080
+  ```
+
+  Con Python 3:
+
+  ```sh
+    cd dist/
+    python3 -m http.server 8080
   ```
 
   Ahora el sitio esta corriendo en `http://localhost:8080`.
