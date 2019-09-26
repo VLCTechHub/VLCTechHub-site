@@ -44,7 +44,7 @@ Site.Events.New.init = function() {
       hashtag: $E('#hashtag').value,
       date: buildEventDateTime()
     }
-    return { event: data }
+    return data
   }
 
   function clearForm() {

@@ -20,7 +20,7 @@ Site.Job.New.init = function() {
       tags: ($E('#keywords').value || '').split(','),
       contact_email: $E('#companyContact').value
     }
-    return { job: data }
+    return data
   }
 
   function clearForm() {
