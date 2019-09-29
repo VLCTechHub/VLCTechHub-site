@@ -6,6 +6,7 @@ const inplace = require('metalsmith-in-place')
 const collections = require('metalsmith-collections')
 const uglify = require('metalsmith-uglify')
 const sass = require('metalsmith-sass')
+const writemetadata = require('metalsmith-writemetadata')
 const nunjucksDate = require('nunjucks-moment-timezone-filter')
 const moment = require('moment')
 const git = require('git-rev-sync')
@@ -38,12 +39,12 @@ Metalsmith(__dirname)
   .source('./data')
   .destination('./dist')
   .clean(true)
-  .use(events({ apiRoot: apiRoot, collection: 'upcomingEvents' }))
+  .use(events({ apiRoot: apiRoot, collection: 'events' }))
   .use(jobs({ apiRoot: apiRoot, collection: 'jobs' }))
   .use(
     collections({
       jobs: { sortBy: 'publishedAt', reverse: true },
-      upcomingEvents: { sortBy: 'startDate' }
+      events: { sortBy: 'startDate' }
     })
   )
   .use(markdown({ sanitize: true }))
@@ -86,7 +87,7 @@ Metalsmith(__dirname)
   )
   .use(
     rss({
-      collection: 'upcomingEvents',
+      collection: 'events',
       description: 'El feed de los próximos eventos.',
       customTitleFn: item => {
         let title = moment(item.titlte).format('dddd DD [de] MMMM') + ' | ' + item.title
@@ -109,6 +110,14 @@ Metalsmith(__dirname)
       },
       pubDateAttributeName: 'publishedAt',
       destination: 'job/board/feed.xml'
+    })
+  )
+  .use(
+    writemetadata({
+      collections: {
+        events: { output: { path: '.events-published.json' }, ignorekeys: ['contents', 'next', 'previous'] },
+        jobs: { output: { path: '.jobs-published.json' }, ignorekeys: ['contents', 'next', 'previous'] }
+      }
     })
   )
   .build(function(err) {
