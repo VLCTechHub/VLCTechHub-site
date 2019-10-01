@@ -6,7 +6,7 @@ Esta es la web de http://vlctechhub.org. Si tienes alguna pregunta puedes contac
 
 Crees que has encontrado un bug o tienes una nueva funcionalidad que proponer? Háznoslo saber!
 
-## Cómo reportar un bug
+## :bug: Cómo reportar un bug
 
 1. Actualiza al commit mas reciente de master. Es posible que el bug ya esté arreglado.
 
@@ -14,7 +14,7 @@ Crees que has encontrado un bug o tienes una nueva funcionalidad que proponer? H
 
 3. [Abre una issue](https://github.com/VLCTechHub/VLCTechHub-site/issues/new). Contra más información proveas, más fácil es para nosotros validar que se trata de un bug y así actuaremos lo más rápido posible.
 
-## Petición de funcionalidad
+## :heavy_plus_sign: Petición de funcionalidad
 
 1. Proporciona una explicación clara y detallada de la funcionalidad que quieres y por qué es importante anyadirla. Ten en cuenta que queremos funcionalidades que resulten útiles a la mayoría de usuarios en lugar de un pequenyo conjunto de estos.
 2. Después de comentar la funcionalidad es posible que [pruebes a crear un Pull Request](https://help.github.com/en/articles/creating-a-pull-request). Si puedes, empieza escribiendo algo de código. Siempre tenemos más cosas que hacer que tiempo disponible para hacerlas. Si puedes escribir algo de código esto acelerará el proceso.
@@ -78,7 +78,7 @@ Con Python 3:
 
 Ahora el sitio esta corriendo en `http://localhost:8080`.
 
-# Contribuyendo con pull requests
+# :gift: Contribuyendo con pull requests
 
 Nos encantan los pull requests! Aquí tienes una breve guía de como contribuir:
 
@@ -101,7 +101,7 @@ El sistema de plantillas que usa este repo es [Nunjucks](https://mozilla.github.
 
 La jerarquia de plantillas de Nunjucks esta basada en un artículo sobre [patrones de disenyo orientados a componentes](https://css-tricks.com/component-led-design-patterns-nunjucks-grunt/) sobre Nunjucks.
 
-## Creando una página nueva
+## :woman_technologist: Creando una página nueva
 
 Para crear una página nueva se necesitan dos cosas: una plantilla y unos datos.
 Por ejemplo: todos los eventos comparten la misma plantilla `templates/event.njk`, cada página de evento son los datos de un evento con la plantilla anterior.
