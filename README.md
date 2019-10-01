@@ -2,7 +2,7 @@
 
 La asociación VLCTechHub promociona las comunidades tecnológicas locales, fomenta el empleo de calidad y (co)organiza eventos para ayudar a mejorar la diversidad, la cooperación y la compartición de conocimiento tecnológico. Organiza el evento [VLCTechFest](https://vlctechfest.org) una vez al año.
 
-Este repositorio es el sitio web https://vlctechhub.org. Es un sitio web construido como el generador estático Metalsmith, que consume [la API de VLCTechHub](https://github.com/VLCTechHub/VLCTechHub-api).
+Este repositorio es el sitio web https://vlctechhub.org, construido con el generador estático Metalsmith consumiendo [la API de VLCTechHub](https://github.com/VLCTechHub/VLCTechHub-api) en su fase de contrucción.
 
 ## Cómo levantar el sitio
 
