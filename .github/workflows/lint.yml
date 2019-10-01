@@ -1,0 +1,32 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  ESLint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v1
+      - name: Set up Node 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: Set up ESLint
+        run: npm install --global eslint
+      - name: Run ESLint checks
+        run: eslint .
+
+  Prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v1
+      - name: Setup up Node 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: Set up Prettier
+        run: npm install --global prettier
+      - name: Run Prettier checks
+        run: prettier -c "**/*.{md,scss,js,json}"

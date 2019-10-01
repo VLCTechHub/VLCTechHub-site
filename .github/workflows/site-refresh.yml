@@ -2,22 +2,29 @@ name: Refresh site in Surge
 
 on:
   schedule:
-      - cron: '*/15 * * * *'
+    - cron: "*/15 * * * *"
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout source code
+        uses: actions/checkout@v1
+      - name: Set up Node 10.x
+        uses: actions/setup-node@v1
         with:
-          ref: metalsmith
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: yarn install
-      - run: yarn run build
+          node-version: 10.x
+      - name: Set up dependencies
+        run: yarn install
+      - name: Build site
+        run: yarn run build
         env:
           NODE_ENV: production
-      - run: npx surge --project $GITHUB_WORKSPACE/dist --domain vlctechhub-revamp.surge.sh
+      - name: Publish site to Surge
+        run: npx surge --project $GITHUB_WORKSPACE/dist --domain vlctechhub.org
         env:
-          SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}        
+          SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
           SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
+      - name: Report published items
+        run: yarn run report-published
+        env:
+          NODE_ENV: production

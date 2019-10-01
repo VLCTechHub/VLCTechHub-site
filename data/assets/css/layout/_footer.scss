@@ -1,0 +1,45 @@
+.main-footer {
+  display: none;
+
+  @include size-medium {
+    display: block;
+
+    margin-top: $space-large;
+    margin-bottom: $space-large;
+
+    .footer-content {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      border-top: 3px solid black;
+      margin: 0 auto;
+      padding-top: $space-large;
+      max-width: 73rem;
+      width: 100%;
+    }
+
+    a {
+      @include on-event {
+        color: $brand-color;
+      }
+    }
+
+    h1 {
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: $space-medium;
+    }
+
+    ul,
+    ul li {
+      margin: 0;
+      padding: 0;
+      text-indent: 0;
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: $space-small;
+    }
+  }
+}

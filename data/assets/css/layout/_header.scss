@@ -1,0 +1,62 @@
+.main-header {
+  display: flex;
+  padding: $space-medium $space-large $space-medium $space-large;
+  align-items: center;
+
+  .logo img {
+    width: 50%;
+    height: auto;
+
+    @include size-medium {
+      width: 120px;
+      height: 55px;
+    }
+  }
+
+  ul {
+    display: none;
+  }
+
+  @include size-medium {
+    ul {
+      display: block;
+    }
+
+    ul,
+    ul li {
+      margin: 0;
+      padding: 0;
+      text-indent: 0;
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-left: $space-large;
+      padding: $space-small;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      a {
+        color: $text-color;
+        padding: 4px 8px;
+        transition: background-color 120ms ease-in-out;
+        @include on-event {
+          background-color: $brand-color;
+        }
+      }
+
+      &.current a {
+        background-color: $brand-color;
+      }
+    }
+
+    .social-links {
+      margin-left: auto;
+
+      li {
+        display: inline;
+      }
+    }
+  }
+}

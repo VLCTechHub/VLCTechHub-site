@@ -1,0 +1,18 @@
+html {
+  color: $text-color;
+  font-family: 'Open Sans', sans-serif;
+}
+
+::selection {
+  background-color: $brand-color;
+  color: $text-color;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: $space-larger;
+  text-transform: lowercase;
+  &::after {
+    content: ' _____';
+  }
+}

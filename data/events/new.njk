@@ -1,0 +1,37 @@
+{% set pageTitle = "Publicar evento" %}
+{% extends "./templates/default.njk" %}
+
+{% from "./templates/macros/form.njk" import textInput, timeInput, dateInput, textArea %}
+
+{% block main %}
+  <article id="new-event">
+    <header>
+      <h1 class="title"> publicar un evento </h1>
+      <p>
+      Si organizas un <strong>evento</strong>, conferencia, taller, charla o quedada informal para fomentar una comunidad o compartir información de base <strong>tecnológica</strong> publica tu evento de forma gratuita. Sólo publicamos conferencias con <strong>código de conducta</strong> y te animamos a que también lo incluyas en tus eventos.
+      </p>
+    </header>
+
+    <section class="notification success">
+      ¡Evento recibido con éxito! Hemos dado de alta tu evento, pero ten en cuenta que la publicación no es inmediata.
+    </section>
+
+    <section class="notification error">
+      No hemos podido crear el evento, por favor revisa que los datos son correctos y prueba más tarde.
+    </section>
+
+    <form onsubmit="return false;">
+    {% set required = true %}
+    {{textInput('title', 'Título', required)}}
+    {{dateInput('startDate', 'Fecha', required)}}
+    {{timeInput('startTime', 'Hora', required, 'Formato hh:mm. Si el control pide tres valores, el tercer valor establece AM o PM.')}}
+    {{textArea('description', 'Descripción', required)}}
+    {{textInput('sourceUrl', 'Link', required)}}
+    {{textInput('hashtag', 'Usuario de twitter', notRequired, 'Por ejemplo: @vlctechhub. Si no tienes usuario de twitter puedes usar un hashtag como por ejemplo #eventoparatodos. De aquí se genera la imagen cuando se publique el evento.')}}
+    <button type="button" class="button button-emphasis" data-type="submit">Enviar el evento</button>
+  </form>
+  </article>
+  <script nonce="{{nonce}}">
+    Site.Events.New.init();
+  </script>
+{% endblock %}

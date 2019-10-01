@@ -1,0 +1,67 @@
+form {
+  p {
+    margin: $space-large 0;
+  }
+
+  p > label {
+    display: block;
+    margin-bottom: $space-small;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .hint {
+    display: block;
+    margin-top: $space-small;
+    color: $text-color-secondary;
+    font-size: 0.9rem;
+  }
+}
+
+input[type='text'],
+input[type='time'],
+input[type='date'],
+textarea,
+fieldset {
+  padding: $space-small;
+  width: 100%;
+  border: 3px solid $black;
+
+  &:focus {
+    outline: none;
+    border: 3px solid $brand-color;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+form[data-submit-attempted='true'] {
+  input[type='text'],
+  input[type='time'],
+  input[type='date'],
+  textarea,
+  fieldset {
+    &:invalid {
+      border: 3px solid firebrick;
+      box-shadow: none;
+    }
+    &:focus:invalid {
+      border: 3px solid $brand-color;
+    }
+  }
+}
+
+.notification {
+  padding: 2rem 1rem;
+  color: #111;
+  &.success {
+    background: #a9e7bb;
+    border-left: 5px solid #42a85f;
+  }
+  &.error {
+    background: #fca7a0;
+    border-left: 5px solid #b82e24;
+  }
+}

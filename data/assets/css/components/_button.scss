@@ -1,0 +1,45 @@
+.button {
+  padding: $space-small;
+  border: 4px solid $black;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.button-primary {
+  color: $white;
+  background-color: $black;
+  transition: all 120ms ease-in-out;
+
+  &:hover {
+    color: $black;
+    background-color: $brand-color;
+  }
+}
+
+.button-secondary {
+  color: $black;
+  background-color: $white;
+  transition: all 120ms ease-in-out;
+
+  &:hover {
+    color: $black;
+    background-color: $brand-color;
+  }
+}
+
+.button-emphasis {
+  color: $black;
+  background-color: $brand-color;
+  transition: all 120ms ease-in-out;
+
+  &:hover {
+    color: $white;
+    background-color: $black;
+  }
+}
