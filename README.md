@@ -4,7 +4,7 @@ La asociación VLCTechHub promociona las comunidades tecnológicas locales, fome
 
 Este repositorio es el sitio web https://vlctechhub.org, construido con el generador estático Metalsmith consumiendo [la API de VLCTechHub](https://github.com/VLCTechHub/VLCTechHub-api) en su fase de contrucción.
 
-## Cómo levantar el sitio
+## 🚀 Cómo levantar el sitio
 
 1. Instala prerequesitos. Para levantar el sitio en local se necesitan tener instalados [yarn](https://yarnpkg.com/en/docs/instal) y tener corriendo la [API de VLCTechHub](https://github.com/VLCTechHub/VLCTechHub-api) en local.
 
