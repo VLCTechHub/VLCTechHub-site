@@ -7,7 +7,14 @@
 {% block main %}
   <article id="next-events">
     <header>
-      <h1 class="title"> Agenda </h1>
+      <div class="header-contain-left">
+        <h1 class="title"> Agenda </h1>
+        <span class="rss-link">
+          <a href="/events/upcoming/feed.xml">
+            <img class="rss-icon" src="/assets/img/rss.png"><span class="rss-text">RSS Feed</span>
+          </a>
+        </span>
+      </div>
       <a class="button button-secondary" href="/events/new/">Publicar un evento</a>
     </header>
     <section class="next-events-summary">
