@@ -4,7 +4,7 @@
   align-items: center;
 
   .logo img {
-    width: 50%;
+    width: 33vw;
     height: auto;
 
     @include size-medium {
@@ -15,6 +15,63 @@
 
   ul {
     display: none;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 1.25rem;
+    right: 2.5rem;
+    background-color: $white;
+    border: 3px solid $black;
+
+    .menu-icon {
+      display: block;
+      float: right;
+      line-height: 0;
+      padding: $space-small;
+      text-align: center;
+
+      > svg {
+        width: $space-medium;
+        height: $space-medium;
+
+        path {
+          fill: $black;
+        }
+      }
+    }
+
+    .trigger {
+      clear: both;
+      display: none;
+      padding-top: $space-medium;
+      list-style: none;
+
+      li {
+        text-transform: uppercase;
+        font-size: 0.9em;
+        font-weight: bold;
+
+        a {
+          display: block;
+          color: $text-color;
+          padding: $space-small $space-medium;
+          transition: background-color 120ms ease-in-out;
+
+          @include on-event {
+            background-color: $brand-color;
+          }
+        }
+
+        &.current a {
+          background-color: $brand-color;
+        }
+      }
+    }
+
+    &:hover .trigger {
+      display: block;
+    }
   }
 
   @include size-medium {
@@ -30,24 +87,37 @@
       list-style: none;
     }
 
-    nav ul li {
-      display: inline;
-      margin-left: $space-large;
-      padding: $space-small;
-      text-transform: uppercase;
-      font-weight: bold;
+    .site-nav {
+      position: relative;
+      top: 0;
+      right: 0;
+      border: none;
 
-      a {
-        color: $text-color;
-        padding: 4px 8px;
-        transition: background-color 120ms ease-in-out;
-        @include on-event {
-          background-color: $brand-color;
-        }
+      .menu-icon {
+        display: none;
       }
 
-      &.current a {
-        background-color: $brand-color;
+      .trigger {
+        display: block;
+        padding-top: 0;
+
+        li {
+          display: inline;
+          margin-left: $space-large;
+          padding: $space-small;
+          text-transform: uppercase;
+          font-size: 1em;
+          font-weight: bold;
+
+          a {
+            display: inherit;
+            padding: 4px 8px;
+          }
+
+          &.current a {
+            background-color: $brand-color;
+          }
+        }
       }
     }
 
