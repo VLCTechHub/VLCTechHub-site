@@ -6,7 +6,14 @@
 {% block main %}
   <article id="job-board">
     <header>
-      <h1 class="title"> Empleo </h1>
+      <div class="header-contain-left">
+        <h1 class="title"> Empleo </h1>
+        <span class="rss-link">
+          <a href="/job/board/feed.xml">
+            <img class="rss-icon" src="/assets/img/rss.png"><span class="rss-text">RSS Feed</span>
+          </a>
+        </span>
+      </div>
       <a class="button button-secondary" href="/job/new/">Publicar una oferta</a>
     </header>
     <section class="jobs">
