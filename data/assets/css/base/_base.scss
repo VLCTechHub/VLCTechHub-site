@@ -42,6 +42,17 @@ h1 a {
   }
 }
 
+span.rss-link,
+span.rss-text{
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent calc(60%),
+    rgb(255, 213, 0) calc(60%),
+    rgb(255, 213, 0) 100%
+  );
+  transition: padding 120ms ease-in-out;
+}
+
 ul {
   margin: 0;
   list-style: square;
