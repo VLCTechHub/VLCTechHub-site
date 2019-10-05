@@ -23,7 +23,7 @@
       <span class="hint">{{hint}}</span>
     {% endif %}
     {% if linkHint %}
-      <span class="hint">{{linkHint}} {% if link %}<a href="{{link}}" target="_blank">{{link}}</a>{% endif %}</span>
+      <span class="hint">{% if link %}<a href="{{link}}" target="_blank" rel="noopener noreferrer" >{{linkHint}}</a>{% endif %}</span>
     {% endif %}
     <span class="error"></span>
   </p>
