@@ -6,29 +6,29 @@
     flex-direction: column-reverse;
 
     .header-contain-left {
-      display:flex;
-      align-items:center;
+      display: flex;
+      align-items: center;
     }
-  
+
     .rss-icon {
       max-height: 1rem;
     }
-  
+
     .rss-link {
       margin-left: 1rem;
     }
 
     .rss-text {
-      position:absolute;
-      padding-left:0.75rem;
-      transform-origin:left;
-      transform:scale(0);
-      transition:350ms;
+      position: absolute;
+      padding-left: 0.75rem;
+      transform-origin: left;
+      transform: scale(0);
+      transition: 350ms;
     }
 
     .rss-icon:hover + .rss-text,
     .rss-text:hover {
-        transform: unset!important;
+      transform: unset !important;
     }
 
     @include size-medium {

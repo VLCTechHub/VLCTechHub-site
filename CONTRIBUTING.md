@@ -26,7 +26,7 @@ VLCTechHub website is developed with the static side generator Metalsmith.
 
 1. **Install yarn**
 
-  Yarn is a dependency manager in node. To install it, follow [its instructions](https://yarnpkg.com/en/docs/install).
+Yarn is a dependency manager in node. To install it, follow [its instructions](https://yarnpkg.com/en/docs/install).
 
 2. **Clone this repository**
 
