@@ -24,9 +24,9 @@ Site.Job.New.init = function() {
   }
 
   function removeHTLM(text) {
-    const div = document.createElement("div");
-    div.innerHTML = text;
-    return div.textContent || div.innerText || "";
+    const div = document.createElement('div')
+    div.innerHTML = text
+    return div.textContent || div.innerText || ''
   }
 
   function clearForm() {
