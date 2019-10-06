@@ -36,7 +36,7 @@ Yarn is a dependency manager in node. To install it, follow [its instructions](h
 
 3. **Install dependencies with yarn**
 
-Go into the newly created directory and install the dependencies.
+Go into the newly created folder and install the dependencies.
 
 ```sh
   cd VLCTechHub-site/
@@ -45,7 +45,7 @@ Go into the newly created directory and install the dependencies.
 
 4. **Build the site**
 
-The command `build` constructs the site in the _dist_ directory.
+The command `build` constructs the site in the _dist_ folder.
 
 ```sh
   yarn run build
@@ -61,16 +61,16 @@ In order to build the website in production mode, we need to properly set the en
 
 5. **Serve the website**
 
-The website is already build! Now we need to run a webserver on the folder _dist_. One easy way is to use the Python one from the command line.
+The website is already built! Now we need to run a webserver on the folder _dist_. One easy way is to use the Python one from the command line.
 
-Con Python 2:
+With Python 2:
 
 ```sh
   cd dist/
   python -m SimpleHTTPServer 8080
 ```
 
-Con Python 3:
+With Python 3:
 
 ```sh
   cd dist/
@@ -88,9 +88,11 @@ We love pull requests! Here you have a brief guide about how to contribute:
 2. Introduce your changes following the syntax guidelines:
 
 - Two spaces, no tabs
-- Follow the conventions you already see in the code
+- Follow the conventions you already see in the code or run the linter for extra help.
 
-3. Commit your changes
+`yarn run lint-warn` will list the offenses, if any. `yarn run lint-fix` will automatically fix the offenses.
+
+3. Commit your changes. This repo uses a pre-commit to list all the offenses (in warning mode).
 
 4. Pushe to your fork and create a pull request. Provide an explanation about why you have done those changes.
 

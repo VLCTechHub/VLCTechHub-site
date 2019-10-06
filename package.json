@@ -25,10 +25,30 @@
   },
   "scripts": {
     "build": "node build.js",
-    "report-published": "node report-published.js"
+    "report-published": "node report-published.js",
+    "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix && ./node_modules/prettier/bin-prettier.js --write \"**/*.{md,scss,js,json}\"",
+    "lint-warn": "./node_modules/eslint/bin/eslint.js . && ./node_modules/prettier/bin-prettier.js --check \"**/*.{md,scss,js,json}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"\r\n    Running a pre-commit linter in *warn mode*.\r\n    To automatically fix any offense run 'yarn run lint-fix' on the command line before you commit.\r\n\" && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "./node_modules/eslint/bin/eslint.js",
+      "./node_modules/prettier/bin-prettier.js --check",
+      "git add"
+    ],
+    "*.{md,json,scss}": [
+      "./node_modules/prettier/bin-prettier.js --check",
+      "git add"
+    ]
   },
   "devDependencies": {
     "eslint": "^6.4.0",
+    "husky": "^3.0.8",
+    "lint-staged": "^9.4.1",
     "prettier": "^1.18.2"
   }
 }
