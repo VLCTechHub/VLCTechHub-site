@@ -1,72 +1,73 @@
-# Preguntas
+# Questions
 
-Esta es la web de http://vlctechhub.org. Si tienes alguna pregunta puedes contactar con el equipo en el canal #vlctchhub de https://slack.vlctechhub.org
+This is the https://vlctechhub.org website repository. If you have any question you can contact with the maintainer team in the slack https://slack.vlctechhub.org, in the channel #vlctechhub
 
-# Bugs y petición de funcionalidades
+# Bugs and functionality proposals
 
-Crees que has encontrado un bug o tienes una nueva funcionalidad que proponer? Háznoslo saber!
+Do you think you found a bug or you have a new functionality to propose? Let us know!
 
-## :bug: Cómo reportar un bug
+## :bug: How to report a bug
 
-1. Actualiza al commit mas reciente de master. Es posible que el bug ya esté arreglado.
+1. Update to the most recent commit in master. It is possible the bug was already fixed.
 
-2. Busca issues similares, es posible que alguien haya encontrado este bug antes.
+2. Search for similar issues in the issues section, it is possible someone already reported the bug.
 
-3. [Abre una issue](https://github.com/VLCTechHub/VLCTechHub-site/issues/new). Contra más información proveas, más fácil es para nosotros validar que se trata de un bug y así actuaremos lo más rápido posible.
+3. [Open an issue](https://github.com/VLCTechHub/VLCTechHub-site/issues/new). The more info you provide in the description, the easier will be to confirm it is actually a bug. That will let us act faster.
 
-## :heavy_plus_sign: Petición de funcionalidad
+## :heavy_plus_sign: Proposing a new functionality
 
-1. Proporciona una explicación clara y detallada de la funcionalidad que quieres y por qué es importante anyadirla. Ten en cuenta que queremos funcionalidades que resulten útiles a la mayoría de usuarios en lugar de un pequenyo conjunto de estos.
-2. Después de comentar la funcionalidad es posible que [pruebes a crear un Pull Request](https://help.github.com/en/articles/creating-a-pull-request). Si puedes, empieza escribiendo algo de código. Siempre tenemos más cosas que hacer que tiempo disponible para hacerlas. Si puedes escribir algo de código esto acelerará el proceso.
+1. Provide a clear and detailed explanation of the functionality you would like to see implemented. Explain the reason why it is important. Bear in mind that we prefer functionalities that benefit the mayority of users instead of a small group of them.
 
-# 🚀 Construyendo el sitio web
+2. After submiting the issue, it is possible that you try to[create a pull request](https://help.github.com/en/articles/creating-a-pull-request). If you can, start writing some code. There are always more more things to do than time to do them. If you can provide some code, it will make the process faster.
 
-La web de VLCTechHub está desarrollada como un sitio estático con el generador metalsmith.
+# 🚀 Building the website
 
-1. **Instala yarn**
+VLCTechHub website is developed with the static side generator Metalsmith.
 
-   Yarn es un gestor de dependencias de proyectos en node. Para instalarlo en tu sistema sigue [sus instrucciones](https://yarnpkg.com/en/docs/install).
+1. **Install yarn**
 
-2. **Clona este repo en tu máquina**
+  Yarn is a dependency manager in node. To install it, follow [its instructions](https://yarnpkg.com/en/docs/install).
+
+2. **Clone this repository**
 
 ```sh
   git clone git@github.com:VLCTechHub/VLCTechHub-site.git
 ```
 
-3. **Instala las dependencias con yarn**
+3. **Install dependencies with yarn**
 
-Entra en el directorio creado e instala las dependencias.
+Go into the newly created directory and install the dependencies.
 
 ```sh
   cd VLCTechHub-site/
   yarn install
 ```
 
-4. **Construye el sitio**
+4. **Build the site**
 
-Cuando ejecutas el comando `build` el sitio se contruye dentro del directorio _dist_.
+The command `build` constructs the site in the _dist_ directory.
 
 ```sh
   yarn run build
 ```
 
-Cuando se construye el site, se usa la API de vlctechhub. Por defecto, usa la dirección local de desarrollo `localhost:5000` para hacer llamadas a la API y enviar los formularios de creación.
+When the site is buld, VLCTechHub API is used. By default it uses the local API, that is, it expects the VLCTechHub api is running on `localhost:5000`.
 
-Para construir el sitio contra producción hay que construir el sitio con la variable de entorno `NODE_ENV` con el valor `production`:
+In order to build the website in production mode, we need to properly set the environment variable `NODE_ENV` with the value `production`:
 
 ```sh
  NODE_ENV=production yarn run build
 ```
 
-5. **Levanta un servidor para ver el sitio**
+5. **Serve the website**
 
-Ya tienes construido el sitio estático! Puedes levantar un sencillo servidor con Python desde la linea de comandos.
+The website is already build! Now we need to run a webserver on the folder _dist_. One easy way is to use the Python one from the command line.
 
 Con Python 2:
 
 ```sh
   cd dist/
-  python -m SimpleHTTPServer --port=8080
+  python -m SimpleHTTPServer 8080
 ```
 
 Con Python 3:
@@ -76,38 +77,37 @@ Con Python 3:
   python3 -m http.server 8080
 ```
 
-Ahora el sitio esta corriendo en `http://localhost:8080`.
+Now the website is available at `http://localhost:8080`.
 
-# :gift: Contribuyendo con pull requests
+# :gift: Contributing with pull requests
 
-Nos encantan los pull requests! Aquí tienes una breve guía de como contribuir:
+We love pull requests! Here you have a brief guide about how to contribute:
 
-1. Forkea el repositorio
+1. Fork this repo
 
-2. Introduce tus cambios siguiendo la guía de estilos de sintaxis:
+2. Introduce your changes following the syntax guidelines:
 
-- Dos espacios, no tabs
-- Sigue las convenciones que vas en el código
+- Two spaces, no tabs
+- Follow the conventions you already see in the code
 
-3. Commitea tus cambios
+3. Commit your changes
 
-4. Pushea a tu fork y crea un pull request. Proporciona alguna explicación de por qué has hecho esos cambios.
+4. Pushe to your fork and create a pull request. Provide an explanation about why you have done those changes.
 
-## 🎓 Aprendiendo MetalSmith y Nunjucks
+## 🎓 Learning MetalSmith and Nunjucks
 
-La documentación de MetalSmith se encuentra en [su web](https://metalsmith.io).
+Metalsmith documentation can be found in [its website](https://metalsmith.io).
 
-El sistema de plantillas que usa este repo es [Nunjucks](https://mozilla.github.io/nunjucks/), un lenguaje de plantillas sencillo y potente desarrollado por Mozilla.
+The template sysmte used in this repo is [Nunjucks](https://mozilla.github.io/nunjucks/), a simple-yet-powerful template language developed by Mozilla.
 
-La jerarquia de plantillas de Nunjucks esta basada en un artículo sobre [patrones de disenyo orientados a componentes](https://css-tricks.com/component-led-design-patterns-nunjucks-grunt/) sobre Nunjucks.
+Template hierarchies are based in an article about [component-oriented design patterns](https://css-tricks.com/component-led-design-patterns-nunjucks-grunt/) in Nunjucks.
 
-## :woman_technologist: Creando una página nueva
+## :woman_technologist: How to create a new page
 
-Para crear una página nueva se necesitan dos cosas: una plantilla y unos datos.
-Por ejemplo: todos los eventos comparten la misma plantilla `templates/event.njk`, cada página de evento son los datos de un evento con la plantilla anterior.
+In order to create a typical page in this repo we need two things: a template and some data to fill the template with. For example, every event page that you see in the built website are the data of one event with the template `templates/event.njk`.
 
-Si ya existe una plantilla para la página que quieres crear, tan solo deberas inclucir el fichero de los datos de la página. Normalmente sera un fichero markdown con extension `.md` dentro de la carpeta `data`. Ten en cuenta que la estructura que elijas determinará la url final.
+If you are creating a new page, chances are the template you need to use already exists. In that case, you _just_ need to provide the data. The data will be often a markdown file with `.md` extension inside the folder `data`. Bear in mind that the strucutre and naming you choose for the files will determine the final url. It is also possible that the data is provided by a yaml file with extension `.yml` and used in a template.
 
-Si la plantilla no existe, puedes crearla dentro de `templates` y luego usarla siguiendo los pasos anteriores.
+If the template does not exists, create it inside the folder `templates` and then use it following the above description.
 
-Para modificar/anyadir css, javascript y/o imagenes usa la carpeta `assets`
+To add or modify css, javascript and/or images use the folder `assets`.
