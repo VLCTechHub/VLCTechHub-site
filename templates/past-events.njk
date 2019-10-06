@@ -1,8 +1,8 @@
 {% set pageTitle = "Eventos pasados" %}
 {% set navItem = "events" %}
 
-{% extends "./templates/default.njk" %}
-{% from "./templates/macros/event.njk" import image, dayOfWeek, time, shortCompleteDate %}
+{% extends "./default.njk" %}
+{% from "./macros/event.njk" import image, dayOfWeek, time, shortCompleteDate %}
 
 {% block main %}
   <article id="past-events">
@@ -10,7 +10,7 @@
       <h1 class="title"> Eventos pasados </h1>
     </header>
     <section class="past-events-summary">
-      {% for event in collections.pastevents %}
+      {% for event in pagination.files %}
        <article class="event-summary">
        <h1>
         <a href="/events/{{event.slug}}">
@@ -27,5 +27,16 @@
       </article>
       {% endfor %}
     </section>
+    <nav>
+      <a href={{'/' + pagination.first.path}}>Primera</a>
+      {% if pagination.previous %}
+        <a href={{'/' + pagination.previous.path}}>Anterior</a>
+      {% endif %}
+      <span>{{ pagination.num + ' de ' + pagination.pages.length }}</span>
+      {% if pagination.next %}
+        <a href={{'/' + pagination.next.path}}>Siguiente</a>
+      {% endif %}
+      <a href={{'/' + pagination.last.path}}>Última</a>
+    </nav>
   </article>
 {% endblock %}

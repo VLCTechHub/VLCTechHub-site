@@ -4,6 +4,7 @@ const layouts = require('metalsmith-layouts')
 const permalinks = require('metalsmith-permalinks')
 const inplace = require('metalsmith-in-place')
 const collections = require('metalsmith-collections')
+const pagination = require('metalsmith-pagination')
 const uglify = require('metalsmith-uglify')
 const sass = require('metalsmith-sass')
 const writemetadata = require('metalsmith-writemetadata')
@@ -47,6 +48,17 @@ Metalsmith(__dirname)
       jobs: { sortBy: 'publishedAt', reverse: true },
       events: { sortBy: 'startDate' },
       pastevents: { sortBy: 'startDate', reverse: true }
+    })
+  )
+  .use(
+    pagination({
+      'collections.pastevents': {
+        perPage: 30,
+        layout: 'past-events.njk',
+        first: 'events/past/index.html',
+        noPageOne: true,
+        path: 'events/past/page/:num/index.html'
+      }
     })
   )
   .use(markdown({ sanitize: true }))
