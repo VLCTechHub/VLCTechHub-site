@@ -39,12 +39,14 @@ Metalsmith(__dirname)
   .source('./data')
   .destination('./dist')
   .clean(true)
-  .use(events({ apiRoot: apiRoot, collection: 'events' }))
+  .use(events.upcoming({ apiRoot: apiRoot, collection: 'events' }))
+  .use(events.past({ apiRoot: apiRoot, collection: 'pastevents' }))
   .use(jobs({ apiRoot: apiRoot, collection: 'jobs' }))
   .use(
     collections({
       jobs: { sortBy: 'publishedAt', reverse: true },
-      events: { sortBy: 'startDate' }
+      events: { sortBy: 'startDate' },
+      pastevents: { sortBy: 'startDate', reverse: true }
     })
   )
   .use(markdown({ sanitize: true }))
@@ -116,6 +118,7 @@ Metalsmith(__dirname)
     writemetadata({
       collections: {
         events: { output: { path: '.events-published.json' }, ignorekeys: ['contents', 'next', 'previous'] },
+        pastevents: { output: { path: '.past-events-published.json' }, ignorekeys: ['contents', 'next', 'previous'] },
         jobs: { output: { path: '.jobs-published.json' }, ignorekeys: ['contents', 'next', 'previous'] }
       }
     })

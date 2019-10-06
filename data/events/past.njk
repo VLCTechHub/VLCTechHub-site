@@ -1,0 +1,31 @@
+{% set pageTitle = "Eventos pasados" %}
+{% set navItem = "events" %}
+
+{% extends "./templates/default.njk" %}
+{% from "./templates/macros/event.njk" import image, dayOfWeek, time, shortCompleteDate %}
+
+{% block main %}
+  <article id="past-events">
+    <header>
+      <h1 class="title"> Eventos pasados </h1>
+    </header>
+    <section class="past-events-summary">
+      {% for event in collections.pastevents %}
+       <article class="event-summary">
+       <h1>
+        <a href="/events/{{event.slug}}">
+          <section class="reset-link">{{image(event.twitter)}}</section>
+          {{event.title}}
+        </a>
+        </h1>
+        <p>
+          {{ dayOfWeek(event.startDate) }} /
+          {{ shortCompleteDate(event.startDate) }} /
+          {{ time(event.startDate) }}
+          </p>
+        <hr>
+      </article>
+      {% endfor %}
+    </section>
+  </article>
+{% endblock %}
