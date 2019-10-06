@@ -14,8 +14,11 @@ help: ## This help.
 .DEFAULT_GOAL := help
 
 # Docker Tasks
-build: ## Build the container. 
-	docker build -t $(IMAGE_NAME) .
+build: ## Build the container using local VLCTechHub-api.
+	docker build -t $(IMAGE_NAME) --network=host --no-cache .
+
+build-prod: ## Build the container using production VLCTechHub-api.
+	docker build -t $(IMAGE_NAME) --build-arg NODE_ENV=production --no-cache .
 
 run: ## Run container. 
 	docker run --name="$(CONTAINER_NAME)" -p $(LOCAL_PORT):80 $(IMAGE_NAME)
