@@ -23,7 +23,7 @@
     <form onsubmit="return false;">
     {% set required = true %}
     {{textInput('title', 'Puesto', required, "Ej: 'Desarrollador ruby', 'Diseñador UX', 'Programador senior .Net'")}}
-    {{textArea('description', 'Descripción', required, "Describe con detalle lo que implica el puesto, qué tipo de candidato buscas, cómo se trabaja en tu empresa y qué beneficios ofrecéis.")}}
+    {{textArea('description', 'Descripción', required, "Describe con detalle lo que implica el puesto, qué tipo de candidato buscas, cómo se trabaja en tu empresa y qué beneficios ofrecéis.", 'Admite el uso de Markdown', 'https://www.markdownguide.org/cheat-sheet/')}}
     {{textInput('keywords', 'Palabras clave', required, "Breve listado separado por comas. Ej: javascript, aws, marketing, photoshop")}}
     {{textInput('salary', 'Sueldo', required, "Los candidatos contactan más con empresas que publican el sueldo en la oferta.")}}
     {{textArea('howToApply', 'Cómo aplicar', required, "Escribe las instrucciones para inscribirte a tu oferta aquí. Ej: 'Mándanos una carta de presentación y tu cv a la direccion de correo xxx@xxx.com. Cuéntanos por qué eres el candidato ideal!'")}}
