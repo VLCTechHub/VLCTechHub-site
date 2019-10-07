@@ -8,7 +8,7 @@ Site.Job.New.init = function() {
   function buildJobAPIData() {
     let data = {
       title: $E('#title').value,
-      description: $E('#description').value,
+      description: removeHTLM($E('#description').value),
       how_to_apply: $E('#howToApply').value,
       link: $E('#sourceUrl').value,
       salary: $E('#salary').value,
@@ -21,6 +21,12 @@ Site.Job.New.init = function() {
       contact_email: $E('#companyContact').value
     }
     return data
+  }
+
+  function removeHTLM(text) {
+    const div = document.createElement('div')
+    div.innerHTML = text
+    return div.textContent || div.innerText || ''
   }
 
   function clearForm() {
