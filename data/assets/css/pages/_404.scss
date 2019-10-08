@@ -1,19 +1,19 @@
 .error-container {
   width: 100%;
   text-align: center;
-  padding: 2rem 4rem;
+  padding: 1rem 0;
 }
 
 .e404 {
   font-weight: 900;
-  font-size: 13rem;
+  font-size: 8rem;
 }
 
 .complement {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
-@media screen and (max-width: 670px) {
+@include size-medium {
   .error-container {
     padding: 2rem;
   }
@@ -27,16 +27,16 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@include size-large {
   .error-container {
-    padding: 1rem 0;
+    padding: 2rem 4rem;
   }
 
   .e404 {
-    font-size: 8rem;
+    font-size: 13rem;
   }
 
   .complement {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 }
