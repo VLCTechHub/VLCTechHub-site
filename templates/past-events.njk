@@ -27,16 +27,26 @@
       </article>
       {% endfor %}
     </section>
-    <nav>
-      <a href={{'/' + pagination.first.path}}>Primera</a>
-      {% if pagination.previous %}
-        <a href={{'/' + pagination.previous.path}}>Anterior</a>
-      {% endif %}
+    <nav class="pagination">
+
+      {% if pagination.num !== 1 %}<a href={{'/' + pagination.first.path}}>{% else %}<span class="pag-disabled">{% endif %}
+        <img class="chevron-first-icon" src="/assets/img/chevron-circle-start-left.svg" alt="Ir a la página inicial">
+      {% if pagination.num !== 1 %}</a>{% else %}</span>{% endif %}
+
+      {% if pagination.previous %}<a href={{'/' + pagination.previous.path}}>{% else %}<span class="pag-disabled">{% endif %}
+        <img class="chevron-left-icon" src="/assets/img/chevron-circle-left.svg" alt="Ir a la página anterior">
+      {% if pagination.previous %}</a>{% else %}</span>{% endif %}
+
       <span>{{ pagination.num + ' de ' + pagination.pages.length }}</span>
-      {% if pagination.next %}
-        <a href={{'/' + pagination.next.path}}>Siguiente</a>
-      {% endif %}
-      <a href={{'/' + pagination.last.path}}>Última</a>
+
+      {% if pagination.next %}<a href={{'/' + pagination.next.path}}>{% else %}<span class="pag-disabled">{% endif %}
+        <img class="chevron-rigth-icon" src="/assets/img/chevron-circle-left.svg" alt="Ir a la página siguiente">
+      {% if pagination.next %}</a>{% else %}</span>{% endif %}
+      
+      {% if pagination.num !== pagination.pages.length %}<a href={{'/' + pagination.last.path}}>{% else %}<span class="pag-disabled">{% endif %}
+        <img class="chevron-last-icon" src="/assets/img/chevron-circle-start-left.svg" alt="Ir a la última página">
+      {% if pagination.num !== pagination.pages.length %}</a>{% else %}</span>{% endif %}
+
     </nav>
   </article>
 {% endblock %}

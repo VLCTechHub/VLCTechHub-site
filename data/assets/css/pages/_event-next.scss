@@ -43,4 +43,20 @@
       }
     }
   }
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > a,
+    > span {
+      margin: 0 $space-small;
+    }
+
+    > .pag-disabled {
+      opacity: .5;
+    }
+  }
 }
