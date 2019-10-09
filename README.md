@@ -1,4 +1,8 @@
-# VLCTechHub
+[![Contributors](https://img.shields.io/github/contributors/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/contributors/VLCTechHub/VLCTechHub-site)
+[![Code style](https://img.shields.io/badge/code%20style-prettier-ff69b4)](https://img.shields.io/badge/code%20style-prettier-ff69b4)
+[![Hacktoberfest](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)
+
+<h1 align="center">VLCTechHub</h1>
 
 VLCTechHub association promotes local technical communities, encourage quality jobs and (co)organices events to help improve diversity, cooperation and make technological knowledge accessible to more people. It organices the event [VLCTechFest](https://vlctechfest.org) once a year.
 
@@ -6,7 +10,7 @@ This repository is the website https://vlctechhub.org, built with the static gen
 
 ## 🚀 How to build this site
 
-Please refer to the section [How to build this site](https://github.com/VLCTechHub/VLCTechHub-site/blob/master/CONTRIBUTING.md#-construyendo-el-sitio-web) in the colaboration guide
+Please refer to the section [How to build this site](https://github.com/VLCTechHub/VLCTechHub-site/blob/master/CONTRIBUTING.md#-construyendo-el-sitio-web) in the colaboration guide.
 
 ## 🤝 How to contribute
 
