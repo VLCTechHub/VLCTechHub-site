@@ -130,7 +130,6 @@ Metalsmith(__dirname)
     writemetadata({
       collections: {
         events: { output: { path: '.events-published.json' }, ignorekeys: ['contents', 'next', 'previous'] },
-        pastevents: { output: { path: '.past-events-published.json' }, ignorekeys: ['contents', 'next', 'previous'] },
         jobs: { output: { path: '.jobs-published.json' }, ignorekeys: ['contents', 'next', 'previous'] }
       }
     })
