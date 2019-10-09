@@ -22,8 +22,10 @@
           {{ dayOfWeek(event.startDate) }} /
           {{ shortCompleteDate(event.startDate) }} /
           {{ time(event.startDate) }}
-          <br>
-          {{event.organizer}}
+          {% if event.organizer %}
+            <br>
+            {{event.organizer}}
+          {% endif %}
           </p>
         <hr>
       </article>
