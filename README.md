@@ -6,7 +6,7 @@
 
 VLCTechHub association promotes local technical communities, encourage quality jobs and (co)organices events to help improve diversity, cooperation and make technological knowledge accessible to more people. It organices the event [VLCTechFest](https://vlctechfest.org) once a year.
 
-This repository is the website https://vlctechhub.org, built with the static generator Metalsmith and consiming [VLCTechHub API](https://github.com/VLCTechHub/VLCTechHub-api) in the building phase.
+This repository is the website https://vlctechhub.org, built with the static generator Metalsmith and consuming [VLCTechHub API](https://github.com/VLCTechHub/VLCTechHub-api) in the building phase.
 
 ## 🚀 How to build this site
 
