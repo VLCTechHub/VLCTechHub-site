@@ -22,6 +22,8 @@
           {{ dayOfWeek(event.startDate) }} /
           {{ shortCompleteDate(event.startDate) }} /
           {{ time(event.startDate) }}
+          <br>
+          {{event.organizer}}
           </p>
         <hr>
       </article>
@@ -42,7 +44,7 @@
       {% if pagination.next %}<a href={{'/' + pagination.next.path}}>{% else %}<span class="pag-disabled">{% endif %}
         <img class="chevron-rigth-icon" src="/assets/img/chevron-circle-left.svg" alt="Ir a la página siguiente">
       {% if pagination.next %}</a>{% else %}</span>{% endif %}
-      
+
       {% if pagination.num !== pagination.pages.length %}<a href={{'/' + pagination.last.path}}>{% else %}<span class="pag-disabled">{% endif %}
         <img class="chevron-last-icon" src="/assets/img/chevron-circle-start-left.svg" alt="Ir a la última página">
       {% if pagination.num !== pagination.pages.length %}</a>{% else %}</span>{% endif %}
