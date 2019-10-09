@@ -2,9 +2,13 @@
 #past-events {
   > header {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
     flex-direction: column-reverse;
+    align-items: baseline;
+    justify-content: space-between;
+
+    @include size-medium {
+      flex-direction: row;
+    }
 
     .header-contain-left {
       display: flex;
@@ -22,8 +26,8 @@
     .rss-text {
       position: absolute;
       padding-left: 0.75rem;
-      transform-origin: left;
       transform: scale(0);
+      transform-origin: left;
       transition: 350ms;
     }
 
@@ -32,12 +36,9 @@
       transform: unset !important;
     }
 
-    @include size-medium {
-      flex-direction: row;
-    }
-
     .button {
-      margin: 4rem 0 1.5rem 0;
+      margin: 4rem 0 1.5rem;
+
       @include size-medium {
         margin: 0;
       }
