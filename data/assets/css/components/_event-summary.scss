@@ -88,7 +88,7 @@
     height: 2px;
     color: black;
     background-color: black;
-    margin: $space-medium auto $space-medium auto;
+    margin: $space-medium auto $space-large auto;
     @include size-medium {
       margin: $space-large auto $space-larger auto;
     }
