@@ -1,0 +1,33 @@
+---
+datasource: 'datasources/communities.yaml'
+permalink: false
+---
+{% set pageTitle = "Comunidades" %}
+{% set navItem = "communities" %}
+
+{% extends "./templates/default.njk" %}
+
+{% block main %}
+  <article id="communities">
+    <header>
+      <div class="header-contain-left">
+        <h1 class="title"> Comunidades </h1>
+        </span>
+      </div>
+    </header>
+    <section class="communities-summary">
+      {% for community in datasource %}
+       <article class="community-summary">
+       <h1>
+        {{ community.title }}
+        </h1>
+        <p>
+          {{ community['twitter-alias'] }} |
+          {{ community['meetup-url'] }}
+          </p>
+        <hr>
+      </article>
+      {% endfor %}
+    </section>
+  </article>
+{% endblock %}

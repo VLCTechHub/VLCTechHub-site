@@ -5,6 +5,7 @@ const permalinks = require('metalsmith-permalinks')
 const inplace = require('metalsmith-in-place')
 const collections = require('metalsmith-collections')
 const pagination = require('metalsmith-pagination')
+const dataLoader = require('metalsmith-data-loader')
 const uglify = require('metalsmith-uglify')
 const sass = require('metalsmith-sass')
 const writemetadata = require('metalsmith-writemetadata')
@@ -59,6 +60,12 @@ Metalsmith(__dirname)
         noPageOne: true,
         path: 'events/past/page/:num/index.html'
       }
+    })
+  )
+  .use(
+    dataLoader({
+      dataProperty: 'datasource',
+      removeSource: true
     })
   )
   .use(markdown())
