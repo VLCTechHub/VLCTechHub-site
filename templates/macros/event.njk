@@ -19,6 +19,14 @@
   {{d | newDate | date('dddd DD [de] MMMM') | capitalize }}
 {% endmacro %}
 
+{% macro shortCompleteDate(d) %}
+  {{d | newDate | date('DD MMMM YYYY') | capitalize }}
+{% endmacro %}
+
+{% macro longCompleteDate(d) %}
+  {{d | newDate | date('dddd DD [de] MMMM [de] YYYY') | capitalize }}
+{% endmacro %}
+
 {% macro time(d) %}
   {{d | newDate | date('tz', 'Europe/Madrid') | date('HH:mm')}}h
 {% endmacro %}

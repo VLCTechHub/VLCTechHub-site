@@ -1,0 +1,56 @@
+{% set pageTitle = "Eventos pasados" %}
+{% set navItem = "events" %}
+
+{% extends "./default.njk" %}
+{% from "./macros/event.njk" import image, dayOfWeek, time, shortCompleteDate %}
+
+{% block main %}
+  <article id="past-events">
+    <header>
+      <h1 class="title"> Eventos pasados </h1>
+    </header>
+    <section class="past-events-summary">
+      {% for event in pagination.files %}
+       <article class="event-summary">
+       <h1>
+        <a href="/events/{{event.slug}}">
+          <section class="reset-link">{{image(event.twitter)}}</section>
+          {{event.title}}
+        </a>
+        </h1>
+        <p>
+          {{ dayOfWeek(event.startDate) }} /
+          {{ shortCompleteDate(event.startDate) }} /
+          {{ time(event.startDate) }}
+          {% if event.organizer %}
+            <br>
+            {{event.organizer}}
+          {% endif %}
+          </p>
+        <hr>
+      </article>
+      {% endfor %}
+    </section>
+    <nav class="pagination">
+
+      {% if pagination.num !== 1 %}<a href={{'/' + pagination.first.path}}>{% else %}<span class="pag-disabled">{% endif %}
+        <img class="chevron-first-icon" src="/assets/img/chevron-circle-start-left.svg" alt="Ir a la página inicial">
+      {% if pagination.num !== 1 %}</a>{% else %}</span>{% endif %}
+
+      {% if pagination.previous %}<a href={{'/' + pagination.previous.path}}>{% else %}<span class="pag-disabled">{% endif %}
+        <img class="chevron-left-icon" src="/assets/img/chevron-circle-left.svg" alt="Ir a la página anterior">
+      {% if pagination.previous %}</a>{% else %}</span>{% endif %}
+
+      <span>{{ pagination.num + ' de ' + pagination.pages.length }}</span>
+
+      {% if pagination.next %}<a href={{'/' + pagination.next.path}}>{% else %}<span class="pag-disabled">{% endif %}
+        <img class="chevron-rigth-icon" src="/assets/img/chevron-circle-left.svg" alt="Ir a la página siguiente">
+      {% if pagination.next %}</a>{% else %}</span>{% endif %}
+
+      {% if pagination.num !== pagination.pages.length %}<a href={{'/' + pagination.last.path}}>{% else %}<span class="pag-disabled">{% endif %}
+        <img class="chevron-last-icon" src="/assets/img/chevron-circle-start-left.svg" alt="Ir a la última página">
+      {% if pagination.num !== pagination.pages.length %}</a>{% else %}</span>{% endif %}
+
+    </nav>
+  </article>
+{% endblock %}
