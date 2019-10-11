@@ -28,7 +28,7 @@
       <h2>Cómo aplicar</h2>
       {{howToApply | safe }}
       </section>
-      {% if sourceUrl %}
+      {% if sourceUrl !== "http://" %}
       <section>
       <h2>Más infomación</h2>
       <p>Más información de la oferta en <a href="{{sourceUrl}}">{{sourceUrl}}</a>.</p>
