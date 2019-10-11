@@ -16,6 +16,7 @@
   position: relative;
   justify-self: left;
   margin-bottom: $space-large;
+  max-width: 300px;
 
   @include size-medium {
     justify-self: center;
