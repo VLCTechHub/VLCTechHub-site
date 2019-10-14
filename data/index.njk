@@ -2,7 +2,7 @@
 {% set navItem = "events" %}
 
 {% extends "./templates/default.njk" %}
-{% from "./templates/macros/event.njk" import image, dayOfWeek, time, shortDate %}
+{% from "./templates/macros/event.njk" import image, dayOfWeek, time, shortDate, dateBadge %}
 
 {% block main %}
   <article id="next-events">
@@ -21,6 +21,7 @@
       {% for event in collections.events %}
        <article class="event-summary">
        <h1>
+        {{ dateBadge(event.isToday, event.isThisWeek, event.twitter) }}
         <a href="events/{{event.slug}}">
           <section class="reset-link">{{image(event.twitter)}}</section>
           {{event.title}}

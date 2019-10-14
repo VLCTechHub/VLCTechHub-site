@@ -6,6 +6,21 @@
   {% endif %}
 {% endmacro %}
 
+{% macro dateBadgeClassNames(twitterInfo) %}
+  {% if twitterInfo.hashtag %}
+    date-badge invert
+  {% else %}
+    date-badge
+  {% endif %}
+{% endmacro %}
+
+{% macro dateBadge(isToday, isThisWeek, twitterInfo) %}
+  {% if isToday %}
+    <div class="{{dateBadgeClassNames(twitterInfo)}}">Hoy</div>
+  {% elif isThisWeek %}
+    <div class="{{dateBadgeClassNames(twitterInfo)}}">Esta semana</div>  
+  {% endif %}
+{% endmacro %}
 
 {% macro dayOfWeek(d) %}
   {{d | newDate | date('dddd') | capitalize }}
