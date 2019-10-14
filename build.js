@@ -61,7 +61,7 @@ Metalsmith(__dirname)
       }
     })
   )
-  .use(markdown({ sanitize: true }))
+  .use(markdown())
   .use(
     inplace({
       engineOptions: {

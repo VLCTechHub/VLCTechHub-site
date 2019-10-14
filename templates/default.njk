@@ -45,7 +45,7 @@
      <main>
         <section class="container">
           {% block main %}
-            This is the default content for body. It should be overriden.
+            {{contents | safe }}
           {% endblock %}
         </section>
       </main>
