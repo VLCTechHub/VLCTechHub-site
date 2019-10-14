@@ -6,17 +6,19 @@
   {% endif %}
 {% endmacro %}
 
-{% macro invert(twitterInfo) %}
+{% macro dateBadgeClassNames(twitterInfo) %}
   {% if twitterInfo.hashtag %}
-    invert
+    date-badge invert
+  {% else %}
+    date-badge
   {% endif %}
 {% endmacro %}
 
-{% macro dateInfo(isToday, isThisWeek, twitterInfo) %}
+{% macro dateBadge(isToday, isThisWeek, twitterInfo) %}
   {% if isToday %}
-    <div class="date-badge {{invert(twitterInfo)}}">Hoy</div>
+    <div class="{{dateBadgeClassNames(twitterInfo)}}">Hoy</div>
   {% elif isThisWeek %}
-    <div class="date-badge {{invert(twitterInfo)}}">Esta semana</div>  
+    <div class="{{dateBadgeClassNames(twitterInfo)}}">Esta semana</div>  
   {% endif %}
 {% endmacro %}
 
