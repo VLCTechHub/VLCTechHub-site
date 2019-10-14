@@ -44,6 +44,7 @@
     img {
       width: 100%;
       max-width: 300px;
+      outline: 4px solid $black;
 
       background-color: whitesmoke;
       transition: outline 120ms ease-in-out;
@@ -54,7 +55,7 @@
       }
     }
     &:hover img {
-      outline: 4px solid $black;
+      outline: 4px solid $brand-color;
     }
   }
 
