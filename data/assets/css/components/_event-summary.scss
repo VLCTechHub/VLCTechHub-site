@@ -1,3 +1,5 @@
+$thumbnailSizeMobile: 75px;
+
 .next-events-summary,
 .past-events-summary {
   display: grid;
@@ -50,7 +52,15 @@
 
     .reset-link {
       margin-bottom: $space-small;
+      margin-right: $space-medium;
       background-image: none;
+      float: left;
+      max-width: $thumbnailSizeMobile;
+
+      @include size-medium {
+        float: none;
+        max-width: auto;
+      }
 
       &:hover {
         background-image: none;
@@ -59,15 +69,16 @@
     }
 
     img {
-      width: 33%;
       min-width: 50px;
-      max-width: 300px;
       outline: 4px solid $black;
+      width: 100%;
+      border-radius: 50%;
 
       background-color: whitesmoke;
       transition: outline 120ms ease-in-out;
 
       @include size-medium {
+        max-width: 300px;
         width: 300px;
         height: 300px;
       }
@@ -81,6 +92,12 @@
     text-align: left;
     color: $text-color-secondary;
     font-size: 0.9rem;
+    margin-left: $thumbnailSizeMobile;
+    padding-left: $space-medium;
+    @include size-medium {
+      margin-left: 0;
+      padding-left: 0;
+    }
   }
 
   hr {
