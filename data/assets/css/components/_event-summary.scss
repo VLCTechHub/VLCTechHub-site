@@ -17,8 +17,8 @@ $thumbnailSizeMobile: 75px;
 .event-summary {
   position: relative;
   justify-self: left;
-  width: 100%;
   margin-bottom: $space-medium;
+  width: 100%;
 
   @include size-medium {
     width: auto;
@@ -52,13 +52,14 @@ $thumbnailSizeMobile: 75px;
 
     .reset-link {
       margin-bottom: $space-small;
-      margin-right: $space-medium;
       background-image: none;
       float: left;
+      margin-right: $space-medium;
       max-width: $thumbnailSizeMobile;
 
       @include size-medium {
         float: none;
+        margin-right: 0;
         max-width: auto;
       }
 
@@ -69,9 +70,9 @@ $thumbnailSizeMobile: 75px;
     }
 
     img {
+      width: 100%;
       min-width: 50px;
       outline: 4px solid $black;
-      width: 100%;
       border-radius: 50%;
 
       background-color: whitesmoke;
