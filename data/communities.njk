@@ -21,10 +21,19 @@ permalink: false
        <h1>
         {{ community.title }}
         </h1>
+        <h2>
+        {{ community.description }}
+        </h2>
         <p>
-          {{ community['twitter-alias'] }} |
-          {{ community['meetup-url'] }}
+          {{ community.twitter }} |
+          {{ community.meetup }} |
+          {{ community.web }}
           </p>
+        <p>
+          {% for tag in community.tags %}
+            {{ tag }}{% if not loop.last %},{% endif %}
+          {% endfor %}
+        </p>
         <hr>
       </article>
       {% endfor %}
