@@ -37,16 +37,21 @@ $thumbnailSizeMobile: 75px;
     text-transform: uppercase;
 
     .date-badge {
-      position: absolute;
-      top: 20px;
-      right: -10px;
-      background-color: $brand-color;
-      padding: 0 5px;
-      z-index: 1;
+      display: none;
 
-      &.invert {
-        color: $brand-color;
-        background-color: $black;
+      @include size-medium {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: -10px;
+        background-color: $brand-color;
+        padding: 0 5px;
+        z-index: 1;
+
+        &.invert {
+          color: $brand-color;
+          background-color: $black;
+        }
       }
     }
 
