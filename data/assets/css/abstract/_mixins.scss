@@ -19,6 +19,12 @@
   }
 }
 
+@mixin size-small {
+  @media (min-width: 35em) {
+    @content;
+  }
+}
+
 @mixin size-medium {
   @media (min-width: 48em) {
     @content;

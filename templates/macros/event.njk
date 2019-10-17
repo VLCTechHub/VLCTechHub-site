@@ -1,8 +1,12 @@
-{% macro image(twitterInfo, width=350) %}
+{% macro image(twitterInfo, width=350, class) %}
   {% if twitterInfo.handle %}
-    <img src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_{{width}}/{{twitterInfo.handle}}.jpg"></img>
+    <img
+      {% if class %} class="{{class}}" {% endif %}
+      src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_{{width}}/{{twitterInfo.handle}}.jpg" />
   {% else %}
-    <img src="https://dummyimage.com/{{width}}x{{width}}/ffd500/000.gif&text=%23{{twitterInfo.hashtag}}"></img>
+    <img
+      {% if class %} class="{{class}}" {% endif %}
+      src="https://dummyimage.com/{{width}}x{{width}}/ffd500/000.gif&text=%23{{twitterInfo.hashtag}}"/>
   {% endif %}
 {% endmacro %}
 
