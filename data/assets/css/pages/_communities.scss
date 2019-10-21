@@ -42,12 +42,8 @@
   }
 
   .media-figure {
-    max-width: 50px;
+    max-width: 80px;
     margin-bottom: $space-small;
-
-    @include size-small {
-      max-width: 80px;
-    }
 
     @include size-medium {
       max-width: 120px;
