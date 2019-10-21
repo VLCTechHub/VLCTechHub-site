@@ -33,7 +33,7 @@ permalink: false
       {% for community in datasource %}
        <article class="community-summary">
         <div class="media">
-          {{ image({handle: community.twitter}, class="media-figure") }}
+          {{ image({handle: community.twitter}, className="media-figure") }}
           <div class="media-body">
             <h1 class="community-title">{{ community.title }}</h1>
             <p class="community-desc">{{ community.description }}</p>

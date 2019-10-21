@@ -1,12 +1,8 @@
-{% macro image(twitterInfo, width=350, class) %}
+{% macro image(twitterInfo, width=350, className="") %}
   {% if twitterInfo.handle %}
-    <img
-      {% if class %} class="{{class}}" {% endif %}
-      src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_{{width}}/{{twitterInfo.handle}}.jpg" />
+    <img class="{{className}}" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_{{width}}/{{twitterInfo.handle}}.jpg" />
   {% else %}
-    <img
-      {% if class %} class="{{class}}" {% endif %}
-      src="https://dummyimage.com/{{width}}x{{width}}/ffd500/000.gif&text=%23{{twitterInfo.hashtag}}"/>
+    <img class="{{className}}" src="https://dummyimage.com/{{width}}x{{width}}/ffd500/000.gif&text=%23{{twitterInfo.hashtag}}"/>
   {% endif %}
 {% endmacro %}
 
@@ -22,7 +18,7 @@
   {% if isToday %}
     <div class="{{dateBadgeClassNames(twitterInfo)}}">Hoy</div>
   {% elif isThisWeek %}
-    <div class="{{dateBadgeClassNames(twitterInfo)}}">Esta semana</div>  
+    <div class="{{dateBadgeClassNames(twitterInfo)}}">Esta semana</div>
   {% endif %}
 {% endmacro %}
 
