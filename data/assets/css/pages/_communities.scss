@@ -1,7 +1,3 @@
-#svg-icons {
-  display: none;
-}
-
 #communities {
   .communities-summary {
     display: flex;
@@ -88,24 +84,6 @@
     svg {
       width: 100%;
       height: 100%;
-    }
-  }
-
-  .icon-meetup:hover {
-    use {
-      fill: #ed1c40;
-    }
-  }
-
-  .icon-twitter:hover {
-    use {
-      fill: #1da1f2;
-    }
-  }
-
-  .icon-web:hover {
-    use {
-      fill: $brand-color;
     }
   }
 }

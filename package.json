@@ -29,7 +29,7 @@
     "build": "node build.js",
     "report-published": "node report-published.js",
     "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix && ./node_modules/prettier/bin-prettier.js --write \"**/*.{md,scss,js,json}\"",
-    "lint-warn": "./node_modules/eslint/bin/eslint.js . && ./node_modules/prettier/bin-prettier.js --check \"**/*.{md,scss,js,json}\" --loglevel warn"
+    "lint-warn": "./node_modules/eslint/bin/eslint.js . && ./node_modules/prettier/bin-prettier.js --check \"**/*.{md,scss,js,json}\""
   },
   "husky": {
     "hooks": {
