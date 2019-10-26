@@ -2,18 +2,26 @@
 {% set navItem = "events" %}
 
 {% extends "./templates/default.njk" %}
-{% from "./templates/macros/event.njk" import image, dayOfWeek, time, shortDate %}
+{% from "./templates/macros/event.njk" import image, dayOfWeek, time, shortDate, dateBadge %}
 
 {% block main %}
   <article id="next-events">
     <header>
-      <h1 class="title"> Agenda </h1>
+      <div class="header-contain-left">
+        <h1 class="title"> Agenda </h1>
+        <span class="rss-link">
+          <a href="/events/upcoming/feed.xml">
+            <img class="rss-icon" src="/assets/img/rss.png"><span class="rss-text">RSS Feed</span>
+          </a>
+        </span>
+      </div>
       <a class="button button-secondary" href="/events/new/">Publicar un evento</a>
     </header>
     <section class="next-events-summary">
       {% for event in collections.events %}
        <article class="event-summary">
        <h1>
+        {{ dateBadge(event.isToday, event.isThisWeek, event.twitter) }}
         <a href="events/{{event.slug}}">
           <section class="reset-link">{{image(event.twitter)}}</section>
           {{event.title}}
@@ -23,6 +31,10 @@
           {{ dayOfWeek(event.startDate) }} /
           {{ shortDate(event.startDate) }} /
           {{ time(event.startDate) }}
+          {% if event.organizer %}
+            <br>
+            {{event.organizer}}
+          {% endif %}
           </p>
         <hr>
       </article>

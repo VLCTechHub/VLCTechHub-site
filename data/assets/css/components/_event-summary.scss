@@ -1,4 +1,5 @@
-.next-events-summary {
+.next-events-summary,
+.past-events-summary {
   display: grid;
   grid-template-columns: 1fr;
 
@@ -15,6 +16,7 @@
   position: relative;
   justify-self: left;
   margin-bottom: $space-large;
+  max-width: 300px;
 
   @include size-medium {
     justify-self: center;
@@ -29,6 +31,20 @@
     font-size: 1.1rem;
     text-transform: uppercase;
 
+    .date-badge {
+      position: absolute;
+      top: 20px;
+      right: -10px;
+      background-color: $brand-color;
+      padding: 0 5px;
+      z-index: 1;
+
+      &.invert {
+        color: $brand-color;
+        background-color: $black;
+      }
+    }
+
     .reset-link {
       margin-bottom: $space-small;
       background-image: none;
@@ -42,6 +58,7 @@
     img {
       width: 100%;
       max-width: 300px;
+      outline: 4px solid $black;
 
       background-color: whitesmoke;
       transition: outline 120ms ease-in-out;
@@ -52,7 +69,7 @@
       }
     }
     &:hover img {
-      outline: 4px solid $black;
+      outline: 4px solid $brand-color;
     }
   }
 

@@ -1,40 +1,21 @@
-# VLCTechHub
+[![Contributors](https://img.shields.io/github/contributors/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/contributors/VLCTechHub/VLCTechHub-site)
+[![Code style](https://img.shields.io/badge/code%20style-prettier-ff69b4)](https://img.shields.io/badge/code%20style-prettier-ff69b4)
+[![Hacktoberfest](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)
 
-La asociación VLCTechHub promociona las comunidades tecnológicas locales, fomenta el empleo de calidad y (co)organiza eventos para ayudar a mejorar la diversidad, la cooperación y la compartición de conocimiento tecnológico. Organiza el evento [VLCTechFest](https://vlctechfest.org) una vez al año.
+<h1 align="center">VLCTechHub</h1>
 
-Este repositorio es el sitio web https://vlctechhub.org, construido con el generador estático Metalsmith consumiendo [la API de VLCTechHub](https://github.com/VLCTechHub/VLCTechHub-api) en su fase de contrucción.
+VLCTechHub association promotes local technical communities, encourage quality jobs and (co)organices events to help improve diversity, cooperation and make technological knowledge accessible to more people. It organices the event [VLCTechFest](https://vlctechfest.org) once a year.
 
-## 🚀 Cómo levantar el sitio
+This repository is the website https://vlctechhub.org, built with the static generator Metalsmith and consuming [VLCTechHub API](https://github.com/VLCTechHub/VLCTechHub-api) in the building phase.
 
-1. Instala prerequesitos. Para levantar el sitio en local se necesitan tener instalados [yarn](https://yarnpkg.com/en/docs/instal) y tener corriendo la [API de VLCTechHub](https://github.com/VLCTechHub/VLCTechHub-api) en local.
+## 🚀 How to build this site
 
-2. Clona el repositorio
+Please refer to the section [How to build this site](https://github.com/VLCTechHub/VLCTechHub-site/blob/master/CONTRIBUTING.md#-building-the-website) in the colaboration guide.
 
-```
-git clone git@github.com:VLCTechHub/VLCTechHub-site.git
-```
+## 🤝 How to contribute
 
-3. Construye el proyecto
-
-```
-cd VLCTechHub-site/
-yarn install
-yarn run build
-```
-
-4. Levanta un servidor web para ver el sitio en `http://localhost:8080`
-
-```
-  cd dist/
-  python3 -m http.server 8080
-```
-
-Para más detalles, puede ver la sección de [construcción del sitio](https://github.com/VLCTechHub/VLCTechHub-site/blob/master/CONTRIBUTING.md#-construyendo-el-sitio-web) en la guía de colaboración.
-
-## 🤝 Cómo contribuir
-
-Preguntas, propuestas, issues y pull request son bienvenidos!
-Echa un vistazo a la [guía de colaboración](./CONTRIBUTING.md) para más información.
+Questios, proposals, issues and pull requests are welcome!
+Have a look at our [colaboration guide](./CONTRIBUTING.md) for further info.
 
 ## :memo: License
 

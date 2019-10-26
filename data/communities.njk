@@ -1,0 +1,61 @@
+---
+datasource: 'datasources/communities.yaml'
+permalink: false
+---
+{% set pageTitle = "Comunidades" %}
+{% set navItem = "communities" %}
+
+{% extends "./templates/default.njk" %}
+{% from "./templates/macros/event.njk" import image %}
+
+{% block main %}
+  <article id="communities">
+    <header>
+      <h1 class="title"> Comunidades </h1>
+    </header>
+    <section class="communities-summary">
+      {% for community in datasource %}
+       <article class="community-summary">
+        <div class="media">
+          {{ image({handle: community.twitter}, className="media-figure") }}
+          <div class="media-body">
+            <h1 class="community-title">{{ community.title }}</h1>
+            <p class="community-desc">{{ community.description }}</p>
+          </div>
+        </div>
+        <div class="links">
+          {% if community.twitter %}
+          <a href="https://twitter.com/{{ community.twitter }}" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          {% endif %}
+          {% if community.meetup %}
+          <a href="{{ community.meetup }}" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          {% endif %}
+          {% if community.web %}
+          <a href="{{ community.web }}" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          {% endif %}
+        </div>
+        {% if community.tags %}
+          <div class="tags">
+            {% for tag in community.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <hr>
+      </article>
+      {% endfor %}
+    </section>
+  </article>
+{% endblock %}

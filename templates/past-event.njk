@@ -1,21 +1,20 @@
 {% extends "./default.njk" %}
-{% from "./macros/event.njk" import image, longDate, time, googleCalendarLink %}
+{% from "./macros/event.njk" import image, longCompleteDate, time %}
 
 {% block main %}
   <article id="event-page">
   <header>
     <h1>{{title}}</h1>
-    <p>{{longDate(startDate)}} | {{time(startDate)}} {% if organizer %}| {{organizer}} {% endif %}</p>
+    <p>{{longCompleteDate(startDate)}} | {{time(startDate)}} {% if organizer %}| {{organizer}} {% endif %}</p>
   </header>
     <section class="event-details">
       {{ image(twitter) }}
       <section class="details">
-      <p>{{longDate(startDate)}}</p>
+      <p>{{longCompleteDate(startDate)}}</p>
       <p>{{time(startDate)}}</p>
       </section>
       <section class="actions">
       <a href="{{sourceUrl}}" class="button button-primary">Ver fuente</a>
-      <a href="{{googleCalendarLink(title, sourceUrl, startDate)}}" class="button button-secondary">Añadir al calendario</a>
       </section>
     </section>
     <section class="event-description">

@@ -1,19 +1,63 @@
-#next-events {
+#next-events,
+#past-events {
   > header {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
     flex-direction: column-reverse;
+    align-items: baseline;
+    justify-content: space-between;
 
     @include size-medium {
       flex-direction: row;
     }
 
+    .header-contain-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .rss-icon {
+      max-height: 1rem;
+    }
+
+    .rss-link {
+      margin-left: 1rem;
+    }
+
+    .rss-text {
+      position: absolute;
+      padding-left: 0.75rem;
+      transform: scale(0);
+      transform-origin: left;
+      transition: 350ms;
+    }
+
+    .rss-icon:hover + .rss-text,
+    .rss-text:hover {
+      transform: unset !important;
+    }
+
     .button {
-      margin: 4rem 0 1.5rem 0;
+      margin: 4rem 0 1.5rem;
+
       @include size-medium {
         margin: 0;
       }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > a,
+    > span {
+      margin: 0 $space-small;
+    }
+
+    > .pag-disabled {
+      opacity: 0.5;
     }
   }
 }

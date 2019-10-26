@@ -43,3 +43,15 @@
     background-color: $black;
   }
 }
+
+.chevron-left-icon,
+.chevron-rigth-icon,
+.chevron-first-icon,
+.chevron-last-icon {
+  width: 2.75rem;
+}
+
+.chevron-rigth-icon,
+.chevron-last-icon {
+  transform: rotate(180deg);
+}

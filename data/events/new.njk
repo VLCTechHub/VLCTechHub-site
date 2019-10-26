@@ -25,7 +25,7 @@
     {{textInput('title', 'Título', required)}}
     {{dateInput('startDate', 'Fecha', required)}}
     {{timeInput('startTime', 'Hora', required, 'Formato hh:mm. Si el control pide tres valores, el tercer valor establece AM o PM.')}}
-    {{textArea('description', 'Descripción', required)}}
+    {{textArea('description', 'Descripción', required, '', 'Admite el uso de Markdown', 'https://www.markdownguide.org/cheat-sheet/')}}
     {{textInput('sourceUrl', 'Link', required)}}
     {{textInput('hashtag', 'Usuario de twitter', notRequired, 'Por ejemplo: @vlctechhub. Si no tienes usuario de twitter puedes usar un hashtag como por ejemplo #eventoparatodos. De aquí se genera la imagen cuando se publique el evento.')}}
     <button type="button" class="button button-emphasis" data-type="submit">Enviar el evento</button>
