@@ -1,22 +1,6 @@
 version: "3.7"
 
 services:
-  site:
-    build: 
-      context: .
-      network: host
-      # Uncomment if you want to build production image
-      #args:
-      #- NODE_ENV=production
-    image: vlctechhub/site:latest
-    ports:
-      - "80:80"
-    networks:
-      default:
-        aliases:
-          - site.vlctechhub.local
-    depends_on:
-      - api
 
   api:
     image: vlctechhub/api:latest
@@ -53,7 +37,7 @@ services:
     depends_on:
       - mongo
     command:
-      ["bash", "-c", "(bundle check || bundle install) && bundle exec rake up"]
+        ["bash", "-c", "(bundle check || bundle install) && bundle exec rake mongo:prepare && bundle exec rake up"]
 
   mongo:
     image: mongo:3.6.12
@@ -61,6 +45,27 @@ services:
       - type: volume
         source: data
         target: /data/db
+
+  site:
+    build:
+      context: .
+      network: host
+      # Uncomment if you want to build production image
+      #args:
+      #- NODE_ENV=production
+      args:
+        - 'NODE_ENV=docker'
+    image: vlctechhub/site:latest
+    ports:
+        - "8080:8080"
+    networks:
+      default:
+        aliases:
+          - site.vlctechhub.local
+    depends_on:
+      - api
+    command:
+        ["yarn", "serve"]
 
 volumes:
   data:

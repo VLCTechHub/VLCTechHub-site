@@ -1,15 +1,11 @@
-FROM node:12.11-alpine as builder
+FROM node:12.13-alpine
 
 ARG NODE_ENV
 
 WORKDIR /app
 
-COPY . /app 
+COPY . /app
+
+ENV NODE_ENV $NODE_ENV
 
 RUN yarn install
-
-RUN NODE_ENV=$NODE_ENV yarn build
-
-FROM nginx:1.17-alpine
-
-COPY --from=builder /app/* /usr/share/nginx/html/
