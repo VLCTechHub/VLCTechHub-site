@@ -1,6 +1,7 @@
 version: "3.7"
 
 services:
+
   api:
     image: vlctechhub/api:latest
     volumes:

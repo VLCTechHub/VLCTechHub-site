@@ -122,6 +122,10 @@ In order to create a typical page in this repo we need two things: a template an
 
 If you are creating a new page, chances are the template you need to use already exists. In that case, you _just_ need to provide the data. The data will be often a markdown file with `.md` extension inside the folder `data`. Bear in mind that the strucutre and naming you choose for the files will determine the final url. It is also possible that the data is provided by a yaml file with extension `.yml` and used in a template.
 
+## :art: Visual style guide
+
+We have a visual style guide we try to follow for developing the site. It has the information about the colours, fonts, sizes, margins... You can find it in this [link](https://trello-attachments.s3.amazonaws.com/5c43105205ce397d451e512f/5ccc28e47798a41f8bed9562/5e34bbebf0482b82fc873122c20704c9/Gu%C3%ADa_de_estilo_webVTH.pdf)
+
 If the template does not exists, create it inside the folder `templates` and then use it following the above description.
 
 To add or modify css, javascript and/or images use the folder `assets`.
