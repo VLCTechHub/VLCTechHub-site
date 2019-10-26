@@ -421,6 +421,14 @@
   - go
   - golang
 -
+  title: VueJS Valencia
+  description: Grupo de amantes de VueJS en Valencia. Cada cierto tiempo nos juntaremos para organizar meetups, y hablar sobre el ecosistema de VueJS
+  twitter:
+  meetup: https://www.meetup.com/es-ES/VueJS-Valencia/
+  web:
+  tags:
+  - vuejs
+-
   title: WordPress Valencia
   description: Lugar de encuentro en Valencia para entusiastas de WordPress, ya sean aficionados, usuarios, desarrolladores, diseñadores, empresas, freelancers
   twitter: _wpvalencia
