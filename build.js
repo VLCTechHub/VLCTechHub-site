@@ -22,8 +22,17 @@ function fromNow(date) {
   return moment(date).fromNow()
 }
 
-const devBuild = (process.env.NODE_ENV || '').trim().toLowerCase() !== 'production'
-const apiRoot = devBuild ? 'http://localhost:5000/v2' : 'https://api.vlctechhub.org/v2'
+const envBuild = (process.env.NODE_ENV || 'dev').trim().toLowerCase()
+
+let apiRoot = 'http://localhost:5000/v2'
+
+if (envBuild === 'production') {
+  apiRoot = 'https://api.vlctechhub.org/v2'
+}
+else if (envBuild === 'docker') {
+  apiRoot = 'http://api:5000/v2'
+}
+
 const version = git.short()
 
 Metalsmith(__dirname)

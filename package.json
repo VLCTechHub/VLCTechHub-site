@@ -29,7 +29,8 @@
     "build": "node build.js",
     "report-published": "node report-published.js",
     "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix && ./node_modules/prettier/bin-prettier.js --write \"**/*.{md,scss,js,json}\"",
-    "lint-warn": "./node_modules/eslint/bin/eslint.js . && ./node_modules/prettier/bin-prettier.js --check \"**/*.{md,scss,js,json}\""
+    "lint-warn": "./node_modules/eslint/bin/eslint.js . && ./node_modules/prettier/bin-prettier.js --check \"**/*.{md,scss,js,json}\"",
+    "serve": "http-server dist/"
   },
   "husky": {
     "hooks": {
@@ -49,6 +50,7 @@
   },
   "devDependencies": {
     "eslint": "^6.4.0",
+    "http-server": "^0.11.1",
     "husky": "^3.0.8",
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2"
