@@ -1,7 +1,7 @@
 {% set pageTitle = "Publicar oferta" %}
 {% extends "./templates/default.njk" %}
 
-{% from "./templates/macros/form.njk" import textInput, textArea %}
+{% from "./templates/macros/form.njk" import textInput, textArea, emailInput %}
 
 {% block main %}
   <article id="new-job">
@@ -31,7 +31,7 @@
     {{textInput('companyName', 'Nombre de la empresa', required)}}
     {{textInput('companyWeb', 'Web de la empresa', required)}}
     {{textInput('companyTwitter', 'Twitter de la empresa', notRequired, "Te nombraremos cuando se publique la oferta. Ej: @mozilla")}}
-    {{textInput('companyContact', 'Email de contacto', required, "Email contacto en caso de tener alguna duda con la oferta. Este email no se publicará con la oferta.")}}
+    {{emailInput('companyContact', 'Email de contacto', required, "Email contacto en caso de tener alguna duda con la oferta. Este email no se publicará con la oferta.")}}
     <button type="button" class="button button-emphasis" data-type="submit">Enviar la oferta</button>
   </form>
   </article>
