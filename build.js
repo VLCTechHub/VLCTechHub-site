@@ -28,8 +28,7 @@ let apiRoot = 'http://localhost:5000/v2'
 
 if (envBuild === 'production') {
   apiRoot = 'https://api.vlctechhub.org/v2'
-}
-else if (envBuild === 'docker') {
+} else if (envBuild === 'docker') {
   apiRoot = 'http://api:5000/v2'
 }
 
