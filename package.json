@@ -27,8 +27,8 @@
   },
   "scripts": {
     "build": "node build.js",
-    "lint": "./node_modules/eslint/bin/eslint.js .",
-    "prettylint": "./node_modules/prettylint/bin/cli.js \"data/**/*.{md,scss,js,json,yaml}\" \"templates/**/*.{md,scss,js,json}\"",
+    "lint": "./node_modules/eslint/bin/eslint.js --ext .njk,.js data/ templates/ lib/",
+    "prettylint": "./node_modules/prettylint/bin/cli.js \"data/**/*.{md,scss,js,json,yaml}\" \"lib/**/*.js\"",
     "report-published": "node report-published.js",
     "serve": "http-server dist/"
   },
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "eslint": "^6.4.0",
+    "eslint-plugin-html": "^6.0.0",
     "http-server": "^0.11.1",
     "husky": "^3.0.8",
     "prettier": "^1.18.2",
