@@ -1,466 +1,413 @@
--
-  title: ACM UPV Chapter
+- title: ACM UPV Chapter
   description: Capítulo de la Association for Computing Machinery en la Universitat Politècnica de València
   twitter: AcmUpv
   meetup:
   web: http://acmupv.webs.upv.es/
   tags:
--
-  title: ACM-Women UPV Chapter
+- title: ACM-Women UPV Chapter
   description: Capítulo de la Association for Computing Machinery en la Universitat Politècnica de València
   twitter: AcmUpv
   meetup:
   web: http://acmupv.webs.upv.es/
   tags:
--
-  title: Agile Levante
+- title: Agile Levante
   description: Compartiendo experiencias Agiles en la zona de levante
   twitter: AgileLevante
   meetup: https://www.meetup.com/es-ES/Agile-Levante/
   web:
   tags:
-  - agile
--
-  title: Agile On Board
+    - agile
+- title: Agile On Board
   description:
   twitter:
   meetup: https://www.meetup.com/es-ES/AGILE-on-board-Valencia/
   web:
   tags:
-  - agile
--
-  title: Asociación Valenciana de Startups
+    - agile
+- title: Asociación Valenciana de Startups
   description: The Startup Ecosystem Association in Valencia
   twitter: Startup_VLC
   meetup:
   web: https://www.asociacionvalencianastartups.es/
   tags:
-  - tech
-  - startups
-  - entrepreneurs
--
-  title: Avalbit
+    - tech
+    - startups
+    - entrepreneurs
+- title: Avalbit
   description: Asociacion del Bitcoin y otras Tecnologías - Trabajo en equipo y colaboracion
   twitter: avalbit
   meetup: https://www.meetup.com/es-ES/ValenciaBitcoin
   web: http://avalbit.org/
   tags:
-  - Bitcoin
-  - Blockchain
--
-  title: AWS Valencia
+    - Bitcoin
+    - Blockchain
+- title: AWS Valencia
   description:
   twitter: awsvalenciaes
   meetup: https://www.meetup.com/es-ES/AWS-Valencia/
   web:
   tags:
-  - AWS
--
-  title: Bitcoin SV Valencia
+    - AWS
+- title: Bitcoin SV Valencia
   description: Grupo interesado en el desarrollo y la comunidad de Bitcoin Satoshi Vision BSV, la verdadera revolución
   twitter: https://twitter.com/Bsvespanol/
   meetup: https://www.meetup.com/es-ES/BitcoinSV_Valencia/
   web: https://bsvespanol.org/
   tags:
-  - Bitcoin
-  - BSV
--
-  title: Club .NET Valencia
+    - Bitcoin
+    - BSV
+- title: Club .NET Valencia
   description: Centrados en aprender entre nosotros, llevar a cabo proyectos multiplataforma y hacer buenos diseños de software
   twitter: dotNetValencia
   meetup: https://www.meetup.com/es-ES/msft-valencia/
   web:
   tags:
-  - .net
-  - "C#"
--
-  title: Databeers VLC
+    - .net
+    - 'C#'
+- title: Databeers VLC
   description: Interested in Data, love beer, in València?
   twitter: databeersvlc
   meetup:
   web: https://databeersvlc.tumblr.com/
   tags:
-  - data
--
-  title: Data UPV
+    - data
+- title: Data UPV
   description: Somos un grupo estudiantil de la UPV que promueve el uso de los datos abiertos entre la Comunidad Universitaria
   twitter: DataUpv
   meetup:
   web: http://dataupv.webs.upv.es/
   tags:
-  - opendata
-  - bigdata
-  - datamining
--
-  title: devscola
+    - opendata
+    - bigdata
+    - datamining
+- title: devscola
   description: Somos una escuela donde aprender a programar
   twitter: devscola
   meetup: https://www.meetup.com/es-ES/Aprende-a-programar-en-Valencia/
   web: http://www.devscola.org/
   tags:
-  - ruby
-  - JS
-  - rails
-  - katayunos
--
-  title: DevWomen
+    - ruby
+    - JS
+    - rails
+    - katayunos
+- title: DevWomen
   description: Comunidad que potencia y visibiliza la figura de la mujer en el sector tecnológico. El desarrollo también es cosa de mujeres
   twitter: DevWomen_ES
   meetup:
   web: https://devwomen.com/
   tags:
--
-  title: DrupalVal
+- title: DrupalVal
   description: Nosotros somos la comunidad Drupal de Valencia. Síguenos para saber todo lo que hacemos y unirte a nosotros
   twitter: drupalval
   meetup: https://www.meetup.com/es-ES/drupalval
   web: https://groups.drupal.org/comunidad-valenciana
   tags:
-  - drupal
--
-  title: FemDevs
+    - drupal
+- title: FemDevs
   description: Asociación que persigue dar espacio y visibilidad a mujeres profesionales, estudiantes o interesadas en el desarrollo de videojuegos
   twitter: FemDevs
   meetup:
   web: https://femdevs.es/
   tags:
-  - FemDevsMeetups
--
-  title: FomAlumni
+    - FemDevsMeetups
+- title: FomAlumni
   description: Comunidad de alumnos, profesores y amigos de @fomiot, profesionales apasionados por las tecnologías y los ecosistemas 4.0
   twitter: FomAlumni
   meetup:
   web: http://www.fomat.es/comunidad-fom/
   tags:
-  - i40VAL
-  - i40VALL
-  - i40MAD
-  - i40VIGO
--
-  title: GDG Valencia
+    - i40VAL
+    - i40VALL
+    - i40MAD
+    - i40VIGO
+- title: GDG Valencia
   description:
   twitter: gdgvalencia
   meetup: https://www.meetup.com/es-ES/GDGValencia/
   web: http://gdgvalencia.es/
   tags:
--
-  title: Geoinquietos VLC
+- title: Geoinquietos VLC
   description: Encuentros entre gente que comparte inquietudes en el ámbito de la geomática, software libre y tecnología geoespacial
   twitter: geoinquietosvlc
   meetup: https://www.meetup.com/es-ES/Geoinquietos-Valencia/
   web:
   tags:
-  - geobirras
-  - geopaella
-  - geovoluntariado
--
-  title: GNU/Linux de Valencia
+    - geobirras
+    - geopaella
+    - geovoluntariado
+- title: GNU/Linux de Valencia
   description: Una aproximación al mundo GNU/Linux desde la capital del Turia
   twitter: GnuLinuxVlc
   meetup:
   web: https://gnulinuxvalencia.org/
   tags:
-  - GNULinux
--
-  title: gvSIG project
+    - GNULinux
+- title: gvSIG project
   description: Free Software project to develop easy to use Geographical Information System products and a great community
   twitter: gvsig
   meetup:
   web: http://www.gvsig.org
   tags:
-  - GIS
--
-  title: Hack&Beers
+    - GIS
+- title: Hack&Beers
   description: Ponencias gratuitas para interesados en la seguridad informática. Ambiente distendido y acompañando las charlas con unas Beers
   twitter: hackandbeers
   meetup:
   web: https://hackandbeers.es/
   tags:
-  - hack
-  - seguridadinformatica
--
-  title: HackNight Valencia
+    - hack
+    - seguridadinformatica
+- title: HackNight Valencia
   description: Un evento mensual en el que cada noche lo hace la gente que acude
   twitter: HackNightVLC
   meetup: https://www.meetup.com/es-ES/HackNight-Valencia/
   web:
   tags:
--
-  title: Hackerspace Valencia
+- title: Hackerspace Valencia
   description: Asociación Hackerspace Valencia. Fricolaje en un ambiente amigable
   twitter: HackVlc
   meetup: https://www.meetup.com/es-ES/Hackerspace-Valencia/
   web: https://hackvlc.es/
   tags:
-  - hack
-  - opensource
-  - makers
--
-  title: infusionvlc
+    - hack
+    - opensource
+    - makers
+- title: infusionvlc
   description: Meetups para el empoderamiento digital de las personas
   twitter: infusionvlc
   meetup:
   web: http://www.infusionvlc.com/
   tags:
--
-  title: Ladies, Wine & Design
+- title: Ladies, Wine & Design
   description: Una noche de tertulia cada mes entre quince diseñadoras y creativas. Habrá vino, cena y hablaremos sobre una amplia variedad de temas relacionados con la creatividad, los negocios y la vida
   twitter:
   meetup: https://www.eventbrite.es/o/ladies-wine-amp-design-valencia-17046040836
   web: https://ladieswinedesign.com/valencia/
   tags:
-  - design
--
-  title: meetmobile
+    - design
+- title: meetmobile
   description: Si te gusta la programación y la tecnología móvil, por fin tienes tu evento en Valencia
   twitter: meetmobileVLC
   meetup: https://www.meetup.com/es-ES/http-meetmobile-es/
   web: https://meetmobile.es/
   tags:
-  - tech
-  - mobile
--
-  title: Ministry of Testing Valencia
+    - tech
+    - mobile
+- title: Ministry of Testing Valencia
   description: Our meetups exist as a way to bring people together to talk and learn about good and authentic testing
   twitter: ministryoftest
   meetup: https://www.meetup.com/es-ES/Ministry-of-Testing-Valencia/
   web: https://www.ministryoftesting.com/
   tags:
-  - softwaretesting
--
-  title: ML Valencia
+    - softwaretesting
+- title: ML Valencia
   description: Charlaremos sobre machinelearning desde conceptos básicos a los más avanzados y descubriremos las últimas herramientas para crear apps predictivas
   twitter: mlvlc
   meetup: https://www.meetup.com/es-ES/Machine-Learning-Valencia/
   web:
   tags:
-  - machinelearning
-  - apps
-  - mlvlc
--
-  title: Moving Forward// Design, UX, SEO, Development & Digital Mkt.
+    - machinelearning
+    - apps
+    - mlvlc
+- title: Moving Forward// Design, UX, SEO, Development & Digital Mkt.
   description: Eventos para cubrir todas las areas del Marketing Digital
   twitter:
   meetup: https://www.meetup.com/es-ES/moving-forward-vlc/
   web:
   tags:
-  - UX
-  - SEO
-  - SEM
--
-  title: PHP Valencia
+    - UX
+    - SEO
+    - SEM
+- title: PHP Valencia
   description: Grupo de desarrolladores web que usan el lenguaje PHP
   twitter: phpvalencia
   meetup: https://www.meetup.com/es-ES/PHP-Valencia/
   web: http://phpvalencia.es/
   tags:
-  - PHP
--
-  title: Python Valencia
+    - PHP
+- title: Python Valencia
   description: Grupo Python Valencia
   twitter: python_vlc
   meetup: https://www.meetup.com/es-ES/Python-Valencia-Meetup/
   web:
   tags:
-  - python
--
-  title: R-Ladies Valencia
+    - python
+- title: R-Ladies Valencia
   description: Promoting the role of women in the R community as part of RLadiesGlobal initiative
   twitter: RLadiesValencia
   meetup:
   web:
   tags:
-  - RLadiesGlobal
-  - RLadiesValencia
-  - rstats
--
-  title: School of AI Valencia
+    - RLadiesGlobal
+    - RLadiesValencia
+    - rstats
+- title: School of AI Valencia
   description: Nuestra misión es ofrecer una educación de Inteligencia Artificial de clase mundial a cualquier persona en la Tierra de forma gratuita
   twitter: SchoolofAIVlc
   meetup: https://www.meetup.com/es-ES/Meetup-Valencia-School-of-AI/
   web: http://schoolofai.es/
   tags:
-  - inteligenciaartificial
-  - machinelearning
-  - deeplearning
--
-  title: Socarrust
+    - inteligenciaartificial
+    - machinelearning
+    - deeplearning
+- title: Socarrust
   description: A group to talk and practice the Rust programming language in Valencia
   twitter: socarrust
   meetup: https://www.meetup.com/es-ES/socarrust/
   web:
   tags:
-  - rust
-  - rustlang
--
-  title: Software Testers & QA Experts de Valencia
+    - rust
+    - rustlang
+- title: Software Testers & QA Experts de Valencia
   description:
   twitter: expoQA
   meetup: https://www.meetup.com/es-ES/Software-Testers-and-QA-Experts-of-Valencia/
   web: http://www.spanishtestacademy.com/
   tags:
-  - testing
--
-  title: Talk Blockchain Valencia
+    - testing
+- title: Talk Blockchain Valencia
   description: Comunidad técnica en torno al desarrollo Blockchain
   twitter:
   meetup: https://www.meetup.com/es-ES/Blockchain-Valencia-Tech/
   web:
   tags:
-  - blockchain
-  - smartcontracts
--
-  title: TestNight Valencia
+    - blockchain
+    - smartcontracts
+- title: TestNight Valencia
   description: Un evento mensual creado con la intención de comunicar e intercambiar ideas y experiencias sobre Software Testing
   twitter: TestNight_VLC
   meetup: https://www.meetup.com/es-ES/TestNight-VLC/
   web:
   tags:
-  - testing
-  - testnight
--
-  title: UX VLC // User Experience y Estrategia
+    - testing
+    - testnight
+- title: UX VLC // User Experience y Estrategia
   description: Para cualquier persona interesada en diseño de Producto y Experiencia de Usuario (UX)
   twitter:
   meetup: https://www.meetup.com/es-ES/UX-VLC-User-Experience-y-Estrategia/
   web:
   tags:
-  - UX
-  - research
-  - productdesign
--
-  title: UXER SCHOOL
+    - UX
+    - research
+    - productdesign
+- title: UXER SCHOOL
   description: Escuela de los profesionales en diseño y experiencia de usuario
   twitter: UXacademy_es
   meetup: https://www.meetup.com/es-ES/UX-Academy-Valencia/
   web: https://www.uxerschool.com/
   tags:
-  - UX
-  - UI
-  - design
--
-  title: Valencia DevOps
+    - UX
+    - UI
+    - design
+- title: Valencia DevOps
   description: Operations meets development. Development meets operations
   twitter: valenciadevops
   meetup: https://www.meetup.com/es-ES/Valencia-DevOps/
   web: https://www.valenciadevops.me/
   tags:
--
-  title: Valencia Interactive
+- title: Valencia Interactive
   description: Local Game Industry community and the official Valencia Unity User Group (VUUG)
   twitter: VLCInteractive
   meetup: https://www.meetup.com/es-ES/ValenciaInteractive/
   web:
   tags:
-  - gamedev
-  - unity3d
--
-  title: Valencia Software Crafters
+    - gamedev
+    - unity3d
+- title: Valencia Software Crafters
   description: Comunidad para profesionales entusiastas del desarrollo del software, sin importar su nivel, que quieran mejorar en su oficio
   twitter: VlcSwCraft
   meetup: https://www.meetup.com/es-ES/Valencia-Software-Crafters/
   web:
   tags:
-  - software
-  - craftsmanship
--
-  title: Valencia Startups
+    - software
+    - craftsmanship
+- title: Valencia Startups
   description: Comunidad para conectar emprendedores y startups en Valencia
   twitter: VLCStartups
   meetup: https://www.meetup.com/es-ES/Valencia-Startups/
   web:
   tags:
-  - emprendedores
-  - startups
-  - networking
--
-  title: Valencia Virtual
+    - emprendedores
+    - startups
+    - networking
+- title: Valencia Virtual
   description: Comunidad de profesionales y entusiastas de la virtualización 3D, mediante el uso de nuevas tecnologías y sus infinitas aplicaciones
   twitter:
   meetup: https://www.meetup.com/es-ES/realidad-virtual-aumentada-en-Valencia/
   web:
   tags:
-  - VR
-  - AR
-  - XR
--
-  title: Valencia.rb
+    - VR
+    - AR
+    - XR
+- title: Valencia.rb
   description: Grupo local de usuarios de Ruby en Valencia
   twitter: valenciarb
   meetup:
   web: https://valenciarb.org/
   tags:
-  - ruby
--
-  title: ValenciaJS
+    - ruby
+- title: ValenciaJS
   description: A meetup in Valencia for people that hack & love JavaScript
   twitter: VlcJS
   meetup: https://www.meetup.com/es-ES/ValenciaJS/
   web:
   tags:
-  - JS
-  - nodejs
-  - frontend
--
-  title: ValenciaJUG
+    - JS
+    - nodejs
+    - frontend
+- title: ValenciaJUG
   description: Valencia Java User Group (JUG) focused in Java Virtual Machine (JVM) programming paradigms and languages
   twitter: VLC_JUG
   meetup: https://www.meetup.com/es-ES/ValenciaJUG/
   web:
   tags:
-  - JVM
-  - programming
-  - java
--
-  title: VlcGophers
+    - JVM
+    - programming
+    - java
+- title: VlcGophers
   description: Nos reunimos cada mes entre cervezas para compartir conocimientos y novedades, mayoritariamente relacionados con Go
   twitter: VlcGophers
   meetup: https://www.meetup.com/es-ES/Valencia-Go-Meetup/
   web:
   tags:
-  - go
-  - golang
--
-  title: VLC Vue.js
+    - go
+    - golang
+- title: VLC Vue.js
   description: Compartiremos conocimientos e inquietudes de tecnología Front-End por medio del framework Vue.js . Esta invitado cualquier persona que quiera aprender o profundizar en el maravilloso ecosistema de Javascript.
   twitter:
   meetup: https://www.meetup.com/es-ES/vlc-vuejs/
   web:
   tags:
-  - vuejs
--
-  title: VueJS Valencia
+    - vuejs
+- title: VueJS Valencia
   description: Grupo de amantes de VueJS en Valencia. Cada cierto tiempo nos juntaremos para organizar meetups, y hablar sobre el ecosistema de VueJS
   twitter:
   meetup: https://www.meetup.com/es-ES/VueJS-Valencia/
   web:
   tags:
-  - vuejs
--
-  title: WordPress Valencia
+    - vuejs
+- title: WordPress Valencia
   description: Lugar de encuentro en Valencia para entusiastas de WordPress, ya sean aficionados, usuarios, desarrolladores, diseñadores, empresas, freelancers
   twitter: _wpvalencia
   meetup: https://www.meetup.com/es-ES/wordpress-valencia-meetup/
   web: http://www.wpvalencia.org/
   tags:
-  - wordpress
-  - wp
--
-  title: WTM Valencia
+    - wordpress
+    - wp
+- title: WTM Valencia
   description: WTM es un evento creado por Google para dar visibilidad y voz a mujeres que trabajan en el sector de la tecnología
   twitter: WtmValencia
   meetup:
   web: https://womentechmakersvalencia.com/
   tags:
-  - WTMValencia19
-  - WTM19
-  - WomenTechmakers
--
-  title: xR WORLD @ Valencia
+    - WTMValencia19
+    - WTM19
+    - WomenTechmakers
+- title: xR WORLD @ Valencia
   description: Comunidad de entusiastas de la Realidad Virtual y Realidad Aumentada en la zona de levante
   twitter:
   meetup: https://www.meetup.com/es-ES/xR-World-Valencia/
   web:
   tags:
-  - VR
-  - AR
+    - VR
+    - AR

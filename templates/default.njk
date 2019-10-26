@@ -36,21 +36,21 @@
   </head>
   <body>
     {% include "./layout/header.njk" %}
-      <script nonce="{{nonce}}">
-        let Site = {};
-        Site.API_ROOT = '{{apiRoot}}'
-      </script>
-      <script src="/assets/js/vlctechhub-{{version}}-min.js"></script>
+    <script nonce="{{nonce}}">
+      let Site = {}
+      Site.API_ROOT = '{{apiRoot}}'
+    </script>
+    <script src="/assets/js/vlctechhub-{{version}}-min.js"></script>
 
-     <main>
-        <section class="container">
-          {% block main %}
-            {{contents | safe }}
-          {% endblock %}
-        </section>
-      </main>
-      {% block footer %}
-        {% include "./layout/footer.njk" %}
-      {% endblock %}
- </body>
+    <main>
+      <section class="container">
+        {% block main %}
+          {{contents | safe }}
+        {% endblock %}
+      </section>
+    </main>
+    {% block footer %}
+      {% include "./layout/footer.njk" %}
+    {% endblock %}
+  </body>
 </html>
