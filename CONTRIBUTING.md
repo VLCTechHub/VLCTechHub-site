@@ -22,6 +22,8 @@ Do you think you found a bug or you have a new functionality to propose? Let us 
 
 # 🚀 Building the website
 
+## Locally
+
 VLCTechHub website is developed with the static side generator Metalsmith.
 
 1. **Install yarn**
@@ -78,6 +80,16 @@ With Python 3:
 ```
 
 Now the website is available at `http://localhost:8080`.
+
+## Using Docker
+
+1. Clone this repository and the [backend repository](https://github.com/VLCTechHub/VLCTechHub-api) in the same folder.
+
+2. In the site folder, just execute `docker-compose up --build` or `docker-compose up` if you have already build the project. Now, the site will be available at `http://localhost:8080`.
+
+3. The site needs to be manually build when a change is made in the code. To do so, just execute `docker-compose exec site yarn build`.
+
+4. If a new package needs to be added, it needs to be done also using the yarn inside the container, with: `docker-compose exec site yarn add [package]`.
 
 # :gift: Contributing with pull requests
 

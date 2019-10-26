@@ -14,7 +14,7 @@ Please refer to the section [How to build this site](https://github.com/VLCTechH
 
 ## 🤝 How to contribute
 
-Questios, proposals, issues and pull requests are welcome!
+Questions, proposals, issues and pull requests are welcome!
 Have a look at our [colaboration guide](./CONTRIBUTING.md) for further info.
 
 ## :memo: License
