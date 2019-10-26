@@ -100,9 +100,9 @@ We love pull requests! Here you have a brief guide about how to contribute:
 2. Introduce your changes following the syntax guidelines:
 
 - Two spaces, no tabs
-- Follow the conventions you already see in the code or run the linter for extra help.
+- Follow the conventions you already see in the code or run the linters for extra help.
 
-`yarn run lint-warn` will list the offenses, if any. `yarn run lint-fix` will automatically fix the offenses.
+`yarn run lint` and `yarn run prettylint` will list the offenses, if any. `yarn run lint --fix` or `yarn run prettylint --fix` to automatically fix the offenses of the linter.
 
 3. Commit your changes. This repo uses a pre-commit to list all the offenses (in warning mode).
 

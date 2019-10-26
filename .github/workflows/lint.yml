@@ -35,4 +35,4 @@ jobs:
       - name: Set up Prettier
         run: npm install --global prettier
       - name: Run Prettier checks
-        run: prettier -c "**/*.{md,scss,js,json}"
+        run: prettier -c "**/*.{md,scss,js,json,yaml}"
