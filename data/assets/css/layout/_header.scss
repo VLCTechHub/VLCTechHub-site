@@ -90,7 +90,7 @@
     .site-nav {
       position: relative;
       top: 0;
-      right: 0;
+      right: -2.5rem;
       border: none;
 
       .menu-icon {
@@ -103,15 +103,14 @@
 
         li {
           display: inline;
-          margin-left: $space-large;
-          padding: $space-small;
+          padding: $space-small / 2;
           text-transform: uppercase;
           font-size: 1em;
           font-weight: bold;
 
           a {
             display: inherit;
-            padding: 4px 8px;
+            padding: rem(4) rem(8);
           }
 
           &.current a {

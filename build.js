@@ -5,6 +5,7 @@ const permalinks = require('metalsmith-permalinks')
 const inplace = require('metalsmith-in-place')
 const collections = require('metalsmith-collections')
 const pagination = require('metalsmith-pagination')
+const dataLoader = require('metalsmith-data-loader')
 const uglify = require('metalsmith-uglify')
 const sass = require('metalsmith-sass')
 const writemetadata = require('metalsmith-writemetadata')
@@ -21,8 +22,16 @@ function fromNow(date) {
   return moment(date).fromNow()
 }
 
-const devBuild = (process.env.NODE_ENV || '').trim().toLowerCase() !== 'production'
-const apiRoot = devBuild ? 'http://localhost:5000/v2' : 'https://api.vlctechhub.org/v2'
+const envBuild = (process.env.NODE_ENV || 'dev').trim().toLowerCase()
+
+let apiRoot = 'http://localhost:5000/v2'
+
+if (envBuild === 'production') {
+  apiRoot = 'https://api.vlctechhub.org/v2'
+} else if (envBuild === 'docker') {
+  apiRoot = 'http://api:5000/v2'
+}
+
 const version = git.short()
 
 Metalsmith(__dirname)
@@ -59,6 +68,12 @@ Metalsmith(__dirname)
         noPageOne: true,
         path: 'events/past/page/:num/index.html'
       }
+    })
+  )
+  .use(
+    dataLoader({
+      dataProperty: 'datasource',
+      removeSource: true
     })
   )
   .use(markdown())

@@ -1,0 +1,17 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.icon-meetup:hover {
+  fill: #ed1c40;
+}
+
+.icon-twitter:hover {
+  fill: #1da1f2;
+}
+
+.icon-web:hover {
+  fill: $brand-color;
+}

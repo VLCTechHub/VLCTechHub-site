@@ -1,0 +1,72 @@
+version: "3.7"
+
+services:
+
+  api:
+    image: vlctechhub/api:latest
+    volumes:
+      - type: bind
+        source: ../VLCTechHub-api #WIP
+        target: /app
+        consistency: delegated
+      - type: volume
+        source: bundle
+        target: /usr/local/bundle
+    tmpfs:
+      - /app/tmp:exec
+    ports:
+      - "5000:5000"
+    networks:
+      default:
+        aliases:
+          - api.vlctechhub.local
+    environment:
+      - RACK_ENV=development
+      - PORT=5000
+      - MONGODB_URI=mongodb://mongo:27017/vlctechhub-dev
+      - TEST_MONGODB_URI=mongodb://mongo:27017/vlctechhub-test
+      - SENDGRID_PASSWORD
+      - SENDGRID_USERNAME
+      - EMAIL_FOR_PUBLICATION
+      - EMAIL_FOR_BROADCAST
+      - TWITTER_CONSUMER_KEY
+      - TWITTER_CONSUMER_SECRET
+      - TWITTER_ACCESS_TOKEN
+      - TWITTER_ACCESS_SECRET
+      - NEW_RELIC_LICENSE_KEY
+    depends_on:
+      - mongo
+    command:
+        ["bash", "-c", "(bundle check || bundle install) && bundle exec rake mongo:prepare && bundle exec rake up"]
+
+  mongo:
+    image: mongo:3.6.12
+    volumes:
+      - type: volume
+        source: data
+        target: /data/db
+
+  site:
+    build:
+      context: .
+      network: host
+      # Uncomment if you want to build production image
+      #args:
+      #- NODE_ENV=production
+      args:
+        - 'NODE_ENV=docker'
+    image: vlctechhub/site:latest
+    ports:
+        - "8080:8080"
+    networks:
+      default:
+        aliases:
+          - site.vlctechhub.local
+    depends_on:
+      - api
+    command:
+        ["yarn", "serve"]
+
+volumes:
+  data:
+  bundle:
