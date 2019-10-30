@@ -22,6 +22,19 @@
         "bug",
         "question"
       ]
+    },
+    {
+      "login": "esebastian",
+      "name": "Eduardo Sebastian",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/577074?v=4",
+      "profile": "https://github.com/esebastian",
+      "contributions": [
+        "code",
+        "doc",
+        "review",
+        "bug",
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 5

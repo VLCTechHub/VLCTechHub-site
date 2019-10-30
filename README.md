@@ -31,6 +31,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/hell03610"><img src="https://avatars3.githubusercontent.com/u/581607?v=4" width="120px;" alt="hell03610"/><br /><sub><b>hell03610</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=hell03610" title="Code">💻</a> <a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=hell03610" title="Documentation">📖</a> <a href="#review-hell03610" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/VLCTechHub/VLCTechHub-site/issues?q=author%3Ahell03610" title="Bug reports">🐛</a> <a href="#question-hell03610" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="https://github.com/esebastian"><img src="https://avatars3.githubusercontent.com/u/577074?v=4" width="120px;" alt="Eduardo Sebastian"/><br /><sub><b>Eduardo Sebastian</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=esebastian" title="Code">💻</a> <a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=esebastian" title="Documentation">📖</a> <a href="#review-esebastian" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/VLCTechHub/VLCTechHub-site/issues?q=author%3Aesebastian" title="Bug reports">🐛</a> <a href="#question-esebastian" title="Answering Questions">💬</a></td>
   </tr>
 </table>
 
