@@ -1,7 +1,5 @@
 [![Contributors](https://img.shields.io/github/contributors/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/contributors/VLCTechHub/VLCTechHub-site)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Code style](https://img.shields.io/badge/code%20style-prettier-ff69b4)](https://img.shields.io/badge/code%20style-prettier-ff69b4)
 [![Hacktoberfest](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)
 
@@ -31,6 +29,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/hell03610"><img src="https://avatars3.githubusercontent.com/u/581607?v=4" width="120px;" alt="hell03610"/><br /><sub><b>hell03610</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=hell03610" title="Code">💻</a> <a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=hell03610" title="Documentation">📖</a> <a href="#review-hell03610" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/VLCTechHub/VLCTechHub-site/issues?q=author%3Ahell03610" title="Bug reports">🐛</a> <a href="#question-hell03610" title="Answering Questions">💬</a></td>
+  </tr>
+</table>
+
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
