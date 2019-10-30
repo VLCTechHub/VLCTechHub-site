@@ -1,0 +1,14 @@
+{
+  "projectName": "VLCTechHub-site",
+  "projectOwner": "VLCTechHub",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 120,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 5
+}
