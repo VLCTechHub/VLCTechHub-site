@@ -37,5 +37,6 @@
       ]
     }
   ],
-  "contributorsPerLine": 5
+  "contributorsPerLine": 5,
+  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-green.svg)](#contributors-)",
 }
