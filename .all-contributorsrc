@@ -35,8 +35,17 @@
         "bug",
         "question"
       ]
+    },
+    {
+      "login": "elopez-zd",
+      "name": "Emma Lopez",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7590742?v=4",
+      "profile": "https://github.com/elopez-zd",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
-  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-green.svg)](#contributors-)",
+  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-green.svg)](#contributors-)"
 }
