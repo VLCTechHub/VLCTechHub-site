@@ -102,6 +102,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "alvarobp",
+      "name": "Álvaro Bautista Pino",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/33331?v=4",
+      "profile": "https://github.com/alvarobp",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
