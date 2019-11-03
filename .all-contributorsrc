@@ -66,6 +66,15 @@
         "bug",
         "question"
       ]
+    },
+    {
+      "login": "meegido",
+      "name": "Mercedes",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3914161?v=4",
+      "profile": "https://github.com/meegido",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,

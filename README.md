@@ -1,4 +1,4 @@
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-5-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-6-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Code style](https://img.shields.io/badge/code%20style-prettier-ff69b4)](https://img.shields.io/badge/code%20style-prettier-ff69b4)
 [![Hacktoberfest](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)
 
@@ -35,6 +35,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/elopez-zd"><img src="https://avatars3.githubusercontent.com/u/7590742?v=4" width="120px;" alt="Emma Lopez"/><br /><sub><b>Emma Lopez</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=elopez-zd" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/elmendalerenda"><img src="https://avatars1.githubusercontent.com/u/577898?v=4" width="120px;" alt="Miguel Ángel Fernández"/><br /><sub><b>Miguel Ángel Fernández</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=elmendalerenda" title="Code">💻</a></td>
     <td align="center"><a href="http://davidhernandez.info"><img src="https://avatars3.githubusercontent.com/u/877002?v=4" width="120px;" alt="David Hernández"/><br /><sub><b>David Hernández</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=DavidHernandez" title="Code">💻</a> <a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=DavidHernandez" title="Documentation">📖</a> <a href="#review-DavidHernandez" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/VLCTechHub/VLCTechHub-site/issues?q=author%3ADavidHernandez" title="Bug reports">🐛</a> <a href="#question-DavidHernandez" title="Answering Questions">💬</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/meegido"><img src="https://avatars0.githubusercontent.com/u/3914161?v=4" width="120px;" alt="Mercedes"/><br /><sub><b>Mercedes</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=meegido" title="Code">💻</a></td>
   </tr>
 </table>
 
