@@ -183,6 +183,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "adrienluitot",
+      "name": "Adrien Luitot",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/23219818?v=4",
+      "profile": "https://adrien-luitot.fr",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
