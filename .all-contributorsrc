@@ -111,6 +111,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Pardiez",
+      "name": "David",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2436316?v=4",
+      "profile": "https://github.com/Pardiez",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
