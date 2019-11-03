@@ -120,6 +120,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Agreon",
+      "name": "Daniel Huth",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4455258?v=4",
+      "profile": "http://agreon.de",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
