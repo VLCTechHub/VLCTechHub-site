@@ -1,4 +1,4 @@
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-15-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-16-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Code style](https://img.shields.io/badge/code%20style-prettier-ff69b4)](https://img.shields.io/badge/code%20style-prettier-ff69b4)
 [![Hacktoberfest](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)
 
@@ -49,6 +49,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/myilm"><img src="https://avatars1.githubusercontent.com/u/11264488?v=4" width="120px;" alt="Zahid"/><br /><sub><b>Zahid</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=myilm" title="Code">💻</a></td>
     <td align="center"><a href="http://mluisamc.github.io"><img src="https://avatars1.githubusercontent.com/u/12004720?v=4" width="120px;" alt="mluisamc"/><br /><sub><b>mluisamc</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=mluisamc" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/lukasleeyo"><img src="https://avatars2.githubusercontent.com/u/19226196?v=4" width="120px;" alt="Lukas Lee"/><br /><sub><b>Lukas Lee</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=lukasleeyo" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/ha87wk"><img src="https://avatars0.githubusercontent.com/u/12788325?v=4" width="120px;" alt="Alexander Xavier Cubas Pérez"/><br /><sub><b>Alexander Xavier Cubas Pérez</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=ha87wk" title="Code">💻</a></td>
   </tr>
 </table>
 
