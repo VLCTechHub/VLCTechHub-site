@@ -210,6 +210,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "AsterYujano",
+      "name": "François",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32224751?v=4",
+      "profile": "http://blog.lepape.me",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,

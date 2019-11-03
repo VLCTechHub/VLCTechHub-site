@@ -1,4 +1,4 @@
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-21-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-22-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Code style](https://img.shields.io/badge/code%20style-prettier-ff69b4)](https://img.shields.io/badge/code%20style-prettier-ff69b4)
 [![Hacktoberfest](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)
 
@@ -59,6 +59,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/JotaMarti"><img src="https://avatars1.githubusercontent.com/u/48419739?v=4" width="120px;" alt="JotaMarti"/><br /><sub><b>JotaMarti</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=JotaMarti" title="Code">💻</a></td>
+    <td align="center"><a href="http://blog.lepape.me"><img src="https://avatars1.githubusercontent.com/u/32224751?v=4" width="120px;" alt="François"/><br /><sub><b>François</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=AsterYujano" title="Code">💻</a></td>
   </tr>
 </table>
 
