@@ -84,6 +84,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jguitar",
+      "name": "Juan F. Pérez",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/761794?v=4",
+      "profile": "https://twitter.com/jguitar_",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
