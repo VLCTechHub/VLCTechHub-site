@@ -1,4 +1,4 @@
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-13-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-14-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Code style](https://img.shields.io/badge/code%20style-prettier-ff69b4)](https://img.shields.io/badge/code%20style-prettier-ff69b4)
 [![Hacktoberfest](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)
 
@@ -47,6 +47,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Pardiez"><img src="https://avatars2.githubusercontent.com/u/2436316?v=4" width="120px;" alt="David"/><br /><sub><b>David</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=Pardiez" title="Code">💻</a></td>
     <td align="center"><a href="http://agreon.de"><img src="https://avatars3.githubusercontent.com/u/4455258?v=4" width="120px;" alt="Daniel Huth"/><br /><sub><b>Daniel Huth</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=Agreon" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/myilm"><img src="https://avatars1.githubusercontent.com/u/11264488?v=4" width="120px;" alt="Zahid"/><br /><sub><b>Zahid</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=myilm" title="Code">💻</a></td>
+    <td align="center"><a href="http://mluisamc.github.io"><img src="https://avatars1.githubusercontent.com/u/12004720?v=4" width="120px;" alt="mluisamc"/><br /><sub><b>mluisamc</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=mluisamc" title="Code">💻</a></td>
   </tr>
 </table>
 
