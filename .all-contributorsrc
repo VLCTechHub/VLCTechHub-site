@@ -53,6 +53,19 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "DavidHernandez",
+      "name": "David Hernández",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/877002?v=4",
+      "profile": "http://davidhernandez.info",
+      "contributions": [
+        "code",
+        "doc",
+        "review",
+        "bug",
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 5,
