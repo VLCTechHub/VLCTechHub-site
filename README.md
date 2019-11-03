@@ -1,4 +1,4 @@
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-19-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-20-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Code style](https://img.shields.io/badge/code%20style-prettier-ff69b4)](https://img.shields.io/badge/code%20style-prettier-ff69b4)
 [![Hacktoberfest](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)
 
@@ -55,6 +55,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://andoniaf.github.io/"><img src="https://avatars3.githubusercontent.com/u/14891798?v=4" width="120px;" alt="Andoni Alonso "/><br /><sub><b>Andoni Alonso </b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=andoniaf" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/alober8"><img src="https://avatars0.githubusercontent.com/u/53255969?v=4" width="120px;" alt="alober8"/><br /><sub><b>alober8</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=alober8" title="Code">💻</a></td>
     <td align="center"><a href="https://adrien-luitot.fr"><img src="https://avatars0.githubusercontent.com/u/23219818?v=4" width="120px;" alt="Adrien Luitot"/><br /><sub><b>Adrien Luitot</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=adrienluitot" title="Code">💻</a></td>
+    <td align="center"><a href="http://xeoth.me"><img src="https://avatars3.githubusercontent.com/u/46075322?v=4" width="120px;" alt="Xeoth"/><br /><sub><b>Xeoth</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=Xeoth" title="Code">💻</a></td>
   </tr>
 </table>
 
