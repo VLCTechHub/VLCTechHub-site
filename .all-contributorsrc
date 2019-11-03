@@ -75,6 +75,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jonastg",
+      "name": "Jonas Talavera",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2404262?v=4",
+      "profile": "https://github.com/jonastg",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,

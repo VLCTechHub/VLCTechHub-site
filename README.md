@@ -1,4 +1,4 @@
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-6-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-7-green.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Code style](https://img.shields.io/badge/code%20style-prettier-ff69b4)](https://img.shields.io/badge/code%20style-prettier-ff69b4)
 [![Hacktoberfest](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)](https://img.shields.io/github/hacktoberfest/2019/VLCTechHub/VLCTechHub-site)
 
@@ -38,6 +38,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/meegido"><img src="https://avatars0.githubusercontent.com/u/3914161?v=4" width="120px;" alt="Mercedes"/><br /><sub><b>Mercedes</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=meegido" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jonastg"><img src="https://avatars2.githubusercontent.com/u/2404262?v=4" width="120px;" alt="Jonas Talavera"/><br /><sub><b>Jonas Talavera</b></sub></a><br /><a href="https://github.com/VLCTechHub/VLCTechHub-site/commits?author=jonastg" title="Code">💻</a></td>
   </tr>
 </table>
 
