@@ -21,7 +21,6 @@ $thumbnailSizeMobile: 75px;
   width: 100%;
 
   @include size-medium {
-    width: auto;
     max-width: 300px;
     margin-bottom: $space-large;
     justify-self: center;
@@ -112,6 +111,8 @@ $thumbnailSizeMobile: 75px;
     color: black;
     background-color: black;
     margin: $space-medium auto $space-large auto;
+    clear: both;
+
     @include size-medium {
       margin: $space-large auto $space-larger auto;
     }
