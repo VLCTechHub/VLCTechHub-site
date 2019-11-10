@@ -17,18 +17,45 @@ $thumbnailSizeMobile: 75px;
 .event-summary {
   position: relative;
   justify-self: left;
-  margin-bottom: $space-medium;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 
   @include size-medium {
-    width: auto;
     max-width: 300px;
     margin-bottom: $space-large;
     justify-self: center;
+    display: block;
   }
 
   @include size-large {
     justify-self: left;
+  }
+
+  .logo-event {
+    flex: 0 0 25;
+    max-width: 25%;
+
+    img {
+      width: 100%;
+      outline: 4px solid $black;
+      background-color: whitesmoke;
+      transition: outline 120ms ease-in-out;
+
+      @include size-medium {
+        width: 300px;
+        height: 300px;
+      }
+    }
+    &:hover img {
+      outline: 4px solid $brand-color;
+    }
+  }
+
+  .description-event {
+    flex: 0 0 70%;
+    max-width: 70%;
+    margin-left: 5%;
   }
 
   h1 {
@@ -54,56 +81,12 @@ $thumbnailSizeMobile: 75px;
         }
       }
     }
-
-    .reset-link {
-      margin-bottom: $space-small;
-      background-image: none;
-      float: left;
-      margin-right: $space-medium;
-      max-width: $thumbnailSizeMobile;
-
-      @include size-medium {
-        float: none;
-        margin-right: 0;
-        max-width: auto;
-      }
-
-      &:hover {
-        background-image: none;
-        padding: 0;
-      }
-    }
-
-    img {
-      width: 100%;
-      min-width: 50px;
-      outline: 4px solid $black;
-      border-radius: 50%;
-
-      background-color: whitesmoke;
-      transition: outline 120ms ease-in-out;
-
-      @include size-medium {
-        max-width: 300px;
-        width: 300px;
-        height: 300px;
-      }
-    }
-    &:hover img {
-      outline: 4px solid $brand-color;
-    }
   }
 
   p {
     text-align: left;
     color: $text-color-secondary;
     font-size: 0.9rem;
-    margin-left: $thumbnailSizeMobile;
-    padding-left: $space-medium;
-    @include size-medium {
-      margin-left: 0;
-      padding-left: 0;
-    }
   }
 
   hr {
@@ -111,7 +94,8 @@ $thumbnailSizeMobile: 75px;
     height: 2px;
     color: black;
     background-color: black;
-    margin: $space-medium auto $space-large auto;
+    margin: $space-medium auto $space-medium auto;
+
     @include size-medium {
       margin: $space-large auto $space-larger auto;
     }
