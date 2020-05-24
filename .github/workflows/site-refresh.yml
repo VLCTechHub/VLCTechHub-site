@@ -3,7 +3,7 @@ name: Refresh site in Surge
 on:
   repository_dispatch:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/15 7-23 * * *"
 
 jobs:
   refresh:
