@@ -2,17 +2,17 @@ Site.Events = Site.Events || {}
 Site.Events.New = {}
 Site.Events.New.init = function() {
   let DST = {
-    2019: { start: new Date(2019, 2, 31), end: new Date(2019, 9, 27) },
-    2020: { start: new Date(2020, 2, 29), end: new Date(2020, 9, 25) },
-    2021: { start: new Date(2021, 2, 28), end: new Date(2021, 9, 31) },
-    2022: { start: new Date(2022, 2, 27), end: new Date(2022, 9, 30) },
-    2023: { start: new Date(2023, 2, 26), end: new Date(2023, 9, 29) },
-    2024: { start: new Date(2024, 2, 31), end: new Date(2024, 9, 27) },
-    2025: { start: new Date(2025, 2, 30), end: new Date(2025, 9, 26) },
-    2026: { start: new Date(2026, 2, 29), end: new Date(2026, 9, 25) },
-    2027: { start: new Date(2027, 2, 28), end: new Date(2027, 9, 31) },
-    2028: { start: new Date(2028, 2, 26), end: new Date(2028, 9, 29) },
-    2029: { start: new Date(2029, 2, 25), end: new Date(2029, 9, 28) }
+    2019: { start: new Date(2019, 2, 31, 2), end: new Date(2019, 9, 27, 3) },
+    2020: { start: new Date(2020, 2, 29, 2), end: new Date(2020, 9, 25, 3) },
+    2021: { start: new Date(2021, 2, 28, 2), end: new Date(2021, 9, 31, 3) },
+    2022: { start: new Date(2022, 2, 27, 2), end: new Date(2022, 9, 30, 3) },
+    2023: { start: new Date(2023, 2, 26, 2), end: new Date(2023, 9, 29, 3) },
+    2024: { start: new Date(2024, 2, 31, 2), end: new Date(2024, 9, 27, 3) },
+    2025: { start: new Date(2025, 2, 30, 2), end: new Date(2025, 9, 26, 3) },
+    2026: { start: new Date(2026, 2, 29, 2), end: new Date(2026, 9, 25, 3) },
+    2027: { start: new Date(2027, 2, 28, 2), end: new Date(2027, 9, 31, 3) },
+    2028: { start: new Date(2028, 2, 26, 2), end: new Date(2028, 9, 29, 3) },
+    2029: { start: new Date(2029, 2, 25, 2), end: new Date(2029, 9, 28, 3) }
   }
 
   function $E(selector) {
@@ -23,7 +23,7 @@ Site.Events.New.init = function() {
     let utcOffset = 1
 
     let dst = DST[date.getUTCFullYear()]
-    if (dst && date > dst.start && date < dst.end) {
+    if (dst && date >= dst.start && date < dst.end) {
       utcOffset = 2
     }
     return utcOffset
