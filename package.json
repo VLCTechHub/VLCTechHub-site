@@ -5,7 +5,7 @@
   "repository": "git@github.com:VLCTechHub/VLCTechHub-site.git",
   "license": "MIT",
   "dependencies": {
-    "feed": "^4.0.0",
+    "feed": "^4.1.0",
     "git-rev-sync": "^1.12.0",
     "jstransformer-nunjucks": "^1.0.0",
     "metalsmith": "^2.3.0",
@@ -13,44 +13,37 @@
     "metalsmith-data-loader": "^1.1.3",
     "metalsmith-in-place": "^4.4.0",
     "metalsmith-layouts": "^2.3.1",
-    "metalsmith-markdown": "^1.2.0",
-    "metalsmith-pagination": "^1.4.1",
+    "metalsmith-markdown": "^1.3.0",
+    "metalsmith-pagination": "^1.5.0",
     "metalsmith-permalinks": "^2.2.0",
-    "metalsmith-sass": "^1.6.0",
-    "metalsmith-uglify": "^2.3.2",
+    "metalsmith-sass": "^1.7.0",
+    "metalsmith-uglify": "^2.3.4",
     "metalsmith-writemetadata": "^0.4.5",
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.31",
     "node-fetch": "^2.6.0",
-    "nunjucks": "^3.2.0",
+    "nunjucks": "^3.2.1",
     "nunjucks-moment-timezone-filter": "^1.0.1",
-    "transliteration": "^2.1.3"
+    "transliteration": "^2.1.11"
   },
   "scripts": {
     "build": "node build.js",
+    "lint": "./node_modules/eslint/bin/eslint.js --ext .njk,.js data/ templates/ lib/",
+    "prettylint": "./node_modules/prettylint/bin/cli.js \"data/**/*.{md,scss,js,json,yaml}\" \"lib/**/*.js\"",
     "report-published": "node report-published.js",
-    "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix && ./node_modules/prettier/bin-prettier.js --write \"**/*.{md,scss,js,json}\"",
-    "lint-warn": "./node_modules/eslint/bin/eslint.js . && ./node_modules/prettier/bin-prettier.js --check \"**/*.{md,scss,js,json}\""
+    "serve": "http-server dist/"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo \"\r\n    Running a pre-commit linter in *warn mode*.\r\n    To automatically fix any offense run 'yarn run lint-fix' on the command line before you commit.\r\n\" && lint-staged"
+      "pre-commit": "echo \"\r\nRunning pre-commit linters...\r\nHINT: To automatically fix any offense run 'yarn run lint --fix' or 'yarn run prettylint --fix' on the command line before you commit.\r\n\" && yarn run lint && yarn run prettylint"
     }
   },
-  "lint-staged": {
-    "*.{js}": [
-      "./node_modules/eslint/bin/eslint.js",
-      "./node_modules/prettier/bin-prettier.js --check",
-      "git add"
-    ],
-    "*.{md,json,scss}": [
-      "./node_modules/prettier/bin-prettier.js --check",
-      "git add"
-    ]
-  },
   "devDependencies": {
-    "eslint": "^6.4.0",
-    "husky": "^3.0.8",
-    "lint-staged": "^9.4.1",
-    "prettier": "^1.18.2"
+    "all-contributors-cli": "^6.9.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-html": "^6.0.0",
+    "http-server": "^0.12.3",
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1",
+    "prettylint": "^1.0.0"
   }
 }

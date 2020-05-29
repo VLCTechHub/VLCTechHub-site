@@ -23,7 +23,7 @@
     <form onsubmit="return false;">
     {% set required = true %}
     {{textInput('title', 'Título', required)}}
-    {{dateInput('startDate', 'Fecha', required)}}
+    {{dateInput('startDate', 'Fecha', required, 'Si tu navegador no soporta el control de tipo fecha, escríbela utilizando el formato yyyy-mm-dd.')}}
     {{timeInput('startTime', 'Hora', required, 'Formato hh:mm. Si el control pide tres valores, el tercer valor establece AM o PM.')}}
     {{textArea('description', 'Descripción', required, '', 'Admite el uso de Markdown', 'https://www.markdownguide.org/cheat-sheet/')}}
     {{textInput('sourceUrl', 'Link', required)}}
@@ -32,6 +32,6 @@
   </form>
   </article>
   <script nonce="{{nonce}}">
-    Site.Events.New.init();
+    Site.Events.New.init()
   </script>
 {% endblock %}

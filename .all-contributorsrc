@@ -1,0 +1,226 @@
+{
+  "projectName": "VLCTechHub-site",
+  "projectOwner": "VLCTechHub",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 120,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "hell03610",
+      "name": "hell03610",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/581607?v=4",
+      "profile": "https://github.com/hell03610",
+      "contributions": [
+        "code",
+        "doc",
+        "review",
+        "bug",
+        "question"
+      ]
+    },
+    {
+      "login": "esebastian",
+      "name": "Eduardo Sebastian",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/577074?v=4",
+      "profile": "https://github.com/esebastian",
+      "contributions": [
+        "code",
+        "doc",
+        "review",
+        "bug",
+        "question"
+      ]
+    },
+    {
+      "login": "elopez-zd",
+      "name": "Emma Lopez",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7590742?v=4",
+      "profile": "https://github.com/elopez-zd",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "elmendalerenda",
+      "name": "Miguel Ángel Fernández",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/577898?v=4",
+      "profile": "https://github.com/elmendalerenda",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "DavidHernandez",
+      "name": "David Hernández",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/877002?v=4",
+      "profile": "http://davidhernandez.info",
+      "contributions": [
+        "code",
+        "doc",
+        "review",
+        "bug",
+        "question"
+      ]
+    },
+    {
+      "login": "meegido",
+      "name": "Mercedes",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3914161?v=4",
+      "profile": "https://github.com/meegido",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jonastg",
+      "name": "Jonas Talavera",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2404262?v=4",
+      "profile": "https://github.com/jonastg",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jguitar",
+      "name": "Juan F. Pérez",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/761794?v=4",
+      "profile": "https://twitter.com/jguitar_",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jantznick",
+      "name": "Nick Jantz",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/18474500?v=4",
+      "profile": "http://nickjantz.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "alvarobp",
+      "name": "Álvaro Bautista Pino",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/33331?v=4",
+      "profile": "https://github.com/alvarobp",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Pardiez",
+      "name": "David",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2436316?v=4",
+      "profile": "https://github.com/Pardiez",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Agreon",
+      "name": "Daniel Huth",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4455258?v=4",
+      "profile": "http://agreon.de",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "myilm",
+      "name": "Zahid",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/11264488?v=4",
+      "profile": "https://github.com/myilm",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mluisamc",
+      "name": "mluisamc",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12004720?v=4",
+      "profile": "http://mluisamc.github.io",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "lukasleeyo",
+      "name": "Lukas Lee",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/19226196?v=4",
+      "profile": "https://github.com/lukasleeyo",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ha87wk",
+      "name": "Alexander Xavier Cubas Pérez",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/12788325?v=4",
+      "profile": "https://github.com/ha87wk",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "andoniaf",
+      "name": "Andoni Alonso ",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/14891798?v=4",
+      "profile": "https://andoniaf.github.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "alober8",
+      "name": "alober8",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/53255969?v=4",
+      "profile": "https://github.com/alober8",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "adrienluitot",
+      "name": "Adrien Luitot",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/23219818?v=4",
+      "profile": "https://adrien-luitot.fr",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Xeoth",
+      "name": "Xeoth",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46075322?v=4",
+      "profile": "http://xeoth.me",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "JotaMarti",
+      "name": "JotaMarti",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/48419739?v=4",
+      "profile": "https://github.com/JotaMarti",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "AsterYujano",
+      "name": "François",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32224751?v=4",
+      "profile": "http://blog.lepape.me",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 5,
+  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-green.svg)](#contributors-)"
+}

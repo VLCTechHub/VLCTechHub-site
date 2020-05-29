@@ -1,5 +1,11 @@
 {
   "extends": "eslint:recommended",
+  "plugins": ["html"],
+  "settings": {
+    "html/html-extensions": [".njk"],
+    "html/indent": "+2",
+    "html/report-bad-indent": "warn"
+  },
   "env": {
     "es6": true,
     "node": true,

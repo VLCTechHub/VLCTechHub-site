@@ -21,6 +21,7 @@ form {
 input[type='text'],
 input[type='time'],
 input[type='date'],
+input[type='email'],
 textarea,
 fieldset {
   padding: $space-small;
@@ -41,6 +42,7 @@ form[data-submit-attempted='true'] {
   input[type='text'],
   input[type='time'],
   input[type='date'],
+  input[type='email'],
   textarea,
   fieldset {
     &:invalid {

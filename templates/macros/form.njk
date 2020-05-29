@@ -2,12 +2,16 @@
   {{_input("text", name, label, required, hint)}}
 {% endmacro %}
 
+{% macro emailInput(name, label, required, hint) %}
+  {{_input("email", name, label, required, hint)}}
+{% endmacro %}
+
 {% macro timeInput(name, label, required, hint) %}
   {{_input("time", name, label, required, hint)}}
 {% endmacro %}
 
 {% macro dateInput(name, label, required, hint) %}
-  {{_input("date", name, label, required, hint)}}
+  {{_input("date", name, label, required, hint, '(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))')}}
 {% endmacro %}
 
 {% macro textArea(name, label, required, hint, linkHint, link) %}
@@ -18,7 +22,7 @@
         <abbr title="Campo obligatorio">*</abbr>
       {% endif %}
     </label>
-    <textarea id="{{name}}" name="{{name}}" rows=10 {%if required %}required{%endif%}></textarea>
+    <textarea id="{{name}}" name="{{name}}" rows=10 {% if required %}required{% endif %}></textarea>
     {% if hint %}
       <span class="hint">{{hint}}</span>
     {% endif %}
@@ -29,7 +33,7 @@
   </p>
 {% endmacro %}
 
-{% macro _input(type, name, label, required, hint) %}
+{% macro _input(type, name, label, required, hint, pattern) %}
   <p>
     <label for="{{name}}">
       <span>{{label}}</span>
@@ -37,7 +41,7 @@
         <abbr title="Campo obligatorio">*</abbr>
       {% endif %}
     </label>
-    <input id="{{name}}" name="{{name}}" type="{{type}}" {%if required %}required{%endif%}></input>
+    <input id="{{name}}" name="{{name}}" type="{{type}}" {% if required %}required{% endif %} {% if pattern %}pattern="{{pattern}}"{% endif %}></input>
     {% if hint %}
       <span class="hint">{{hint}}</span>
     {% endif %}
