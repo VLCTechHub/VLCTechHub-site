@@ -9,5 +9,12 @@
 @import 'components/generics', 'components/button', 'components/event-summary', 'components/form', 'components/icons',
   'components/tag';
 
-@import 'pages/communities', 'pages/event-new', 'pages/event-next', 'pages/event', 'pages/job-board', 'pages/job-new',
-  'pages/job', 'pages/404';
+@import 'pages/communities';
+@import 'pages/event-new';
+@import 'pages/event-next';
+@import 'pages/event';
+@import 'pages/faq';
+@import 'pages/job-board';
+@import 'pages/job-new';
+@import 'pages/job';
+@import 'pages/404';

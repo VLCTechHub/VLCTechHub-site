@@ -9,32 +9,26 @@ on:
       - master
 
 jobs:
-  ESLint:
+  linting:
+    name: Linting
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v1
-      - name: Set up Node 10.x
+        uses: actions/checkout@v2
+      - name: Set up Node 14.x
         uses: actions/setup-node@v1
         with:
-          node-version: 10.x
-      - name: Set up ESLint
-        run: npm install --global eslint
-      - name: Set up ESLint html plugin
-        run: npm install eslint-plugin-html@latest --save-dev
-      - name: Run ESLint checks
-        run: eslint --ext .njk,.js data/ lib/ templates/
-
-  Prettier:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v1
-      - name: Setup up Node 10.x
-        uses: actions/setup-node@v1
+          node-version: '14'
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        id: cache-node_modules
         with:
-          node-version: 10.x
-      - name: Set up Prettier
-        run: npm install --global prettier
-      - name: Run Prettier checks
-        run: prettier -c "**/*.{md,scss,js,json,yaml}"
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        if: ${{ steps.cache-node_modules.outputs.cache-hit != 'true' }}
+        run: yarn install
+      - name: Syntax linting
+        run: yarn run lint
+      - name: Format linting
+        run: yarn run prettylint
