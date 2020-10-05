@@ -103,6 +103,16 @@
   web: https://groups.drupal.org/comunidad-valenciana
   tags:
     - drupal
+- title: Emerging Tech Valencia
+  description: Grupo enfocado a tecnologías emergentes como contenedores, cloud computing, *aaS, SaaS, IaaS, siempre enfocadas a open source.
+  twitter:
+  meetup: https://www.meetup.com/es-ES/Emerging-Tech-Valencia/
+  web:
+  tags:
+    - opensource
+    - kubernetes
+    - docker
+    - devops
 - title: FemDevs
   description: Asociación que persigue dar espacio y visibilidad a mujeres profesionales, estudiantes o interesadas en el desarrollo de videojuegos
   twitter: FemDevs
