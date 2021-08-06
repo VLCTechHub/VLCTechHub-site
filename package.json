@@ -24,14 +24,16 @@
     "nunjucks": "^3.2.3",
     "nunjucks-moment-timezone-filter": "^1.0.3",
     "sanitize-html": "^2.4.0",
-    "transliteration": "^2.2.0"
+    "tar": "^4.4.2",
+    "transliteration": "^2.2.0",
+    "trim-newlines": "^3.0.1"
   },
   "scripts": {
     "build": "node build.js",
     "lint": "./node_modules/eslint/bin/eslint.js --ext .njk,.js data/ templates/ lib/",
     "prettylint": "./node_modules/prettylint/bin/cli.js \"data/**/*.{md,scss,js,json,yaml}\" \"lib/**/*.js\"",
     "report-published": "node report-published.js",
-    "serve": "http-server dist/"
+    "serve": "serve -n -p 8080 dist/"
   },
   "husky": {
     "hooks": {
@@ -42,9 +44,9 @@
     "all-contributors-cli": "^6.20.0",
     "eslint": "^7.32.0",
     "eslint-plugin-html": "^6.1.2",
-    "http-server": "^0.12.3",
     "husky": "^7.0.1",
     "prettier": "^2.3.2",
-    "prettylint": "^1.0.0"
+    "prettylint": "^1.0.0",
+    "serve": "^12.0.0"
   }
 }
