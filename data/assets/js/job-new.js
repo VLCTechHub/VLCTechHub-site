@@ -1,6 +1,6 @@
 Site.Job = Site.Job || {}
 Site.Job.New = {}
-Site.Job.New.init = function() {
+Site.Job.New.init = function () {
   function $E(selector) {
     return document.querySelector(selector)
   }
@@ -15,10 +15,10 @@ Site.Job.New.init = function() {
       company: {
         name: $E('#companyName').value,
         link: $E('#companyWeb').value,
-        twitter: $E('#companyTwitter').value
+        twitter: $E('#companyTwitter').value,
       },
       tags: ($E('#keywords').value || '').split(','),
-      contact_email: $E('#companyContact').value
+      contact_email: $E('#companyContact').value,
     }
     return data
   }
@@ -40,9 +40,9 @@ Site.Job.New.init = function() {
       '#companyName',
       '#companyWeb',
       '#companyTwitter',
-      '#companyContact'
+      '#companyContact',
     ]
-    fields.forEach(field => {
+    fields.forEach((field) => {
       $E(field).value = ''
     })
     $form.removeAttribute('data-submit-attempted')
@@ -76,9 +76,9 @@ Site.Job.New.init = function() {
       mode: 'cors',
       cache: 'no-cache',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(buildJobAPIData())
+      body: JSON.stringify(buildJobAPIData()),
     })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error('Response not ok')
         }

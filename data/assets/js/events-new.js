@@ -1,6 +1,6 @@
 Site.Events = Site.Events || {}
 Site.Events.New = {}
-Site.Events.New.init = function() {
+Site.Events.New.init = function () {
   let DST = {
     2019: { start: new Date(2019, 2, 31, 2), end: new Date(2019, 9, 27, 3) },
     2020: { start: new Date(2020, 2, 29, 2), end: new Date(2020, 9, 25, 3) },
@@ -12,7 +12,7 @@ Site.Events.New.init = function() {
     2026: { start: new Date(2026, 2, 29, 2), end: new Date(2026, 9, 25, 3) },
     2027: { start: new Date(2027, 2, 28, 2), end: new Date(2027, 9, 31, 3) },
     2028: { start: new Date(2028, 2, 26, 2), end: new Date(2028, 9, 29, 3) },
-    2029: { start: new Date(2029, 2, 25, 2), end: new Date(2029, 9, 28, 3) }
+    2029: { start: new Date(2029, 2, 25, 2), end: new Date(2029, 9, 28, 3) },
   }
 
   function $E(selector) {
@@ -42,14 +42,14 @@ Site.Events.New.init = function() {
       description: $E('#description').value,
       link: $E('#sourceUrl').value,
       hashtag: $E('#hashtag').value,
-      date: buildEventDateTime()
+      date: buildEventDateTime(),
     }
     return data
   }
 
   function clearForm() {
     let fields = ['#title', '#description', '#startDate', '#startTime', '#sourceUrl', '#hashtag']
-    fields.forEach(field => {
+    fields.forEach((field) => {
       $E(field).value = ''
     })
     $form.removeAttribute('data-submit-attempted')
@@ -83,9 +83,9 @@ Site.Events.New.init = function() {
       mode: 'cors',
       cache: 'no-cache',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(buildEventAPIData())
+      body: JSON.stringify(buildEventAPIData()),
     })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error('Response not ok')
         }

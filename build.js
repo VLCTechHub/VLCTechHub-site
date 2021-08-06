@@ -1,7 +1,7 @@
 const Metalsmith = require('metalsmith')
 const markdown = require('metalsmith-markdown')
 const layouts = require('metalsmith-layouts')
-const permalinks = require('metalsmith-permalinks')
+const permalinks = require('@metalsmith/permalinks')
 const inplace = require('metalsmith-in-place')
 const collections = require('metalsmith-collections')
 const pagination = require('metalsmith-pagination')
@@ -40,11 +40,11 @@ Metalsmith(__dirname)
       ogTitle: 'VLCTechHub',
       ogDescription:
         'VLCTechHub es el hub de eventos y empleo tecnológico en Valencia: eventos de programación, coding dojos, talleres, workshops o quedadas informales para fomentar una comunidad o compartir información de base tecnológica en Valencia.',
-      ogUrl: 'https://vlctechhub.org/'
+      ogUrl: 'https://vlctechhub.org/',
     },
     apiRoot: apiRoot,
     version: git.short(),
-    nonce: Buffer.from(Math.random().toString()).toString('base64')
+    nonce: Buffer.from(Math.random().toString()).toString('base64'),
   })
   .source('./data')
   .destination('./dist')
@@ -56,7 +56,7 @@ Metalsmith(__dirname)
     collections({
       jobs: { sortBy: 'publishedAt', reverse: true },
       events: { sortBy: 'startDate' },
-      pastevents: { sortBy: 'startDate', reverse: true }
+      pastevents: { sortBy: 'startDate', reverse: true },
     })
   )
   .use(
@@ -66,36 +66,36 @@ Metalsmith(__dirname)
         layout: 'past-events.njk',
         first: 'events/past/index.html',
         noPageOne: true,
-        path: 'events/past/page/:num/index.html'
-      }
+        path: 'events/past/page/:num/index.html',
+      },
     })
   )
   .use(
     dataLoader({
       dataProperty: 'datasource',
-      removeSource: true
+      removeSource: true,
     })
   )
   .use(markdown())
   .use(
     inplace({
       engineOptions: {
-        filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate, fromNow: fromNow }
-      }
+        filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate, fromNow: fromNow },
+      },
     })
   )
   .use(
     layouts({
       engineOptions: {
-        filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate, fromNow: fromNow }
+        filters: { date: nunjucksDate.dateFilter, newDate: nunjucksDate.newDate, fromNow: fromNow },
       },
-      directory: 'templates/'
+      directory: 'templates/',
     })
   )
   .use(permalinks({}))
   .use(
     sass({
-      outputDir: 'assets/css/'
+      outputDir: 'assets/css/',
     })
   )
   .use((files, metalsmith, done) => {
@@ -109,16 +109,16 @@ Metalsmith(__dirname)
       es: true,
       concat: {
         file: `vlctechhub-${version}-min.js`,
-        root: 'assets/js'
+        root: 'assets/js',
       },
-      removeOriginal: true
+      removeOriginal: true,
     })
   )
   .use(
     rss({
       collection: 'events',
       description: 'El feed de los próximos eventos.',
-      customTitleFn: item => {
+      customTitleFn: (item) => {
         let title = moment(item.titlte).format('dddd DD [de] MMMM') + ' | ' + item.title
         if (item.twitter.handle) {
           title = title + ' por @' + item.twitter.handle
@@ -126,30 +126,30 @@ Metalsmith(__dirname)
         return title[0].toUpperCase() + title.slice(1)
       },
       pubDateAttributeName: 'startDate',
-      destination: 'events/upcoming/feed.xml'
+      destination: 'events/upcoming/feed.xml',
     })
   )
   .use(
     rss({
       collection: 'jobs',
       description: 'El feed de las ofertas de trabajo.',
-      customTitleFn: item => {
+      customTitleFn: (item) => {
         let title = item.title + ' | ' + item.companyName
         return title
       },
       pubDateAttributeName: 'publishedAt',
-      destination: 'job/board/feed.xml'
+      destination: 'job/board/feed.xml',
     })
   )
   .use(
     writemetadata({
       collections: {
         events: { output: { path: '.events-published.json' }, ignorekeys: ['contents', 'next', 'previous'] },
-        jobs: { output: { path: '.jobs-published.json' }, ignorekeys: ['contents', 'next', 'previous'] }
-      }
+        jobs: { output: { path: '.jobs-published.json' }, ignorekeys: ['contents', 'next', 'previous'] },
+      },
     })
   )
-  .build(function(err) {
+  .build(function (err) {
     if (err) {
       throw err
     }
