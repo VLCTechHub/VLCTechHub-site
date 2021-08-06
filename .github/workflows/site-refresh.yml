@@ -1,9 +1,9 @@
-name: Refresh site in Surge
+name: Refresh site
 
 on:
   repository_dispatch:
   schedule:
-    - cron: "*/15 7-23 * * *"
+    - cron: '*/15 7-23 * * *'
 
 jobs:
   refresh:
@@ -29,12 +29,14 @@ jobs:
         run: yarn run build
         env:
           NODE_ENV: production
-      - name: Publish site to Surge
-        run: npx surge --project $GITHUB_WORKSPACE/dist --domain vlctechhub.org
-        env:
-          SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
-          SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
+      - name: Publish site
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        id: publish
+        with:
+          branch: gh-pages
+          folder: dist
       - name: Report published items
+        if: ${{ steps.publish.outputs.deployment-status == 'success' }}
         run: yarn run report-published
         env:
           NODE_ENV: production
