@@ -35,6 +35,8 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+          git-config-name: vlctechhub[bot]
+          git-config-email: vlctechhub@users.noreply.github.com
       - name: Report published items
         if: ${{ steps.publish.outputs.deployment-status == 'success' }}
         run: yarn run report-published
