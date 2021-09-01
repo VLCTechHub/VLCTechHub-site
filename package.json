@@ -24,7 +24,7 @@
     "nunjucks": "^3.2.3",
     "nunjucks-moment-timezone-filter": "^1.0.3",
     "sanitize-html": "^2.4.0",
-    "tar": "^4.4.2",
+    "tar": "^4.4.18",
     "transliteration": "^2.2.0",
     "trim-newlines": "^3.0.1"
   },
