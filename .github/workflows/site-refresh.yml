@@ -37,6 +37,7 @@ jobs:
           folder: dist
           git-config-name: vlctechhub[bot]
           git-config-email: vlctechhub@users.noreply.github.com
+          single-commit: true
       - name: Report published items
         if: ${{ steps.publish.outputs.deployment-status == 'success' }}
         run: yarn run report-published
