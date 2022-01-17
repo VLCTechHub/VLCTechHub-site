@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
-      - name: Set up Node 14.x
+      - name: Set up Node 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '16'
       - name: Cache node_modules
         uses: actions/cache@v1
         id: cache-node_modules
