@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>VLCTechHub Feed</title>
+        <link>https://vlctechhub.org/</link>
+        <description>El feed de las ofertas de trabajo.</description>
+        <lastBuildDate>Fri, 18 Oct 2024 23:19:01 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>VLCTechHub</generator>
+        <language>es</language>
+    </channel>
+</rss>
