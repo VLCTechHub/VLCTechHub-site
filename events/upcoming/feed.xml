@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>VLCTechHub Feed</title>
+        <link>https://vlctechhub.org/</link>
+        <description>El feed de los próximos eventos.</description>
+        <lastBuildDate>Thu, 24 Oct 2024 23:52:31 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>VLCTechHub</generator>
+        <language>es</language>
+        <item>
+            <title><![CDATA[Jueves 24 de octubre | Introducción a SolidJS: Construyendo interfaces reactivas y rápidas por @vlcjs]]></title>
+            <link>https://vlctechhub.org/events/introduccion-a-solidjs-construyendo-interfaces-reactivas-y-rapidas-671a9b7a1b75</link>
+            <guid>https://vlctechhub.org/events/introduccion-a-solidjs-construyendo-interfaces-reactivas-y-rapidas-671a9b7a1b75</guid>
+            <pubDate>Thu, 07 Nov 2024 18:00:00 GMT</pubDate>
+            <description><![CDATA[Exploraremos los fundamentos de SolidJS, un framework JavaScript que destaca por su reactividad sin compromiso en rendimiento. Veremos cómo SolidJS se diferencia de otros frameworks populares y cómo puedes aprovechar su enfoque declarativo y eficiente para construir interfaces de usuario modernas. ¡Ideal tanto para principiantes como para quienes buscan alternativas innovadoras en el desarrollo frontend!]]></description>
+            <content:encoded><![CDATA[<p>Exploraremos los fundamentos de SolidJS, un framework JavaScript que destaca por su reactividad sin compromiso en rendimiento. Veremos cómo SolidJS se diferencia de otros frameworks populares y cómo puedes aprovechar su enfoque declarativo y eficiente para construir interfaces de usuario modernas. ¡Ideal tanto para principiantes como para quienes buscan alternativas innovadoras en el desarrollo frontend!</p>
+]]></content:encoded>
+        </item>
+    </channel>
+</rss>
