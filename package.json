@@ -22,7 +22,7 @@
     "metalsmith-sass": "2.0.0",
     "metalsmith-uglify": "2.4.0",
     "metalsmith-writemetadata": "0.4.5",
-    "moment-timezone": "0.5.34",
+    "moment-timezone": "0.5.35",
     "node-fetch": "2.6.7",
     "node-sass": "7.0.1",    
     "nunjucks": "3.2.3",
