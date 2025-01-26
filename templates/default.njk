@@ -33,6 +33,9 @@
     <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png">
     <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    {% block head %}
+      {{contents | safe }}
+    {% endblock %}
   </head>
   <body>
     {% include "./layout/header.njk" %}

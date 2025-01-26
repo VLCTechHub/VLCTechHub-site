@@ -4,6 +4,10 @@
 {% extends "./templates/default.njk" %}
 {% from "./templates/macros/event.njk" import image, dayOfWeek, time, shortDate, dateBadge %}
 
+{% block head %}
+  <meta http-equiv="refresh" content="5; url="https://vlctechhub.org/events/past/">
+{% endblock %}
+
 {% block main %}
   <article id="next-events">
     <header>
