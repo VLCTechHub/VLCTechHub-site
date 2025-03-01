@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Apache Kafka®: advice from the trenches or how to successfully fail! | VLCTechHub</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello Kafkateers!
+
+In order to do our part to help flatten the curve of the spread of COVID-19, we are moving all of our meetups online for the time being. Please find the details to join this meetup below.
+
+Make sure to join our Community Slack on the #events channel (use a thread for this meetup)..."/>
+    <meta name="og:title" content="Apache Kafka®: advice from the trenches or how to successfully fail!"/>
+    <meta name="og:description" content="Hello Kafkateers!
+
+In order to do our part to help flatten the curve of the spread of COVID-19, we are moving all of our meetups online for the time being. Please find the details to join this meetup below.
+
+Make sure to join our Community Slack on the #events channel (use a thread for this meetup)..."/>
+    <meta name="og:url" content="https://api.vlctechhub.org/v2events/apache-kafka-advice-from-the-trenches-or-how-to-successfully-fail-5e78e9997668/"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*; script-src 'self' 'nonce-MC42NzgyMDc3MzUyNjYzNzQ1' ;  connect-src https://api.vlctechhub.org/v2/ ">
+
+    <link rel="stylesheet" href="/assets/css/vlctechhub-47305eb-min.css">
+
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicon/manifest.json">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    
+      <p>Hello Kafkateers!</p>
+<p>In order to do our part to help flatten the curve of the spread of COVID-19, we are moving all of our meetups online for the time being. Please find the details to join this meetup below.</p>
+<p>Make sure to join our Community Slack on the #events channel (use a thread for this meetup) for live discussion. Please note: it will take a few hours for the invite to go through, so please join Slack now! <a href="https://launchpass.com/confluentcommunity">https://launchpass.com/confluentcommunity</a></p>
+<hr />
+<p>Join from PC, Mac, Linux, iOS or Android: <a href="https://confluent.zoom.us/j/986351190">https://confluent.zoom.us/j/986351190</a></p>
+<p>Or iPhone one-tap :
+Mexico: +522299100061,,986351190# or +525541614288,,986351190#
+Or Telephone：
+Dial(for higher quality, dial a number based on your current location)：
+Mexico: +52 229 910 0061 or +52 554 161 4288 or 800 733 4118 (Toll Free)
+Argentina: +54 112 040 0447 or +54 341 512 2188 or +54 343 414 5986 or 822 345 9889 (Toll Free)
+Bolivia (Plurinational State of): 800 100 560 (Toll Free)
+Chile: +56 23 210 9066 or +56 41 256 0288 or 800 914 125 (Toll Free)
+Colombia: +57 1 508 7702 or +57 2 620 7388 or 1 800 518 4301 (Toll Free)
+Costa Rica: +506 4000 3843
+Guatemala: 1800 3000 161 (Toll Free)
+Panama: +507 833 9588 or 800 0558 (Toll Free)
+Peru: +51 1 707 5788 or +51 1 730 6777 or 0 800 78743 (Toll Free)
+Meeting ID: 986 351 190
+International numbers available: <a href="https://confluent.zoom.us/u/ad2PJngrkq">https://confluent.zoom.us/u/ad2PJngrkq</a></p>
+<hr />
+<p>Agenda:
+6:45pm-7:00pm: Online Networking (feel free to BYOB!!)
+7:00pm-7:50pm: Pere Urbón-Bayes, Confluent
+7:50pm-8:20pm: Additional Q&amp;A + Networking (and talk to people on the Confluent Community Slack)</p>
+<hr />
+<p>Talk: Pere Urbón-Bayes</p>
+<p>Bio: Pere es Arquitecto de Soluciones en Confluent, desde Berlin en Alemania. Habiendo trabajado en sistema y arquitectura de datos por mor de 15 años como freelance y consultor. En estos roles ha trabajado de forma principal en sistemas de procesamiento de datos y búsqueda, ayudando empresas a construir arquitecturas de datos resilientes y escalables.</p>
+<p>El trabajo normalmente es a medio camino entre la infraestructura, los ingenieros y los científicos de datos, ontologías y producto.
+En el pasado, siendo parte de Elastic, la empresa detrás de Elasticsearch, ayudando empresas en sistemas de operaciones. Cuando no está en el trabajo a Pere le encanta pasar tiempo con la familia, niños y disfrutar de un buen partido de Balonmano.</p>
+<p>Title: Apache Kafka®: advice from the trenches or how to successfully fail!</p>
+<p>Abstract:
+Operating a complex distributed system such as Apache Kafka could be a lot of work, so many moving parts need to be understood when something wrong happens. With brokers, partitions, leaders, consumers, producers, offsets, consumer groups, etc, and security, managing Apache Kafka can be challenging.</p>
+<p>From managing consistency, numbers of partitions, understanding under replicated partitions, to the challenges of setting up security, and others, in this talk we will review common issues, and mitigation strategies, seen from the trenches helping teams around the globe with their Kafka infrastructure.</p>
+<p>By the end of this talk you will have a collection of strategies to detect and prevent common issues with Apache Kafka, in a nutshell more peace and nights of sleep for you, more happiness for your users, the best case scenario.</p>
+<hr />
+<p>Online Meetup Etiquette:
+•Please unmute yourself when you have a question.
+•Make sure you’re on gallery view so you can see all of your peers.
+•Unless speaker specifies otherwise, please hold your questions until the end of the presentation.</p>
+<hr />
+<p>If you would like to speak or host our next event please let us know! <a href="mailto:community@confluent.io">community@confluent.io</a></p>
+
+    
+  </head>
+  <body>
+    <header class="main-header">
+  <a href="/" class="logo">
+    <img src="/assets/img/vlctechhub.png" alt="VLCTechHub">
+  </a>
+
+  
+    
+
+<nav class="site-nav">
+  <a href="#" class="menu-icon">
+    <svg viewBox="0 0 18 15">
+      <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+      <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+      <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+    </svg>
+  </a>
+
+  <div class="trigger">
+    
+      <li class="">
+        <a href="/">Agenda</a>
+      </li>
+    
+      <li class="">
+        <a href="/job/board/">Empleo</a>
+      </li>
+    
+      <li class="">
+        <a href="/communities">Comunidades</a>
+      </li>
+    
+      <li class="">
+        <a href="/faq">Faq</a>
+      </li>
+    
+      <li class="">
+        <a href="/about">Quiénes somos</a>
+      </li>
+    
+  </div>
+</nav>
+
+  
+
+  <ul class="social-links">
+  </ul>
+</header>
+
+    <script nonce="MC42NzgyMDc3MzUyNjYzNzQ1">
+      let Site = {}
+      Site.API_ROOT = 'https://api.vlctechhub.org/v2'
+    </script>
+    <script src="/assets/js/vlctechhub-47305eb-min.js"></script>
+
+    <main>
+      <section class="container ">
+        
+  <article id="event-page">
+  <header>
+    <h1>Apache Kafka®: advice from the trenches or how to successfully fail!</h1>
+    <p>
+  Jueves 26 de marzo de 2020
+ | 
+  18:45h
+ | @ConfluentInc </p>
+  </header>
+    <section class="event-details">
+      
+  
+    <img class="" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/ConfluentInc.jpg" />
+  
+
+      <section class="details">
+      <p>
+  Jueves 26 de marzo de 2020
+</p>
+      <p>
+  18:45h
+</p>
+      </section>
+      <section class="actions">
+      <a href="https://www.meetup.com/Valencia-Kafka/events/269600982/" class="button button-primary">Ver fuente</a>
+      </section>
+    </section>
+    <section class="event-description">
+      <p>Hello Kafkateers!</p>
+<p>In order to do our part to help flatten the curve of the spread of COVID-19, we are moving all of our meetups online for the time being. Please find the details to join this meetup below.</p>
+<p>Make sure to join our Community Slack on the #events channel (use a thread for this meetup) for live discussion. Please note: it will take a few hours for the invite to go through, so please join Slack now! <a href="https://launchpass.com/confluentcommunity">https://launchpass.com/confluentcommunity</a></p>
+<hr />
+<p>Join from PC, Mac, Linux, iOS or Android: <a href="https://confluent.zoom.us/j/986351190">https://confluent.zoom.us/j/986351190</a></p>
+<p>Or iPhone one-tap :
+Mexico: +522299100061,,986351190# or +525541614288,,986351190#
+Or Telephone：
+Dial(for higher quality, dial a number based on your current location)：
+Mexico: +52 229 910 0061 or +52 554 161 4288 or 800 733 4118 (Toll Free)
+Argentina: +54 112 040 0447 or +54 341 512 2188 or +54 343 414 5986 or 822 345 9889 (Toll Free)
+Bolivia (Plurinational State of): 800 100 560 (Toll Free)
+Chile: +56 23 210 9066 or +56 41 256 0288 or 800 914 125 (Toll Free)
+Colombia: +57 1 508 7702 or +57 2 620 7388 or 1 800 518 4301 (Toll Free)
+Costa Rica: +506 4000 3843
+Guatemala: 1800 3000 161 (Toll Free)
+Panama: +507 833 9588 or 800 0558 (Toll Free)
+Peru: +51 1 707 5788 or +51 1 730 6777 or 0 800 78743 (Toll Free)
+Meeting ID: 986 351 190
+International numbers available: <a href="https://confluent.zoom.us/u/ad2PJngrkq">https://confluent.zoom.us/u/ad2PJngrkq</a></p>
+<hr />
+<p>Agenda:
+6:45pm-7:00pm: Online Networking (feel free to BYOB!!)
+7:00pm-7:50pm: Pere Urbón-Bayes, Confluent
+7:50pm-8:20pm: Additional Q&amp;A + Networking (and talk to people on the Confluent Community Slack)</p>
+<hr />
+<p>Talk: Pere Urbón-Bayes</p>
+<p>Bio: Pere es Arquitecto de Soluciones en Confluent, desde Berlin en Alemania. Habiendo trabajado en sistema y arquitectura de datos por mor de 15 años como freelance y consultor. En estos roles ha trabajado de forma principal en sistemas de procesamiento de datos y búsqueda, ayudando empresas a construir arquitecturas de datos resilientes y escalables.</p>
+<p>El trabajo normalmente es a medio camino entre la infraestructura, los ingenieros y los científicos de datos, ontologías y producto.
+En el pasado, siendo parte de Elastic, la empresa detrás de Elasticsearch, ayudando empresas en sistemas de operaciones. Cuando no está en el trabajo a Pere le encanta pasar tiempo con la familia, niños y disfrutar de un buen partido de Balonmano.</p>
+<p>Title: Apache Kafka®: advice from the trenches or how to successfully fail!</p>
+<p>Abstract:
+Operating a complex distributed system such as Apache Kafka could be a lot of work, so many moving parts need to be understood when something wrong happens. With brokers, partitions, leaders, consumers, producers, offsets, consumer groups, etc, and security, managing Apache Kafka can be challenging.</p>
+<p>From managing consistency, numbers of partitions, understanding under replicated partitions, to the challenges of setting up security, and others, in this talk we will review common issues, and mitigation strategies, seen from the trenches helping teams around the globe with their Kafka infrastructure.</p>
+<p>By the end of this talk you will have a collection of strategies to detect and prevent common issues with Apache Kafka, in a nutshell more peace and nights of sleep for you, more happiness for your users, the best case scenario.</p>
+<hr />
+<p>Online Meetup Etiquette:
+•Please unmute yourself when you have a question.
+•Make sure you’re on gallery view so you can see all of your peers.
+•Unless speaker specifies otherwise, please hold your questions until the end of the presentation.</p>
+<hr />
+<p>If you would like to speak or host our next event please let us know! <a href="mailto:community@confluent.io">community@confluent.io</a></p>
+
+    </section>
+  </article>
+
+      </section>
+    </main>
+    
+      <footer class="main-footer">
+  <section class="footer-content">
+    <section>
+      <h1>Eventos</h1>
+      <ul>
+        <li><a href="/">Próximos eventos</a></li>
+        <li><a href="/events/past/">Eventos pasados</a></li>
+        <li><a href="/events/new/">Publicar evento</a></li>
+        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/vlctechhub-publisher-addon/">Firefox extension</a>
+        <li><a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc">Chrome extension</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Ofertas de trabajo</h1>
+      <ul>
+        <li><a href="/job/board/">Ofertas activas</a></li>
+        <li><a href="/job/new/">Publicar ofertas</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Social</h1>
+      <ul>
+        <li><a href="https://twitter.com/VLCTechHub">Twitter</a></li>
+        <li><a href="https://slack.vlctechhub.org/">Slack</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Contacto</h1>
+      <ul>
+        <li><a href="https://github.com/VLCTechHub/">Github</a></li>
+        <li><a href="mailto:hola@vlctechhub.org">Mail</a></li>
+        <li><a href="/communities">Comunidades</a></li>
+        <li><a href="/faq">Faq</a></li>
+      </ul>
+    </section>
+  </section>
+</footer>
+
+    
+  </body>
+</html>

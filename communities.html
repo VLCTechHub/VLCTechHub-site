@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Comunidades | VLCTechHub</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VLCTechHub es el hub de eventos y empleo tecnológico en Valencia: eventos de programación, coding dojos, talleres, workshops o quedadas informales para fomentar una comunidad o compartir información de base tecnológica en Valencia."/>
+    <meta name="og:title" content="VLCTechHub"/>
+    <meta name="og:description" content="VLCTechHub es el hub de eventos y empleo tecnológico en Valencia: eventos de programación, coding dojos, talleres, workshops o quedadas informales para fomentar una comunidad o compartir información de base tecnológica en Valencia."/>
+    <meta name="og:url" content="https://vlctechhub.org/"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*; script-src 'self' 'nonce-MC42NzgyMDc3MzUyNjYzNzQ1' ;  connect-src https://api.vlctechhub.org/v2/ ">
+
+    <link rel="stylesheet" href="/assets/css/vlctechhub-47305eb-min.css">
+
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicon/manifest.json">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    
+      {% set pageTitle = "Comunidades" %}
+{% set navItem = "communities" %}
+
+{% extends "./templates/default.njk" %}
+{% from "./templates/macros/event.njk" import image %}
+
+{% block main %}
+  <article id="communities">
+    <header>
+      <h1 class="title"> Comunidades </h1>
+    </header>
+    <section class="communities-summary">
+      {% for community in datasource %}
+       <article class="community-summary">
+        <div class="media">
+          {{ image({handle: community.twitter}, className="media-figure") }}
+          <div class="media-body">
+            <h1 class="community-title">{{ community.title }}</h1>
+            <p class="community-desc">{{ community.description }}</p>
+          </div>
+        </div>
+        <div class="links">
+          {% if community.twitter %}
+          <a href="https://twitter.com/{{ community.twitter }}" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          {% endif %}
+          {% if community.meetup %}
+          <a href="{{ community.meetup }}" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          {% endif %}
+          {% if community.web %}
+          <a href="{{ community.web }}" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          {% endif %}
+        </div>
+        {% if community.tags %}
+          <div class="tags">
+            {% for tag in community.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <hr>
+      </article>
+      {% endfor %}
+    </section>
+  </article>
+{% endblock %}
+
+    
+  </head>
+  <body>
+    <header class="main-header">
+  <a href="/" class="logo">
+    <img src="/assets/img/vlctechhub.png" alt="VLCTechHub">
+  </a>
+
+  
+    
+
+<nav class="site-nav">
+  <a href="#" class="menu-icon">
+    <svg viewBox="0 0 18 15">
+      <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+      <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+      <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+    </svg>
+  </a>
+
+  <div class="trigger">
+    
+      <li class="">
+        <a href="/">Agenda</a>
+      </li>
+    
+      <li class="">
+        <a href="/job/board/">Empleo</a>
+      </li>
+    
+      <li class="current">
+        <a href="/communities">Comunidades</a>
+      </li>
+    
+      <li class="">
+        <a href="/faq">Faq</a>
+      </li>
+    
+      <li class="">
+        <a href="/about">Quiénes somos</a>
+      </li>
+    
+  </div>
+</nav>
+
+  
+
+  <ul class="social-links">
+  </ul>
+</header>
+
+    <script nonce="MC42NzgyMDc3MzUyNjYzNzQ1">
+      let Site = {}
+      Site.API_ROOT = 'https://api.vlctechhub.org/v2'
+    </script>
+    <script src="/assets/js/vlctechhub-47305eb-min.js"></script>
+
+    <main>
+      <section class="container ">
+        
+  <article id="communities">
+    <header>
+      <h1 class="title"> Comunidades </h1>
+    </header>
+    <section class="communities-summary">
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/AcmUpv.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">ACM UPV Chapter</h1>
+            <p class="community-desc">Capítulo de la Association for Computing Machinery en la Universitat Politècnica de València</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/AcmUpv" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="http://acmupv.webs.upv.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/AcmUpv.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">ACM-Women UPV Chapter</h1>
+            <p class="community-desc">Capítulo de la Association for Computing Machinery en la Universitat Politècnica de València</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/AcmUpv" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="http://acmupv.webs.upv.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/AgileLevante.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Agile Levante</h1>
+            <p class="community-desc">Compartiendo experiencias Agiles en la zona de levante</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/AgileLevante" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Agile-Levante/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">agile</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://dummyimage.com/350x350/ffd500/000.gif&text=%23"/>
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Agile On Board</h1>
+            <p class="community-desc"></p>
+          </div>
+        </div>
+        <div class="links">
+          
+          
+          <a href="https://www.meetup.com/es-ES/AGILE-on-board-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">agile</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/Startup_VLC.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Asociación Valenciana de Startups</h1>
+            <p class="community-desc">The Startup Ecosystem Association in Valencia</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/Startup_VLC" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="https://www.asociacionvalencianastartups.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">tech</span>
+            
+              <span class="tag">startups</span>
+            
+              <span class="tag">entrepreneurs</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/avalbit.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Avalbit</h1>
+            <p class="community-desc">Asociacion del Bitcoin y otras Tecnologías - Trabajo en equipo y colaboracion</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/avalbit" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/ValenciaBitcoin" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="http://avalbit.org/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">Bitcoin</span>
+            
+              <span class="tag">Blockchain</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/AWSUG_VLC.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">AWS UG Valencia</h1>
+            <p class="community-desc">AWS User Group de Valencia.</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/AWSUG_VLC" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/AWS-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">AWS</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/https://twitter.com/Bsvespanol/.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Bitcoin SV Valencia</h1>
+            <p class="community-desc">Grupo interesado en el desarrollo y la comunidad de Bitcoin Satoshi Vision BSV, la verdadera revolución</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/https://twitter.com/Bsvespanol/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/BitcoinSV_Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="https://bsvespanol.org/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">Bitcoin</span>
+            
+              <span class="tag">BSV</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/dotNetValencia.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Club .NET Valencia</h1>
+            <p class="community-desc">Centrados en aprender entre nosotros, llevar a cabo proyectos multiplataforma y hacer buenos diseños de software</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/dotNetValencia" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/msft-valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">.net</span>
+            
+              <span class="tag">C#</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/databeersvlc.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Databeers VLC</h1>
+            <p class="community-desc">Interested in Data, love beer, in València?</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/databeersvlc" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="https://databeersvlc.tumblr.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">data</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/DataUpv.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Data UPV</h1>
+            <p class="community-desc">Somos un grupo estudiantil de la UPV que promueve el uso de los datos abiertos entre la Comunidad Universitaria</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/DataUpv" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="http://dataupv.webs.upv.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">opendata</span>
+            
+              <span class="tag">bigdata</span>
+            
+              <span class="tag">datamining</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/devscola.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">devscola</h1>
+            <p class="community-desc">Somos una escuela donde aprender a programar</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/devscola" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Aprende-a-programar-en-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="http://www.devscola.org/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">ruby</span>
+            
+              <span class="tag">JS</span>
+            
+              <span class="tag">rails</span>
+            
+              <span class="tag">katayunos</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/DevWomen_ES.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">DevWomen</h1>
+            <p class="community-desc">Comunidad que potencia y visibiliza la figura de la mujer en el sector tecnológico. El desarrollo también es cosa de mujeres</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/DevWomen_ES" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="https://devwomen.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/drupalval.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">DrupalVal</h1>
+            <p class="community-desc">Nosotros somos la comunidad Drupal de Valencia. Síguenos para saber todo lo que hacemos y unirte a nosotros</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/drupalval" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/drupalval" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="https://groups.drupal.org/comunidad-valenciana" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">drupal</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://dummyimage.com/350x350/ffd500/000.gif&text=%23"/>
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Emerging Tech Valencia</h1>
+            <p class="community-desc">Grupo enfocado a tecnologías emergentes como contenedores, cloud computing, *aaS, SaaS, IaaS, siempre enfocadas a open source.</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          
+          <a href="https://www.meetup.com/es-ES/Emerging-Tech-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">opensource</span>
+            
+              <span class="tag">kubernetes</span>
+            
+              <span class="tag">docker</span>
+            
+              <span class="tag">devops</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/FemDevs.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">FemDevs</h1>
+            <p class="community-desc">Asociación que persigue dar espacio y visibilidad a mujeres profesionales, estudiantes o interesadas en el desarrollo de videojuegos</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/FemDevs" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="https://femdevs.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">FemDevsMeetups</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/FomAlumni.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">FomAlumni</h1>
+            <p class="community-desc">Comunidad de alumnos, profesores y amigos de @fomiot, profesionales apasionados por las tecnologías y los ecosistemas 4.0</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/FomAlumni" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="http://www.fomat.es/comunidad-fom/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">i40VAL</span>
+            
+              <span class="tag">i40VALL</span>
+            
+              <span class="tag">i40MAD</span>
+            
+              <span class="tag">i40VIGO</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/gdgvalencia.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">GDG Valencia</h1>
+            <p class="community-desc"></p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/gdgvalencia" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/GDGValencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="http://gdgvalencia.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/geoinquietosvlc.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Geoinquietos VLC</h1>
+            <p class="community-desc">Encuentros entre gente que comparte inquietudes en el ámbito de la geomática, software libre y tecnología geoespacial</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/geoinquietosvlc" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Geoinquietos-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">geobirras</span>
+            
+              <span class="tag">geopaella</span>
+            
+              <span class="tag">geovoluntariado</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/GnuLinuxVlc.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">GNU/Linux de Valencia</h1>
+            <p class="community-desc">Una aproximación al mundo GNU/Linux desde la capital del Turia</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/GnuLinuxVlc" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="https://gnulinuxvalencia.org/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">GNULinux</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/gvsig.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">gvSIG project</h1>
+            <p class="community-desc">Free Software project to develop easy to use Geographical Information System products and a great community</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/gvsig" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="http://www.gvsig.org" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">GIS</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/hackandbeers.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Hack&amp;Beers</h1>
+            <p class="community-desc">Ponencias gratuitas para interesados en la seguridad informática. Ambiente distendido y acompañando las charlas con unas Beers</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/hackandbeers" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="https://hackandbeers.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">hack</span>
+            
+              <span class="tag">seguridadinformatica</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/HackNightVLC.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">HackNight Valencia</h1>
+            <p class="community-desc">Un evento mensual en el que cada noche lo hace la gente que acude</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/HackNightVLC" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/HackNight-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/HackVlc.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Hackerspace Valencia</h1>
+            <p class="community-desc">Asociación Hackerspace Valencia. Fricolaje en un ambiente amigable</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/HackVlc" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Hackerspace-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="https://hackvlc.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">hack</span>
+            
+              <span class="tag">opensource</span>
+            
+              <span class="tag">makers</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/infusionvlc.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">infusionvlc</h1>
+            <p class="community-desc">Meetups para el empoderamiento digital de las personas</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/infusionvlc" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="http://www.infusionvlc.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://dummyimage.com/350x350/ffd500/000.gif&text=%23"/>
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Ladies, Wine &amp; Design</h1>
+            <p class="community-desc">Una noche de tertulia cada mes entre quince diseñadoras y creativas. Habrá vino, cena y hablaremos sobre una amplia variedad de temas relacionados con la creatividad, los negocios y la vida</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          
+          <a href="https://www.eventbrite.es/o/ladies-wine-amp-design-valencia-17046040836" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="https://ladieswinedesign.com/valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">design</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/meetmobileVLC.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">meetmobile</h1>
+            <p class="community-desc">Si te gusta la programación y la tecnología móvil, por fin tienes tu evento en Valencia</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/meetmobileVLC" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/http-meetmobile-es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="https://meetmobile.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">tech</span>
+            
+              <span class="tag">mobile</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/ministryoftest.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Ministry of Testing Valencia</h1>
+            <p class="community-desc">Our meetups exist as a way to bring people together to talk and learn about good and authentic testing</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/ministryoftest" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Ministry-of-Testing-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.ministryoftesting.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">softwaretesting</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/mlvlc.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">ML Valencia</h1>
+            <p class="community-desc">Charlaremos sobre machinelearning desde conceptos básicos a los más avanzados y descubriremos las últimas herramientas para crear apps predictivas</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/mlvlc" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Machine-Learning-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">machinelearning</span>
+            
+              <span class="tag">apps</span>
+            
+              <span class="tag">mlvlc</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://dummyimage.com/350x350/ffd500/000.gif&text=%23"/>
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Moving Forward// Design, UX, SEO, Development &amp; Digital Mkt.</h1>
+            <p class="community-desc">Eventos para cubrir todas las areas del Marketing Digital</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          
+          <a href="https://www.meetup.com/es-ES/moving-forward-vlc/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">UX</span>
+            
+              <span class="tag">SEO</span>
+            
+              <span class="tag">SEM</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/phpvalencia.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">PHP Valencia</h1>
+            <p class="community-desc">Grupo de desarrolladores web que usan el lenguaje PHP</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/phpvalencia" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/PHP-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="http://phpvalencia.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">PHP</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/python_vlc.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Python Valencia</h1>
+            <p class="community-desc">Grupo Python Valencia</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/python_vlc" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Python-Valencia-Meetup/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">python</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/RLadiesValencia.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">R-Ladies Valencia</h1>
+            <p class="community-desc">Promoting the role of women in the R community as part of RLadiesGlobal initiative</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/RLadiesValencia" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">RLadiesGlobal</span>
+            
+              <span class="tag">RLadiesValencia</span>
+            
+              <span class="tag">rstats</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/SchoolofAIVlc.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">School of AI Valencia</h1>
+            <p class="community-desc">Nuestra misión es ofrecer una educación de Inteligencia Artificial de clase mundial a cualquier persona en la Tierra de forma gratuita</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/SchoolofAIVlc" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Meetup-Valencia-School-of-AI/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="http://schoolofai.es/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">inteligenciaartificial</span>
+            
+              <span class="tag">machinelearning</span>
+            
+              <span class="tag">deeplearning</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/socarrust.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Socarrust</h1>
+            <p class="community-desc">A group to talk and practice the Rust programming language in Valencia</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/socarrust" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/socarrust/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">rust</span>
+            
+              <span class="tag">rustlang</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/expoQA.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Software Testers &amp; QA Experts de Valencia</h1>
+            <p class="community-desc"></p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/expoQA" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Software-Testers-and-QA-Experts-of-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="http://www.spanishtestacademy.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">testing</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://dummyimage.com/350x350/ffd500/000.gif&text=%23"/>
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Talk Blockchain Valencia</h1>
+            <p class="community-desc">Comunidad técnica en torno al desarrollo Blockchain</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          
+          <a href="https://www.meetup.com/es-ES/Blockchain-Valencia-Tech/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">blockchain</span>
+            
+              <span class="tag">smartcontracts</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/TestNight_VLC.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">TestNight Valencia</h1>
+            <p class="community-desc">Un evento mensual creado con la intención de comunicar e intercambiar ideas y experiencias sobre Software Testing</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/TestNight_VLC" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/TestNight-VLC/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">testing</span>
+            
+              <span class="tag">testnight</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://dummyimage.com/350x350/ffd500/000.gif&text=%23"/>
+  
+
+          <div class="media-body">
+            <h1 class="community-title">UX VLC // User Experience y Estrategia</h1>
+            <p class="community-desc">Para cualquier persona interesada en diseño de Producto y Experiencia de Usuario (UX)</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          
+          <a href="https://www.meetup.com/es-ES/UX-VLC-User-Experience-y-Estrategia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">UX</span>
+            
+              <span class="tag">research</span>
+            
+              <span class="tag">productdesign</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/UXacademy_es.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">UXER SCHOOL</h1>
+            <p class="community-desc">Escuela de los profesionales en diseño y experiencia de usuario</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/UXacademy_es" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/UX-Academy-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.uxerschool.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">UX</span>
+            
+              <span class="tag">UI</span>
+            
+              <span class="tag">design</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/valenciadevops.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Valencia DevOps</h1>
+            <p class="community-desc">Operations meets development. Development meets operations</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/valenciadevops" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Valencia-DevOps/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.valenciadevops.me/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/VLCInteractive.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Valencia Interactive</h1>
+            <p class="community-desc">Local Game Industry community and the official Valencia Unity User Group (VUUG)</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/VLCInteractive" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/ValenciaInteractive/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">gamedev</span>
+            
+              <span class="tag">unity3d</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/VlcSwCraft.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Valencia Software Crafters</h1>
+            <p class="community-desc">Comunidad para profesionales entusiastas del desarrollo del software, sin importar su nivel, que quieran mejorar en su oficio</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/VlcSwCraft" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Valencia-Software-Crafters/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">software</span>
+            
+              <span class="tag">craftsmanship</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/VLCStartups.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Valencia Startups</h1>
+            <p class="community-desc">Comunidad para conectar emprendedores y startups en Valencia</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/VLCStartups" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Valencia-Startups/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">emprendedores</span>
+            
+              <span class="tag">startups</span>
+            
+              <span class="tag">networking</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://dummyimage.com/350x350/ffd500/000.gif&text=%23"/>
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Valencia Virtual</h1>
+            <p class="community-desc">Comunidad de profesionales y entusiastas de la virtualización 3D, mediante el uso de nuevas tecnologías y sus infinitas aplicaciones</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          
+          <a href="https://www.meetup.com/es-ES/realidad-virtual-aumentada-en-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">VR</span>
+            
+              <span class="tag">AR</span>
+            
+              <span class="tag">XR</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/valenciarb.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">Valencia.rb</h1>
+            <p class="community-desc">Grupo local de usuarios de Ruby en Valencia</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/valenciarb" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="https://valenciarb.org/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">ruby</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/VlcJS.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">ValenciaJS</h1>
+            <p class="community-desc">A meetup in Valencia for people that hack &amp; love JavaScript</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/VlcJS" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/ValenciaJS/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">JS</span>
+            
+              <span class="tag">nodejs</span>
+            
+              <span class="tag">frontend</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/VLC_JUG.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">ValenciaJUG</h1>
+            <p class="community-desc">Valencia Java User Group (JUG) focused in Java Virtual Machine (JVM) programming paradigms and languages</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/VLC_JUG" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/ValenciaJUG/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">JVM</span>
+            
+              <span class="tag">programming</span>
+            
+              <span class="tag">java</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/VlcGophers.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">VlcGophers</h1>
+            <p class="community-desc">Nos reunimos cada mes entre cervezas para compartir conocimientos y novedades, mayoritariamente relacionados con Go</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/VlcGophers" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/Valencia-Go-Meetup/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">go</span>
+            
+              <span class="tag">golang</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/VuejsValencia.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">VueJS Valencia</h1>
+            <p class="community-desc">Grupo de amantes de VueJS en Valencia. Cada cierto tiempo nos juntaremos para organizar meetups, y hablar sobre el ecosistema de VueJS</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/VuejsValencia" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/VueJS-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">vuejs</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/_wpvalencia.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">WordPress Valencia</h1>
+            <p class="community-desc">Lugar de encuentro en Valencia para entusiastas de WordPress, ya sean aficionados, usuarios, desarrolladores, diseñadores, empresas, freelancers</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/_wpvalencia" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          <a href="https://www.meetup.com/es-ES/wordpress-valencia-meetup/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+          <a href="http://www.wpvalencia.org/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">wordpress</span>
+            
+              <span class="tag">wp</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://res.cloudinary.com/vlctechhub/image/twitter_name/w_350/WtmValencia.jpg" />
+  
+
+          <div class="media-body">
+            <h1 class="community-title">WTM Valencia</h1>
+            <p class="community-desc">WTM es un evento creado por Google para dar visibilidad y voz a mujeres que trabajan en el sector de la tecnología</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          <a href="https://twitter.com/WtmValencia" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter"><use
+              href="/assets/img/symbol-defs.svg#icon-twitter"
+              xlink:href="/assets/img/symbol-defs.svg#icon-twitter"></use></svg>
+          </a>
+          
+          
+          
+          <a href="https://womentechmakersvalencia.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-web"><use
+              href="/assets/img/symbol-defs.svg#icon-web"
+              xlink:href="/assets/img/symbol-defs.svg#icon-web"></use></svg>
+          </a>
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">WTMValencia19</span>
+            
+              <span class="tag">WTM19</span>
+            
+              <span class="tag">WomenTechmakers</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+       <article class="community-summary">
+        <div class="media">
+          
+  
+    <img class="media-figure" src="https://dummyimage.com/350x350/ffd500/000.gif&text=%23"/>
+  
+
+          <div class="media-body">
+            <h1 class="community-title">xR WORLD @ Valencia</h1>
+            <p class="community-desc">Comunidad de entusiastas de la Realidad Virtual y Realidad Aumentada en la zona de levante</p>
+          </div>
+        </div>
+        <div class="links">
+          
+          
+          <a href="https://www.meetup.com/es-ES/xR-World-Valencia/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-meetup"><use
+              href="/assets/img/symbol-defs.svg#icon-meetup"
+              xlink:href="/assets/img/symbol-defs.svg#icon-meetup"></use></svg>
+          </a>
+          
+          
+        </div>
+        
+          <div class="tags">
+            
+              <span class="tag">VR</span>
+            
+              <span class="tag">AR</span>
+            
+          </div>
+        
+        <hr>
+      </article>
+      
+    </section>
+  </article>
+
+      </section>
+    </main>
+    
+      <footer class="main-footer">
+  <section class="footer-content">
+    <section>
+      <h1>Eventos</h1>
+      <ul>
+        <li><a href="/">Próximos eventos</a></li>
+        <li><a href="/events/past/">Eventos pasados</a></li>
+        <li><a href="/events/new/">Publicar evento</a></li>
+        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/vlctechhub-publisher-addon/">Firefox extension</a>
+        <li><a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc">Chrome extension</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Ofertas de trabajo</h1>
+      <ul>
+        <li><a href="/job/board/">Ofertas activas</a></li>
+        <li><a href="/job/new/">Publicar ofertas</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Social</h1>
+      <ul>
+        <li><a href="https://twitter.com/VLCTechHub">Twitter</a></li>
+        <li><a href="https://slack.vlctechhub.org/">Slack</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Contacto</h1>
+      <ul>
+        <li><a href="https://github.com/VLCTechHub/">Github</a></li>
+        <li><a href="mailto:hola@vlctechhub.org">Mail</a></li>
+        <li><a href="/communities">Comunidades</a></li>
+        <li><a href="/faq">Faq</a></li>
+      </ul>
+    </section>
+  </section>
+</footer>
+
+    
+  </body>
+</html>

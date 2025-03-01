@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Publicar oferta | VLCTechHub</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VLCTechHub es el hub de eventos y empleo tecnológico en Valencia: eventos de programación, coding dojos, talleres, workshops o quedadas informales para fomentar una comunidad o compartir información de base tecnológica en Valencia."/>
+    <meta name="og:title" content="VLCTechHub"/>
+    <meta name="og:description" content="VLCTechHub es el hub de eventos y empleo tecnológico en Valencia: eventos de programación, coding dojos, talleres, workshops o quedadas informales para fomentar una comunidad o compartir información de base tecnológica en Valencia."/>
+    <meta name="og:url" content="https://vlctechhub.org/"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*; script-src 'self' 'nonce-MC42NzgyMDc3MzUyNjYzNzQ1' ;  connect-src https://api.vlctechhub.org/v2/ ">
+
+    <link rel="stylesheet" href="/assets/css/vlctechhub-47305eb-min.css">
+
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicon/manifest.json">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    
+      {% set pageTitle = "Publicar oferta" %}
+{% extends "./templates/default.njk" %}
+
+{% from "./templates/macros/form.njk" import textInput, textArea, emailInput %}
+
+{% block main %}
+  <article id="new-job">
+    <header>
+      <h1 class="title"> publicar una oferta </h1>
+      <p>
+      Recomendamos seguir <a href="http://www.carlosreig.es/como-hacer-una-buena-oferta-de-trabajo/?source=vlctechhub" target="_blank" rel="noopener noreferrer">esta guía </a>para publicar. <strong>Revisamos cada oferta</strong>, ten en cuenta que la publicación no es inmediata.
+      </p>
+    </header>
+
+    <section class="notification success">
+      ¡Oferta recibida con éxito! Hemos dado de alta tu oferta, pero ten en cuenta que la publicación no es inmediata.
+    </section>
+
+    <section class="notification error">
+      No hemos podido crear la oferta, por favor revisa que los datos son correctos y prueba más tarde.
+    </section>
+
+    <form onsubmit="return false;">
+    {% set required = true %}
+    {{textInput('title', 'Puesto', required, "Ej: 'Desarrollador ruby', 'Diseñador UX', 'Programador senior .Net'")}}
+    {{textArea('description', 'Descripción', required, "Describe con detalle lo que implica el puesto, qué tipo de candidato buscas, cómo se trabaja en tu empresa y qué beneficios ofrecéis.", 'Admite el uso de Markdown', 'https://www.markdownguide.org/cheat-sheet/')}}
+    {{textInput('keywords', 'Palabras clave', required, "Breve listado separado por comas. Ej: javascript, aws, marketing, photoshop")}}
+    {{textInput('salary', 'Sueldo', required, "Los candidatos contactan más con empresas que publican el sueldo en la oferta.")}}
+    {{textArea('howToApply', 'Cómo aplicar', required, "Escribe las instrucciones para inscribirte a tu oferta aquí. Ej: 'Mándanos una carta de presentación y tu cv a la direccion de correo xxx@xxx.com. Cuéntanos por qué eres el candidato ideal!'", 'Admite el uso de Markdown', 'https://www.markdownguide.org/cheat-sheet/')}}
+    {{textInput('sourceUrl', 'URL de la oferta', notRequired, "Si tienes publicada la oferta en tu página web puedes poder aquí el link.")}}
+    {{textInput('companyName', 'Nombre de la empresa', required)}}
+    {{textInput('companyWeb', 'Web de la empresa', required)}}
+    {{textInput('companyTwitter', 'Twitter de la empresa', notRequired, "Te nombraremos cuando se publique la oferta. Ej: @mozilla")}}
+    {{emailInput('companyContact', 'Email de contacto', required, "Email contacto en caso de tener alguna duda con la oferta. Este email no se publicará con la oferta.")}}
+    <button type="button" class="button button-emphasis" data-type="submit">Enviar la oferta</button>
+  </form>
+  </article>
+  <script nonce="{{nonce}}">
+    Site.Job.New.init()
+  </script>
+{% endblock %}
+
+    
+  </head>
+  <body>
+    <header class="main-header">
+  <a href="/" class="logo">
+    <img src="/assets/img/vlctechhub.png" alt="VLCTechHub">
+  </a>
+
+  
+    
+
+<nav class="site-nav">
+  <a href="#" class="menu-icon">
+    <svg viewBox="0 0 18 15">
+      <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+      <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+      <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+    </svg>
+  </a>
+
+  <div class="trigger">
+    
+      <li class="">
+        <a href="/">Agenda</a>
+      </li>
+    
+      <li class="">
+        <a href="/job/board/">Empleo</a>
+      </li>
+    
+      <li class="">
+        <a href="/communities">Comunidades</a>
+      </li>
+    
+      <li class="">
+        <a href="/faq">Faq</a>
+      </li>
+    
+      <li class="">
+        <a href="/about">Quiénes somos</a>
+      </li>
+    
+  </div>
+</nav>
+
+  
+
+  <ul class="social-links">
+  </ul>
+</header>
+
+    <script nonce="MC42NzgyMDc3MzUyNjYzNzQ1">
+      let Site = {}
+      Site.API_ROOT = 'https://api.vlctechhub.org/v2'
+    </script>
+    <script src="/assets/js/vlctechhub-47305eb-min.js"></script>
+
+    <main>
+      <section class="container ">
+        
+  <article id="new-job">
+    <header>
+      <h1 class="title"> publicar una oferta </h1>
+      <p>
+      Recomendamos seguir <a href="http://www.carlosreig.es/como-hacer-una-buena-oferta-de-trabajo/?source=vlctechhub" target="_blank" rel="noopener noreferrer">esta guía </a>para publicar. <strong>Revisamos cada oferta</strong>, ten en cuenta que la publicación no es inmediata.
+      </p>
+    </header>
+
+    <section class="notification success">
+      ¡Oferta recibida con éxito! Hemos dado de alta tu oferta, pero ten en cuenta que la publicación no es inmediata.
+    </section>
+
+    <section class="notification error">
+      No hemos podido crear la oferta, por favor revisa que los datos son correctos y prueba más tarde.
+    </section>
+
+    <form onsubmit="return false;">
+    
+    
+  
+  <p>
+    <label for="title">
+      <span>Puesto</span>
+      
+        <abbr title="Campo obligatorio">*</abbr>
+      
+    </label>
+    <input id="title" name="title" type="text" required ></input>
+    
+      <span class="hint">Ej: &#39;Desarrollador ruby&#39;, &#39;Diseñador UX&#39;, &#39;Programador senior .Net&#39;</span>
+    
+    <span class="error"></span>
+  </p>
+
+
+    
+  <p>
+    <label for="description">
+      Descripción
+      
+        <abbr title="Campo obligatorio">*</abbr>
+      
+    </label>
+    <textarea id="description" name="description" rows=10 required></textarea>
+    
+      <span class="hint">Describe con detalle lo que implica el puesto, qué tipo de candidato buscas, cómo se trabaja en tu empresa y qué beneficios ofrecéis.</span>
+    
+    
+      <span class="hint"><a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" rel="noopener noreferrer" >Admite el uso de Markdown</a></span>
+    
+    <span class="error"></span>
+  </p>
+
+    
+  
+  <p>
+    <label for="keywords">
+      <span>Palabras clave</span>
+      
+        <abbr title="Campo obligatorio">*</abbr>
+      
+    </label>
+    <input id="keywords" name="keywords" type="text" required ></input>
+    
+      <span class="hint">Breve listado separado por comas. Ej: javascript, aws, marketing, photoshop</span>
+    
+    <span class="error"></span>
+  </p>
+
+
+    
+  
+  <p>
+    <label for="salary">
+      <span>Sueldo</span>
+      
+        <abbr title="Campo obligatorio">*</abbr>
+      
+    </label>
+    <input id="salary" name="salary" type="text" required ></input>
+    
+      <span class="hint">Los candidatos contactan más con empresas que publican el sueldo en la oferta.</span>
+    
+    <span class="error"></span>
+  </p>
+
+
+    
+  <p>
+    <label for="howToApply">
+      Cómo aplicar
+      
+        <abbr title="Campo obligatorio">*</abbr>
+      
+    </label>
+    <textarea id="howToApply" name="howToApply" rows=10 required></textarea>
+    
+      <span class="hint">Escribe las instrucciones para inscribirte a tu oferta aquí. Ej: &#39;Mándanos una carta de presentación y tu cv a la direccion de correo xxx@xxx.com. Cuéntanos por qué eres el candidato ideal!&#39;</span>
+    
+    
+      <span class="hint"><a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" rel="noopener noreferrer" >Admite el uso de Markdown</a></span>
+    
+    <span class="error"></span>
+  </p>
+
+    
+  
+  <p>
+    <label for="sourceUrl">
+      <span>URL de la oferta</span>
+      
+    </label>
+    <input id="sourceUrl" name="sourceUrl" type="text"  ></input>
+    
+      <span class="hint">Si tienes publicada la oferta en tu página web puedes poder aquí el link.</span>
+    
+    <span class="error"></span>
+  </p>
+
+
+    
+  
+  <p>
+    <label for="companyName">
+      <span>Nombre de la empresa</span>
+      
+        <abbr title="Campo obligatorio">*</abbr>
+      
+    </label>
+    <input id="companyName" name="companyName" type="text" required ></input>
+    
+    <span class="error"></span>
+  </p>
+
+
+    
+  
+  <p>
+    <label for="companyWeb">
+      <span>Web de la empresa</span>
+      
+        <abbr title="Campo obligatorio">*</abbr>
+      
+    </label>
+    <input id="companyWeb" name="companyWeb" type="text" required ></input>
+    
+    <span class="error"></span>
+  </p>
+
+
+    
+  
+  <p>
+    <label for="companyTwitter">
+      <span>Twitter de la empresa</span>
+      
+    </label>
+    <input id="companyTwitter" name="companyTwitter" type="text"  ></input>
+    
+      <span class="hint">Te nombraremos cuando se publique la oferta. Ej: @mozilla</span>
+    
+    <span class="error"></span>
+  </p>
+
+
+    
+  
+  <p>
+    <label for="companyContact">
+      <span>Email de contacto</span>
+      
+        <abbr title="Campo obligatorio">*</abbr>
+      
+    </label>
+    <input id="companyContact" name="companyContact" type="email" required ></input>
+    
+      <span class="hint">Email contacto en caso de tener alguna duda con la oferta. Este email no se publicará con la oferta.</span>
+    
+    <span class="error"></span>
+  </p>
+
+
+    <button type="button" class="button button-emphasis" data-type="submit">Enviar la oferta</button>
+  </form>
+  </article>
+  <script nonce="MC42NzgyMDc3MzUyNjYzNzQ1">
+    Site.Job.New.init()
+  </script>
+
+      </section>
+    </main>
+    
+      <footer class="main-footer">
+  <section class="footer-content">
+    <section>
+      <h1>Eventos</h1>
+      <ul>
+        <li><a href="/">Próximos eventos</a></li>
+        <li><a href="/events/past/">Eventos pasados</a></li>
+        <li><a href="/events/new/">Publicar evento</a></li>
+        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/vlctechhub-publisher-addon/">Firefox extension</a>
+        <li><a href="https://chrome.google.com/webstore/detail/vlctechhub-publisher-addo/jmphppchcbgfglglfbemgbjligclmcmc">Chrome extension</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Ofertas de trabajo</h1>
+      <ul>
+        <li><a href="/job/board/">Ofertas activas</a></li>
+        <li><a href="/job/new/">Publicar ofertas</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Social</h1>
+      <ul>
+        <li><a href="https://twitter.com/VLCTechHub">Twitter</a></li>
+        <li><a href="https://slack.vlctechhub.org/">Slack</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Contacto</h1>
+      <ul>
+        <li><a href="https://github.com/VLCTechHub/">Github</a></li>
+        <li><a href="mailto:hola@vlctechhub.org">Mail</a></li>
+        <li><a href="/communities">Comunidades</a></li>
+        <li><a href="/faq">Faq</a></li>
+      </ul>
+    </section>
+  </section>
+</footer>
+
+    
+  </body>
+</html>
