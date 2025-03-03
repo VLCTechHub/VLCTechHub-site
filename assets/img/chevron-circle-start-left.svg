@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512pt" height="512pt" version="1.1" viewBox="0 0 512.00002 512.00002" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<circle cx="255" cy="257" r="235.45" fill-opacity="0" stroke="#000" stroke-width="39.108"/>
+<path class="chevron" d="m189.22 256 147.28-147.29 28.286 28.285-119 119 119 119-28.286 28.285z" stroke="#000" stroke-width=".75px"/>
+<path class="stick" d="m153.88 402.52-7e-3 -294.46h40.002c-0.41622 118.94 1e-3 167.54-2.6e-4 294.46z" stroke="#000" stroke-width=".75"/>
+</svg>
